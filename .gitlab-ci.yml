@@ -1,0 +1,14 @@
+# job name
+compile_pdf:
+  # commands to execute
+  script:
+    - latexmk -pdf my_thesis.tex
+  # artifacts to collect after successful execution
+  artifacts:
+    paths:
+      - "*.pdf"
+      - iib_thesis.cls
+      - .gitlab-ci.yml
+      - "*.tex"
+      - my_bibliography.bib
+      - images/
