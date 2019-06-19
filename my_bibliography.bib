@@ -1,35 +1,1018 @@
-@BOOK{lamport2005,
-	Author = {Lamport, Leslie},
-	Title = {LATEX: a document preparation system; user's guide and reference manual},
-	ISBN = {0201529831},
-	Publisher = {Addison-Wesley, Boston},
-	Year = {2005}
+
+@article{suRenderCNNViewpoint2015,
+	title = {Render for {CNN}: Viewpoint Estimation in Images Using {CNNs} Trained with Rendered 3D Model Views},
+	url = {http://arxiv.org/abs/1505.05641},
+	shorttitle = {Render for {CNN}},
+	abstract = {Object viewpoint estimation from 2D images is an essential task in computer vision. However, two issues hinder its progress: scarcity of training data with viewpoint annotations, and a lack of powerful features. Inspired by the growing availability of 3D models, we propose a framework to address both issues by combining render-based image synthesis and {CNNs}. We believe that 3D models have the potential in generating a large number of images of high variation, which can be well exploited by deep {CNN} with a high learning capacity. Towards this goal, we propose a scalable and overfit-resistant image synthesis pipeline, together with a novel {CNN} specifically tailored for the viewpoint estimation task. Experimentally, we show that the viewpoint estimation from our pipeline can significantly outperform state-of-the-art methods on {PASCAL} 3D+ benchmark.},
+	journaltitle = {{arXiv}:1505.05641 [cs]},
+	author = {Su, Hao and Qi, Charles R. and Li, Yangyan and Guibas, Leonidas},
+	urldate = {2019-05-16},
+	date = {2015-05-21},
+	eprinttype = {arxiv},
+	eprint = {1505.05641},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {arXiv\:1505.05641 PDF:/Users/abdullah/Zotero/storage/9G6TZKZT/Su et al. - 2015 - Render for CNN Viewpoint Estimation in Images Usi.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/EVKTX4X2/1505.html:text/html}
 }
 
-@INPROCEEDINGS {hilfert_koenig_2015,
-  title = {Low-Cost Virtual Reality Environment For Engineering And Construction},
-  author = {Hilfert, Thomas and König, Markus},
-  booktitle = {32nd International Symposium on Automation and Robotics in Construction and Mining},
-  year = {2015},
-  month = {June},
-  organization = {University of Oulu, Finnland},
-  url = {http://isarc2015.org},
+@article{mccormacSceneNetRGBD5M2016,
+	title = {{SceneNet} {RGB}-D: 5M Photorealistic Images of Synthetic Indoor Trajectories with Ground Truth},
+	url = {http://arxiv.org/abs/1612.05079},
+	shorttitle = {{SceneNet} {RGB}-D},
+	abstract = {We introduce {SceneNet} {RGB}-D, expanding the previous work of {SceneNet} to enable large scale photorealistic rendering of indoor scene trajectories. It provides pixel-perfect ground truth for scene understanding problems such as semantic segmentation, instance segmentation, and object detection, and also for geometric computer vision problems such as optical flow, depth estimation, camera pose estimation, and 3D reconstruction. Random sampling permits virtually unlimited scene configurations, and here we provide a set of 5M rendered {RGB}-D images from over 15K trajectories in synthetic layouts with random but physically simulated object poses. Each layout also has random lighting, camera trajectories, and textures. The scale of this dataset is well suited for pre-training data-driven computer vision techniques from scratch with {RGB}-D inputs, which previously has been limited by relatively small labelled datasets in {NYUv}2 and {SUN} {RGB}-D. It also provides a basis for investigating 3D scene labelling tasks by providing perfect camera poses and depth data as proxy for a {SLAM} system. We host the dataset at http://robotvault.bitbucket.io/scenenet-rgbd.html},
+	journaltitle = {{arXiv}:1612.05079 [cs]},
+	author = {{McCormac}, John and Handa, Ankur and Leutenegger, Stefan and Davison, Andrew J.},
+	urldate = {2019-05-16},
+	date = {2016-12-15},
+	eprinttype = {arxiv},
+	eprint = {1612.05079},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {arXiv\:1612.05079 PDF:/Users/abdullah/Zotero/storage/CDXZM66C/McCormac et al. - 2016 - SceneNet RGB-D 5M Photorealistic Images of Synthe.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/JTV9IDWX/1612.html:text/html}
 }
 
-@ARTICLE {hilfert_koenig_2016,
-  title = {Low-cost virtual reality environment for engineering and construction},
-  author = {Hilfert, Thomas and König, Markus},
-  journal = {Visualization in Engineering},
-  year = {2016},
-  month = {January},
-  volume = {4},
-  number = {2},
-  doi = {10.1186/s40327-015-0031-5}
+@inproceedings{shrivastavaLearningSimulatedUnsupervised2017,
+	title = {Learning From Simulated and Unsupervised Images Through Adversarial Training},
+	url = {http://openaccess.thecvf.com/content_cvpr_2017/html/Shrivastava_Learning_From_Simulated_CVPR_2017_paper.html},
+	eventtitle = {Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition},
+	pages = {2107--2116},
+	author = {Shrivastava, Ashish and Pfister, Tomas and Tuzel, Oncel and Susskind, Joshua and Wang, Wenda and Webb, Russell},
+	urldate = {2019-05-16},
+	date = {2017},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/ZSWEWGII/Shrivastava et al. - 2017 - Learning From Simulated and Unsupervised Images Th.pdf:application/pdf;Snapshot:/Users/abdullah/Zotero/storage/A5T2Z8NV/Shrivastava_Learning_From_Simulated_CVPR_2017_paper.html:text/html}
 }
 
-@misc{wiki:xxx,
-    author = "{Wikipedia contributors}",
-    title = "{LaTeX --- Wikipedia, The Free Encyclopedia}",
-    year = "2011",
-    note = "\url{https://en.wikipedia.org/w/index.php?title=LaTeX\&oldid=413720397} [accessed 30-November-2018]"
+@article{tremblayTrainingDeepNetworks2018,
+	title = {Training Deep Networks with Synthetic Data: Bridging the Reality Gap by Domain Randomization},
+	url = {http://arxiv.org/abs/1804.06516},
+	shorttitle = {Training Deep Networks with Synthetic Data},
+	abstract = {We present a system for training deep neural networks for object detection using synthetic images. To handle the variability in real-world data, the system relies upon the technique of domain randomization, in which the parameters of the simulator\$-\$such as lighting, pose, object textures, etc.\$-\$are randomized in non-realistic ways to force the neural network to learn the essential features of the object of interest. We explore the importance of these parameters, showing that it is possible to produce a network with compelling performance using only non-artistically-generated synthetic data. With additional fine-tuning on real data, the network yields better performance than using real data alone. This result opens up the possibility of using inexpensive synthetic data for training neural networks while avoiding the need to collect large amounts of hand-annotated real-world data or to generate high-fidelity synthetic worlds\$-\$both of which remain bottlenecks for many applications. The approach is evaluated on bounding box detection of cars on the {KITTI} dataset.},
+	journaltitle = {{arXiv}:1804.06516 [cs]},
+	author = {Tremblay, Jonathan and Prakash, Aayush and Acuna, David and Brophy, Mark and Jampani, Varun and Anil, Cem and To, Thang and Cameracci, Eric and Boochoon, Shaad and Birchfield, Stan},
+	urldate = {2019-05-16},
+	date = {2018-04-17},
+	eprinttype = {arxiv},
+	eprint = {1804.06516},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {arXiv\:1804.06516 PDF:/Users/abdullah/Zotero/storage/5GA2RXS2/Tremblay et al. - 2018 - Training Deep Networks with Synthetic Data Bridgi.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/DVTW9EQ9/1804.html:text/html}
+}
+
+@article{wuImageBasedCamera2016,
+	title = {Image Based Camera Localization: an Overview},
+	url = {http://arxiv.org/abs/1610.03660},
+	shorttitle = {Image Based Camera Localization},
+	abstract = {Recently, virtual reality, augmented reality, robotics, autonomous driving et al attract much attention of both academic and industrial community, in which image based camera localization is a key task. However, there has not been a complete review on image-based camera localization. It is urgent to map this topic to help people enter the field quickly. In this paper, an overview of image based camera localization is presented. A new and complete kind of classifications for image based camera localization is provided and the related techniques are introduced. Trends for the future development are also discussed. It will be useful to not only researchers but also engineers and other people interested.},
+	journaltitle = {{arXiv}:1610.03660 [cs]},
+	author = {Wu, Yihong and Tang, Fulin and Li, Heping},
+	urldate = {2019-05-16},
+	date = {2016-10-12},
+	eprinttype = {arxiv},
+	eprint = {1610.03660},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {arXiv\:1610.03660 PDF:/Users/abdullah/Zotero/storage/F3YXQJQ3/Wu et al. - 2016 - Image Based Camera Localization an Overview.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/CR7D2K8K/1610.html:text/html}
+}
+
+@inproceedings{szegedyGoingDeeperConvolutions2015,
+	title = {Going Deeper With Convolutions},
+	url = {https://www.cv-foundation.org/openaccess/content_cvpr_2015/html/Szegedy_Going_Deeper_With_2015_CVPR_paper.html},
+	eventtitle = {Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition},
+	pages = {1--9},
+	author = {Szegedy, Christian and Liu, Wei and Jia, Yangqing and Sermanet, Pierre and Reed, Scott and Anguelov, Dragomir and Erhan, Dumitru and Vanhoucke, Vincent and Rabinovich, Andrew},
+	urldate = {2019-05-16},
+	date = {2015},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/AGPDRYEM/Szegedy et al. - 2015 - Going Deeper With Convolutions.pdf:application/pdf;Snapshot:/Users/abdullah/Zotero/storage/V3Y7W9GY/Szegedy_Going_Deeper_With_2015_CVPR_paper.html:text/html}
+}
+
+@article{lowryVisualPlaceRecognition2016,
+	title = {Visual Place Recognition: A Survey},
+	volume = {32},
+	issn = {1552-3098},
+	doi = {10.1109/TRO.2015.2496823},
+	shorttitle = {Visual Place Recognition},
+	abstract = {Visual place recognition is a challenging problem due to the vast range of ways in which the appearance of real-world places can vary. In recent years, improvements in visual sensing capabilities, an ever-increasing focus on long-term mobile robot autonomy, and the ability to draw on state-of-the-art research in other disciplines-particularly recognition in computer vision and animal navigation in neuroscience-have all contributed to significant advances in visual place recognition systems. This paper presents a survey of the visual place recognition research landscape. We start by introducing the concepts behind place recognition-the role of place recognition in the animal kingdom, how a “place” is defined in a robotics context, and the major components of a place recognition system. Long-term robot operations have revealed that changing appearance can be a significant factor in visual place recognition failure; therefore, we discuss how place recognition solutions can implicitly or explicitly account for appearance change within the environment. Finally, we close with a discussion on the future of visual place recognition, in particular with respect to the rapid advances being made in the related fields of deep learning, semantic scene understanding, and video description.},
+	pages = {1--19},
+	number = {1},
+	journaltitle = {{IEEE} Transactions on Robotics},
+	author = {Lowry, S. and Sünderhauf, N. and Newman, P. and Leonard, J. J. and Cox, D. and Corke, P. and Milford, M. J.},
+	date = {2016-02},
+	keywords = {animal kingdom, animal navigation, Animals, computer vision, Computer vision, Conferences, deep learning, learning (artificial intelligence), long-term mobile robot autonomy, mobile robots, Navigation, object recognition, place recognition, Robot sensing systems, robot vision, robotics context, semantic scene understanding, video description, video signal processing, Visual place recognition, visual place recognition research landscape, visual place recognition system, visual sensing capabilities, Visualization},
+	file = {IEEE Xplore Abstract Record:/Users/abdullah/Zotero/storage/88BDTSHG/7339473.html:text/html;IEEE Xplore Full Text PDF:/Users/abdullah/Zotero/storage/NVEGIQ4V/Lowry et al. - 2016 - Visual Place Recognition A Survey.pdf:application/pdf}
+}
+
+@article{walchImagebasedLocalizationUsing2016,
+	title = {Image-based localization using {LSTMs} for structured feature correlation},
+	url = {http://arxiv.org/abs/1611.07890},
+	abstract = {In this work we propose a new {CNN}+{LSTM} architecture for camera pose regression for indoor and outdoor scenes. {CNNs} allow us to learn suitable feature representations for localization that are robust against motion blur and illumination changes. We make use of {LSTM} units on the {CNN} output, which play the role of a structured dimensionality reduction on the feature vector, leading to drastic improvements in localization performance. We provide extensive quantitative comparison of {CNN}-based and {SIFT}-based localization methods, showing the weaknesses and strengths of each. Furthermore, we present a new large-scale indoor dataset with accurate ground truth from a laser scanner. Experimental results on both indoor and outdoor public datasets show our method outperforms existing deep architectures, and can localize images in hard conditions, e.g., in the presence of mostly textureless surfaces, where classic {SIFT}-based methods fail.},
+	journaltitle = {{arXiv}:1611.07890 [cs]},
+	author = {Walch, Florian and Hazirbas, Caner and Leal-Taixé, Laura and Sattler, Torsten and Hilsenbeck, Sebastian and Cremers, Daniel},
+	urldate = {2019-05-16},
+	date = {2016-11-23},
+	eprinttype = {arxiv},
+	eprint = {1611.07890},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {arXiv\:1611.07890 PDF:/Users/abdullah/Zotero/storage/G8DRZ48A/Walch et al. - 2016 - Image-based localization using LSTMs for structure.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/I7HACKCJ/1611.html:text/html}
+}
+
+@inproceedings{orlandoImageBasedLocalization2019,
+	title = {Image Based Localization with Simulated Egocentric Navigations},
+	doi = {10.5220/0007356503050312},
+	pages = {305--312},
+	author = {Orlando, Santi and Furnari, Antonino and Battiato, Sebastiano and Farinella, Giovanni},
+	date = {2019-01-01},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/HWNUWLMB/Orlando et al. - 2019 - Image Based Localization with Simulated Egocentric.pdf:application/pdf}
+}
+
+@article{hinterstoisserPreTrainedImageFeatures2017,
+	title = {On Pre-Trained Image Features and Synthetic Images for Deep Learning},
+	url = {http://arxiv.org/abs/1710.10710},
+	abstract = {Deep Learning methods usually require huge amounts of training data to perform at their full potential, and often require expensive manual labeling. Using synthetic images is therefore very attractive to train object detectors, as the labeling comes for free, and several approaches have been proposed to combine synthetic and real images for training. In this paper, we show that a simple trick is sufficient to train very effectively modern object detectors with synthetic images only: We freeze the layers responsible for feature extraction to generic layers pre-trained on real images, and train only the remaining layers with plain {OpenGL} rendering. Our experiments with very recent deep architectures for object recognition (Faster-{RCNN}, R-{FCN}, Mask-{RCNN}) and image feature extractors ({InceptionResnet} and Resnet) show this simple approach performs surprisingly well.},
+	journaltitle = {{arXiv}:1710.10710 [cs]},
+	author = {Hinterstoisser, Stefan and Lepetit, Vincent and Wohlhart, Paul and Konolige, Kurt},
+	urldate = {2019-05-17},
+	date = {2017-10-29},
+	eprinttype = {arxiv},
+	eprint = {1710.10710},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {arXiv\:1710.10710 PDF:/Users/abdullah/Zotero/storage/JA432ZR5/Hinterstoisser et al. - 2017 - On Pre-Trained Image Features and Synthetic Images.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/VVR4E92M/1710.html:text/html}
+}
+
+@inproceedings{brachmannLearningLessMore2018,
+	title = {Learning Less Is More - 6D Camera Localization via 3D Surface Regression},
+	url = {http://openaccess.thecvf.com/content_cvpr_2018/html/Brachmann_Learning_Less_Is_CVPR_2018_paper.html},
+	eventtitle = {Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition},
+	pages = {4654--4662},
+	author = {Brachmann, Eric and Rother, Carsten},
+	urldate = {2019-05-17},
+	date = {2018},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/8XGZ7LB6/Brachmann and Rother - 2018 - Learning Less Is More - 6D Camera Localization via.pdf:application/pdf;Snapshot:/Users/abdullah/Zotero/storage/M8C4KBZT/Brachmann_Learning_Less_Is_CVPR_2018_paper.html:text/html}
+}
+
+@article{rajpuraObjectDetectionUsing2017,
+	title = {Object Detection Using Deep {CNNs} Trained on Synthetic Images},
+	url = {http://arxiv.org/abs/1706.06782},
+	abstract = {The need for large annotated image datasets for training Convolutional Neural Networks ({CNNs}) has been a significant impediment for their adoption in computer vision applications. We show that with transfer learning an effective object detector can be trained almost entirely on synthetically rendered datasets. We apply this strategy for detecting pack- aged food products clustered in refrigerator scenes. Our {CNN} trained only with 4000 synthetic images achieves mean average precision ({mAP}) of 24 on a test set with 55 distinct products as objects of interest and 17 distractor objects. A further increase of 12\% in the {mAP} is obtained by adding only 400 real images to these 4000 synthetic images in the training set. A high degree of photorealism in the synthetic images was not essential in achieving this performance. We analyze factors like training data set size and 3D model dictionary size for their influence on detection performance. Additionally, training strategies like fine-tuning with selected layers and early stopping which affect transfer learning from synthetic scenes to real scenes are explored. Training {CNNs} with synthetic datasets is a novel application of high-performance computing and a promising approach for object detection applications in domains where there is a dearth of large annotated image data.},
+	journaltitle = {{arXiv}:1706.06782 [cs]},
+	author = {Rajpura, Param S. and Bojinov, Hristo and Hegde, Ravi S.},
+	urldate = {2019-05-17},
+	date = {2017-06-21},
+	eprinttype = {arxiv},
+	eprint = {1706.06782},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {arXiv\:1706.06782 PDF:/Users/abdullah/Zotero/storage/QGRSWXH7/Rajpura et al. - 2017 - Object Detection Using Deep CNNs Trained on Synthe.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/U7KFWG4V/1706.html:text/html}
+}
+
+@article{wangDeLS3DDeepLocalization2018,
+	title = {{DeLS}-3D: Deep Localization and Segmentation with a 3D Semantic Map},
+	url = {http://arxiv.org/abs/1805.04949},
+	shorttitle = {{DeLS}-3D},
+	abstract = {For applications such as autonomous driving, self-localization/camera pose estimation and scene parsing are crucial technologies. In this paper, we propose a unified framework to tackle these two problems simultaneously. The uniqueness of our design is a sensor fusion scheme which integrates camera videos, motion sensors ({GPS}/{IMU}), and a 3D semantic map in order to achieve robustness and efficiency of the system. Specifically, we first have an initial coarse camera pose obtained from consumer-grade {GPS}/{IMU}, based on which a label map can be rendered from the 3D semantic map. Then, the rendered label map and the {RGB} image are jointly fed into a pose {CNN}, yielding a corrected camera pose. In addition, to incorporate temporal information, a multi-layer recurrent neural network ({RNN}) is further deployed improve the pose accuracy. Finally, based on the pose from {RNN}, we render a new label map, which is fed together with the {RGB} image into a segment {CNN} which produces per-pixel semantic label. In order to validate our approach, we build a dataset with registered 3D point clouds and video camera images. Both the point clouds and the images are semantically-labeled. Each video frame has ground truth pose from highly accurate motion sensors. We show that practically, pose estimation solely relying on images like {PoseNet} may fail due to street view confusion, and it is important to fuse multiple sensors. Finally, various ablation studies are performed, which demonstrate the effectiveness of the proposed system. In particular, we show that scene parsing and pose estimation are mutually beneficial to achieve a more robust and accurate system.},
+	journaltitle = {{arXiv}:1805.04949 [cs]},
+	author = {Wang, Peng and Yang, Ruigang and Cao, Binbin and Xu, Wei and Lin, Yuanqing},
+	urldate = {2019-05-17},
+	date = {2018-05-13},
+	eprinttype = {arxiv},
+	eprint = {1805.04949},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {arXiv\:1805.04949 PDF:/Users/abdullah/Zotero/storage/WIMDWX5B/Wang et al. - 2018 - DeLS-3D Deep Localization and Segmentation with a.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/CZSXRLRD/1805.html:text/html}
+}
+
+@inproceedings{acharyaMODELLINGUNCERTAINTYSINGLE2019,
+	title = {{MODELLING} {UNCERTAINTY} {OF} {SINGLE} {IMAGE} {INDOOR} {LOCALISATION} {USING} A 3D {MODEL} {AND} {DEEP} {LEARNING}},
+	abstract = {Many current indoor localisation approaches need an initial location at the beginning of localisation. The existing visual approaches to indoor localisation perform a 3D reconstruction of the indoor spaces beforehand, for determining this initial location, which is challenging for large indoor spaces. In this research, we present a visual approach for indoor localisation that is eliminating the requirement of any image-based reconstruction of indoor spaces by using a 3D model. A deep Bayesian convolutional neural network is fine-tuned with synthetic images generated from a 3D model to estimate the camera pose of real images. The uncertainty of the estimated camera poses is modelled by sampling the outputs of the Bayesian network fine-tuned with synthetic images. The results of the experiments indicate that a localisation accuracy of approximately 2 metres can be achieved using the proposed approach.},
+	author = {Acharya, Debaditya and Roy, Sesa and Khoshelham, Kourosh and Winter, Stephan},
+	date = {2019-06-11},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/TMICKSTH/Acharya et al. - 2019 - MODELLING UNCERTAINTY OF SINGLE IMAGE INDOOR LOCAL.pdf:application/pdf}
+}
+
+@article{acharyaBIMPoseNetIndoorCamera2019,
+	title = {{BIM}-{PoseNet}: Indoor camera localisation using a 3D indoor model and deep learning from synthetic images},
+	volume = {150},
+	doi = {10.1016/j.isprsjprs.2019.02.020},
+	shorttitle = {{BIM}-{PoseNet}},
+	abstract = {The ubiquity of cameras built in mobile devices has resulted in a renewed interest in image-based localisation in indoor environments where the global navigation satellite system ({GNSS}) signals are not available. Existing approaches for indoor localisation using images either require an initial location or need first to perform a 3D reconstruction of the whole environment using structure-from-motion ({SfM}) methods, which is challenging and time-consuming for large indoor spaces. In this paper, a visual localisation approach is proposed to eliminate the requirement of image-based reconstruction of the indoor environment by using a 3D indoor model. A deep convolutional neural network ({DCNN}) is fine-tuned using synthetic images obtained from the 3D indoor model to regress the camera pose. Results of the experiments indicate that the proposed approach can be used for indoor localisation in real-time with an accuracy of approximately 2 m.},
+	pages = {245--258},
+	journaltitle = {{ISPRS} Journal of Photogrammetry and Remote Sensing},
+	author = {Acharya, Debaditya and Khoshelham, Kourosh and Winter, Stephan},
+	date = {2019-03-06},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/L7ZF2XUJ/Acharya et al. - 2019 - BIM-PoseNet Indoor camera localisation using a 3D.pdf:application/pdf}
+}
+
+@inproceedings{lofflerEvaluationCriteriaInsideOut2018,
+	title = {Evaluation Criteria for Inside-Out Indoor Positioning Systems Based on Machine Learning},
+	doi = {10.1109/IPIN.2018.8533862},
+	abstract = {Real-time tracking allows to trace goods and enables the optimization of logistics processes in many application areas. Camera-based inside-out tracking that uses an infrastructure of fixed and known markers is costly as the markers need to be installed and maintained in the environment. Instead, systems that use natural markers suffer from changes in the physical environment. Recently a number of approaches based on machine learning ({ML}) aim to address such issues. This paper proposes evaluation criteria that consider algorith-mic properties of {ML}-based positioning schemes and introduces a dataset from an indoor warehouse scenario to evaluate for them. Our dataset consists of images labeled with millimeter precise positions that allows for a better development and performance evaluation of learning algorithms. This allows an evaluation of machine learning algorithms for monocular optical positioning in a realistic indoor position application for the first time. We also show the feasibility of {ML}-based positioning schemes for an industrial deployment.},
+	author = {Löffler, Christoffer and Riechel, Sascha and Fischer, Janina and Mutschler, Christopher},
+	date = {2018-09-24}
+}
+
+@article{yassinRecentAdvancesIndoor2016,
+	title = {Recent Advances in Indoor Localization: A Survey on Theoretical Approaches and Applications},
+	volume = {{PP}},
+	doi = {10.1109/COMST.2016.2632427},
+	shorttitle = {Recent Advances in Indoor Localization},
+	abstract = {The availability of location information has become a key factor in today’s communications systems allowing location based services. In outdoor scenarios, the mobile terminal position is obtained with high accuracy thanks to the Global Positioning System ({GPS}) or to the standalone cellular systems. However, the main problem of {GPS} and cellular systems resides in the indoor environment and in scenarios with deep shadowing effects where the satellite or cellular signals are broken. In this paper, we survey different technologies and methodologies for indoor and outdoor localization with an emphasis on indoor methodologies and concepts. Additionally, we discuss in this review different localization-based applications, where the location information is critical to estimate. Finally, a comprehensive discussion of the challenges in terms of accuracy, cost, complexity, security, scalability, etc. is given. The aim of this survey is to provide a comprehensive overview of existing efforts as well as auspicious and anticipated dimensions for future work in indoor localization techniques and applications.},
+	pages = {1--1},
+	journaltitle = {{IEEE} Communications Surveys \& Tutorials},
+	author = {Yassin, Ali and Nasser, Youssef and Awad, Mariette and Al-Dubai, Ahmed and Liu, Ran and Yuen, Chau and Raulefs, Ronald},
+	date = {2016-11-29},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/HK3TXFRK/Yassin et al. - 2016 - Recent Advances in Indoor Localization A Survey o.pdf:application/pdf}
+}
+
+@article{simonyanDeepConvolutionalNetworks2013,
+	title = {Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps},
+	url = {http://arxiv.org/abs/1312.6034},
+	shorttitle = {Deep Inside Convolutional Networks},
+	abstract = {This paper addresses the visualisation of image classification models, learnt using deep Convolutional Networks ({ConvNets}). We consider two visualisation techniques, based on computing the gradient of the class score with respect to the input image. The first one generates an image, which maximises the class score [Erhan et al., 2009], thus visualising the notion of the class, captured by a {ConvNet}. The second technique computes a class saliency map, specific to a given image and class. We show that such maps can be employed for weakly supervised object segmentation using classification {ConvNets}. Finally, we establish the connection between the gradient-based {ConvNet} visualisation methods and deconvolutional networks [Zeiler et al., 2013].},
+	journaltitle = {{arXiv}:1312.6034 [cs]},
+	author = {Simonyan, Karen and Vedaldi, Andrea and Zisserman, Andrew},
+	urldate = {2019-05-20},
+	date = {2013-12-20},
+	eprinttype = {arxiv},
+	eprint = {1312.6034},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {arXiv\:1312.6034 PDF:/Users/abdullah/Zotero/storage/TQYCLX8I/Simonyan et al. - 2013 - Deep Inside Convolutional Networks Visualising Im.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/M4K8NYGC/1312.html:text/html}
+}
+
+@article{sunderhaufPerformanceConvNetFeatures2015,
+	title = {On the Performance of {ConvNet} Features for Place Recognition},
+	url = {http://arxiv.org/abs/1501.04158},
+	abstract = {After the incredible success of deep learning in the computer vision domain, there has been much interest in applying Convolutional Network ({ConvNet}) features in robotic fields such as visual navigation and {SLAM}. Unfortunately, there are fundamental differences and challenges involved. Computer vision datasets are very different in character to robotic camera data, real-time performance is essential, and performance priorities can be different. This paper comprehensively evaluates and compares the utility of three state-of-the-art {ConvNets} on the problems of particular relevance to navigation for robots; viewpoint-invariance and condition-invariance, and for the first time enables real-time place recognition performance using {ConvNets} with large maps by integrating a variety of existing (locality-sensitive hashing) and novel (semantic search space partitioning) optimization techniques. We present extensive experiments on four real world datasets cultivated to evaluate each of the specific challenges in place recognition. The results demonstrate that speed-ups of two orders of magnitude can be achieved with minimal accuracy degradation, enabling real-time performance. We confirm that networks trained for semantic place categorization also perform better at (specific) place recognition when faced with severe appearance changes and provide a reference for which networks and layers are optimal for different aspects of the place recognition problem.},
+	journaltitle = {{arXiv}:1501.04158 [cs]},
+	author = {Sünderhauf, Niko and Dayoub, Feras and Shirazi, Sareh and Upcroft, Ben and Milford, Michael},
+	urldate = {2019-05-20},
+	date = {2015-01-17},
+	eprinttype = {arxiv},
+	eprint = {1501.04158},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Robotics},
+	file = {arXiv\:1501.04158 PDF:/Users/abdullah/Zotero/storage/4ZE2WRQF/Sünderhauf et al. - 2015 - On the Performance of ConvNet Features for Place R.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/GMT4F3LJ/1501.html:text/html}
+}
+
+@incollection{liWorldwidePoseEstimation2016,
+	title = {Worldwide Pose Estimation Using 3D Point Clouds},
+	isbn = {978-3-319-25779-2},
+	abstract = {This chapter addresses the problem of determining where a photo was taken by estimating a full 6-{DOF}-plus-intrincs camera pose with respect to a large geo-registered 3D point cloud, bringing together research on image localization, landmark recognition, and 3D pose estimation. Our method scales to datasets with hundreds of thousands of images and tens of millions of 3D points through the use of two new techniques: a co-occurrence prior for {RANSAC} and bidirectional matching of image features with 3D points. We evaluate our method on several large datasets, and show state-of-the-art results on landmark recognition as well as the ability to locate cameras to within meters, requiring only seconds per query.},
+	pages = {147--163},
+	author = {Li, Yunpeng and Snavely, Noah and P. Huttenlocher, Daniel and Fua, Pascal},
+	date = {2016-07-06},
+	doi = {10.1007/978-3-319-25781-5_8},
+	file = {Eingereichte Version:/Users/abdullah/Zotero/storage/T72X7D8P/Li et al. - 2016 - Worldwide Pose Estimation Using 3D Point Clouds.pdf:application/pdf}
+}
+
+@inproceedings{balntasRelocNetContinuousMetric2018a,
+	title = {{RelocNet}: Continuous Metric Learning Relocalisation using Neural Nets},
+	url = {http://openaccess.thecvf.com/content_ECCV_2018/html/Vassileios_Balntas_RelocNet_Continous_Metric_ECCV_2018_paper.html},
+	shorttitle = {{RelocNet}},
+	eventtitle = {Proceedings of the European Conference on Computer Vision ({ECCV})},
+	pages = {751--767},
+	author = {Balntas, Vassileios and Li, Shuda and Prisacariu, Victor},
+	urldate = {2019-06-01},
+	date = {2018},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/R2R4AVI8/Balntas et al. - 2018 - RelocNet Continuous Metric Learning Relocalisatio.pdf:application/pdf;Snapshot:/Users/abdullah/Zotero/storage/283RBUN6/Vassileios_Balntas_RelocNet_Continous_Metric_ECCV_2018_paper.html:text/html}
+}
+
+@article{muellerCNNBASEDINITIALLOCALIZATION2018,
+	title = {{CNN}-{BASED} {INITIAL} {LOCALIZATION} {IMPROVED} {BY} {DATA} {AUGMENTATION}},
+	volume = {{IV}-1},
+	issn = {2194-9050},
+	url = {https://www.isprs-ann-photogramm-remote-sens-spatial-inf-sci.net/IV-1/117/2018/},
+	doi = {10.5194/isprs-annals-IV-1-117-2018},
+	abstract = {Image-based localization or camera re-localization is a fundamental task in computer vision and mandatory in the ﬁelds of navigation for robotics and autonomous driving or for virtual and augmented reality. Such image pose regression in 6 Degrees of Freedom ({DoF}) is recently solved by Convolutional Neural Networks ({CNNs}). However, already well-established methods based on feature matching still score higher accuracies so far. Therefore, we want to investigate how data augmentation could further improve {CNN}-based pose regression. Data augmentation is a valuable technique to boost performance on training based methods and wide spread in the computer vision community. Our aim in this paper is to show the beneﬁt of data augmentation for pose regression by {CNNs}. For this purpose images are rendered from a 3D model of the actual test environment. This model again is generated by the original training data set, whereas no additional information nor data is required. Furthermore we introduce different training sets composed of rendered and real images. It is shown that the enhanced training of {CNNs} by utilizing 3D models of the environment improves the image localization accuracy. The accuracy of pose regression could be improved up to 69.37\% for the position component and 61.61\% for the rotation component on our investigated data set.},
+	pages = {117--124},
+	journaltitle = {{ISPRS} Ann. Photogramm. Remote Sens. Spatial Inf. Sci.},
+	author = {Mueller, M. S. and Metzger, A. and Jutzi, B.},
+	urldate = {2019-06-01},
+	date = {2018-09-26},
+	langid = {english},
+	file = {Mueller et al. - 2018 - CNN-BASED INITIAL LOCALIZATION IMPROVED BY DATA AU.pdf:/Users/abdullah/Zotero/storage/G8YRPBL2/Mueller et al. - 2018 - CNN-BASED INITIAL LOCALIZATION IMPROVED BY DATA AU.pdf:application/pdf}
+}
+
+@inproceedings{caiHybridProbabilisticModel2018,
+	title = {A Hybrid Probabilistic Model for Camera Relocalization},
+	abstract = {We present a hybrid deep learning method for modelling the uncertainty of camera relocalization from a single {RGB} image. The proposed system leverages the discriminative deep image representation from a convolutional neural networks, and uses Gaussian Process regressors to generate the probability distribution of the six degree of freedom (6DoF) camera pose in an end-to-end fashion. This results in a network that can generate uncertainties over its inferences with no need to sample many times. Furthermore we show that our objective based on {KL} divergence reduces the dependence on the choice of hyperparameters. The results show that compared to the state-of-the-art Bayesian camera relocalization method, our model produces comparable localization uncertainty and improves the system efficiency significantly, without loss of accuracy.},
+	booktitle = {{BMVC}},
+	author = {Cai, Ming and Shen, Chunhua and Reid, Ian D.},
+	date = {2018},
+	keywords = {Approximation algorithm, Artificial neural network, Convolutional neural network, Deep learning, End-to-end principle, Gaussian process, {KL}-{ONE}, Kriging, The Australian},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/MPZJ25A4/Cai et al. - 2018 - A Hybrid Probabilistic Model for Camera Relocaliza.pdf:application/pdf}
+}
+
+@inproceedings{kovalevDeepLearningTheano2016,
+	title = {Deep Learning with Theano, Torch, Caffe, {TensorFlow}, and Deeplearning4J: Which One Is the Best in Speed and Accuracy?},
+	shorttitle = {Deep Learning with Theano, Torch, Caffe, {TensorFlow}, and Deeplearning4J},
+	abstract = {This paper presents results of a comparative study of the leading Deep Learning frameworks, including Theano (with Keras wrapper), Torch, Caffe, {TensorFlow}, and Deeplearning4J. Detailed results of quantitative assessment of their training and predicting speed, as well as resultant classification accuracy, are provided. The research was conducted jointly by the United Institute of Informatics Problems (Belarus National Academy of Sciences) and Altoros, a global provider of big data and Platform-as-a-Service solutions.},
+	author = {Kovalev, Vassili and Kalinovsky, Alexander and Kovalev, Sergey},
+	date = {2016-10-03},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/AEIR9UCS/Kovalev et al. - 2016 - Deep Learning with Theano, Torch, Caffe, TensorFlo.pdf:application/pdf}
+}
+
+@article{guIndoorLocalizationImproved2019,
+	title = {Indoor Localization Improved by Spatial Context - A Survey},
+	volume = {52},
+	abstract = {Indoor localization is essential for healthcare, security, augmented reality gaming, and many other location-based services. There is currently a wealth of relevant literature on indoor localization. This paper focuses on recent advances in indoor localization methods that use spatial context to improve the location estimation. Spatial context in the form of maps and spatial models have been used to improve the localization by constraining location estimates in the navigable parts of indoor environments. Landmarks such as doors and corners, which are also one form of spatial context, have proved useful in assisting indoor localization by correcting the localization error. This survey gives a comprehensive review of state-of-the-art indoor localization methods and localization
+improvement methods using maps, spatial models, and landmarks.},
+	pages = {64:1--35},
+	journaltitle = {{ACM} Computing Surveys},
+	author = {Gu, Fuqiang and Hu, Xuke and Ramezani, Milad and Acharya, Debaditya and Khoshelham, Kourosh and Valaee, Shahrokh and Shang, Jianga},
+	date = {2019-06-10},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/ATALC3TA/Gu et al. - 2019 - Indoor Localization Improved by Spatial Context - .pdf:application/pdf}
+}
+
+@online{Publikationen,
+	title = {Publikationen},
+	url = {https://www.inf.bi.ruhr-uni-bochum.de/index.php?option=com_publikationen&Itemid=129&seite=details&ID=757&lang=de},
+	urldate = {2019-06-11},
+	file = {Publikationen:/Users/abdullah/Zotero/storage/Q7YRD8CT/index.html:text/html}
+}
+
+@inproceedings{haImagebasedIndoorLocalization2018,
+	location = {Taipei, Taiwan},
+	title = {Image-based Indoor Localization Using {BIM} and Features of {CNN}},
+	url = {http://www.iaarc.org/publications/2018_proceedings_of_the_35th_isarc/image_based_indoor_localization_using_bim_and_features_of_cnn.html},
+	doi = {10.22260/ISARC2018/0107},
+	abstract = {This study suggests an indoor localization method to estimate the location of a user of a mobile device with imaging capability. The proposed method uses a matching approach between an actual photograph and a rendered {BIM} (building information modeling) image. A pre-trained {VGG} 16 network is used for feature extraction. Experimental results show that the best image matching performance can be obtained when using features from pooling layer 4 of {VGG}16. The proposed method allows for indoor localization only by image matching without additional sensing information.},
+	eventtitle = {34th International Symposium on Automation and Robotics in Construction},
+	author = {Ha, Inhae and Kim, Hongjo and Park, Somin and Kim, Hyoungkwan},
+	urldate = {2019-06-12},
+	date = {2018-07-22},
+	langid = {english},
+	file = {Ha et al. - 2018 - Image-based Indoor Localization Using BIM and Feat.pdf:/Users/abdullah/Zotero/storage/QH9PMFU6/Ha et al. - 2018 - Image-based Indoor Localization Using BIM and Feat.pdf:application/pdf}
+}
+
+@article{fuhrmannDeepLearningBilderkennungSteuerung,
+	title = {Deep Learning in der {BilderkennungSteuerung} autonomer mobiler Roboter mit Hilfe neuronaler Netze},
+	abstract = {This present bachelor thesis deals with the problem of machine learning for orientation and navigation by visual perception, based on a practical example using a robot vehicle. The basis of this thesis are deep learning concepts in artiﬁcial neural networks in the ﬁeld of image recognition and the theoretical and practical comparison of training models for this networks. The usability of those methods in the context of robot navigation in dynamic environments is evaluated, using a specially for this work developed robot vehicle. Finally, the implementation of the theoretical concepts of these deep learning models is demonstrated with the practical use of this robot vehicle.},
+	pages = {64},
+	author = {Fuhrmann, Arno},
+	langid = {german},
+	file = {Fuhrmann - Deep Learning in der BilderkennungSteuerung autono.pdf:/Users/abdullah/Zotero/storage/7DXBDTY7/Fuhrmann - Deep Learning in der BilderkennungSteuerung autono.pdf:application/pdf}
+}
+
+@article{prueferTobiasHassenkloeverKlassifikation,
+	title = {Tobias Hassenklöver Klassiﬁkation hochvarianter Muster mit Faltungsnetzwerken},
+	abstract = {The classiﬁcation of objects and especially of humans by software is for years a great challenge. These highly variant forms are optically captured and often detected with the use of neural networks in combination with statistical methods. A new method for the detection of these highly variant patterns, such as characters, objects or people are Convolutional neural networks. Convolutional neural networks are a variety of Neural networks, which make their decisions based on algorithms used in image processing. In this thesis the limits of the detection of Convolutional neural networks are tested. In the tests the impact on the classiﬁcation accuracy is checked with various modiﬁed input data.},
+	pages = {59},
+	author = {Prüfer, Betreuender and Fohl, Dr Wolfgang},
+	langid = {german},
+	file = {Prüfer and Fohl - Tobias Hassenklöver Klassiﬁkation hochvarianter Mu.pdf:/Users/abdullah/Zotero/storage/2KIIQBFT/Prüfer and Fohl - Tobias Hassenklöver Klassiﬁkation hochvarianter Mu.pdf:application/pdf}
+}
+
+@article{kendallGeometryUncertaintyinDeep,
+	title = {Geometry and Uncertaintyin Deep Learning for Computer Vision},
+	pages = {208},
+	author = {Kendall, Alex Guy},
+	langid = {english},
+	file = {Kendall - Geometry and Uncertaintyin Deep Learning for Compu.pdf:/Users/abdullah/Zotero/storage/CK2KUICS/Kendall - Geometry and Uncertaintyin Deep Learning for Compu.pdf:application/pdf}
+}
+
+@inproceedings{furukawaInternetscaleMultiviewStereo2010,
+	location = {San Francisco, {CA}, {USA}},
+	title = {Towards Internet-scale multi-view stereo},
+	isbn = {978-1-4244-6984-0},
+	url = {http://ieeexplore.ieee.org/document/5539802/},
+	doi = {10.1109/CVPR.2010.5539802},
+	abstract = {This paper introduces an approach for enabling existing multi-view stereo methods to operate on extremely large unstructured photo collections. The main idea is to decompose the collection into a set of overlapping sets of photos that can be processed in parallel, and to merge the resulting reconstructions. This overlapping clustering problem is formulated as a constrained optimization and solved iteratively. The merging algorithm, designed to be parallel and out-of-core, incorporates robust ﬁltering steps to eliminate low-quality reconstructions and enforce global visibility constraints. The approach has been tested on several large datasets downloaded from Flickr.com, including one with over ten thousand images, yielding a 3D reconstruction with nearly thirty million points.},
+	eventtitle = {2010 {IEEE} Conference on Computer Vision and Pattern Recognition ({CVPR})},
+	pages = {1434--1441},
+	booktitle = {2010 {IEEE} Computer Society Conference on Computer Vision and Pattern Recognition},
+	publisher = {{IEEE}},
+	author = {Furukawa, Yasutaka and Curless, Brian and Seitz, Steven M. and Szeliski, Richard},
+	urldate = {2019-06-16},
+	date = {2010-06},
+	langid = {english},
+	file = {Furukawa et al. - 2010 - Towards Internet-scale multi-view stereo.pdf:/Users/abdullah/Zotero/storage/366VAF5B/Furukawa et al. - 2010 - Towards Internet-scale multi-view stereo.pdf:application/pdf}
+}
+
+@article{piascoSurveyVisualBasedLocalization2018,
+	title = {A survey on Visual-Based Localization: On the benefit of heterogeneous data},
+	volume = {74},
+	url = {https://hal.archives-ouvertes.fr/hal-01744680},
+	doi = {10.1016/j.patcog.2017.09.013},
+	shorttitle = {A survey on Visual-Based Localization},
+	abstract = {We are surrounded by plenty of information about our environment. From these multiple sources, numerous data could be extracted: set of images, 3D model, coloured points cloud... When classical localization devices failed (e.g. {GPS} sensor in cluttered environments), aforementioned data could be used within a localization framework. This is called Visual Based Localization ({VBL}). Due to numerous data types that can be collected from a scene, {VBL} encompasses a large amount of different methods. This paper presents a survey about recent methods that localize a visual acquisition system according to a known environment. We start by categorizing {VBL} methods into two distinct families: indirect and direct localization systems. As the localization environment is almost always dynamic, we pay special attention to methods designed to handle appearances changes occurring in a scene. Thereafter, we highlight methods exploiting heterogeneous types of data. Finally, we conclude the paper with a discussion on promising trends that could permit to a localization system to reach high precision pose estimation within an area as large as possible.},
+	pages = {90 -- 109},
+	journaltitle = {Pattern Recognition},
+	author = {Piasco, Nathan and Sidibé, Désiré and Demonceaux, Cédric and Gouet-Brunet, Valérie},
+	urldate = {2019-06-16},
+	date = {2018-02},
+	keywords = {Camera Relocalisation, Image-based localization, Pose estimation, Visual geo-localization},
+	file = {HAL PDF Full Text:/Users/abdullah/Zotero/storage/97H79C5H/Piasco et al. - 2018 - A survey on Visual-Based Localization On the bene.pdf:application/pdf}
+}
+
+@inproceedings{shottonSceneCoordinateRegression2013a,
+	title = {Scene Coordinate Regression Forests for Camera Relocalization in {RGB}-D Images},
+	url = {http://openaccess.thecvf.com/content_cvpr_2013/html/Shotton_Scene_Coordinate_Regression_2013_CVPR_paper.html},
+	eventtitle = {Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition},
+	pages = {2930--2937},
+	author = {Shotton, Jamie and Glocker, Ben and Zach, Christopher and Izadi, Shahram and Criminisi, Antonio and Fitzgibbon, Andrew},
+	urldate = {2019-06-16},
+	date = {2013},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/K49T3LT8/Shotton et al. - 2013 - Scene Coordinate Regression Forests for Camera Rel.pdf:application/pdf;Snapshot:/Users/abdullah/Zotero/storage/N6LI2KWX/Shotton_Scene_Coordinate_Regression_2013_CVPR_paper.html:text/html}
+}
+
+@article{kendallModellingUncertaintyDeep2015a,
+	title = {Modelling Uncertainty in Deep Learning for Camera Relocalization},
+	url = {http://arxiv.org/abs/1509.05909},
+	abstract = {We present a robust and real-time monocular six degree of freedom visual relocalization system. We use a Bayesian convolutional neural network to regress the 6-{DOF} camera pose from a single {RGB} image. It is trained in an end-to-end manner with no need of additional engineering or graph optimisation. The algorithm can operate indoors and outdoors in real time, taking under 6ms to compute. It obtains approximately 2m and 6 degrees accuracy for very large scale outdoor scenes and 0.5m and 10 degrees accuracy indoors. Using a Bayesian convolutional neural network implementation we obtain an estimate of the model's relocalization uncertainty and improve state of the art localization accuracy on a large scale outdoor dataset. We leverage the uncertainty measure to estimate metric relocalization error and to detect the presence or absence of the scene in the input image. We show that the model's uncertainty is caused by images being dissimilar to the training dataset in either pose or appearance.},
+	journaltitle = {{arXiv}:1509.05909 [cs]},
+	author = {Kendall, Alex and Cipolla, Roberto},
+	urldate = {2019-06-17},
+	date = {2015-09-19},
+	eprinttype = {arxiv},
+	eprint = {1509.05909},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Robotics},
+	file = {arXiv\:1509.05909 PDF:/Users/abdullah/Zotero/storage/S7UZMUB7/Kendall und Cipolla - 2015 - Modelling Uncertainty in Deep Learning for Camera .pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/UDS24Z8U/1509.html:text/html}
+}
+
+@article{pengLearningDeepObject2014,
+	title = {Learning Deep Object Detectors from 3D Models},
+	url = {http://arxiv.org/abs/1412.7122},
+	abstract = {Crowdsourced 3D {CAD} models are becoming easily accessible online, and can potentially generate an infinite number of training images for almost any object category.We show that augmenting the training data of contemporary Deep Convolutional Neural Net ({DCNN}) models with such synthetic data can be effective, especially when real training data is limited or not well matched to the target domain. Most freely available {CAD} models capture 3D shape but are often missing other low level cues, such as realistic object texture, pose, or background. In a detailed analysis, we use synthetic {CAD}-rendered images to probe the ability of {DCNN} to learn without these cues, with surprising findings. In particular, we show that when the {DCNN} is fine-tuned on the target detection task, it exhibits a large degree of invariance to missing low-level cues, but, when pretrained on generic {ImageNet} classification, it learns better when the low-level cues are simulated. We show that our synthetic {DCNN} training approach significantly outperforms previous methods on the {PASCAL} {VOC}2007 dataset when learning in the few-shot scenario and improves performance in a domain shift scenario on the Office benchmark.},
+	journaltitle = {{arXiv}:1412.7122 [cs]},
+	author = {Peng, Xingchao and Sun, Baochen and Ali, Karim and Saenko, Kate},
+	urldate = {2019-06-18},
+	date = {2014-12-22},
+	eprinttype = {arxiv},
+	eprint = {1412.7122},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning, Computer Science - Neural and Evolutionary Computing},
+	file = {arXiv\:1412.7122 PDF:/Users/abdullah/Zotero/storage/9EW95DWT/Peng et al. - 2014 - Learning Deep Object Detectors from 3D Models.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/E56IJSEF/1412.html:text/html}
+}
+
+@inproceedings{varolLearningSyntheticHumans2017,
+	location = {Honolulu, {HI}},
+	title = {Learning from Synthetic Humans},
+	isbn = {978-1-5386-0457-1},
+	url = {http://ieeexplore.ieee.org/document/8099975/},
+	doi = {10.1109/CVPR.2017.492},
+	abstract = {Estimating human pose, shape, and motion from images and videos are fundamental challenges with many applications. Recent advances in 2D human pose estimation use large amounts of manually-labeled training data for learning convolutional neural networks ({CNNs}). Such data is time consuming to acquire and difﬁcult to extend. Moreover, manual labeling of 3D pose, depth and motion is impractical. In this work we present {SURREAL} (Synthetic {hUmans} {foR} {REAL} tasks): a new large-scale dataset with synthetically-generated but realistic images of people rendered from 3D sequences of human motion capture data. We generate more than 6 million frames together with ground truth pose, depth maps, and segmentation masks. We show that {CNNs} trained on our synthetic dataset allow for accurate human depth estimation and human part segmentation in real {RGB} images. Our results and the new dataset open up new possibilities for advancing person analysis using cheap and large-scale synthetic data.},
+	eventtitle = {2017 {IEEE} Conference on Computer Vision and Pattern Recognition ({CVPR})},
+	pages = {4627--4635},
+	booktitle = {2017 {IEEE} Conference on Computer Vision and Pattern Recognition ({CVPR})},
+	publisher = {{IEEE}},
+	author = {Varol, Gul and Romero, Javier and Martin, Xavier and Mahmood, Naureen and Black, Michael J. and Laptev, Ivan and Schmid, Cordelia},
+	urldate = {2019-06-18},
+	date = {2017-07},
+	langid = {english},
+	file = {Varol et al. - 2017 - Learning from Synthetic Humans.pdf:/Users/abdullah/Zotero/storage/QFNDJR64/Varol et al. - 2017 - Learning from Synthetic Humans.pdf:application/pdf}
+}
+
+@article{clarkVidLocDeepSpatioTemporal2017,
+	title = {{VidLoc}: A Deep Spatio-Temporal Model for 6-{DoF} Video-Clip Relocalization},
+	url = {http://arxiv.org/abs/1702.06521},
+	shorttitle = {{VidLoc}},
+	abstract = {Machine learning techniques, namely convolutional neural networks ({CNN}) and regression forests, have recently shown great promise in performing 6-{DoF} localization of monocular images. However, in most cases imagesequences, rather only single images, are readily available. To this extent, none of the proposed learning-based approaches exploit the valuable constraint of temporal smoothness, often leading to situations where the per-frame error is larger than the camera motion. In this paper we propose a recurrent model for performing 6-{DoF} localization of video-clips. We ﬁnd that, even by considering only short sequences (20 frames), the pose estimates are smoothed and the localization error can be drastically reduced. Finally, we consider means of obtaining probabilistic pose estimates from our model. We evaluate our method on openly-available real-world autonomous driving and indoor localization datasets.},
+	journaltitle = {{arXiv}:1702.06521 [cs]},
+	author = {Clark, Ronald and Wang, Sen and Markham, Andrew and Trigoni, Niki and Wen, Hongkai},
+	urldate = {2019-06-18},
+	date = {2017-02-21},
+	langid = {english},
+	eprinttype = {arxiv},
+	eprint = {1702.06521},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Clark et al. - 2017 - VidLoc A Deep Spatio-Temporal Model for 6-DoF Vid.pdf:/Users/abdullah/Zotero/storage/BPATFCW4/Clark et al. - 2017 - VidLoc A Deep Spatio-Temporal Model for 6-DoF Vid.pdf:application/pdf}
+}
+
+@inproceedings{kendallGeometricLossFunctions2017,
+	location = {Honolulu, {HI}},
+	title = {Geometric Loss Functions for Camera Pose Regression with Deep Learning},
+	isbn = {978-1-5386-0457-1},
+	url = {http://ieeexplore.ieee.org/document/8100177/},
+	doi = {10.1109/CVPR.2017.694},
+	abstract = {Deep learning has shown to be effective for robust and real-time monocular image relocalisation. In particular, {PoseNet} [22] is a deep convolutional neural network which learns to regress the 6-{DOF} camera pose from a single image. It learns to localize using high level features and is robust to difﬁcult lighting, motion blur and unknown camera intrinsics, where point based {SIFT} registration fails. However, it is trained using a naive loss function, with hyperparameters which require expensive tuning. In this paper, we give the problem a more fundamental theoretical treatment. We explore a number of novel loss functions for learning camera pose which are based on geometry and scene reprojection error. Additionally we show how to automatically learn an optimal weighting to simultaneously regress position and orientation. By leveraging geometry, we demonstrate that our technique signiﬁcantly improves {PoseNet}’s performance across datasets ranging from indoor rooms to a small city.},
+	eventtitle = {2017 {IEEE} Conference on Computer Vision and Pattern Recognition ({CVPR})},
+	pages = {6555--6564},
+	booktitle = {2017 {IEEE} Conference on Computer Vision and Pattern Recognition ({CVPR})},
+	publisher = {{IEEE}},
+	author = {Kendall, Alex and Cipolla, Roberto},
+	urldate = {2019-06-18},
+	date = {2017-07},
+	langid = {english},
+	file = {Kendall und Cipolla - 2017 - Geometric Loss Functions for Camera Pose Regressio.pdf:/Users/abdullah/Zotero/storage/T2W2SQNP/Kendall und Cipolla - 2017 - Geometric Loss Functions for Camera Pose Regressio.pdf:application/pdf}
+}
+
+@inproceedings{kendallPoseNetConvolutionalNetwork2015,
+	title = {{PoseNet}: A Convolutional Network for Real-Time 6-{DOF} Camera Relocalization},
+	url = {https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Kendall_PoseNet_A_Convolutional_ICCV_2015_paper.html},
+	shorttitle = {{PoseNet}},
+	eventtitle = {Proceedings of the {IEEE} International Conference on Computer Vision},
+	pages = {2938--2946},
+	author = {Kendall, Alex and Grimes, Matthew and Cipolla, Roberto},
+	urldate = {2019-06-18},
+	date = {2015},
+	keywords = {camera intrinsics, Cameras, convolution, convolutional neural network, image motion analysis, image plane regression problems, large scale classification data, large scale outdoor scenes, monocular six degree of freedom relocalization system, motion blur, neural nets, Neural networks, point based {SIFT} registration, pose feature, {PoseNet}, Quaternions, real-time 6-{DOF} camera relocalization, real-time systems, Real-time systems, regression analysis, Robot vision systems, Simultaneous localization and mapping, single {RGB} image, Training, transfer learning},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/4GR4PBI8/Kendall et al. - 2015 - PoseNet A Convolutional Network for Real-Time 6-D.pdf:application/pdf;IEEE Xplore Abstract Record:/Users/abdullah/Zotero/storage/T4EPYSRV/7410693.html:text/html;Snapshot:/Users/abdullah/Zotero/storage/D78MNZZE/Kendall_PoseNet_A_Convolutional_ICCV_2015_paper.html:text/html;Submitted Version:/Users/abdullah/Zotero/storage/C6IYME88/Kendall et al. - 2015 - PoseNet A Convolutional Network for Real-Time 6-D.pdf:application/pdf}
+}
+
+@inproceedings{wangDeepVOEndtoendVisual2017,
+	location = {Singapore, Singapore},
+	title = {{DeepVO}: Towards end-to-end visual odometry with deep Recurrent Convolutional Neural Networks},
+	isbn = {978-1-5090-4633-1},
+	url = {http://ieeexplore.ieee.org/document/7989236/},
+	doi = {10.1109/ICRA.2017.7989236},
+	shorttitle = {{DeepVO}},
+	abstract = {This paper studies monocular visual odometry ({VO}) problem. Most of existing {VO} algorithms are developed under a standard pipeline including feature extraction, feature matching, motion estimation, local optimisation, etc. Although some of them have demonstrated superior performance, they usually need to be carefully designed and speciﬁcally ﬁne-tuned to work well in different environments. Some prior knowledge is also required to recover an absolute scale for monocular {VO}. This paper presents a novel end-to-end framework for monocular {VO} by using deep Recurrent Convolutional Neural Networks ({RCNNs}). Since it is trained and deployed in an end-to-end manner, it infers poses directly from a sequence of raw {RGB} images (videos) without adopting any module in the conventional {VO} pipeline. Based on the {RCNNs}, it not only automatically learns effective feature representation for the {VO} problem through Convolutional Neural Networks, but also implicitly models sequential dynamics and relations using deep Recurrent Neural Networks. Extensive experiments on the {KITTI} {VO} dataset show competitive performance to state-ofthe-art methods, verifying that the end-to-end Deep Learning technique can be a viable complement to the traditional {VO} systems.},
+	eventtitle = {2017 {IEEE} International Conference on Robotics and Automation ({ICRA})},
+	pages = {2043--2050},
+	booktitle = {2017 {IEEE} International Conference on Robotics and Automation ({ICRA})},
+	publisher = {{IEEE}},
+	author = {Wang, Sen and Clark, Ronald and Wen, Hongkai and Trigoni, Niki},
+	urldate = {2019-06-18},
+	date = {2017-05},
+	langid = {english},
+	file = {Wang et al. - 2017 - DeepVO Towards end-to-end visual odometry with de.pdf:/Users/abdullah/Zotero/storage/2JTAL47J/Wang et al. - 2017 - DeepVO Towards end-to-end visual odometry with de.pdf:application/pdf}
+}
+
+@article{costanteExploringRepresentationLearning2016,
+	title = {Exploring Representation Learning With {CNNs} for Frame-to-Frame Ego-Motion Estimation},
+	volume = {1},
+	issn = {2377-3766, 2377-3774},
+	url = {http://ieeexplore.ieee.org/document/7347378/},
+	doi = {10.1109/LRA.2015.2505717},
+	abstract = {Visual Ego-Motion Estimation, or brieﬂy Visual Odometry ({VO}), is one of the key building blocks of modern {SLAM} systems. In the last decade, impressive results have been demonstrated in the context of visual navigation, reaching very high localization performance. However, all ego-motion estimation systems require careful parameter tuning procedures for the speciﬁc environment they have to work in. Furthermore, even in ideal scenarios, most state-of-the-art approaches fail to handle image anomalies and imperfections, which results in less robust estimates. {VO} systems that rely on geometrical approaches extract sparse or dense features and match them to perform Frame to Frame (F2F) motion estimation. However, images contain much more information that can be used to further improve the F2F estimation. To learn new feature representation a very successful approach is to use deep Convolutional Neural Networks. Inspired by recent advances in Deep Networks and by previous work on learning methods applied to {VO}, we explore the use of Convolutional Neural Networks to learn both the best visual features and the best estimator for the task of visual Ego-Motion Estimation. With experiments on publicly available datasets we show that our approach is robust with respect to blur, luminance and contrast anomalies and outperforms most state-of-the-art approaches even in nominal conditions.},
+	pages = {18--25},
+	number = {1},
+	journaltitle = {{IEEE} Robot. Autom. Lett.},
+	author = {Costante, Gabriele and Mancini, Michele and Valigi, Paolo and Ciarfuglia, Thomas A.},
+	urldate = {2019-06-18},
+	date = {2016-01},
+	langid = {english},
+	file = {Costante et al. - 2016 - Exploring Representation Learning With CNNs for Fr.pdf:/Users/abdullah/Zotero/storage/YPIGDKIY/Costante et al. - 2016 - Exploring Representation Learning With CNNs for Fr.pdf:application/pdf}
+}
+
+@incollection{melekhovRelativeCameraPose2017,
+	location = {Cham},
+	title = {Relative Camera Pose Estimation Using Convolutional Neural Networks},
+	volume = {10617},
+	isbn = {978-3-319-70352-7 978-3-319-70353-4},
+	url = {http://link.springer.com/10.1007/978-3-319-70353-4_57},
+	abstract = {This paper presents a convolutional neural network based approach for estimating the relative pose between two cameras. The proposed network takes {RGB} images from both cameras as input and directly produces the relative rotation and translation as output. The system is trained in an end-to-end manner utilising transfer learning from a large scale classiﬁcation dataset. The introduced approach is compared with widely used local feature based methods ({SURF}, {ORB}) and the results indicate a clear improvement over the baseline. In addition, a variant of the proposed architecture containing a spatial pyramid pooling ({SPP}) layer is evaluated and shown to further improve the performance.},
+	pages = {675--687},
+	booktitle = {Advanced Concepts for Intelligent Vision Systems},
+	publisher = {Springer International Publishing},
+	author = {Melekhov, Iaroslav and Ylioinas, Juha and Kannala, Juho and Rahtu, Esa},
+	editor = {Blanc-Talon, Jacques and Penne, Rudi and Philips, Wilfried and Popescu, Dan and Scheunders, Paul},
+	urldate = {2019-06-18},
+	date = {2017},
+	langid = {english},
+	doi = {10.1007/978-3-319-70353-4_57},
+	file = {Melekhov et al. - 2017 - Relative Camera Pose Estimation Using Convolutiona.pdf:/Users/abdullah/Zotero/storage/C82DPP7X/Melekhov et al. - 2017 - Relative Camera Pose Estimation Using Convolutiona.pdf:application/pdf}
+}
+
+@inproceedings{parisottoGlobalPoseEstimation2018,
+	location = {Salt Lake City, {UT}},
+	title = {Global Pose Estimation with an Attention-Based Recurrent Network},
+	isbn = {978-1-5386-6100-0},
+	url = {https://ieeexplore.ieee.org/document/8575522/},
+	doi = {10.1109/CVPRW.2018.00061},
+	abstract = {The ability for an agent to localize itself within an environment is crucial for many real-world applications. For unknown environments, Simultaneous Localization and Mapping ({SLAM}) enables incremental and concurrent building of and localizing within a map. We present a new, differentiable architecture, Neural Graph Optimizer, progressing towards a complete neural network solution for {SLAM} by designing a system composed of a local pose estimation model, a novel pose selection module, and a novel graph optimization process. The entire architecture is trained in an end-to-end fashion, enabling the network to automatically learn domain-speciﬁc features relevant to the visual odometry and avoid the involved process of feature engineering. We demonstrate the effectiveness of our system on a simulated 2D maze and the 3D {ViZ}-Doom environment.},
+	eventtitle = {2018 {IEEE}/{CVF} Conference on Computer Vision and Pattern Recognition Workshops ({CVPRW})},
+	pages = {350--35009},
+	booktitle = {2018 {IEEE}/{CVF} Conference on Computer Vision and Pattern Recognition Workshops ({CVPRW})},
+	publisher = {{IEEE}},
+	author = {Parisotto, Emilio and Chaplot, Devendra Singh and Zhang, Jian and Salakhutdinov, Ruslan},
+	urldate = {2019-06-18},
+	date = {2018-06},
+	langid = {english},
+	file = {Parisotto et al. - 2018 - Global Pose Estimation with an Attention-Based Rec.pdf:/Users/abdullah/Zotero/storage/W4E7VCDI/Parisotto et al. - 2018 - Global Pose Estimation with an Attention-Based Rec.pdf:application/pdf}
+}
+
+@incollection{krizhevskyImageNetClassificationDeep2012,
+	title = {{ImageNet} Classification with Deep Convolutional Neural Networks},
+	url = {http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf},
+	pages = {1097--1105},
+	booktitle = {Advances in Neural Information Processing Systems 25},
+	publisher = {Curran Associates, Inc.},
+	author = {Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
+	editor = {Pereira, F. and Burges, C. J. C. and Bottou, L. and Weinberger, K. Q.},
+	urldate = {2019-06-18},
+	date = {2012},
+	file = {NIPS Full Text PDF:/Users/abdullah/Zotero/storage/U8YR4LH7/Krizhevsky et al. - 2012 - ImageNet Classification with Deep Convolutional Ne.pdf:application/pdf;NIPS Snapshot:/Users/abdullah/Zotero/storage/E82FVXG7/4824-imagenet-classification-with-deep-convolutional-neural-networks.html:text/html}
+}
+
+@article{glockerRealTimeRGBDCamera2015,
+	title = {Real-Time {RGB}-D Camera Relocalization via Randomized Ferns for Keyframe Encoding},
+	volume = {21},
+	issn = {1077-2626},
+	url = {http://ieeexplore.ieee.org/document/6912003/},
+	doi = {10.1109/TVCG.2014.2360403},
+	abstract = {Recovery from tracking failure is essential in any simultaneous localization and tracking system. In this context, we explore an efﬁcient keyframe-based relocalization method based on frame encoding using randomized ferns. The method enables automatic discovery of keyframes through online harvesting in tracking mode, and fast retrieval of pose candidates in the case when tracking is lost. Frame encoding is achieved by applying simple binary feature tests which are stored in the nodes of an ensemble of randomized ferns. The concatenation of small block codes generated by each fern yields a global compact representation of camera frames. Based on those representations we deﬁne the frame dissimilarity as the block-wise hamming distance ({BlockHD}). Dissimilarities between an incoming query frame and a large set of keyframes can be efﬁciently evaluated by simply traversing the nodes of the ferns and counting image co-occurrences in corresponding code tables. In tracking mode, those dissimilarities decide whether a frame/pose pair is considered as a novel keyframe. For tracking recovery, poses of the most similar keyframes are retrieved and used for reinitialization of the tracking algorithm. The integration of our relocalization method into a hand-held {KinectFusion} system allows seamless continuation of mapping even when tracking is frequently lost.},
+	pages = {571--583},
+	number = {5},
+	journaltitle = {{IEEE} Trans. Visual. Comput. Graphics},
+	author = {Glocker, Ben and Shotton, Jamie and Criminisi, Antonio and Izadi, Shahram},
+	urldate = {2019-06-18},
+	date = {2015-05-01},
+	langid = {english},
+	file = {Glocker et al. - 2015 - Real-Time RGB-D Camera Relocalization via Randomiz.pdf:/Users/abdullah/Zotero/storage/DFK8VGJM/Glocker et al. - 2015 - Real-Time RGB-D Camera Relocalization via Randomiz.pdf:application/pdf}
+}
+
+@article{massicetiRandomForestsNeural2016,
+	title = {Random Forests versus Neural Networks - What's Best for Camera Localization?},
+	url = {http://arxiv.org/abs/1609.05797},
+	abstract = {This work addresses the task of camera localization in a known 3D scene given a single input {RGB} image. State-of-the-art approaches accomplish this in two steps: ﬁrstly, regressing for every pixel in the image its 3D scene coordinate and subsequently, using these coordinates to estimate the ﬁnal 6D camera pose via {RANSAC}. To solve the ﬁrst step, Random Forests ({RFs}) are typically used. On the other hand, Neural Networks ({NNs}) reign in many dense regression tasks, but are not test-time efﬁcient. We ask the question: which of the two is best for camera localization? To address this, we make two method contributions: (1) a test-time efﬁcient {NN} architecture which we term a {ForestNet} that is derived and initialized from a {RF}, and (2) a new fully-differentiable robust averaging technique for regression ensembles which can be trained endto-end with a {NN}. Our experimental ﬁndings show that for scene coordinate regression, traditional {NN} architectures are superior to test-time efﬁcient {RFs} and {ForestNets}, however, this does not translate to ﬁnal 6D camera pose accuracy where {RFs} and {ForestNets} perform slightly better. To summarize, our best method, a {ForestNet} with a robust average, which has an equivalent fast and lightweight {RF}, improves over the stateof-the-art for camera localization on the 7-Scenes dataset [1]. While this work focuses on scene coordinate regression for camera localization, our innovations may also be applied to other continuous regression tasks.},
+	journaltitle = {{arXiv}:1609.05797 [cs]},
+	author = {Massiceti, Daniela and Krull, Alexander and Brachmann, Eric and Rother, Carsten and Torr, Philip H. S.},
+	urldate = {2019-06-18},
+	date = {2016-09-19},
+	langid = {english},
+	eprinttype = {arxiv},
+	eprint = {1609.05797},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Robotics},
+	file = {Massiceti et al. - 2016 - Random Forests versus Neural Networks - What's Bes.pdf:/Users/abdullah/Zotero/storage/UHPUTCQB/Massiceti et al. - 2016 - Random Forests versus Neural Networks - What's Bes.pdf:application/pdf}
+}
+
+@article{santosMappingIndoorSpaces2016,
+	title = {Mapping Indoor Spaces by Adaptive Coarse-to-Fine Registration of {RGB}-D Data},
+	volume = {13},
+	issn = {1545-598X},
+	doi = {10.1109/LGRS.2015.2508880},
+	abstract = {In this letter, we present an adaptive coarse-to-fine registration method for 3-D indoor mapping using {RGB}-D data. We weight the 3-D points based on the theoretical random error of depth measurements and introduce a novel disparity-based model for an accurate and robust coarse-to-fine registration. Some feature extraction methods required by the method are also presented. First, our method exploits both visual and depth information to compute the initial transformation parameters. We employ scale-invariant feature transformation for extracting, detecting, and matching 2-D visual features, and their associated depth values are used to perform coarse registration. Then, we use an image-based segmentation technique for detecting regions in the {RGB} images. Their associated 3-D centroid and the correspondent disparity values are used to refine the initial transformation parameters. Finally, the loop-closure detection and a global adjustment of the complete sequence data are used to recognize when the camera has returned to a previously visited location and minimize the registration errors. The effectiveness of the proposed method is demonstrated with the Kinect data set. The experimental results show that the proposed method can properly map the indoor environment with a relative and absolute accuracy value of around 3-5 cm, respectively.},
+	pages = {262--266},
+	number = {2},
+	journaltitle = {{IEEE} Geoscience and Remote Sensing Letters},
+	author = {Santos, D. R. dos and Basso, M. A. and Khoshelham, K. and Oliveira, E. de and Pavan, N. L. and Vosselman, G.},
+	date = {2016-02},
+	keywords = {Cameras, Simultaneous localization and mapping, Visualization, Feature extraction, Three-dimensional displays, 2D visual feature matching, 3-D indoor mapping, 3D centroid, 3D indoor mapping, adaptive coarse-to-fine registration method, Coarse-to-fine registration, depth measurements, disparity-based model, disparity-to-plane model, feature detection, feature extraction, feature extraction methods, global optimization, image matching, image registration, image segmentation, Image segmentation, image-based segmentation technique, indoor environment, Kinect data set, loop-closure detection, optical sensors, {RGB}-D data, {RGB}-D sensor, scale-invariant feature transformation, Solid modeling, spatial variables measurement, transforms},
+	file = {IEEE Xplore Abstract Record:/Users/abdullah/Zotero/storage/BUYE5C89/7374652.html:text/html;IEEE Xplore Full Text PDF:/Users/abdullah/Zotero/storage/QSHDBCQM/Santos et al. - 2016 - Mapping Indoor Spaces by Adaptive Coarse-to-Fine R.pdf:application/pdf}
+}
+
+@article{svarmCityScaleLocalizationCameras2017,
+	title = {City-Scale Localization for Cameras with Known Vertical Direction},
+	volume = {39},
+	issn = {0162-8828, 2160-9292},
+	url = {http://ieeexplore.ieee.org/document/7534854/},
+	doi = {10.1109/TPAMI.2016.2598331},
+	abstract = {We consider the problem of localizing a novel image in a large 3D model, given that the gravitational vector is known. In principle, this is just an instance of camera pose estimation, but the scale of the problem introduces some interesting challenges. Most importantly, it makes the correspondence problem very difﬁcult so there will often be a signiﬁcant number of outliers to handle. To tackle this problem, we use recent theoretical as well as technical advances. Many modern cameras and phones have gravitational sensors that allow us to reduce the search space. Further, there are new techniques to efﬁciently and reliably deal with extreme rates of outliers. We extend these methods to camera pose estimation by using accurate approximations and fast polynomial solvers. Experimental results are given demonstrating that it is possible to reliably estimate the camera pose despite cases with more than 99\% outlier correspondences in city-scale models with several millions of 3D points.},
+	pages = {1455--1461},
+	number = {7},
+	journaltitle = {{IEEE} Trans. Pattern Anal. Mach. Intell.},
+	author = {Svarm, Linus and Enqvist, Olof and Kahl, Fredrik and Oskarsson, Magnus},
+	urldate = {2019-06-18},
+	date = {2017-07-01},
+	langid = {english},
+	file = {Svarm et al. - 2017 - City-Scale Localization for Cameras with Known Ver.pdf:/Users/abdullah/Zotero/storage/FEXJL9TH/Svarm et al. - 2017 - City-Scale Localization for Cameras with Known Ver.pdf:application/pdf}
+}
+
+@article{irscharaStructurefromMotionPointClouds,
+	title = {From Structure-from-Motion Point Clouds to Fast Location Recognition},
+	abstract = {Efﬁcient view registration with respect to a given 3D reconstruction has many applications like inside-out tracking in indoor and outdoor environments, and geo-locating images from large photo collections. We present a fast location recognition technique based on structure from motion point clouds. Vocabulary tree-based indexing of features directly returns relevant fragments of 3D models instead of documents from the images database. Additionally, we propose a compressed 3D scene representation which improves recognition rates while simultaneously reducing the computation time and the memory consumption. The design of our method is based on algorithms that efﬁciently utilize modern graphics processing units to deliver real-time performance for view registration. We demonstrate the approach by matching hand-held outdoor videos to known 3D urban models, and by registering images from online photo collections to the corresponding landmarks.},
+	pages = {8},
+	author = {Irschara, Arnold and Zach, Christopher and Frahm, Jan-Michael and Bischof, Horst},
+	langid = {english},
+	file = {Irschara et al. - From Structure-from-Motion Point Clouds to Fast Lo.pdf:/Users/abdullah/Zotero/storage/DDQYMZTY/Irschara et al. - From Structure-from-Motion Point Clouds to Fast Lo.pdf:application/pdf}
+}
+
+@incollection{radenovicCNNImageRetrieval2016,
+	location = {Cham},
+	title = {{CNN} Image Retrieval Learns from {BoW}: Unsupervised Fine-Tuning with Hard Examples},
+	volume = {9905},
+	isbn = {978-3-319-46447-3 978-3-319-46448-0},
+	url = {http://link.springer.com/10.1007/978-3-319-46448-0_1},
+	shorttitle = {{CNN} Image Retrieval Learns from {BoW}},
+	abstract = {Convolutional Neural Networks ({CNNs}) achieve state-of-theart performance in many computer vision tasks. However, this achievement is preceded by extreme manual annotation in order to perform either training from scratch or ﬁne-tuning for the target task. In this work, we propose to ﬁne-tune {CNN} for image retrieval from a large collection of unordered images in a fully automated manner. We employ state-of-the-art retrieval and Structure-from-Motion ({SfM}) methods to obtain 3D models, which are used to guide the selection of the training data for {CNN} ﬁne-tuning. We show that both hard positive and hard negative examples enhance the ﬁnal performance in particular object retrieval with compact codes.},
+	pages = {3--20},
+	booktitle = {Computer Vision – {ECCV} 2016},
+	publisher = {Springer International Publishing},
+	author = {Radenović, Filip and Tolias, Giorgos and Chum, Ondřej},
+	editor = {Leibe, Bastian and Matas, Jiri and Sebe, Nicu and Welling, Max},
+	urldate = {2019-06-18},
+	date = {2016},
+	langid = {english},
+	doi = {10.1007/978-3-319-46448-0_1},
+	file = {Radenović et al. - 2016 - CNN Image Retrieval Learns from BoW Unsupervised .pdf:/Users/abdullah/Zotero/storage/DPMRCD36/Radenović et al. - 2016 - CNN Image Retrieval Learns from BoW Unsupervised .pdf:application/pdf}
+}
+
+@article{arandjelovicThreeThingsEveryone2012,
+	title = {Three things everyone should know to improve object retrieval},
+	doi = {10.1109/CVPR.2012.6248018},
+	abstract = {The objective of this work is object retrieval in large scale image datasets, where the object is specified by an image query and retrieval should be immediate at run time in the manner of Video Google [28]. We make the following three contributions: (i) a new method to compare {SIFT} descriptors ({RootSIFT}) which yields superior performance without increasing processing or storage requirements; (ii) a novel method for query expansion where a richer model for the query is learnt discriminatively in a form suited to immediate retrieval through efficient use of the inverted index; (iii) an improvement of the image augmentation method proposed by Turcot and Lowe [29], where only the augmenting features which are spatially consistent with the augmented image are kept. We evaluate these three methods over a number of standard benchmark datasets (Oxford Buildings 5k and 105k, and Paris 6k) and demonstrate substantial improvements in retrieval performance whilst maintaining immediate retrieval speeds. Combining these complementary methods achieves a new state-of-the-art performance on these datasets.},
+	pages = {2911--2918},
+	journaltitle = {2012 {IEEE} Conference on Computer Vision and Pattern Recognition},
+	author = {Arandjelovic, Relja and Zisserman, Andrew},
+	date = {2012},
+	keywords = {Benchmark (computing), Google Videos, Inverted index, Query expansion, Requirement, Run time (program lifecycle phase), Scale-invariant feature transform, While}
+}
+
+@inproceedings{zhuTenfoldImprovementVisual2007,
+	location = {Rio de Janeiro, Brazil},
+	title = {Ten-fold Improvement in Visual Odometry Using Landmark Matching},
+	isbn = {978-1-4244-1630-1},
+	url = {http://ieeexplore.ieee.org/document/4409062/},
+	doi = {10.1109/ICCV.2007.4409062},
+	abstract = {Our goal is to create a visual odometry system for robots and wearable systems such that localization accuracies of centimeters can be obtained for hundreds of meters of distance traveled. Existing systems have achieved approximately a 1\% to 5\% localization error rate whereas our proposed system achieves close to 0.1\% error rate, a ten-fold reduction. Traditional visual odometry systems drift over time as the frame-to-frame errors accumulate. In this paper, we propose to improve visual odometry using visual landmarks in the scene. First, a dynamic local landmark tracking technique is proposed to track a set of local landmarks across image frames and select an optimal set of tracked local landmarks for pose computation. As a result, the error associated with each pose computation is minimized to reduce the drift signiﬁcantly. Second, a global landmark based drift correction technique is proposed to recognize previously visited locations and use them to correct drift accumulated during motion. At each visited location along the route, a set of distinctive visual landmarks is automatically extracted and inserted into a landmark database dynamically. We integrate the landmark based approach into a navigation system with 2 stereo pairs and a low-cost Inertial Measurement Unit ({IMU}) for increased robustness. We demonstrate that a real-time visual odometry system using local and global landmarks can precisely locate a user within 1 meter over 1000 meters in unknown indoor/outdoor environments with challenging situations such as climbing stairs, opening doors, moving foreground objects etc..},
+	eventtitle = {2007 {IEEE} 11th International Conference on Computer Vision},
+	pages = {1--8},
+	booktitle = {2007 {IEEE} 11th International Conference on Computer Vision},
+	publisher = {{IEEE}},
+	author = {Zhu, Zhiwei and Oskiper, Taragay and Samarasekera, Supun and Kumar, Rakesh and Sawhney, Harpreet S.},
+	urldate = {2019-06-18},
+	date = {2007},
+	langid = {english},
+	file = {Zhu et al. - 2007 - Ten-fold Improvement in Visual Odometry Using Land.pdf:/Users/abdullah/Zotero/storage/KQ8LBEMX/Zhu et al. - 2007 - Ten-fold Improvement in Visual Odometry Using Land.pdf:application/pdf}
+}
+
+@inproceedings{xiaoLightweightMapMatching2014,
+	location = {Berlin},
+	title = {Lightweight map matching for indoor localisation using conditional random fields},
+	isbn = {978-1-4799-3146-0 978-1-4799-3147-7},
+	url = {http://ieeexplore.ieee.org/document/6846747/},
+	doi = {10.1109/IPSN.2014.6846747},
+	abstract = {Indoor tracking and navigation is a fundamental need for pervasive and context-aware smartphone applications. Although indoor maps are becoming increasingly available, there is no practical and reliable indoor map matching solution available at present. We present {MapCraft}, a novel, robust and responsive technique that is extremely computationally efﬁcient (running in under 10 ms on an Android smartphone), does not require training in different sites, and tracks well even when presented with very noisy sensor data. Key to our approach is expressing the tracking problem as a conditional random ﬁeld ({CRF}), a technique which has had great success in areas such as natural language processing, but has yet to be considered for indoor tracking. Unlike directed graphical models like Hidden Markov Models, {CRFs} capture arbitrary constraints that express how well observations support state transitions, given map constraints. Extensive experiments in multiple sites show how {MapCraft} outperforms state-of-the art approaches, demonstrating excellent tracking error and accurate reconstruction of tortuous trajectories with zero training effort. As proof of its robustness, we also demonstrate how it is able to accurately track the position of a user from accelerometer and magnetometer measurements only (i.e. gyro- and {WiFi}-free). We believe that such an energy-efﬁcient approach will enable alwayson background localisation, enabling a new era of location-aware applications to be developed.},
+	eventtitle = {2014 13th {ACM}/{IEEE} International Conference on Information Processing in Sensor Networks ({IPSN})},
+	pages = {131--142},
+	booktitle = {{IPSN}-14 Proceedings of the 13th International Symposium on Information Processing in Sensor Networks},
+	publisher = {{IEEE}},
+	author = {Xiao, Zhuoling and Wen, Hongkai and Markham, Andrew and Trigoni, Niki},
+	urldate = {2019-06-18},
+	date = {2014-04},
+	langid = {english},
+	file = {Xiao et al. - 2014 - Lightweight map matching for indoor localisation u.pdf:/Users/abdullah/Zotero/storage/4XYGQGWM/Xiao et al. - 2014 - Lightweight map matching for indoor localisation u.pdf:application/pdf}
+}
+
+@article{zampellaIndoorPositioningUsing2015,
+	title = {Indoor Positioning Using Efficient Map Matching, {RSS} Measurements, and an Improved Motion Model},
+	volume = {64},
+	issn = {0018-9545, 1939-9359},
+	url = {http://ieeexplore.ieee.org/document/7008540/},
+	doi = {10.1109/TVT.2015.2391296},
+	abstract = {Unlike outdoor positioning, there is not a unique solution to obtain the position of a person inside a building or in {GNSS} denied areas. Typical implementations indoor rely on dead reckoning or beacon based positioning, but a robust estimation must combine several techniques to overcome their own drawbacks. In this paper, we present an indoor positioning system based on foot mounted Pedestrian Dead Reckoning ({PDR}) with an efﬁcient Map Matching, Received Signal Strength ({RSS}) measurements and an improved motion model that includes the estimation of the turn rate bias. The system was implemented using a two levels structure with a low level {PDR}-ﬁlter and a high level particle ﬁlter to include all the measurements.},
+	pages = {1304--1317},
+	number = {4},
+	journaltitle = {{IEEE} Trans. Veh. Technol.},
+	author = {Zampella, Francisco and Jimenez Ruiz, Antonio Ramon and Seco Granja, Fernando},
+	urldate = {2019-06-18},
+	date = {2015-04},
+	langid = {english},
+	file = {Zampella et al. - 2015 - Indoor Positioning Using Efficient Map Matching, R.pdf:/Users/abdullah/Zotero/storage/KNLCHL6Z/Zampella et al. - 2015 - Indoor Positioning Using Efficient Map Matching, R.pdf:application/pdf}
+}
+
+@article{acharyaBIMTrackerModelbasedVisual2019,
+	title = {{BIM}-Tracker: A model-based visual tracking approach for indoor localisation using a 3D building model},
+	volume = {150},
+	issn = {09242716},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S092427161930053X},
+	doi = {10.1016/j.isprsjprs.2019.02.014},
+	shorttitle = {{BIM}-Tracker},
+	abstract = {This article presents an accurate and robust visual indoor localisation approach that not only is infrastructurefree, but also avoids accumulation error by taking advantage of 1) the widespread ubiquity of mobile devices with cameras and 2) the availability of 3D building models for most modern buildings. Localisation is performed by matching image sequences captured by a camera, with a 3D model of the building in a model-based visual tracking framework. Comprehensive evaluation of the approach with a photo-realistic synthetic dataset shows the robustness of the localisation approach under challenging conditions. Additionally, the approach is tested and evaluated on real data captured by a smartphone. The results of the experiments indicate that a localisation accuracy better than 10 centimetres can be achieved by using this approach. Since localisation errors do not accumulate the proposed approach is suitable for indoor localisation tasks for long periods of time and augmented reality applications, without requiring any local infrastructure. A {MATLAB} implementation can be found on https://github.com/debaditya-unimelb/{BIM}-Tracker. For a video demo visit: https://youtu.be/cq7mk4mfdRA.},
+	pages = {157--171},
+	journaltitle = {{ISPRS} Journal of Photogrammetry and Remote Sensing},
+	author = {Acharya, Debaditya and Ramezani, Milad and Khoshelham, Kourosh and Winter, Stephan},
+	urldate = {2019-06-18},
+	date = {2019-04},
+	langid = {english},
+	file = {Acharya et al. - 2019 - BIM-Tracker A model-based visual tracking approac.pdf:/Users/abdullah/Zotero/storage/ZME9LRNK/Acharya et al. - 2019 - BIM-Tracker A model-based visual tracking approac.pdf:application/pdf}
+}
+
+@article{lepetitMonocularModelBased3D2005,
+	title = {Monocular Model-Based 3D Tracking of Rigid Objects: A Survey},
+	volume = {1},
+	issn = {1572-2740, 1572-2759},
+	url = {http://www.nowpublishers.com/article/Details/CGV-001},
+	doi = {10.1561/0600000001},
+	shorttitle = {Monocular Model-Based 3D Tracking of Rigid Objects},
+	abstract = {Many applications require tracking of complex 3D objects. These include visual servoing of robotic arms on speciﬁc target objects, Augmented Reality systems that require real-time registration of the object to be augmented, and head tracking systems that sophisticated interfaces can use. Computer Vision oﬀers solutions that are cheap, practical and non-invasive.},
+	pages = {1--89},
+	number = {1},
+	journaltitle = {{FNT} in Computer Graphics and Vision},
+	author = {Lepetit, Vincent and Fua, Pascal},
+	urldate = {2019-06-18},
+	date = {2005},
+	langid = {english},
+	file = {Lepetit und Fua - 2005 - Monocular Model-Based 3D Tracking of Rigid Objects.pdf:/Users/abdullah/Zotero/storage/8QENBZ2L/Lepetit und Fua - 2005 - Monocular Model-Based 3D Tracking of Rigid Objects.pdf:application/pdf}
+}
+
+@inproceedings{davisonRealtimeSimultaneousLocalisation2003,
+	location = {Nice, France},
+	title = {Real-time simultaneous localisation and mapping with a single camera},
+	isbn = {978-0-7695-1950-0},
+	url = {http://ieeexplore.ieee.org/document/1238654/},
+	doi = {10.1109/ICCV.2003.1238654},
+	abstract = {Ego-motion estimation for an agile single camera moving through general, unknown scenes becomes a much more challenging problem when real-time performance is required rather than under the off-line processing conditions under which most successful structure from motion work has been achieved. This task of estimating camera motion from measurements of a continuously expanding set of selfmapped visual features is one of a class of problems known as Simultaneous Localisation and Mapping ({SLAM}) in the robotics community, and we argue that such real-time mapping research, despite rarely being camera-based, is more relevant here than off-line structure from motion methods due to the more fundamental emphasis placed on propagation of uncertainty.},
+	eventtitle = {{ICCV} 2003: 9th International Conference on Computer Vision},
+	pages = {1403--1410 vol.2},
+	booktitle = {Proceedings Ninth {IEEE} International Conference on Computer Vision},
+	publisher = {{IEEE}},
+	author = {{Davison}},
+	urldate = {2019-06-18},
+	date = {2003},
+	langid = {english},
+	file = {Davison - 2003 - Real-time simultaneous localisation and mapping wi.pdf:/Users/abdullah/Zotero/storage/E8PCDP4J/Davison - 2003 - Real-time simultaneous localisation and mapping wi.pdf:application/pdf}
+}
+
+@article{harleSurveyIndoorInertial23,
+	title = {A Survey of Indoor Inertial Positioning Systems for Pedestrians},
+	volume = {15},
+	issn = {1553-877X},
+	url = {http://ieeexplore.ieee.org/document/6407455/},
+	doi = {10.1109/SURV.2012.121912.00075},
+	abstract = {With the continual miniaturisation of sensors and processing nodes, Pedestrian Dead Reckoning ({PDR}) systems are becoming feasible options for indoor tracking. These use inertial and other sensors, often combined with domain-speciﬁc knowledge about walking, to track user movements. There is currently a wealth of relevant literature spread across different research communities. In this survey, a taxonomy of modern {PDRs} is developed and used to contextualise the contributions from different areas. Techniques for step detection, characterisation, inertial navigation and step-and-heading-based deadreckoning are reviewed and compared. Techniques that incorporate building maps through particle ﬁlters are analysed, along with hybrid systems that use absolute position ﬁxes to correct dead-reckoning output. In addition, consideration is given to the possibility of using smartphones as {PDR} sensing devices.},
+	pages = {1281--1293},
+	number = {3},
+	journaltitle = {{IEEE} Commun. Surv. Tutorials},
+	author = {Harle, Robert},
+	urldate = {2019-06-18},
+	date = {2013},
+	langid = {english},
+	file = {Harle - 2013 - A Survey of Indoor Inertial Positioning Systems fo.pdf:/Users/abdullah/Zotero/storage/MRA2AQD2/Harle - 2013 - A Survey of Indoor Inertial Positioning Systems fo.pdf:application/pdf}
+}
+
+@article{hassanIndoorPositioningUsing,
+	title = {Indoor Positioning Using Visible {LED} Lights: A Survey},
+	pages = {31},
+	author = {Hassan, Naveed Ul and Naeem, Aqsa and Pasha, Muhammad Adeel and Jadoon, Tariq},
+	langid = {english},
+	file = {Hassan et al. - Indoor Positioning Using Visible LED Lights A Sur.pdf:/Users/abdullah/Zotero/storage/4DDEFGL5/Hassan et al. - Indoor Positioning Using Visible LED Lights A Sur.pdf:application/pdf}
+}
+
+@article{mautzIndoorPositioningTechnologies2012,
+	title = {Indoor positioning technologies},
+	rights = {http://rightsstatements.org/page/{InC}-{NC}/1.0/, info:eu-repo/semantics/{openAccess}},
+	url = {http://hdl.handle.net/20.500.11850/54888},
+	doi = {10.3929/ethz-a-007313554},
+	pages = {1 Band},
+	author = {Mautz, Rainer},
+	urldate = {2019-06-18},
+	date = {2012},
+	langid = {english},
+	keywords = {Architecture, {ASTRO}-{GEODETIC} {DETERMINATION} {OF} {POSITION} + {GEOGRAPHICAL} {COORDINATES} ({GEODESY}), {ASTRONOMISCH}-{GEODÄTISCHE} {ORTSBESTIMMUNG} + {GEOGRAPHISCHE} {KOORDINATEN} ({GEODÄSIE}), Earth sciences, {GEODÄTISCHE} {MESSVERFAHREN} ({GEODÄSIE}), {GEODETIC} {MEASURING} {METHODS} ({GEODESY}), {GEOMATICS} ({GEOGRAPHY}), {GEOMATIK} ({GEOGRAFIE}), {GLOBAL} {NAVIGATION} {SATELLITE} {SYSTEM}, {GNSS} ({GEODÄSIE}), {GLOBAL} {NAVIGATION} {SATELLITE} {SYSTEM}, {GNSS} ({GEODESY}), {GLOBAL} {POSITIONING} {SYSTEM}, {GPS} + {INDOOR} {GPS} ({GEODÄSIE}), {GLOBAL} {POSITIONING} {SYSTEM}, {GPS} + {INDOOR} {GPS} ({GEODESY}), info:eu-repo/classification/ddc/550, info:eu-repo/classification/ddc/720},
+	file = {Mautz - 2012 - Indoor positioning technologies.pdf:/Users/abdullah/Zotero/storage/UQFAZ3F2/Mautz - 2012 - Indoor positioning technologies.pdf:application/pdf}
+}
+
+@inproceedings{wuDelvingDeeperConvolutional2017,
+	location = {Singapore, Singapore},
+	title = {Delving deeper into convolutional neural networks for camera relocalization},
+	isbn = {978-1-5090-4633-1},
+	url = {http://ieeexplore.ieee.org/document/7989663/},
+	doi = {10.1109/ICRA.2017.7989663},
+	abstract = {Convolutional Neural Networks ({CNNs}) have been applied to camera relocalization, which is to infer the pose of the camera given a single monocular image. However, there are still many open problems for camera relocalization with {CNNs}. We delve into the {CNNs} for camera relocalization. First, a variant of Euler angles named Euler6 is proposed to represent orientation. Then a data augmentation method named pose synthesis is designed to reduce sparsity of poses in the whole pose space to cope with overﬁtting in training. Third, a multi-task {CNN} named {BranchNet} is proposed to deal with the complex coupling of orientation and translation. The network consists of several shared convolutional layers and splits into two branches which predict orientation and translation, respectively. Experiments on the 7Scenes dataset show that incorporating these techniques one by one into an existing model {PoseNet} always leads to better results. Together these techniques reduce the orientation error by 15.9\% and the translation error by 38.3\% compared to the state-of-the-art model Bayesian {PoseNet}. We implement {BranchNet} on an Intel {NUC} mobile platform and reach a speed of 43 fps, which meets the real-time requirement of many robotic applications.},
+	eventtitle = {2017 {IEEE} International Conference on Robotics and Automation ({ICRA})},
+	pages = {5644--5651},
+	booktitle = {2017 {IEEE} International Conference on Robotics and Automation ({ICRA})},
+	publisher = {{IEEE}},
+	author = {Wu, Jian and Ma, Liwei and Hu, Xiaolin},
+	urldate = {2019-06-18},
+	date = {2017-05},
+	langid = {english},
+	file = {Wu et al. - 2017 - Delving deeper into convolutional neural networks .pdf:/Users/abdullah/Zotero/storage/3BXUW6N4/Wu et al. - 2017 - Delving deeper into convolutional neural networks .pdf:application/pdf}
+}
+
+@inproceedings{melekhovImageBasedLocalizationUsing2017,
+	title = {Image-Based Localization Using Hourglass Networks},
+	url = {http://openaccess.thecvf.com/content_ICCV_2017_workshops/w17/html/Melekhov_Image-Based_Localization_Using_ICCV_2017_paper.html},
+	eventtitle = {Proceedings of the {IEEE} International Conference on Computer Vision},
+	pages = {879--886},
+	author = {Melekhov, Iaroslav and Ylioinas, Juha and Kannala, Juho and Rahtu, Esa},
+	urldate = {2019-06-18},
+	date = {2017},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/IDUQJL4C/Melekhov et al. - 2017 - Image-Based Localization Using Hourglass Networks.pdf:application/pdf;Snapshot:/Users/abdullah/Zotero/storage/YQ5KMATH/Melekhov_Image-Based_Localization_Using_ICCV_2017_paper.html:text/html}
+}
+
+@article{mullerSQUEEZEPOSENETIMAGEBASED2017,
+	title = {{SQUEEZEPOSENET}: {IMAGE} {BASED} {POSE} {REGRESSION} {WITH} {SMALL} {CONVOLUTIONAL} {NEURAL} {NETWORKS} {FOR} {REAL} {TIME} {UAS} {NAVIGATION}},
+	volume = {{IV}-2/W3},
+	issn = {2194-9050},
+	url = {https://www.isprs-ann-photogramm-remote-sens-spatial-inf-sci.net/IV-2-W3/49/2017/},
+	doi = {10.5194/isprs-annals-IV-2-W3-49-2017},
+	shorttitle = {{SQUEEZEPOSENET}},
+	abstract = {The number of unmanned aerial vehicles ({UAVs}) is increasing since low-cost airborne systems are available for a wide range of users. The outdoor navigation of such vehicles is mostly based on global navigation satellite system ({GNSS}) methods to gain the vehicles trajectory. The drawback of satellite-based navigation are failures caused by occlusions and multi-path interferences. Beside this, local image-based solutions like Simultaneous Localization and Mapping ({SLAM}) and Visual Odometry ({VO}) can e.g. be used to support the {GNSS} solution by closing trajectory gaps but are computationally expensive. However, if the trajectory estimation is interrupted or not available a re-localization is mandatory. In this paper we will provide a novel method for a {GNSS}-free and fast image-based pose regression in a known area by utilizing a small convolutional neural network ({CNN}). With on-board processing in mind, we employ a lightweight {CNN} called {SqueezeNet} and use transfer learning to adapt the network to pose regression. Our experiments show promising results for {GNSS}-free and fast localization.},
+	pages = {49--57},
+	journaltitle = {{ISPRS} Ann. Photogramm. Remote Sens. Spatial Inf. Sci.},
+	author = {Müller, M. S. and Urban, S. and Jutzi, B.},
+	urldate = {2019-06-18},
+	date = {2017-08-18},
+	langid = {english},
+	file = {Müller et al. - 2017 - SQUEEZEPOSENET IMAGE BASED POSE REGRESSION WITH S.pdf:/Users/abdullah/Zotero/storage/XENDKWHE/Müller et al. - 2017 - SQUEEZEPOSENET IMAGE BASED POSE REGRESSION WITH S.pdf:application/pdf}
+}
+
+@inproceedings{brahmbhattGeometryAwareLearningMaps2018,
+	title = {Geometry-Aware Learning of Maps for Camera Localization},
+	url = {http://openaccess.thecvf.com/content_cvpr_2018/html/Brahmbhatt_Geometry-Aware_Learning_of_CVPR_2018_paper.html},
+	eventtitle = {Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition},
+	pages = {2616--2625},
+	author = {Brahmbhatt, Samarth and Gu, Jinwei and Kim, Kihwan and Hays, James and Kautz, Jan},
+	urldate = {2019-06-18},
+	date = {2018},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/X6FAPY7Y/Brahmbhatt et al. - 2018 - Geometry-Aware Learning of Maps for Camera Localiz.pdf:application/pdf;Snapshot:/Users/abdullah/Zotero/storage/UES39MEU/Brahmbhatt_Geometry-Aware_Learning_of_CVPR_2018_paper.html:text/html}
+}
+
+@inproceedings{valadaDeepAuxiliaryLearning2018,
+	location = {Brisbane, {QLD}},
+	title = {Deep Auxiliary Learning for Visual Localization and Odometry},
+	isbn = {978-1-5386-3081-5},
+	url = {https://ieeexplore.ieee.org/document/8462979/},
+	doi = {10.1109/ICRA.2018.8462979},
+	abstract = {Localization is an indispensable component of a robot’s autonomy stack that enables it to determine where it is in the environment, essentially making it a precursor for any action execution or planning. Although convolutional neural networks have shown promising results for visual localization, they are still grossly outperformed by state-of-the-art local feature-based techniques. In this work, we propose {VLocNet}, a new convolutional neural network architecture for 6-{DoF} global pose regression and odometry estimation from consecutive monocular images. Our multitask model incorporates hard parameter sharing, thus being compact and enabling real-time inference, in addition to being end-to-end trainable. We propose a novel loss function that utilizes auxiliary learning to leverage relative pose information during training, thereby constraining the search space to obtain consistent pose estimates. We evaluate our proposed {VLocNet} on indoor as well as outdoor datasets and show that even our single task model exceeds the performance of state-of-the-art deep architectures for global localization, while achieving competitive performance for visual odometry estimation. Furthermore, we present extensive experimental evaluations utilizing our proposed Geometric Consistency Loss that show the effectiveness of multitask learning and demonstrate that our model is the ﬁrst deep learning technique to be on par with, and in some cases outperforms state-of-theart {SIFT}-based approaches.},
+	eventtitle = {2018 {IEEE} International Conference on Robotics and Automation ({ICRA})},
+	pages = {6939--6946},
+	booktitle = {2018 {IEEE} International Conference on Robotics and Automation ({ICRA})},
+	publisher = {{IEEE}},
+	author = {Valada, Abhinav and Radwan, Noha and Burgard, Wolfram},
+	urldate = {2019-06-18},
+	date = {2018-05},
+	langid = {english},
+	file = {Valada et al. - 2018 - Deep Auxiliary Learning for Visual Localization an.pdf:/Users/abdullah/Zotero/storage/CMRCM9V2/Valada et al. - 2018 - Deep Auxiliary Learning for Visual Localization an.pdf:application/pdf}
+}
+
+@article{valadaIncorporatingSemanticGeometric,
+	title = {Incorporating Semantic and Geometric Priors in Deep Pose Regression},
+	abstract = {Deep learning has enabled recent breakthroughs across a wide spectrum of scene understanding tasks, however, its applicability to camera pose regression has been unfruitful due to the direct formulation that renders it incapable of encoding scene-speciﬁc constrains. In this work, we propose the {VLocNet}++ architecture that overcomes this limitation by simultaneously embedding geometric and semantic knowledge of the world into the pose regression network. We employ a multitask learning approach to exploit the inter-task relationship between learning semantics, regressing 6-{DoF} global pose and odometry for the mutual beneﬁt of each of these tasks. Furthermore, in order to enforce global consistency during camera pose regression, we propose the novel Geometric Consistency Loss function that leverages the predicted relative motion estimated from odometry to constrict the search space while training. Extensive experiments on the challenging Microsoft 7-Scenes benchmark and our {DeepLoc} dataset demonstrate that our approach exceeds the state-of-the-art outperforming local feature-based methods while simultaneously performing multiple tasks and exhibiting substantial robustness in challenging scenarios.},
+	pages = {4},
+	author = {Valada, Abhinav and Radwan, Noha and Burgard, Wolfram},
+	langid = {english},
+	file = {Valada et al. - Incorporating Semantic and Geometric Priors in Dee.pdf:/Users/abdullah/Zotero/storage/CL7CDTMD/Valada et al. - Incorporating Semantic and Geometric Priors in Dee.pdf:application/pdf}
+}
+
+@article{heDeepResidualLearning2015,
+	title = {Deep Residual Learning for Image Recognition},
+	url = {http://arxiv.org/abs/1512.03385},
+	abstract = {Deeper neural networks are more difﬁcult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the {ImageNet} dataset we evaluate residual nets with a depth of up to 152 layers—8× deeper than {VGG} nets [41] but still having lower complexity. An ensemble of these residual nets achieves 3.57\% error on the {ImageNet} test set. This result won the 1st place on the {ILSVRC} 2015 classiﬁcation task. We also present analysis on {CIFAR}-10 with 100 and 1000 layers.},
+	journaltitle = {{arXiv}:1512.03385 [cs]},
+	author = {He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+	urldate = {2019-06-18},
+	date = {2015-12-10},
+	langid = {english},
+	eprinttype = {arxiv},
+	eprint = {1512.03385},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {He et al. - 2015 - Deep Residual Learning for Image Recognition.pdf:/Users/abdullah/Zotero/storage/BXJWIK3C/He et al. - 2015 - Deep Residual Learning for Image Recognition.pdf:application/pdf}
+}
+
+@article{girshickFastRCNN2015,
+	title = {Fast R-{CNN}},
+	url = {http://arxiv.org/abs/1504.08083},
+	abstract = {This paper proposes a Fast Region-based Convolutional Network method (Fast R-{CNN}) for object detection. Fast R-{CNN} builds on previous work to efﬁciently classify object proposals using deep convolutional networks. Compared to previous work, Fast R-{CNN} employs several innovations to improve training and testing speed while also increasing detection accuracy. Fast R-{CNN} trains the very deep {VGG}16 network 9× faster than R-{CNN}, is 213× faster at test-time, and achieves a higher {mAP} on {PASCAL} {VOC} 2012. Compared to {SPPnet}, Fast R-{CNN} trains {VGG}16 3× faster, tests 10× faster, and is more accurate. Fast R-{CNN} is implemented in Python and C++ (using Caffe) and is available under the open-source {MIT} License at https: //github.com/rbgirshick/fast-rcnn.},
+	journaltitle = {{arXiv}:1504.08083 [cs]},
+	author = {Girshick, Ross},
+	urldate = {2019-06-18},
+	date = {2015-04-30},
+	langid = {english},
+	eprinttype = {arxiv},
+	eprint = {1504.08083},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Girshick - 2015 - Fast R-CNN.pdf:/Users/abdullah/Zotero/storage/3TBVNF6E/Girshick - 2015 - Fast R-CNN.pdf:application/pdf}
+}
+
+@article{girshickRichFeatureHierarchies2013,
+	title = {Rich feature hierarchies for accurate object detection and semantic segmentation},
+	url = {http://arxiv.org/abs/1311.2524},
+	abstract = {Object detection performance, as measured on the canonical {PASCAL} {VOC} dataset, has plateaued in the last few years. The best-performing methods are complex ensemble systems that typically combine multiple low-level image features with high-level context. In this paper, we propose a simple and scalable detection algorithm that improves mean average precision ({mAP}) by more than 30\% relative to the previous best result on {VOC} 2012—achieving a {mAP} of 53.3\%. Our approach combines two key insights: (1) one can apply high-capacity convolutional neural networks ({CNNs}) to bottom-up region proposals in order to localize and segment objects and (2) when labeled training data is scarce, supervised pre-training for an auxiliary task, followed by domain-speciﬁc ﬁne-tuning, yields a signiﬁcant performance boost. Since we combine region proposals with {CNNs}, we call our method R-{CNN}: Regions with {CNN} features. We also compare R-{CNN} to {OverFeat}, a recently proposed sliding-window detector based on a similar {CNN} architecture. We ﬁnd that R-{CNN} outperforms {OverFeat} by a large margin on the 200-class {ILSVRC}2013 detection dataset. Source code for the complete system is available at http://www.cs.berkeley.edu/˜rbg/rcnn.},
+	journaltitle = {{arXiv}:1311.2524 [cs]},
+	author = {Girshick, Ross and Donahue, Jeff and Darrell, Trevor and Malik, Jitendra},
+	urldate = {2019-06-18},
+	date = {2013-11-11},
+	langid = {english},
+	eprinttype = {arxiv},
+	eprint = {1311.2524},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Girshick et al. - 2013 - Rich feature hierarchies for accurate object detec.pdf:/Users/abdullah/Zotero/storage/YR7PD7T2/Girshick et al. - 2013 - Rich feature hierarchies for accurate object detec.pdf:application/pdf}
+}
+
+@article{renFasterRCNNRealTime2015,
+	title = {Faster R-{CNN}: Towards Real-Time Object Detection with Region Proposal Networks},
+	url = {http://arxiv.org/abs/1506.01497},
+	shorttitle = {Faster R-{CNN}},
+	abstract = {State-of-the-art object detection networks depend on region proposal algorithms to hypothesize object locations. Advances like {SPPnet} [1] and Fast R-{CNN} [2] have reduced the running time of these detection networks, exposing region proposal computation as a bottleneck. In this work, we introduce a Region Proposal Network ({RPN}) that shares full-image convolutional features with the detection network, thus enabling nearly cost-free region proposals. An {RPN} is a fully convolutional network that simultaneously predicts object bounds and objectness scores at each position. The {RPN} is trained end-to-end to generate high-quality region proposals, which are used by Fast R-{CNN} for detection. We further merge {RPN} and Fast R-{CNN} into a single network by sharing their convolutional features—using the recently popular terminology of neural networks with “attention” mechanisms, the {RPN} component tells the uniﬁed network where to look. For the very deep {VGG}-16 model [3], our detection system has a frame rate of 5fps (including all steps) on a {GPU}, while achieving state-of-the-art object detection accuracy on {PASCAL} {VOC} 2007, 2012, and {MS} {COCO} datasets with only 300 proposals per image. In {ILSVRC} and {COCO} 2015 competitions, Faster R-{CNN} and {RPN} are the foundations of the 1st-place winning entries in several tracks. Code has been made publicly available.},
+	journaltitle = {{arXiv}:1506.01497 [cs]},
+	author = {Ren, Shaoqing and He, Kaiming and Girshick, Ross and Sun, Jian},
+	urldate = {2019-06-18},
+	date = {2015-06-04},
+	langid = {english},
+	eprinttype = {arxiv},
+	eprint = {1506.01497},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Ren et al. - 2015 - Faster R-CNN Towards Real-Time Object Detection w.pdf:/Users/abdullah/Zotero/storage/2KMMGUXG/Ren et al. - 2015 - Faster R-CNN Towards Real-Time Object Detection w.pdf:application/pdf}
+}
+
+@article{renFasterRCNNRealTime2015a,
+	title = {Faster R-{CNN}: Towards Real-Time Object Detection with Region Proposal Networks},
+	url = {http://arxiv.org/abs/1506.01497},
+	shorttitle = {Faster R-{CNN}},
+	abstract = {State-of-the-art object detection networks depend on region proposal algorithms to hypothesize object locations. Advances like {SPPnet} [1] and Fast R-{CNN} [2] have reduced the running time of these detection networks, exposing region proposal computation as a bottleneck. In this work, we introduce a Region Proposal Network ({RPN}) that shares full-image convolutional features with the detection network, thus enabling nearly cost-free region proposals. An {RPN} is a fully convolutional network that simultaneously predicts object bounds and objectness scores at each position. The {RPN} is trained end-to-end to generate high-quality region proposals, which are used by Fast R-{CNN} for detection. We further merge {RPN} and Fast R-{CNN} into a single network by sharing their convolutional features—using the recently popular terminology of neural networks with “attention” mechanisms, the {RPN} component tells the uniﬁed network where to look. For the very deep {VGG}-16 model [3], our detection system has a frame rate of 5fps (including all steps) on a {GPU}, while achieving state-of-the-art object detection accuracy on {PASCAL} {VOC} 2007, 2012, and {MS} {COCO} datasets with only 300 proposals per image. In {ILSVRC} and {COCO} 2015 competitions, Faster R-{CNN} and {RPN} are the foundations of the 1st-place winning entries in several tracks. Code has been made publicly available.},
+	journaltitle = {{arXiv}:1506.01497 [cs]},
+	author = {Ren, Shaoqing and He, Kaiming and Girshick, Ross and Sun, Jian},
+	urldate = {2019-06-18},
+	date = {2015-06-04},
+	langid = {english},
+	eprinttype = {arxiv},
+	eprint = {1506.01497},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {Ren et al. - 2015 - Faster R-CNN Towards Real-Time Object Detection w.pdf:/Users/abdullah/Zotero/storage/UJ6U95R3/Ren et al. - 2015 - Faster R-CNN Towards Real-Time Object Detection w.pdf:application/pdf}
+}
+
+@incollection{liWorldwidePoseEstimation2012,
+	location = {Berlin, Heidelberg},
+	title = {Worldwide Pose Estimation Using 3D Point Clouds},
+	volume = {7572},
+	isbn = {978-3-642-33717-8 978-3-642-33718-5},
+	url = {http://link.springer.com/10.1007/978-3-642-33718-5_2},
+	abstract = {We address the problem of determining where a photo was taken by estimating a full 6-{DOF}-plus-intrincs camera pose with respect to a large geo-registered 3D point cloud, bringing together research on image localization, landmark recognition, and 3D pose estimation. Our method scales to datasets with hundreds of thousands of images and tens of millions of 3D points through the use of two new techniques: a co-occurrence prior for {RANSAC} and bidirectional matching of image features with 3D points. We evaluate our method on several large data sets, and show state-of-the-art results on landmark recognition as well as the ability to locate cameras to within meters, requiring only seconds per query.},
+	pages = {15--29},
+	booktitle = {Computer Vision – {ECCV} 2012},
+	publisher = {Springer Berlin Heidelberg},
+	author = {Li, Yunpeng and Snavely, Noah and Huttenlocher, Dan and Fua, Pascal},
+	editor = {Fitzgibbon, Andrew and Lazebnik, Svetlana and Perona, Pietro and Sato, Yoichi and Schmid, Cordelia},
+	editorb = {Hutchison, David and Kanade, Takeo and Kittler, Josef and Kleinberg, Jon M. and Mattern, Friedemann and Mitchell, John C. and Naor, Moni and Nierstrasz, Oscar and Pandu Rangan, C. and Steffen, Bernhard and Sudan, Madhu and Terzopoulos, Demetri and Tygar, Doug and Vardi, Moshe Y. and Weikum, Gerhard},
+	editorbtype = {redactor},
+	urldate = {2019-06-18},
+	date = {2012},
+	langid = {english},
+	doi = {10.1007/978-3-642-33718-5_2},
+	file = {Li et al. - 2012 - Worldwide Pose Estimation Using 3D Point Clouds.pdf:/Users/abdullah/Zotero/storage/XV7SJYPL/Li et al. - 2012 - Worldwide Pose Estimation Using 3D Point Clouds.pdf:application/pdf}
 }
