@@ -16,15 +16,24 @@
 % - image only
 % Überführen auf CNNs
 \pagebreak
-Bei der Klassifizierung von Bildern \cite{krizhevskyImageNetClassificationDeep2012, simonyanVeryDeepConvolutional2014, heDeepResidualLearning2015} sowie bei der  Objekterkennung \cite{girshickRichFeatureHierarchies2013, renFasterRCNNRealTime2015b, girshickFastRCNN2015} werden CNNs erfolgreich eingesetzt.
-Seit Kurzem werden CNNs auch in den Anwendungsgebieten der Lokalisierung verwendet. Zum Beispiel verwenden \textit{Parisotto et al.} CNNs in Bezug auf das SLAM Problem \cite{parisottoGlobalPoseEstimation2018}. \textit{Melekhov et al.} schätzen anhand CNNs die relative Pose zweier Kameras \cite{melekwashovRelativeCameraPose2017}. \textit{Constante et al.} und \textit{Wang et el.} setzen es im Bereich der visuellen Odometrie ein \cite{costanteExploringRepresentationLearning2016, wangDeepVOEndtoendVisual2017}.
+DCNNs werden erfolgreich im Bereich des Maschinelles Sehen, wie z.B. bei der Klassifizierung von Bildern \cite{krizhevskyImageNetClassificationDeep2012, simonyanVeryDeepConvolutional2014, heDeepResidualLearning2015} sowie bei der  Objekterkennung \cite{girshickRichFeatureHierarchies2013, renFasterRCNNRealTime2015b, girshickFastRCNN2015},  eingesetzt.
+Seit Kurzem werden DCNNs auch in den Anwendungsgebieten der Lokalisierung verwendet. Zum Beispiel verwenden \textit{Parisotto et al.} DCNNs in Bezug auf das SLAM Problem \cite{parisottoGlobalPoseEstimation2018}. \textit{Melekhov et al.} schätzen anhand DCNNs die relative Pose zweier Kameras \cite{melekwashovRelativeCameraPose2017}. \textit{Constante et al.} und \textit{Wang et el.} setzen es im Bereich der visuellen Odometrie ein \cite{costanteExploringRepresentationLearning2016, wangDeepVOEndtoendVisual2017}.
+Ein wesentlicher Nachteil von DCNNs ist der Bedarf an sehr großen Datensätzen für den Trainingsprozess.
+Ein verbreiteter Ansatz den Trainingsprozess zu beschleunigen ist das Feinabstimmen der Netzwerkarchitekturen, die auf verschiedene Aufgaben der Bildklassifizierung auf das ImageNet \cite{russakovskyImageNetLargeScale2014} Datensatzes trainierten wurden.
+
+
+scheinbar unabhängigen Aufgaben der Bildklassifizierung  trainierten  Netzwerkarchitekturen i
+
+
 
 % Posenet überführen
-Geleitet von state-of-the-art Ergebnissen der CNNs stellen \textit{Kendall et al.} PoseNet vor.
+Geleitet von state-of-the-art Ergebnissen der CNNs stellen \textit{Kendall et al.} PoseNet\cite{kendallPoseNetConvolutionalNetwork2015} vor.
 % Posenet erklären
+PoseNet 
+Das Netzwerk wird mit Bild und Posenpaare direkt trainiert.
 
 % Varianten aufzählen
-Für die Verbesserung der Lokalisierung von PoseNet wurden viele Ansätze vorgestellt. Eine Erweiterung.
+Für die Verbesserung der Lokalisierung von PoseNet wurden viele Ansätze vorgestellt. Eine Erweiterung von PoseNet stellen die Autoren selbst
 
 
 % Alternative CNNs regressors
