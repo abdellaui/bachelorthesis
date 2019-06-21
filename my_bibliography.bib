@@ -964,22 +964,6 @@ improvement methods using maps, spatial models, and landmarks.},
 	file = {Girshick et al. - 2013 - Rich feature hierarchies for accurate object detec.pdf:/Users/abdullah/Zotero/storage/YR7PD7T2/Girshick et al. - 2013 - Rich feature hierarchies for accurate object detec.pdf:application/pdf}
 }
 
-@article{renFasterRCNNRealTime2015,
-	title = {Faster R-{CNN}: Towards Real-Time Object Detection with Region Proposal Networks},
-	url = {http://arxiv.org/abs/1506.01497},
-	shorttitle = {Faster R-{CNN}},
-	abstract = {State-of-the-art object detection networks depend on region proposal algorithms to hypothesize object locations. Advances like {SPPnet} [1] and Fast R-{CNN} [2] have reduced the running time of these detection networks, exposing region proposal computation as a bottleneck. In this work, we introduce a Region Proposal Network ({RPN}) that shares full-image convolutional features with the detection network, thus enabling nearly cost-free region proposals. An {RPN} is a fully convolutional network that simultaneously predicts object bounds and objectness scores at each position. The {RPN} is trained end-to-end to generate high-quality region proposals, which are used by Fast R-{CNN} for detection. We further merge {RPN} and Fast R-{CNN} into a single network by sharing their convolutional features—using the recently popular terminology of neural networks with “attention” mechanisms, the {RPN} component tells the uniﬁed network where to look. For the very deep {VGG}-16 model [3], our detection system has a frame rate of 5fps (including all steps) on a {GPU}, while achieving state-of-the-art object detection accuracy on {PASCAL} {VOC} 2007, 2012, and {MS} {COCO} datasets with only 300 proposals per image. In {ILSVRC} and {COCO} 2015 competitions, Faster R-{CNN} and {RPN} are the foundations of the 1st-place winning entries in several tracks. Code has been made publicly available.},
-	journaltitle = {{arXiv}:1506.01497 [cs]},
-	author = {Ren, Shaoqing and He, Kaiming and Girshick, Ross and Sun, Jian},
-	urldate = {2019-06-18},
-	date = {2015-06-04},
-	langid = {english},
-	eprinttype = {arxiv},
-	eprint = {1506.01497},
-	keywords = {Computer Science - Computer Vision and Pattern Recognition},
-	file = {Ren et al. - 2015 - Faster R-CNN Towards Real-Time Object Detection w.pdf:/Users/abdullah/Zotero/storage/2KMMGUXG/Ren et al. - 2015 - Faster R-CNN Towards Real-Time Object Detection w.pdf:application/pdf}
-}
-
 @article{renFasterRCNNRealTime2015a,
 	title = {Faster R-{CNN}: Towards Real-Time Object Detection with Region Proposal Networks},
 	url = {http://arxiv.org/abs/1506.01497},
@@ -1015,4 +999,365 @@ improvement methods using maps, spatial models, and landmarks.},
 	langid = {english},
 	doi = {10.1007/978-3-642-33718-5_2},
 	file = {Li et al. - 2012 - Worldwide Pose Estimation Using 3D Point Clouds.pdf:/Users/abdullah/Zotero/storage/XV7SJYPL/Li et al. - 2012 - Worldwide Pose Estimation Using 3D Point Clouds.pdf:application/pdf}
+}
+
+@article{shafaeiPlayLearnUsing2016,
+	title = {Play and Learn: Using Video Games to Train Computer Vision Models},
+	url = {http://arxiv.org/abs/1608.01745},
+	shorttitle = {Play and Learn},
+	abstract = {Video games are a compelling source of annotated data as they can readily provide fine-grained groundtruth for diverse tasks. However, it is not clear whether the synthetically generated data has enough resemblance to the real-world images to improve the performance of computer vision models in practice. We present experiments assessing the effectiveness on real-world data of systems trained on synthetic {RGB} images that are extracted from a video game. We collected over 60000 synthetic samples from a modern video game with similar conditions to the real-world {CamVid} and Cityscapes datasets. We provide several experiments to demonstrate that the synthetically generated {RGB} images can be used to improve the performance of deep neural networks on both image segmentation and depth estimation. These results show that a convolutional network trained on synthetic data achieves a similar test error to a network that is trained on real-world data for dense image classification. Furthermore, the synthetically generated {RGB} images can provide similar or better results compared to the real-world datasets if a simple domain adaptation technique is applied. Our results suggest that collaboration with game developers for an accessible interface to gather data is potentially a fruitful direction for future work in computer vision.},
+	journaltitle = {{arXiv}:1608.01745 [cs]},
+	author = {Shafaei, Alireza and Little, James J. and Schmidt, Mark},
+	urldate = {2019-06-19},
+	date = {2016-08-04},
+	eprinttype = {arxiv},
+	eprint = {1608.01745},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {arXiv\:1608.01745 PDF:/Users/abdullah/Zotero/storage/DZRG8XBF/Shafaei et al. - 2016 - Play and Learn Using Video Games to Train Compute.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/28ZWJJDA/1608.html:text/html}
+}
+
+@inproceedings{dosovitskiyFlowNetLearningOptical2015,
+	location = {Santiago},
+	title = {{FlowNet}: Learning Optical Flow with Convolutional Networks},
+	isbn = {978-1-4673-8391-2},
+	url = {https://ieeexplore.ieee.org/document/7410673/},
+	doi = {10.1109/ICCV.2015.316},
+	shorttitle = {{FlowNet}},
+	abstract = {Convolutional neural networks ({CNNs}) have recently been very successful in a variety of computer vision tasks, especially on those linked to recognition. Optical ﬂow estimation has not been among the tasks {CNNs} succeeded at. In this paper we construct {CNNs} which are capable of solving the optical ﬂow estimation problem as a supervised learning task. We propose and compare two architectures: a generic architecture and another one including a layer that correlates feature vectors at different image locations. Since existing ground truth data sets are not sufﬁciently large to train a {CNN}, we generate a large synthetic Flying Chairs dataset. We show that networks trained on this unrealistic data still generalize very well to existing datasets such as Sintel and {KITTI}, achieving competitive accuracy at frame rates of 5 to 10 fps.},
+	eventtitle = {2015 {IEEE} International Conference on Computer Vision ({ICCV})},
+	pages = {2758--2766},
+	booktitle = {2015 {IEEE} International Conference on Computer Vision ({ICCV})},
+	publisher = {{IEEE}},
+	author = {Dosovitskiy, Alexey and Fischer, Philipp and Ilg, Eddy and Hausser, Philip and Hazirbas, Caner and Golkov, Vladimir and Smagt, Patrick van der and Cremers, Daniel and Brox, Thomas},
+	urldate = {2019-06-19},
+	date = {2015-12},
+	langid = {english},
+	file = {Dosovitskiy et al. - 2015 - FlowNet Learning Optical Flow with Convolutional .pdf:/Users/abdullah/Zotero/storage/686IXTAG/Dosovitskiy et al. - 2015 - FlowNet Learning Optical Flow with Convolutional .pdf:application/pdf}
+}
+
+@article{simonyanVeryDeepConvolutional2014,
+	title = {Very Deep Convolutional Networks for Large-Scale Image Recognition},
+	url = {http://arxiv.org/abs/1409.1556},
+	abstract = {In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3x3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16-19 weight layers. These findings were the basis of our {ImageNet} Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing {ConvNet} models publicly available to facilitate further research on the use of deep visual representations in computer vision.},
+	journaltitle = {{arXiv}:1409.1556 [cs]},
+	author = {Simonyan, Karen and Zisserman, Andrew},
+	urldate = {2019-06-19},
+	date = {2014-09-04},
+	eprinttype = {arxiv},
+	eprint = {1409.1556},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {arXiv\:1409.1556 PDF:/Users/abdullah/Zotero/storage/G8U732PD/Simonyan and Zisserman - 2014 - Very Deep Convolutional Networks for Large-Scale I.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/CCMKBL6U/1409.html:text/html}
+}
+
+@article{renFasterRCNNRealTime2015b,
+	title = {Faster R-{CNN}: Towards Real-Time Object Detection with Region Proposal Networks},
+	url = {http://arxiv.org/abs/1506.01497},
+	shorttitle = {Faster R-{CNN}},
+	abstract = {State-of-the-art object detection networks depend on region proposal algorithms to hypothesize object locations. Advances like {SPPnet} and Fast R-{CNN} have reduced the running time of these detection networks, exposing region proposal computation as a bottleneck. In this work, we introduce a Region Proposal Network ({RPN}) that shares full-image convolutional features with the detection network, thus enabling nearly cost-free region proposals. An {RPN} is a fully convolutional network that simultaneously predicts object bounds and objectness scores at each position. The {RPN} is trained end-to-end to generate high-quality region proposals, which are used by Fast R-{CNN} for detection. We further merge {RPN} and Fast R-{CNN} into a single network by sharing their convolutional features---using the recently popular terminology of neural networks with 'attention' mechanisms, the {RPN} component tells the unified network where to look. For the very deep {VGG}-16 model, our detection system has a frame rate of 5fps (including all steps) on a {GPU}, while achieving state-of-the-art object detection accuracy on {PASCAL} {VOC} 2007, 2012, and {MS} {COCO} datasets with only 300 proposals per image. In {ILSVRC} and {COCO} 2015 competitions, Faster R-{CNN} and {RPN} are the foundations of the 1st-place winning entries in several tracks. Code has been made publicly available.},
+	journaltitle = {{arXiv}:1506.01497 [cs]},
+	author = {Ren, Shaoqing and He, Kaiming and Girshick, Ross and Sun, Jian},
+	urldate = {2019-06-19},
+	date = {2015-06-04},
+	eprinttype = {arxiv},
+	eprint = {1506.01497},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {arXiv\:1506.01497 PDF:/Users/abdullah/Zotero/storage/4IHBVP8C/Ren et al. - 2015 - Faster R-CNN Towards Real-Time Object Detection w.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/5MRKM58C/1506.html:text/html}
+}
+
+@article{russakovskyImageNetLargeScale2014,
+	title = {{ImageNet} Large Scale Visual Recognition Challenge},
+	url = {http://arxiv.org/abs/1409.0575},
+	abstract = {The {ImageNet} Large Scale Visual Recognition Challenge is a benchmark in object category classification and detection on hundreds of object categories and millions of images. The challenge has been run annually from 2010 to present, attracting participation from more than fifty institutions. This paper describes the creation of this benchmark dataset and the advances in object recognition that have been possible as a result. We discuss the challenges of collecting large-scale ground truth annotation, highlight key breakthroughs in categorical object recognition, provide a detailed analysis of the current state of the field of large-scale image classification and object detection, and compare the state-of-the-art computer vision accuracy with human accuracy. We conclude with lessons learned in the five years of the challenge, and propose future directions and improvements.},
+	journaltitle = {{arXiv}:1409.0575 [cs]},
+	author = {Russakovsky, Olga and Deng, Jia and Su, Hao and Krause, Jonathan and Satheesh, Sanjeev and Ma, Sean and Huang, Zhiheng and Karpathy, Andrej and Khosla, Aditya and Bernstein, Michael and Berg, Alexander C. and Fei-Fei, Li},
+	urldate = {2019-06-20},
+	date = {2014-09-01},
+	eprinttype = {arxiv},
+	eprint = {1409.0575},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, I.4.8, I.5.2},
+	file = {arXiv\:1409.0575 PDF:/Users/abdullah/Zotero/storage/IZUXHRUY/Russakovsky et al. - 2014 - ImageNet Large Scale Visual Recognition Challenge.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/3S4TBN72/1409.html:text/html}
+}
+
+@article{kokkinosPushingBoundariesBoundary2015,
+	title = {Pushing the Boundaries of Boundary Detection using Deep Learning},
+	url = {http://arxiv.org/abs/1511.07386},
+	abstract = {In this work we show that adapting Deep Convolutional Neural Network training to the task of boundary detection can result in substantial improvements over the current state-of-the-art in boundary detection. Our contributions consist firstly in combining a careful design of the loss for boundary detection training, a multi-resolution architecture and training with external data to improve the detection accuracy of the current state of the art. When measured on the standard Berkeley Segmentation Dataset, we improve theoptimal dataset scale F-measure from 0.780 to 0.808 - while human performance is at 0.803. We further improve performance to 0.813 by combining deep learning with grouping, integrating the Normalized Cuts technique within a deep network. We also examine the potential of our boundary detector in conjunction with the task of semantic segmentation and demonstrate clear improvements over state-of-the-art systems. Our detector is fully integrated in the popular Caffe framework and processes a 320x420 image in less than a second.},
+	journaltitle = {{arXiv}:1511.07386 [cs]},
+	author = {Kokkinos, Iasonas},
+	urldate = {2019-06-20},
+	date = {2015-11-23},
+	eprinttype = {arxiv},
+	eprint = {1511.07386},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Machine Learning},
+	file = {arXiv\:1511.07386 PDF:/Users/abdullah/Zotero/storage/QYPZQT8E/Kokkinos - 2015 - Pushing the Boundaries of Boundary Detection using.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/Y2CYWIME/1511.html:text/html}
+}
+
+@article{maninisConvolutionalOrientedBoundaries2016,
+	title = {Convolutional Oriented Boundaries},
+	volume = {9905},
+	url = {http://arxiv.org/abs/1608.02755},
+	doi = {10.1007/978-3-319-46448-0_35},
+	abstract = {We present Convolutional Oriented Boundaries ({COB}), which produces multiscale oriented contours and region hierarchies starting from generic image classification Convolutional Neural Networks ({CNNs}). {COB} is computationally efficient, because it requires a single {CNN} forward pass for contour detection and it uses a novel sparse boundary representation for hierarchical segmentation; it gives a significant leap in performance over the state-of-the-art, and it generalizes very well to unseen categories and datasets. Particularly, we show that learning to estimate not only contour strength but also orientation provides more accurate results. We perform extensive experiments on {BSDS}, {PASCAL} Context, {PASCAL} Segmentation, and {MS}-{COCO}, showing that {COB} provides state-of-the-art contours, region hierarchies, and object proposals in all datasets.},
+	pages = {580--596},
+	journaltitle = {{arXiv}:1608.02755 [cs]},
+	author = {Maninis, Kevis-Kokitsi and Pont-Tuset, Jordi and Arbeláez, Pablo and Van Gool, Luc},
+	urldate = {2019-06-20},
+	date = {2016},
+	eprinttype = {arxiv},
+	eprint = {1608.02755},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {arXiv\:1608.02755 PDF:/Users/abdullah/Zotero/storage/6B4F8CGV/Maninis et al. - 2016 - Convolutional Oriented Boundaries.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/2KDHEAIW/1608.html:text/html}
+}
+
+@incollection{hazirbasFuseNetIncorporatingDepth2017,
+	location = {Cham},
+	title = {{FuseNet}: Incorporating Depth into Semantic Segmentation via Fusion-Based {CNN} Architecture},
+	volume = {10111},
+	isbn = {978-3-319-54180-8 978-3-319-54181-5},
+	url = {http://link.springer.com/10.1007/978-3-319-54181-5_14},
+	shorttitle = {{FuseNet}},
+	abstract = {In this paper we address the problem of semantic labeling of indoor scenes on {RGB}-D data. With the availability of {RGB}-D cameras, it is expected that additional depth measurement will improve the accuracy. Here we investigate a solution how to incorporate complementary depth information into a semantic segmentation framework by making use of convolutional neural networks ({CNNs}). Recently encoder-decoder type fully convolutional {CNN} architectures have achieved a great success in the ﬁeld of semantic segmentation. Motivated by this observation we propose an encoder-decoder type network, where the encoder part is composed of two branches of networks that simultaneously extract features from {RGB} and depth images and fuse depth features into the {RGB} feature maps as the network goes deeper. Comprehensive experimental evaluations demonstrate that the proposed fusion-based architecture achieves competitive results with the state-of-the-art methods on the challenging {SUN} {RGB}-D benchmark obtaining 76.27\% global accuracy, 48.30\% average class accuracy and 37.29\% average intersectionover-union score.},
+	pages = {213--228},
+	booktitle = {Computer Vision – {ACCV} 2016},
+	publisher = {Springer International Publishing},
+	author = {Hazirbas, Caner and Ma, Lingni and Domokos, Csaba and Cremers, Daniel},
+	editor = {Lai, Shang-Hong and Lepetit, Vincent and Nishino, Ko and Sato, Yoichi},
+	urldate = {2019-06-20},
+	date = {2017},
+	langid = {english},
+	doi = {10.1007/978-3-319-54181-5_14},
+	file = {Hazirbas et al. - 2017 - FuseNet Incorporating Depth into Semantic Segment.pdf:/Users/abdullah/Zotero/storage/AJCMHWVQ/Hazirbas et al. - 2017 - FuseNet Incorporating Depth into Semantic Segment.pdf:application/pdf}
+}
+
+@incollection{hazirbasFuseNetIncorporatingDepth2017a,
+	location = {Cham},
+	title = {{FuseNet}: Incorporating Depth into Semantic Segmentation via Fusion-Based {CNN} Architecture},
+	volume = {10111},
+	isbn = {978-3-319-54180-8 978-3-319-54181-5},
+	url = {http://link.springer.com/10.1007/978-3-319-54181-5_14},
+	shorttitle = {{FuseNet}},
+	abstract = {In this paper we address the problem of semantic labeling of indoor scenes on {RGB}-D data. With the availability of {RGB}-D cameras, it is expected that additional depth measurement will improve the accuracy. Here we investigate a solution how to incorporate complementary depth information into a semantic segmentation framework by making use of convolutional neural networks ({CNNs}). Recently encoder-decoder type fully convolutional {CNN} architectures have achieved a great success in the ﬁeld of semantic segmentation. Motivated by this observation we propose an encoder-decoder type network, where the encoder part is composed of two branches of networks that simultaneously extract features from {RGB} and depth images and fuse depth features into the {RGB} feature maps as the network goes deeper. Comprehensive experimental evaluations demonstrate that the proposed fusion-based architecture achieves competitive results with the state-of-the-art methods on the challenging {SUN} {RGB}-D benchmark obtaining 76.27\% global accuracy, 48.30\% average class accuracy and 37.29\% average intersectionover-union score.},
+	pages = {213--228},
+	booktitle = {Computer Vision – {ACCV} 2016},
+	publisher = {Springer International Publishing},
+	author = {Hazirbas, Caner and Ma, Lingni and Domokos, Csaba and Cremers, Daniel},
+	editor = {Lai, Shang-Hong and Lepetit, Vincent and Nishino, Ko and Sato, Yoichi},
+	urldate = {2019-06-20},
+	date = {2017},
+	langid = {english},
+	doi = {10.1007/978-3-319-54181-5_14},
+	file = {Hazirbas et al. - 2017 - FuseNet Incorporating Depth into Semantic Segment.pdf:/Users/abdullah/Zotero/storage/C8PYFS7H/Hazirbas et al. - 2017 - FuseNet Incorporating Depth into Semantic Segment.pdf:application/pdf}
+}
+
+@inproceedings{nohLearningDeconvolutionNetwork2015,
+	title = {Learning Deconvolution Network for Semantic Segmentation},
+	url = {https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Noh_Learning_Deconvolution_Network_ICCV_2015_paper.html},
+	eventtitle = {Proceedings of the {IEEE} International Conference on Computer Vision},
+	pages = {1520--1528},
+	author = {Noh, Hyeonwoo and Hong, Seunghoon and Han, Bohyung},
+	urldate = {2019-06-20},
+	date = {2015},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/L5M7348G/Noh et al. - 2015 - Learning Deconvolution Network for Semantic Segmen.pdf:application/pdf;Snapshot:/Users/abdullah/Zotero/storage/F545LAHJ/Noh_Learning_Deconvolution_Network_ICCV_2015_paper.html:text/html}
+}
+
+@inproceedings{liDepthSurfaceNormal2015,
+	title = {Depth and Surface Normal Estimation From Monocular Images Using Regression on Deep Features and Hierarchical {CRFs}},
+	url = {http://openaccess.thecvf.com/content_cvpr_2015/html/Li_Depth_and_Surface_2015_CVPR_paper.html},
+	eventtitle = {Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition},
+	pages = {1119--1127},
+	author = {Li, Bo and Shen, Chunhua and Dai, Yuchao and van den Hengel, Anton and He, Mingyi},
+	urldate = {2019-06-20},
+	date = {2015},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/W545C33U/Li et al. - 2015 - Depth and Surface Normal Estimation From Monocular.pdf:application/pdf;Snapshot:/Users/abdullah/Zotero/storage/V9DUHIBD/Li_Depth_and_Surface_2015_CVPR_paper.html:text/html}
+}
+
+@article{laskarCameraRelocalizationComputing2017,
+	title = {Camera Relocalization by Computing Pairwise Relative Poses Using Convolutional Neural Network},
+	url = {http://arxiv.org/abs/1707.09733},
+	abstract = {We propose a new deep learning based approach for camera relocalization. Our approach localizes a given query image by using a convolutional neural network ({CNN}) for first retrieving similar database images and then predicting the relative pose between the query and the database images, whose poses are known. The camera location for the query image is obtained via triangulation from two relative translation estimates using a {RANSAC} based approach. Each relative pose estimate provides a hypothesis for the camera orientation and they are fused in a second {RANSAC} scheme. The neural network is trained for relative pose estimation in an end-to-end manner using training image pairs. In contrast to previous work, our approach does not require scene-specific training of the network, which improves scalability, and it can also be applied to scenes which are not available during the training of the network. As another main contribution, we release a challenging indoor localisation dataset covering 5 different scenes registered to a common coordinate frame. We evaluate our approach using both our own dataset and the standard 7 Scenes benchmark. The results show that the proposed approach generalizes well to previously unseen scenes and compares favourably to other recent {CNN}-based methods.},
+	journaltitle = {{arXiv}:1707.09733 [cs]},
+	author = {Laskar, Zakaria and Melekhov, Iaroslav and Kalia, Surya and Kannala, Juho},
+	urldate = {2019-06-20},
+	date = {2017-07-31},
+	eprinttype = {arxiv},
+	eprint = {1707.09733},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+	file = {arXiv\:1707.09733 PDF:/Users/abdullah/Zotero/storage/HD73T96I/Laskar et al. - 2017 - Camera Relocalization by Computing Pairwise Relati.pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/4CPURF48/1707.html:text/html}
+}
+
+@article{hochreiterLongShortTermMemory1997,
+	title = {Long Short-Term Memory},
+	volume = {9},
+	issn = {0899-7667},
+	url = {https://doi.org/10.1162/neco.1997.9.8.1735},
+	doi = {10.1162/neco.1997.9.8.1735},
+	abstract = {Learning to store information over extended time intervals by recurrent backpropagation takes a very long time, mostly because of insufficient, decaying error backflow. We briefly review Hochreiter's (1991) analysis of this problem, then address it by introducing a novel, efficient, gradient based method called long short-term memory ({LSTM}). Truncating the gradient where this does not do harm, {LSTM} can learn to bridge minimal time lags in excess of 1000 discrete-time steps by enforcing constant error flow through constant error carousels within special units. Multiplicative gate units learn to open and close access to the constant error flow. {LSTM} is local in space and time; its computational complexity per time step and weight is O. 1. Our experiments with artificial data involve local, distributed, real-valued, and noisy pattern representations. In comparisons with real-time recurrent learning, back propagation through time, recurrent cascade correlation, Elman nets, and neural sequence chunking, {LSTM} leads to many more successful runs, and learns much faster. {LSTM} also solves complex, artificial long-time-lag tasks that have never been solved by previous recurrent network algorithms.},
+	pages = {1735--1780},
+	number = {8},
+	journaltitle = {Neural Computation},
+	author = {Hochreiter, Sepp and Schmidhuber, Jürgen},
+	urldate = {2019-06-20},
+	date = {1997-11-01},
+	file = {Snapshot:/Users/abdullah/Zotero/storage/U3CFH9XI/neco.1997.9.8.html:text/html}
+}
+
+@article{hochreiterLongShortTermMemory1997a,
+	title = {Long Short-Term Memory},
+	volume = {9},
+	issn = {0899-7667, 1530-888X},
+	url = {http://www.mitpressjournals.org/doi/10.1162/neco.1997.9.8.1735},
+	doi = {10.1162/neco.1997.9.8.1735},
+	abstract = {Learning to store information over extended time intervals via recurrent backpropagation takes a very long time, mostly due to insu cient, decaying error back ow. We brie y review Hochreiter's 1991 analysis of this problem, then address it by introducing a novel, e cient, gradient-based method called {\textbackslash}Long Short-Term Memory" ({LSTM}). Truncating the gradient where this does not do harm, {LSTM} can learn to bridge minimal time lags in excess of 1000 discrete time steps by enforcing constant error ow through {\textbackslash}constant error carrousels" within special units. Multiplicative gate units learn to open and close access to the constant error ow. {LSTM} is local in space and time; its computational complexity per time step and weight is O(1). Our experiments with arti cial data involve local, distributed, real-valued, and noisy pattern representations. In comparisons with {RTRL}, {BPTT}, Recurrent Cascade-Correlation, Elman nets, and Neural Sequence Chunking, {LSTM} leads to many more successful runs, and learns much faster. {LSTM} also solves complex, arti cial long time lag tasks that have never been solved by previous recurrent network algorithms.},
+	pages = {1735--1780},
+	number = {8},
+	journaltitle = {Neural Computation},
+	author = {Hochreiter, Sepp and Schmidhuber, Jürgen},
+	urldate = {2019-06-20},
+	date = {1997-11},
+	langid = {english},
+	file = {Hochreiter and Schmidhuber - 1997 - Long Short-Term Memory.pdf:/Users/abdullah/Zotero/storage/5X4CPGZB/Hochreiter and Schmidhuber - 1997 - Long Short-Term Memory.pdf:application/pdf}
+}
+
+@inproceedings{naseerDeepRegressionMonocular2017,
+	location = {Vancouver, {BC}},
+	title = {Deep regression for monocular camera-based 6-{DoF} global localization in outdoor environments},
+	isbn = {978-1-5386-2682-5},
+	url = {http://ieeexplore.ieee.org/document/8205957/},
+	doi = {10.1109/IROS.2017.8205957},
+	abstract = {Precise localization of robots is imperative for their safe and autonomous navigation in both indoor and outdoor environments. In outdoor scenarios, the environment typically undergoes signiﬁcant perceptual changes and requires robust methods for accurate localization. Monocular camerabased approaches provide an inexpensive solution to such challenging problems compared to 3D {LiDAR}-based methods. Recently, approaches have leveraged deep convolutional neural networks ({CNNs}) to perform place recognition and they turn out to outperform traditional handcrafted features under challenging perceptual conditions. In this paper, we propose an approach for directly regressing a 6-{DoF} camera pose using {CNNs} and a single monocular {RGB} image. We leverage the idea of transfer learning for training our network as this technique has shown to perform better when the number of training samples are not very high. Furthermore, we propose novel data augmentation in 3D space for additional pose coverage which leads to more accurate localization. In contrast to the traditional visual metric localization approaches, our resulting map size is constant with respect to the database. During localization, our approach has a constant time complexity of O(1) and is independent of the database size and runs in real-time at∼80 Hz using a single {GPU}. We show the localization accuracy of our approach on publicly available datasets and that it outperforms {CNN}-based state-of-the-art methods.},
+	eventtitle = {2017 {IEEE}/{RSJ} International Conference on Intelligent Robots and Systems ({IROS})},
+	pages = {1525--1530},
+	booktitle = {2017 {IEEE}/{RSJ} International Conference on Intelligent Robots and Systems ({IROS})},
+	publisher = {{IEEE}},
+	author = {Naseer, Tayyab and Burgard, Wolfram},
+	urldate = {2019-06-20},
+	date = {2017-09},
+	langid = {english},
+	file = {Naseer and Burgard - 2017 - Deep regression for monocular camera-based 6-DoF g.pdf:/Users/abdullah/Zotero/storage/3GBAWXXD/Naseer and Burgard - 2017 - Deep regression for monocular camera-based 6-DoF g.pdf:application/pdf}
+}
+
+@online{160207360SqueezeNet,
+	title = {[1602.07360] {SqueezeNet}: {AlexNet}-level accuracy with 50x fewer parameters and {\textless}0.5MB model size},
+	url = {https://arxiv.org/abs/1602.07360},
+	urldate = {2019-06-21},
+	file = {[1602.07360] SqueezeNet\: AlexNet-level accuracy with 50x fewer parameters and <0.5MB model size:/Users/abdullah/Zotero/storage/QB65MJQ9/1602.html:text/html}
+}
+
+@article{iandolaSqueezeNetAlexNetlevelAccuracy2016,
+	title = {{SqueezeNet}: {AlexNet}-level accuracy with 50x fewer parameters and {\textless}0.5MB model size},
+	url = {http://arxiv.org/abs/1602.07360},
+	shorttitle = {{SqueezeNet}},
+	abstract = {Recent research on deep neural networks has focused primarily on improving accuracy. For a given accuracy level, it is typically possible to identify multiple {DNN} architectures that achieve that accuracy level. With equivalent accuracy, smaller {DNN} architectures offer at least three advantages: (1) Smaller {DNNs} require less communication across servers during distributed training. (2) Smaller {DNNs} require less bandwidth to export a new model from the cloud to an autonomous car. (3) Smaller {DNNs} are more feasible to deploy on {FPGAs} and other hardware with limited memory. To provide all of these advantages, we propose a small {DNN} architecture called {SqueezeNet}. {SqueezeNet} achieves {AlexNet}-level accuracy on {ImageNet} with 50x fewer parameters. Additionally, with model compression techniques we are able to compress {SqueezeNet} to less than 0.5MB (510x smaller than {AlexNet}). The {SqueezeNet} architecture is available for download here: https://github.com/{DeepScale}/{SqueezeNet}},
+	journaltitle = {{arXiv}:1602.07360 [cs]},
+	author = {Iandola, Forrest N. and Han, Song and Moskewicz, Matthew W. and Ashraf, Khalid and Dally, William J. and Keutzer, Kurt},
+	urldate = {2019-06-21},
+	date = {2016-02-23},
+	eprinttype = {arxiv},
+	eprint = {1602.07360},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition, Computer Science - Artificial Intelligence},
+	file = {arXiv\:1602.07360 PDF:/Users/abdullah/Zotero/storage/7FZ4MCAM/Iandola et al. - 2016 - SqueezeNet AlexNet-level accuracy with 50x fewer .pdf:application/pdf;arXiv.org Snapshot:/Users/abdullah/Zotero/storage/VDHWAPDX/1602.html:text/html}
+}
+
+@inproceedings{huitlTUMindoorExtensiveImage2012,
+	location = {Orlando, {FL}, {USA}},
+	title = {{TUMindoor}: An extensive image and point cloud dataset for visual indoor localization and mapping},
+	isbn = {978-1-4673-2533-2 978-1-4673-2534-9 978-1-4673-2532-5},
+	url = {http://ieeexplore.ieee.org/document/6467224/},
+	doi = {10.1109/ICIP.2012.6467224},
+	shorttitle = {{TUMindoor}},
+	abstract = {Recent advances in the ﬁeld of content-based image retrieval ({CBIR}) have made it possible to quickly search large image databases using photographs or video sequences as a query. With appropriately tagged images of places, this technique can be applied to the problem of visual location recognition. While this task has attracted large interest in the community, most existing approaches focus on outdoor environments only. This is mainly due to the fact that the generation of an indoor dataset is elaborate and complex. In order to allow researchers to advance their approaches towards the challenging ﬁeld of {CBIR}-based indoor localization and to facilitate an objective comparison of different algorithms, we provide an extensive, high resolution indoor dataset. The free for use dataset includes realistic query sequences with ground truth as well as point cloud data, enabling a localization system to perform 6-{DOF} pose estimation.},
+	eventtitle = {2012 19th {IEEE} International Conference on Image Processing ({ICIP} 2012)},
+	pages = {1773--1776},
+	booktitle = {2012 19th {IEEE} International Conference on Image Processing},
+	publisher = {{IEEE}},
+	author = {Huitl, R. and Schroth, G. and Hilsenbeck, S. and Schweiger, F. and Steinbach, E.},
+	urldate = {2019-06-21},
+	date = {2012-09},
+	langid = {english},
+	file = {Huitl et al. - 2012 - TUMindoor An extensive image and point cloud data.pdf:/Users/abdullah/Zotero/storage/DDKQ73WT/Huitl et al. - 2012 - TUMindoor An extensive image and point cloud data.pdf:application/pdf}
+}
+
+@book{izadiKinectFusionRealtime3D2011,
+	title = {{KinectFusion}: Real-time 3D Reconstruction and Interaction Using a Moving Depth Camera},
+	isbn = {978-1-4503-0716-1},
+	url = {https://www.microsoft.com/en-us/research/publication/kinectfusion-real-time-3d-reconstruction-and-interaction-using-a-moving-depth-camera/},
+	shorttitle = {{KinectFusion}},
+	abstract = {{KinectFusion} enables a user holding and moving a standard Kinect camera to rapidly create detailed 3D reconstructions of an indoor scene. Only the depth data from Kinect is used to track the 3D pose of the sensor and reconstruct, geometrically precise, 3D models of the physical scene in real-time. The capabilities of {KinectFusion}, as well …},
+	author = {Izadi, Shahram and Kim, David and Hilliges, Otmar and Molyneaux, David and Newcombe, Richard and Kohli, Pushmeet and Shotton, Jamie and Hodges, Steve and Freeman, Dustin and Davison, Andrew and Fitzgibbon, Andrew},
+	urldate = {2019-06-21},
+	date = {2011-10-01},
+	langid = {american},
+	file = {Full Text PDF:/Users/abdullah/Zotero/storage/R45KEBV7/Izadi et al. - 2011 - KinectFusion Real-time 3D Reconstruction and Inte.pdf:application/pdf;Snapshot:/Users/abdullah/Zotero/storage/QPDYI2TB/kinectfusion-real-time-3d-reconstruction-and-interaction-using-a-moving-depth-camera.html:text/html}
+}
+
+@incollection{denkerTransformingNeuralNetOutput1991,
+	title = {Transforming Neural-Net Output Levels to Probability Distributions},
+	url = {http://papers.nips.cc/paper/419-transforming-neural-net-output-levels-to-probability-distributions.pdf},
+	pages = {853--859},
+	booktitle = {Advances in Neural Information Processing Systems 3},
+	publisher = {Morgan-Kaufmann},
+	author = {Denker, John S. and {LeCun}, Yann},
+	editor = {Lippmann, R. P. and Moody, J. E. and Touretzky, D. S.},
+	urldate = {2019-06-21},
+	date = {1991},
+	file = {NIPS Full Text PDF:/Users/abdullah/Zotero/storage/FRC434F5/Denker and LeCun - 1991 - Transforming Neural-Net Output Levels to Probabili.pdf:application/pdf;NIPS Snapshot:/Users/abdullah/Zotero/storage/D8BZC8UF/419-transforming-neural-net-output-levels-to-probability-distributions.html:text/html}
+}
+
+@article{mackayPracticalBayesianFramework1991,
+	title = {A Practical Bayesian Framework for Backprop Networks},
+	volume = {4},
+	abstract = {A quantitative and practical Bayesian framework is described for learning of mappings in feedforward networks. The framework makes possible: (1) objective comparisons between solutions using alternative network architectures},
+	pages = {448--472},
+	journaltitle = {Neural Computation},
+	author = {{MacKay}, David J. C.},
+	date = {1991},
+	file = {Citeseer - Full Text PDF:/Users/abdullah/Zotero/storage/T433UJ9T/MacKay - 1991 - A Practical Bayesian Framework for Backprop Networ.pdf:application/pdf;Citeseer - Snapshot:/Users/abdullah/Zotero/storage/GINDHRHW/summary.html:text/html}
+}
+
+@inproceedings{pishchulinArticulatedPeopleDetection2012a,
+	title = {Articulated people detection and pose estimation: Reshaping the future},
+	doi = {10.1109/CVPR.2012.6248052},
+	shorttitle = {Articulated people detection and pose estimation},
+	abstract = {State-of-the-art methods for human detection and pose estimation require many training samples for best performance. While large, manually collected datasets exist, the captured variations w.r.t. appearance, shape and pose are often uncontrolled thus limiting the overall performance. In order to overcome this limitation we propose a new technique to extend an existing training set that allows to explicitly control pose and shape variations. For this we build on recent advances in computer graphics to generate samples with realistic appearance and background while modifying body shape and pose. We validate the effectiveness of our approach on the task of articulated human detection and articulated pose estimation. We report close to state of the art results on the popular Image Parsing [25] human pose estimation benchmark and demonstrate superior performance for articulated human detection. In addition we define a new challenge of combined articulated human detection and pose estimation in real-world scenes.},
+	eventtitle = {2012 {IEEE} Conference on Computer Vision and Pattern Recognition},
+	pages = {3178--3185},
+	booktitle = {2012 {IEEE} Conference on Computer Vision and Pattern Recognition},
+	author = {Pishchulin, L. and Jain, A. and Andriluka, M. and Thormählen, T. and Schiele, B.},
+	date = {2012-06},
+	keywords = {Training, Solid modeling, articulated human detection, articulated people detection, articulated pose estimation, body shape, computer graphics, Estimation, human pose estimation benchmark, Humans, image parsing, {IP} networks, Joints, pose estimation, real-world scenes, realistic appearance, Shape, shape variations},
+	file = {IEEE Xplore Abstract Record:/Users/abdullah/Zotero/storage/CL7T8WUW/6248052.html:text/html;Submitted Version:/Users/abdullah/Zotero/storage/4FGI6WMC/Pishchulin et al. - 2012 - Articulated people detection and pose estimation .pdf:application/pdf}
+}
+
+@article{fanelloLearningBeDepth2014,
+	title = {Learning to be a depth camera for close-range human capture and interaction},
+	volume = {33},
+	issn = {07300301},
+	url = {http://dl.acm.org/citation.cfm?doid=2601097.2601223},
+	doi = {10.1145/2601097.2601223},
+	pages = {1--11},
+	number = {4},
+	journaltitle = {{ACM} Trans. Graph.},
+	author = {Fanello, Sean Ryan and Paek, Tim and Keskin, Cem and Izadi, Shahram and Kohli, Pushmeet and Kim, David and Sweeney, David and Criminisi, Antonio and Shotton, Jamie and Kang, Sing Bing},
+	urldate = {2019-06-21},
+	date = {2014-07-27},
+	langid = {english},
+	file = {Fanello et al. - 2014 - Learning to be a depth camera for close-range huma.pdf:/Users/abdullah/Zotero/storage/EB3P6I87/Fanello et al. - 2014 - Learning to be a depth camera for close-range huma.pdf:application/pdf}
+}
+
+@inproceedings{gaidonVirtualWorldsProxyMultiobject2016,
+	location = {Las Vegas, {NV}, {USA}},
+	title = {{VirtualWorlds} as Proxy for Multi-object Tracking Analysis},
+	isbn = {978-1-4673-8851-1},
+	url = {http://ieeexplore.ieee.org/document/7780839/},
+	doi = {10.1109/CVPR.2016.470},
+	abstract = {Modern computer vision algorithms typically require expensive data acquisition and accurate manual labeling. In this work, we instead leverage the recent progress in computer graphics to generate fully labeled, dynamic, and photo-realistic proxy virtual worlds. We propose an efﬁcient real-to-virtual world cloning method, and validate our approach by building and publicly releasing a new video dataset, called “Virtual {KITTI}” 1, automatically labeled with accurate ground truth for object detection, tracking, scene and instance segmentation, depth, and optical ﬂow. We provide quantitative experimental evidence suggesting that (i) modern deep learning algorithms pre-trained on real data behave similarly in real and virtual worlds, and (ii) pre-training on virtual data improves performance. As the gap between real and virtual worlds is small, virtual worlds enable measuring the impact of various weather and imaging conditions on recognition performance, all other things being equal. We show these factors may affect drastically otherwise high-performing deep models for tracking.},
+	eventtitle = {2016 {IEEE} Conference on Computer Vision and Pattern Recognition ({CVPR})},
+	pages = {4340--4349},
+	booktitle = {2016 {IEEE} Conference on Computer Vision and Pattern Recognition ({CVPR})},
+	publisher = {{IEEE}},
+	author = {Gaidon, Adrien and Wang, Qiao and Cabon, Yohann and Vig, Eleonora},
+	urldate = {2019-06-21},
+	date = {2016-06},
+	langid = {english},
+	file = {Gaidon et al. - 2016 - VirtualWorlds as Proxy for Multi-object Tracking A.pdf:/Users/abdullah/Zotero/storage/YQGTQNMZ/Gaidon et al. - 2016 - VirtualWorlds as Proxy for Multi-object Tracking A.pdf:application/pdf}
 }
