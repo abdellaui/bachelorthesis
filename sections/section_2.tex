@@ -21,7 +21,7 @@ Ein verbreiteter Ansatz beim Entwurf von DCNNs ist das häufig zweckentfremdende
 Seit Kurzem werden DCNNs auch in den Anwendungsgebieten der Lokalisierung verwendet. Zum Beispiel verwenden Parisotto \etal \cite{parisottoGlobalPoseEstimation2018} DCNNs in Bezug auf das SLAM Problem. Melekhov \etal \cite{melekhovRelativeCameraPose2017} schätzen anhand DCNNs die relative Pose zweier Kameras. Constante \etal  \cite{costanteExploringRepresentationLearning2016} und Wang et el \cite{wangDeepVOEndtoendVisual2017} setzen es im Bereich der visuellen Odometrie ein.
 
 % Posenet überführen
-Geleitet von den \textit{state-of-the-art} Lokalisierungsergebnissen der DCNNs stellen Kendall \etal \cite{kendallPoseNetConvolutionalNetwork2015} den ersten Ansatz zu direkten Posebestimmung  vor.
+Geleitet von den \textit{state-of-the-art} Lokalisierungsergebnissen der DCNNs stellen Kendall \etal\cite{kendallPoseNetConvolutionalNetwork2015} den ersten Ansatz zu direkten Posebestimmung  vor.
 % Posenet erklären
 PoseNet \cite{kendallPoseNetConvolutionalNetwork2015} ist das Feintuning der GoogLeNet \cite{szegedyGoingDeeperConvolutions2015} Architektur und zweckentfremdet es von der Bildklassifizierung zu einem Pose-Regressor. Trainiert mit einem Datensatz, bestehend aus Paaren von Farbbild und Pose, kann es die sechs Freiheitsgrade der Kameraposen in unbekannten Szenen mittels eines Farbbildes bestimmen. Dieser Ansatz benötigt weder Tiefenbilder der Szene noch eine durchsuchbare Bildgalerie. Im Vergleich zu den metrischen Ansätzen wie SLAM oder visuelle Odometrie liefert es eine weniger akkurate Pose, jedoch bietet es eine hohe Toleranz gegenüber Skalierungs- und Erscheinungsänderungen des Anfragebildes an \cite{piascoSurveyVisualBasedLocalization2018}.
 
