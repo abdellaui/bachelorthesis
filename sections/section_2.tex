@@ -29,7 +29,19 @@ Es ist das Feintuning der GoogLeNet \cite{szegedyGoingDeeperConvolutions2015} Ar
 % Varianten aufzählen
 Es gibt mehrere Ansätze, die die Genauigkeit von PoseNet übertreffen.
 % Modelling uncertainy
-Dieselben Autoren erweitern PoseNet mit einer, unter Berücksichtigung von geometrischen Eigenschaften, neue Kostenfunktion \cite{kendallGeometricLossFunctions2017}. Wlach et al. \cite{walchImagebasedLocalizationUsing2016} und Clark et al. \cite{clarkVidLocDeepSpatioTemporal2017} setzen Long-Short-Term-Memory (LSTM) \cite{hochreiterLongShortTermMemory1997a} Einheiten ein. Wu et al.\cite{wuDelvingDeeperConvolutional2017}  und  Naseer et al. \cite{naseerDeepRegressionMonocular2017} augmentieren den Trainingsdatensatz. Im Vergleich zu PoseNet verwenden Müller et al. \cite{mullerSQUEEZEPOSENETIMAGEBASED2017} und Melekhov et al.\cite{melekhovImageBasedLocalizationUsing2017} eine andere Architektur. Brahmbhatt et al. \cite{brahmbhattGeometryAwareLearningMaps2018} und Valada et al. \cite{valadaDeepAuxiliaryLearning2018, valadaIncorporatingSemanticGeometric} binden zusätzliche Informationen wie z.B. visuelle Odometrie, GPS oder IMU ein.
+Dieselben Autoren erweitern PoseNet mit einer, unter Berücksichtigung von geometrischen Eigenschaften, neue Kostenfunktion \cite{kendallGeometricLossFunctions2017}. 
+
+Wlach et al. \cite{walchImagebasedLocalizationUsing2016} und Clark et al. \cite{clarkVidLocDeepSpatioTemporal2017} setzen Long-Short-Term-Memory (LSTM) \cite{hochreiterLongShortTermMemory1997a} Einheiten ein. 
+
+
+Wu et al.\cite{wuDelvingDeeperConvolutional2017} und Naseer et al. \cite{naseerDeepRegressionMonocular2017} augmentieren den Trainingsdatensatz. 
+Wu et al.\cite{wuDelvingDeeperConvolutional2017} stocken den vorhandenen Datensatz mit simulierten Pose, indem sie die Bilder künstlich rotieren. Naseer et al. \cite{naseerDeepRegressionMonocular2017} erweitern zuerst über ein weiteres CNN den Datensatz um Tiefenbilder, um anschließend RGB-Bilder aus verschiedenen Viewpoints zu simulieren.
+
+
+Im Vergleich zu PoseNet verwenden Müller et al. \cite{mullerSQUEEZEPOSENETIMAGEBASED2017} und Melekhov et al.\cite{melekhovImageBasedLocalizationUsing2017} eine andere Architektur. 
+
+
+Brahmbhatt et al. \cite{brahmbhattGeometryAwareLearningMaps2018} und Valada et al. \cite{valadaDeepAuxiliaryLearning2018, valadaIncorporatingSemanticGeometric} binden zusätzliche Informationen wie z.B. visuelle Odometrie, GPS oder IMU ein.
 Die oben aufgeführten Ansätze sind abhängig von SfM methotds.
 
 % Simulierte Daten / syntethic
