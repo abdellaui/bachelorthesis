@@ -6,22 +6,22 @@ Dieses Kapitel versucht einen Überblick des Forschungsstandes in den unterschie
 
 \subsection{Einführung}
 % Lokalisierungsproblem erläutern
+Lokalisierung in Gebäude 
 % Ansätze aufzählen
 % Überführen auf visuelle Lokalisierung
 
-% Arten erläutern
-% indirekte methoden
-% direkte methoden
-% - point-matching
-% - rgb-d
-% - image only
 \textbf{Pose Estimation} wird in dieser Arbeit als eine Methode der visuellen Lokalisierung \textit{(Visual-Based Localization, kurz VBL)} betrachtet. VBL beschäftigt sich mit der Bestimmung der Pose (Position + Orientierung) eines visuellen Abfragematerials (z.B. ein RGB-Bild) in einer zuvor bekannten Szene  \cite{piascoSurveyVisualBasedLocalization2018}.
 Ein naheliegendes Themengebiet der Robotik ist die visuelle Ortswiedererkennung (Visual Place Recognition, kurz VPR) \cite{lowryVisualPlaceRecognition2016}. Die visuelle Ortswiedererkennung fokussiert sich auf das Feststellen eines bereits besuchten Ortes und definiert sich aus einer Datenverarbeitungs-, Kartografierungs- sowie einem Orientierungsmodul. Allgemein lässt sich das Prozess eines VPRs \cite{lowryVisualPlaceRecognition2016} folgend beschreiben.  Das Datenverarbeitungsmodul bereitet die Daten vor und übergibt diese dem Orientierungsmodul. Eine interne Karte besuchter Orte wird durch das Kartografiemodul erstellt. Das Orientierungsmodul bestimmt die Position und/oder die Orientierung und entscheidet, auf der Grundlage der immer aktuell gehaltenen Karte, ob ein Ort bereits besucht wurde. Im Vergleich zur VPR \cite{lowryVisualPlaceRecognition2016} versucht die visuellen Lokalisierung \cite{piascoSurveyVisualBasedLocalization2018} eine Pose zu bestimmen und bedarf daher keiner Kartographierungsmodul.
 
 % hat 2 katogiren..
 Die rein visuellen Lokalisierungsmethoden unterteilen sich in indirekte und direkte Methoden.
 \newline
-% image based und 
+% Arten erläutern
+% indirekte methoden
+% direkte methoden
+% - point-matching
+% - rgb-d
+% - image only
 % Überführen auf CNNs
 \textbf{Convolutional Neural Networks} \textit{(CNN)} werden erfolgreich im Bereich des Maschinelles Sehens, wie z. B. bei der Klassifizierung von Bildern \cite{krizhevskyImageNetClassificationDeep2012, simonyanVeryDeepConvolutional2014, heDeepResidualLearning2015} sowie bei der Objekterkennung \cite{girshickRichFeatureHierarchies2013, renFasterRCNNRealTime2015b, girshickFastRCNN2015} eingesetzt. 
 Ein verbreiteter Ansatz beim Entwurf von CNNs ist das häufig zweckentfremdende Feintunen \textit{(fine-tune)} der Netzwerkarchitekturen, die z. B. für die Bildklassifizierung angesichts der Aufgaben von ImageNet \cite{russakovskyImageNetLargeScale2014} konstruiert wurden. Dieser Ansatz konnte beispielsweise erfolgreich in der Objekterkennung \cite{girshickFastRCNN2015}, Objektsegmentierung \cite{kokkinosPushingBoundariesBoundary2015, maninisConvolutionalOrientedBoundaries2016}, semantische Segmentierung \cite{nohLearningDeconvolutionNetwork2015, hazirbasFuseNetIncorporatingDepth2017a} und Tiefenbestimmung \cite{liDepthSurfaceNormal2015} verfolgt werden.
