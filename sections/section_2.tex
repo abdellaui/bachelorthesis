@@ -16,7 +16,7 @@ Dieses Kapitel versucht einen Überblick des Forschungsstandes in den unterschie
 % - rgb-d
 % - image only
 \textbf{Pose Estimation} ist eine Methode der visuellen Lokalisierung \textit{(Visual-Based Localization, kurz VBL)}. VBL beschäftigt sich mit der Bestimmung der Pose (Position + Orientierung) eines visuellen Abfragematerials (z.B. Bild) in einer zuvor bekannten Szene  \cite{piascoSurveyVisualBasedLocalization2018}.
-Ein nah liegendes Themengebiet der Robotik ist die visuelle Ortswiedererkennung (Visual Place Recognition, kurz VPR) \cite{lowryVisualPlaceRecognition2016}. Die visuelle Ortswiedererkennung fokussiert sich auf das Feststellen eines bereits besuchten Ortes und definiert sich aus den drei Datenverarbeitungs-, Kartografieruns- sowie Orientierungsmodulen. Dabei entscheidet das Orientierungsmodul, auf der Grundlage des aktuellen Inputs, ob ein Ort bereits besucht wurde und aktualisiert ggbfs. die interne Karte. Im Vergleich dazu versucht die visuellen Lokalisierung eine Pose zu bestimmen.
+Ein nah liegendes Themengebiet der Robotik ist die visuelle Ortswiedererkennung (Visual Place Recognition, kurz VPR) \cite{lowryVisualPlaceRecognition2016}. Die visuelle Ortswiedererkennung fokussiert sich auf das Feststellen eines bereits besuchten Ortes und definiert sich aus den drei Datenverarbeitungs-, Kartografieruns- sowie Orientierungsmodulen. Dabei entscheidet das Orientierungsmodul, auf der Grundlage des aktuellen Inputs und der immer aktuell gehaltenen Karte, ob ein Ort bereits besucht wurde. Im Vergleich dazu versucht die visuellen Lokalisierung eine Pose zu bestimmen.
 
 
 
