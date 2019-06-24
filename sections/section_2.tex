@@ -28,11 +28,11 @@ Diese Ansätze haben Ähnlichkeiten zur den indirekten Methoden und benötigen e
 
 
 Diese Forschungsprojekte liefern gewünschte Resultate, jedoch benötigen diese Ansätze die nicht so weit verbreiteten 3D-Kameras.
-
+\\\\
 \textbf{Convolutional Neural Networks} \textit{(CNN)} werden erfolgreich im Bereich des Maschinelles Sehens, wie z. B. bei der Klassifizierung von Bildern \cite{krizhevskyImageNetClassificationDeep2012, simonyanVeryDeepConvolutional2014, heDeepResidualLearning2015} sowie bei der Objekterkennung \cite{girshickRichFeatureHierarchies2013, renFasterRCNNRealTime2015b, girshickFastRCNN2015} eingesetzt. 
 Ein verbreiteter Ansatz beim Entwurf von CNNs ist das häufig zweckentfremdende Feintunen \textit{(fine-tune)} der Netzwerkarchitekturen, die z. B. für die Bildklassifizierung angesichts der Aufgaben von ImageNet \cite{russakovskyImageNetLargeScale2014} konstruiert wurden. Dieser Ansatz konnte beispielsweise erfolgreich in der Objekterkennung \cite{girshickFastRCNN2015}, Objektsegmentierung \cite{kokkinosPushingBoundariesBoundary2015, maninisConvolutionalOrientedBoundaries2016}, semantische Segmentierung \cite{nohLearningDeconvolutionNetwork2015, hazirbasFuseNetIncorporatingDepth2017a} und Tiefenbestimmung \cite{liDepthSurfaceNormal2015} verfolgt werden.
 Seit Kurzem werden CNNs auch in den Anwendungsgebieten der Lokalisierung verwendet. Zum Beispiel verwenden Parisotto \etal\cite{parisottoGlobalPoseEstimation2018} CNNs in Bezug auf das SLAM Problem. Melekhov \etal\cite{melekhovRelativeCameraPose2017} schätzen anhand CNNs die relative Pose zweier Kameras. Constante \etal\cite{costanteExploringRepresentationLearning2016} und Wang \etal\cite{wangDeepVOEndtoendVisual2017} setzen es im Bereich der visuellen Odometrie ein.
-\\\\
+
 % Posenet überführen & erklären
 Geleitet von den \textit{state-of-the-art} Lokalisierungsergebnissen der CNNs stellen Kendall \etal\cite{kendallPoseNetConvolutionalNetwork2015} den ersten Ansatz zu direkten Posebestimmung nur mit RGB-Bildern vor. PoseNet \cite{kendallPoseNetConvolutionalNetwork2015} ist die Modifikation der GoogLeNet \cite{szegedyGoingDeeperConvolutions2015} Architektur und zweckentfremdet es von der Bildklassifizierung zu einem Pose-Regressor. Trainiert mit einem Datensatz, bestehend aus Paaren von Farbbild und Pose, kann es die sechs Freiheitsgrade der Kameraposen in unbekannten Szenen mittels eines Bildes bestimmen. Dieser Ansatz benötigt weder Tiefenbilder der Szene noch eine durchsuchbare Bildgalerie. Im Vergleich zu den metrischen Ansätzen wie SLAM oder visuelle Odometrie liefert es eine weniger akkurate Pose. Es bietet jedoch eine hohe Toleranz gegenüber Skalierungs- und Erscheinungsänderungen des Anfragebildes an \cite{piascoSurveyVisualBasedLocalization2018}.
 
