@@ -63,10 +63,9 @@ Inspiriert von ihren biologischen Vorbildern \footnote{das Nervensystem eines Le
 
 Ein einzelnes Neuron erhält einen Inputsignal auf mehreren Kanälen und löst erst ein Signal (\textit{output}) aus, falls die gewichtete Summe des Inputs einen gewissen Schwellwert erreicht \cite{CS231nConvolutionalNeural}. Abbildung \ref{fig:neuron} stellt eine beispielhafte Visualisierung eines künstlichen Neurons dar.
 
-Sei $x$ das Input, $w$ der Gewichtsvektor, $b$ ein Bias, $f$ eine nicht-lineare \textit{Aktivierungsfunktion}, dann ist ein künstliches Neuron mit der Inputsgröße $I$ mathematisch folgend formuliert:
+Sei $x$ das Input, $w$ der Gewichtsvektor, $b$ ein Bias, $f$ eine nicht-lineare \textit{Aktivierungsfunktion}, dann ist ein künstliches Neuron mit der Inputsgröße $I$ mathematisch eine nicht-lineare Funktion $\textbf{n} : \mathbb{R}^I \mapsto \mathbb{R}$:
 \begin{equation}
 	\label{eq:neuron}
-\textbf{n} : \mathbb{R}^I \mapsto \mathbb{R}
 \quad mit \quad	\textbf{n(x)}=f\left(\sum_i w_{i} x_{i} + b\right)
 \end{equation}
 
