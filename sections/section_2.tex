@@ -63,8 +63,7 @@ Inspiriert von ihren biologischen Vorbildern \footnote{das Nervensystem eines Le
 
 Ein einzelnes Neuron erhält einen Inputsignal auf mehreren Kanälen und löst erst ein Signal (\textit{output}) aus, falls die gewichtete Summe des Inputs einen gewissen Schwellwert erreicht \cite{CS231nConvolutionalNeural}.
 
-Künstliche Neuronen können zu einer Schicht (layer) zusammengeführt werden. Mehrere solcher Schichten können dann z.B. ein \textit{feedforward} Netzwerk bilden. Bei einem \textit{feedforward} Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output an die Neuronen des Schichtes $l+1$ weiter\footnote{Diese Einschränkung gilt nicht bei \textit{feedback} Netzwerken, auch bekannt als\textit{ Recurrent Neural Networwks}, welche in dieser Arbeit nicht behandelt werden.
-} \cite{Goodfellow-et-al-2016} .
+Künstliche Neuronen können zu einer Schicht (layer) zusammengeführt werden. Mehrere solcher Schichten können dann Netzwerk bilden. Bei einem \textit{feedforward} Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output an die Neuronen des Schichtes $l+1$ weiter \cite{Goodfellow-et-al-2016}. Diese Einschränkung gilt nicht bei \textit{feedback} Netzwerken, auch bekannt als\textit{ Recurrent Neural Networwks}, welche in dieser Arbeit nicht behandelt werden.
 Die Tiefe (\textit{depth}) eines Netzwerks wird dabei durch die Anzahl der Schichten bestimmt und die Breite (\textit{width}) eines Schichtes wird durch die Anzahl der Neuronen  bestimmt\cite{Goodfellow-et-al-2016}.
 
 Das Netz lernt durch die Anpassung der Gewichte.
