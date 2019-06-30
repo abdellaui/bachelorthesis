@@ -79,15 +79,15 @@ Sei $x$ das Input, $w$ der Gewichtsvektor, $b$ ein Bias, $f$ eine nicht-lineare 
 
 Künstliche Neuronen können zu einer Schicht (layer) zusammengeführt werden. Mehrere solcher Schichten können einen Netzwerk bilden. Bei einem \textit{feedforward} Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output an die Neuronen des Schichtes $l+1$ weiter \cite{Goodfellow-et-al-2016}. Diese Einschränkung gilt nicht bei \textit{feedback} Netzwerken, auch bekannt als \textit{Recurrent Neural Networks}\footnote{Recurrent Neural Networks werden in dieser Arbeit nicht mehr behandelt}.
 
+
+Die Tiefe (\textit{depth}) eines Netzwerks wird dabei durch die Anzahl der Schichten bestimmt\footnote{der Input-Schicht ist ausgeschloßen} und die Breite (\textit{width}) eines Schichtes wird durch die Anzahl der Neuronen  bestimmt\cite{Goodfellow-et-al-2016}.
+
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/neural_net.jpeg}
 	\caption{Ein feedforwad neuronales Netz mit der Tiefe 3 bestehend aus einem Input der Breite 3, aus zwei Hidden-Layer der Breite 4 und einem Output-Layer der Breite 1. Entnommen aus \cite{CS231nConvolutionalNeural}}
 	\label{fig:neural_net}
 \end{figure}
-
-
-Die Tiefe (\textit{depth}) eines Netzwerks wird dabei durch die Anzahl der Schichten bestimmt und die Breite (\textit{width}) eines Schichtes wird durch die Anzahl der Neuronen  bestimmt\cite{Goodfellow-et-al-2016}.
 
 Das Netz lernt durch die Anpassung der Gewichte.
 \subsection{Convulutional Neural Networks}
