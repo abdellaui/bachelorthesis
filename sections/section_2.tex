@@ -91,7 +91,7 @@ Sei $x$ das Input, $w$ der Gewichtsvektor, $b$ ein Bias, $f$ eine nicht-lineare 
 	
 	% Draw the input layer nodes
 	\foreach \name / \y in {1,...,3}
-	\node[input neuron, pin=left:INput\y] (I-\name) at (0,-\y) {};
+	\node[input neuron, pin=left:x_\y] (I-\name) at (0,-\y) {};
 	
 	% Draw the hidden layer nodes
 	\foreach \name / \y in {1,...,5}
