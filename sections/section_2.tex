@@ -66,7 +66,11 @@ Ein einzelnes Neuron erhält einen Inputsignal auf mehreren Kanälen und löst e
 Sei $x$ das Input, $w$ der Gewichtsvektor, $b$ ein Bias, $f$ eine nicht-lineare \textit{Aktivierungsfunktion}, dann ist ein künstliches Neuron mit der Inputsgröße $I$ mathematisch eine nicht-lineare Funktion $\textbf{n} : \mathbb{R}^I \mapsto \mathbb{R}$:
 \begin{equation}
 	\label{eq:neuron}
-\quad mit \quad	\textbf{n(x)}=f\left(\sum_i w_{i} x_{i} + b\right)
+	\quad mit 
+	\quad	\textbf{n(x)}=f\left(\sum_i w_{i} x_{i} + b\right)
+	\quad oder
+	\quad \textbf{n(x)}=f(w^(T)x+b)
+
 \end{equation}
 
 
