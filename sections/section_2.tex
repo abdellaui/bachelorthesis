@@ -100,10 +100,10 @@ Sei $x$ das Input, $w$ der Gewichtsvektor, $b$ ein Bias, $f$ eine nicht-lineare 
 	\path[yshift=0.5cm]
 	node[hidden neuron] (H-\name) at (\layersep,-\y cm) {};
 
-	% Draw the hidden layer nodes
-\foreach \name / \y in {1,...,5}
-\path[yshift=0.5cm]
-node[hidden neuron] (H-\name) at (\layersep,-\y cm) {};
+		% Draw the hidden layer nodes
+	\foreach \name / \y in {1,...,5}
+	\path[yshift=0.5cm]
+	node[hidden neuron] (H-\name) at (\layersep,-\y cm) {};
 
 	
 	% Draw the output layer node
