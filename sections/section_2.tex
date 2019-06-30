@@ -77,7 +77,7 @@ Sei $x$ das Input, $w$ der Gewichtsvektor, $b$ ein Bias, $f$ eine nicht-lineare 
 	\label{fig:neuron}
 \end{figure}
 
-Künstliche Neuronen können zu einer Schicht (layer) zusammengeführt werden. Mehrere solcher Schichten bilden einen Netzwerk. Bei einem \textit{feedforward} Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output an die Neuronen des Schichtes $l+1$ weiter \cite{Goodfellow-et-al-2016}. Diese Einschränkung gilt nicht bei \textit{feedback} Netzwerken, auch bekannt als \textit{Recurrent Neural Networks}\footnote{Recurrent Neural Networks werden in dieser Arbeit nicht mehr behandelt}.
+Künstliche Neuronen können zu einer Schicht (\textit{layer}) zusammengeführt werden. Mehrere solcher Schichten bilden einen Netzwerk. Bei einem \textit{feedforward} Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output an die Neuronen des Schichtes $l+1$ weiter \cite{Goodfellow-et-al-2016}. Diese Einschränkung gilt nicht bei \textit{feedback} Netzwerken, auch bekannt als \textit{Recurrent Neural Networks}\footnote{Recurrent Neural Networks werden in dieser Arbeit nicht mehr behandelt}.
 
 
 Die Tiefe (\textit{depth}) eines Netzwerks wird dabei durch die Anzahl der Schichten bestimmt\footnote{der Input-Schicht ist ausgeschloßen} und die Breite (\textit{width}) eines Schichtes wird durch die Anzahl der Neuronen  bestimmt\cite{Goodfellow-et-al-2016}.
