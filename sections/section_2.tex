@@ -65,8 +65,8 @@ Ein einzelnes Neuron erhält einen Inputsignal auf mehreren Kanälen und löst e
 
 Sei $x$ das Input, $w$ der Gewichtsvektor, $b$ ein Bias, $f$ eine nicht-lineare \textit{Aktivierungsfunktion}, dann ist ein künstliches Neuron mit der Inputsgröße $I$ mathematisch folgend formuliert:
 \begin{equation}
-n : \mathbb{R}^I \mapsto \mathbb{R}
-mit	n(x)=f\left(\sum_i w_{i} x_{i} + b\right)
+\textbf{n} : \mathbb{R}^I \mapsto \mathbb{R}
+& mit &	\textbf{n(x)}=f\left(\sum_i w_{i} x_{i} + b\right)
 \end{equation}
 
 Künstliche Neuronen können zu einer Schicht (layer) zusammengeführt werden. Mehrere solcher Schichten können einen Netzwerk bilden. Bei einem \textit{feedforward} Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output an die Neuronen des Schichtes $l+1$ weiter \cite{Goodfellow-et-al-2016}. Diese Einschränkung gilt nicht bei \textit{feedback} Netzwerken, auch bekannt als \textit{Recurrent Neural Networks}\footnote{Recurrent Neural Networks werden in dieser Arbeit nicht mehr behandelt}.
