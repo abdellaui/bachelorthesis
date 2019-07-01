@@ -76,7 +76,7 @@ Sei $x$ das Input, $w$ der Gewichtsvektor, $b$ ein Bias, $f$ eine nicht-lineare 
 
 Künstliche Neuronen können zu einer Schicht (\textit{layer}) zusammengeführt werden. Mehrere solcher Schichten bilden einen Netzwerk. Bei einem \textit{feedforward} Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output an die Neuronen des Schichtes $l+1$ weiter \cite{Goodfellow-et-al-2016}. Diese Einschränkung gilt nicht bei \textit{feedback} Netzwerken, auch bekannt als \textit{Recurrent Neural Networks}\footnote{Recurrent Neural Networks werden in dieser Arbeit nicht weiter behandelt}.
 
-
+Die erste Schicht wird als Input-, die letzte Schicht als Ouput-Layer bezeichnet. Alle Schichten dazwischen sind Hidden-Layer \cite{Goodfellow-et-al-2016}.. Der Ouput-Layer liefert zugleich auch das Ergebniss eines Netzwerks, daher haben die Neuronen des Ouput-Layers meist keine Aktivierungsfunktion \cite{CS231nConvolutionalNeural}}.
 Die Tiefe (\textit{depth}) eines Netzwerks wird dabei durch die Anzahl der Schichten bestimmt\footnote{der Input-Schicht ist ausgeschloßen} und die Breite (\textit{width}) eines Schichtes wird durch die Anzahl der Neuronen  bestimmt \cite{Goodfellow-et-al-2016}.
 
 \begin{figure}
@@ -86,8 +86,7 @@ Die Tiefe (\textit{depth}) eines Netzwerks wird dabei durch die Anzahl der Schic
 	\label{fig:neural_net}
 \end{figure}
 
-Ziel eines KNNs ist es eine Funktion $g^*$ zu approximieren, dass einen Input $x$ auf einen Output $y$ abbildet. Ein feedforward neuronales Netz approximiert die Funktion $g(x; \theta)=y$  mit den bestmöglichen Paramtern für  $\theta$.
- Netz lernt durch die Anpassung der Gewichte.
+Ziel eines KNNs ist es eine Funktion $g^*$ zu approximieren, dass einen Input $x$ auf einen Output $y$ abbildet. Sei $g(x; \theta)=y$  solch eine Funktion, dann lernt ein KNN die Paramtern mit der besten Approxmierung.
 \subsection{Convulutional Neural Networks}
 \subsubsection{Convolution Layer}
 \subsubsection{Pooling Layer}
