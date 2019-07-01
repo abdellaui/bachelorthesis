@@ -63,14 +63,14 @@ Ein einzelnes Neuron erhält einen Inputsignal auf mehreren Kanälen und löst e
 Sei $x$ das Input, $w$ der Gewichtsvektor, $b$ ein Bias, $f$ eine nicht-lineare \textit{Aktivierungsfunktion}, dann ist ein künstliches Neuron mit der Inputsgröße $I$ mathematisch die folgende nicht-lineare Funktion \cite{CS231nConvolutionalNeural}:
 \begin{equation}
 	\label{eq:neuron}
-	\quad	\textbf{n(x)}=f\left(\sum_i w_{i} x_{i} + b\right) = f(W^Tx+b)
+	\quad	\textbf{n(x)}=\phi\left(\sum_i w_{i} x_{i} + b\right) = \phi(W^Tx+b)
 \end{equation}
 
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.5\textwidth]{images/neuron_model.png}
-	\caption{Visualisierung eines künstlichen Neurons definiert nach der Gleichung \ref{eq:neuron}. Dieser Neuron summiert das Produkt des Inputvektors $x = (x_0, x_1, x_2)$  mit den jeweiligen Gewichten und addiert einen Bias $b$. Durch die Summe erzeugt die Aktivierungsfunktion $f$ das Output des Neurons.}
+	\includegraphics[width=0.8\textwidth]{images/neuron.png}
+	\caption{Visualisierung eines künstlichen Neurons definiert nach der Gleichung \ref{eq:neuron}. Dieser Neuron summiert das Produkt des Inputvektors $x$  mit den jeweiligen Gewichten $w$ und addiert einen Bias $b$. Durch die Summe erzeugt die Aktivierungsfunktion $\phi$ das Output $y$ des Neurons.}
 	\label{fig:neuron}
 \end{figure}
 
