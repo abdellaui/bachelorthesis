@@ -60,7 +60,7 @@ Inspiriert von ihren biologischen Vorbildern \footnote{das Nervensystem eines Le
 
 Ein einzelnes Neuron erhält einen Inputsignal auf mehreren Kanälen und löst erst ein Signal (\textit{output}) aus, falls die gewichtete Summe des Inputs einen gewissen Schwellwert erreicht \cite{CS231nConvolutionalNeural}. Abbildung \ref{fig:neuron} stellt eine beispielhafte Visualisierung eines künstlichen Neurons dar.
 
-Sei $x$ das Input, $w$ der Gewichtsvektor, $b$ ein Bias, $f$ eine nicht-lineare \textit{Aktivierungsfunktion}, dann ist ein künstliches Neuron mit der Inputsgröße $I$ mathematisch eine nicht-lineare Funktion $\textbf{n} : \mathbb{R}^I \mapsto \mathbb{R}$ \cite{CS231nConvolutionalNeural}:
+Sei $x$ das Input, $w$ der Gewichtsvektor, $b$ ein Bias, $f$ eine nicht-lineare \textit{Aktivierungsfunktion}, dann ist ein künstliches Neuron mit der Inputsgröße $I$ mathematisch die folgende nicht-lineare Funktion \cite{CS231nConvolutionalNeural}:
 \begin{equation}
 	\label{eq:neuron}
 	\quad	\textbf{n(x)}=f\left(\sum_i w_{i} x_{i} + b\right) = f(W^Tx+b)
@@ -86,7 +86,8 @@ Die Tiefe (\textit{depth}) eines Netzwerks wird dabei durch die Anzahl der Schic
 	\label{fig:neural_net}
 \end{figure}
 
-Ziel eines KNNs ist es eine Funktion $g^*$ zu approximieren, dass bei einem Input $x$ Das Netz lernt durch die Anpassung der Gewichte.
+Ziel eines KNNs ist es eine Funktion $g^*$ zu approximieren, dass einen Input $x$ auf einen Output $y$ abbildet. Bei einem feedforward neuronales Netz $g(x;\theta)=y$ ist dabei die Verkettung der 
+ Netz lernt durch die Anpassung der Gewichte.
 \subsection{Convulutional Neural Networks}
 \subsubsection{Convolution Layer}
 \subsubsection{Pooling Layer}
