@@ -81,9 +81,6 @@ Die erste Schicht wird als Input-, die letzte Schicht als Ouput-Layer bezeichnet
 Die Tiefe (\textit{depth}) eines Netzwerks wird dabei durch die Anzahl der Schichten bestimmt\footnote{der Input-Schicht ist ausgeschloßen} und die Breite (\textit{width}) eines Schichtes wird durch die Anzahl der Neuronen  bestimmt \cite{Goodfellow-et-al-2016}. 
 Abilldung \ref{fig:neural_net} illustriert ein feedforwarneuronales Netz als ein azyklischer Graph.
 
-
-Ziel eines KNNs ist es eine Funktion $f^*$ zu approximieren, dass einen Input $x$ auf einen Output $y$ abbildet. Sei $y = f(x; \theta)$  solch eine Funktion, dann besetzt ein KNN die Werte des $\theta$ Parameters mit eines der besten Approximierung. Der Parameter $\theta$ stellt hierbei die Gewichte dar, welche erlernt werden sollen. 
-Das Lernen ist die strategische Anpassung der Gewichte über Input-Output Paare (\textit{Trainingsdaten}) und findet i.d.R. durch ein \textit{Backpropagation}-Verfahren statt.
 \begin{figure}[hbt]
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/neural_net.png}
@@ -91,6 +88,9 @@ Das Lernen ist die strategische Anpassung der Gewichte über Input-Output Paare 
 	\label{fig:neural_net}
 \end{figure}
 
+
+Ziel eines KNNs ist es eine Funktion $f^*$ zu approximieren, dass einen Input $x$ auf einen Output $y$ abbildet. Sei $y = f(x; \theta)$  solch eine Funktion, dann besetzt ein KNN die Werte des $\theta$ Parameters mit eines der besten Approximierung. Der Parameter $\theta$ stellt hierbei die Gewichte dar, welche erlernt werden sollen. 
+Das Lernen ist die strategische Anpassung der Gewichte über Input-Output Paare (\textit{Trainingsdaten}) und findet i.d.R. durch ein \textit{Backpropagation}-Verfahren statt.
 
 \begin{figure}[htp]
 	\centering
