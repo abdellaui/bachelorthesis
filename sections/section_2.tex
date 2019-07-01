@@ -70,19 +70,19 @@ Sei $x$ das Input, $w$ der Gewichtsvektor, $b$ ein Bias, $f$ eine nicht-lineare 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/neuron_model.png}
-	\caption{Visualisierung eines künstlichen Neurons definiert nach der Gleichung \ref{eq:neuron}. Dieser Neuron summiert das Produkt des Inputvektors $x = (x_0, x_1, x_2)$  mit den jeweiligen Gewichten und addiert einen Bias $b$. Durch die Summe erzeugt die Aktivierungsfunktion $f$ das Output des Neurons. Entnommen aus \cite{CS231nConvolutionalNeural}}
+	\caption{Visualisierung eines künstlichen Neurons definiert nach der Gleichung \ref{eq:neuron}. Dieser Neuron summiert das Produkt des Inputvektors $x = (x_0, x_1, x_2)$  mit den jeweiligen Gewichten und addiert einen Bias $b$. Durch die Summe erzeugt die Aktivierungsfunktion $f$ das Output des Neurons.
 	\label{fig:neuron}
 \end{figure}
 
 Künstliche Neuronen können zu einer Schicht (\textit{layer}) zusammengeführt werden. Mehrere solcher Schichten bilden einen Netzwerk. Bei einem \textit{feedforward} Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output an die Neuronen des Schichtes $l+1$ weiter \cite{Goodfellow-et-al-2016}. Diese Einschränkung gilt nicht bei \textit{feedback} Netzwerken, auch bekannt als \textit{Recurrent Neural Networks}\footnote{Recurrent Neural Networks werden in dieser Arbeit nicht weiter behandelt}.
 
 Die erste Schicht wird als Input-, die letzte Schicht als Ouput-Layer bezeichnet. Alle Schichten dazwischen sind Hidden-Layer \cite{Goodfellow-et-al-2016}. Der Ouput-Layer liefert zugleich auch das Ergebniss eines Netzwerks, daher haben die Neuronen des Ouput-Layers meist keine Aktivierungsfunktion \cite{CS231nConvolutionalNeural}}.
-Die Tiefe (\textit{depth}) eines Netzwerks wird dabei durch die Anzahl der Schichten bestimmt\footnote{der Input-Schicht ist ausgeschloßen} und die Breite (\textit{width}) eines Schichtes wird durch die Anzahl der Neuronen  bestimmt \cite{Goodfellow-et-al-2016}.
-
+Die Tiefe (\textit{depth}) eines Netzwerks wird dabei durch die Anzahl der Schichten bestimmt\footnote{der Input-Schicht ist ausgeschloßen} und die Breite (\textit{width}) eines Schichtes wird durch die Anzahl der Neuronen  bestimmt \cite{Goodfellow-et-al-2016}. 
+Abilldung \ref{fig:neural_net} illustriert ein feedforward neuronales Netz als ein azyklischer Graph.
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\textwidth]{images/neural_net.jpeg}
-	\caption{Ein \textit{feedforwad} neuronales Netz mit der Tiefe 3 bestehend aus einem Input der Breite 3, aus zwei \textit{Hidden-Layer }der Breite 4 und einem \textit{Output-Layer} der Breite 1.  Entnommen aus \cite{CS231nConvolutionalNeural}}
+	\includegraphics[width=0.7\textwidth]{images/neural_net.png}
+	\caption{Ein \textit{feedforwad} neuronales Netz mit der Tiefe 3 bestehend aus einem Input der Breite 3, aus zwei \textit{Hidden-Layer }der Breite 4 und einem \textit{Output-Layer} der Breite 1.}
 	\label{fig:neural_net}
 \end{figure}
 
