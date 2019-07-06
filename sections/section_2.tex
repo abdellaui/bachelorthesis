@@ -83,7 +83,7 @@ Eine Schicht $l$ operiert somit auf das Ouput $y_{l-1}$ und stellt die nicht-lin
 \label{eq:layer}
 y_l = f_l(y_{l-1}) = \phi(W^T_lx_{l-1}+b_{l})
 \end{equation}
- Bei einem \textit{feedback} Netzwerken, auch bekannt als \textit{Recurrent Neural Networks}, können Neuronen mit Neuronen aus jedem Schicht, sowie zu sich selbst, verbunden sein. Im weiteren Verlauf dieser Arbeit ist bei einem Netzwerk immer ein feedforward Ansatz gemeint, da feedback Netzwerke keinen Bestand in dieser Arbeit haben.
+ Bei einem \textit{feedback} Netzwerken, auch bekannt als \textit{Recurrent Neural Networks}, können Neuronen mit Neuronen aus jedem Schicht, sowie zu sich selbst, verbunden sein. Da feedback Netzwerke keinen Einsatz in dieser Arbeit haben, ist im weiteren Verlauf dieser Arbeit bei einem Netzwerk immer ein feedforward Ansatz gemeint.
  
 Die erste Schicht eines Netzwerk wird als Input-, die letzte Schicht als Ouput-Layer bezeichnet. Alle Schichten dazwischen sind Hidden-Layer \cite{Goodfellow-et-al-2016}. Der Ouput-Layer liefert zugleich auch das Ergebniss eines Netzwerks, daher haben die Neuronen des Ouput-Layers meist keine Aktivierungsfunktion \cite{CS231nConvolutionalNeural}.
 
@@ -99,8 +99,13 @@ Abilldung \ref{fig:neural_net} illustriert ein \textit{feedforward} neuronales N
 
 
 Ziel eines KNNs ist es eine Funktion $f^*$ zu approximieren, dass einen Input $x$ auf einen Output $y$ abbildet. Sei $y = f(x; \theta)$  solch eine Funktion, dann besetzt ein KNN die Werte des $\theta$ Parameters mit eines der besten Approximierung. Der Parameter $\theta$ stellt hierbei die Gewichte dar, welche erlernt werden sollen. 
-Das Lernen ist die strategische Anpassung der Gewichte über Input-Output Paare (\textit{Trainingsdaten}) und findet i.d.R. durch ein \textit{Backpropagation}-Verfahren statt.
+Das Lernen ist die strategische Anpassung der Gewichte über Input-Output Paare (\textit{Trainingsdaten}) und findet i.d.R. durch ein \textit{Backpropagation}-Verfahren statt. Die Funktion $y = f(x; \theta)$ bildet sich aus den Funktionen der Schichten (Gleichung \ref{eq:layer}) im Netzwerk und kann bei einer Tiefe $L$ repräsentiert werden als die folgende Funktion $f :  \mathbb{R}^{M_0} \mapsto \mathbb{R}^{M_L}$ \cite{Goodfellow-et-al-2016, bauckhageInformedMachineLearning}:
  
+\begin{equation}
+\label{eq:layer}
+y(x) = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L \circ ... \circ f_2 \circ f_1)(x)
+\end{equation}
+
 
 \begin{figure}[htp]
 	\centering
