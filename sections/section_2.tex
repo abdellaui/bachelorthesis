@@ -77,8 +77,14 @@ Ein künstliches Neuron mit der Inputsgröße $M$ ist mathematisch die nicht-lin
 	\label{fig:neuron}
 \end{figure}
 
-Künstliche Neuronen können zu einer Schicht (\textit{layer}) zusammengeführt werden. Mehrere solcher Schichten bilden einen Netzwerk. Bei einem \textit{feedforward} Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output an die Neuronen des Schichtes $l+1$ weiter \cite{Goodfellow-et-al-2016}. Neuronen aus der gleichen Schicht sind nicht untereinander verbunden. Diese Einschränkung gilt nicht bei \textit{feedback} Netzwerken, auch bekannt als \textit{Recurrent Neural Networks}.
-Sei $y_l$ der Ouput und $f_l$ die Funktion des Schichtes $l$, dann
+Künstliche Neuronen können zu einer Schicht (\textit{layer}) zusammengeführt werden. Mehrere solcher Schichten bilden einen Netzwerk. Bei einem \textit{feedforward} Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output an die Neuronen des Schichtes $l+1$ weiter \cite{Goodfellow-et-al-2016}. Neuronen aus der gleichen Schicht sind nicht untereinander verbunden. Diese Einschränkungen gelten nicht bei \textit{feedback} Netzwerken, auch bekannt als \textit{Recurrent Neural Networks}.
+Eine Schicht $l$ im \textit{feedforward} Netzwerk operiert auf das Ouput $y_{l-1}$ und stellt die nicht-lineare Funtkion $f_l :  \mathbb{R}^{M_{l-1}} \mapsto \mathbb{R}^{M_l}$ dar:
+
+\begin{equation}
+\label{eq:layer}
+\quad	\textbf{y(x)}=\phi\left(\sum_{m=1}^{M} w_{i} x_{i} + b\right) = \phi(W^Tx+b)
+\end{equation}
+
 
 Die erste Schicht wird als Input-, die letzte Schicht als Ouput-Layer bezeichnet. Alle Schichten dazwischen sind Hidden-Layer \cite{Goodfellow-et-al-2016}. Der Ouput-Layer liefert zugleich auch das Ergebniss eines Netzwerks, daher haben die Neuronen des Ouput-Layers meist keine Aktivierungsfunktion \cite{CS231nConvolutionalNeural}.
 
