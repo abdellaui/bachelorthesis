@@ -82,7 +82,7 @@ Eine Schicht $l$ im \textit{feedforward} Netzwerk operiert auf das Ouput $y_{l-1
 
 \begin{equation}
 \label{eq:layer}
-y_l = \phi(W^T_lx_{l-1}+b_{l})
+y_l = f_l(y_{l-1})\phi(W^T_lx_{l-1}+b_{l})
 \end{equation}
 
 
