@@ -65,7 +65,7 @@ Ein einzelnes Neuron erhält einen Inputsignal auf mehreren Kanälen und löst e
 Ein künstliches Neuron mit der Inputsgröße $M$ ist mathematisch die nicht-lineare Funktion $y : \mathbb{R}^M \mapsto \mathbb{R}$ mit den Parametern $x$ als Input, $w$ als Gewichtsvektor, $b$ als ein Bias, $\phi$ als eine nicht-lineare \textit{Aktivierungsfunktion} \cite{CS231nConvolutionalNeural}:
 \begin{equation}
 	\label{eq:neuron}
-	\quad	\textbf{y(x)}=\phi\left(\sum_{m=1}^{M} w_{i} x_{i} + b\right) = \phi(W^Tx+b)
+	y(x)=\phi\left(\sum_{m=1}^{M} w_{i} x_{i} + b\right) = \phi(W^Tx+b)
 \end{equation}
 
 
@@ -82,7 +82,7 @@ Eine Schicht $l$ im \textit{feedforward} Netzwerk operiert auf das Ouput $y_{l-1
 
 \begin{equation}
 \label{eq:layer}
-\quad	\textbf{y_{l}(x)}= \phi(W^T_lx_{l-1}+b_{l})
+y_l = \phi(W^T_lx_{l-1}+b_{l})
 \end{equation}
 
 
