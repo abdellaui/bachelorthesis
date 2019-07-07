@@ -118,7 +118,7 @@ Ein künstliches Neuron mit der Inputsgröße $M$ ist mathematisch die nicht-lin
 \end{figure}
 
 Künstliche Neuronen können zu einer Schicht (\textit{layer}) zusammengeführt werden. Verbindungen solcher Schichten bilden einen neuronales Netzwerk.
-Bei einem \textit{feedforward} Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output $y_{l}$ an jedes Neuron der Schicht $l+1$ weiter. Ebenso sind Neuronen aus der gleichen Schicht untereinander nicht verbunden \cite{Goodfellow-et-al-2016}.
+Bei einem \textit{feedforward} (\textit{fully-connected}) Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output $y_{l}$ an jedes Neuron der Schicht $l+1$ weiter. Ebenso sind Neuronen aus der gleichen Schicht untereinander nicht verbunden \cite{Goodfellow-et-al-2016}.
 Eine Schicht $l$ eines feedforward Netzwerkes operiert somit auf das Ouput $y_{l-1}$ und stellt die nicht-lineare Funktion $f_l :  \mathbb{R}^{M_{l-1}} \mapsto \mathbb{R}^{M_l}$ dar \cite{bauckhageInformedMachineLearning}:
 \begin{equation}
 \label{eq:layer}
@@ -158,20 +158,14 @@ y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L \circ ... \circ f_2 \circ f_1)(x)
 
 \subsection{Convolutional Neural Networks}
 
-Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben wurden, arbeitet auf einem Inputsvektor $x \in \mathbb{R}^{M}$.
+Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben wurden, arbeitet auf einem Inputsvektor $x \in \mathbb{R}^{M}$ und reichen diesen Input durch eine Kette von fully-connected Schichten. Hingegen arbeiten CNNs auf einem drei-dimensionalen Inputsvolumen $x \in \mathbb{R}^{x} \times \mathbb{R}^{y} \times \mathbb{R}^{d}$ und verarbeiten den Input durch eine von \textit{Convolution Layer}, \textit{Pooling Layer} und \textit{Fully-Connected Layer} zusammengesetzte Netzwerkarchitektur. 
 
-CNNs haben eine ähnliche Struktur zu dem einfacheh beschriebene Netzwerk in Abschnitt \ref{sec:KNN} 
-onvolutional Neural Networks are very similar to ordinary Neural Networks from the previous chapter:
-
-ConvNet architectures make the explicit assumption that the inputs are images, which allows us to encode certain properties into the architecture. These then make the forward function more efficient to implement and vastly reduce the amount of parameters in the network.
-
-
- unlike a regular Neural Network, the layers of a ConvNet have neurons arranged in 3 dimensions: width, height, depth. (Note that the word depth here refers to the third dimension of an activation volume, not to the depth of a full Neural Network, which can refer to the total number of layers in a network.)
+CNNs werden hauptsächlich im Kontext von Bildern eingesetzt, dabei stellt ein RGB-Bild ein Volumen von Breite $\times$ Höhe $\times$ Kanäle dar.
  
  
 \subsubsection{Convolution Layer}
 \subsubsection{Pooling Layer}
-\subsubsection{Fully Connected Layer}
+\subsubsection{Fully-Connected Layer}
 \subsection{Bekannte CNN Modelle}
 \subsubsection{GoogLeNet}
 \subsubsection{PoseNet}
