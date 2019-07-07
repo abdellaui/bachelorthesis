@@ -167,10 +167,16 @@ Eine Convolutional Neural Network Architektur setzt sich aus einer Sequenz von u
   \begin{table}
 	\centering
 	\caption{A simple table example using the \textit{tabularx} package}
-	\begin{tabularx}{0.9\textwidth}{l l X}
+	\begin{tabularx}{0.9\textwidth}{m{3cm} l X}
 		\textbf{Art des Schichtes} & \textbf{Parameter} & \textbf{Hyperparameter}\\
 		\hline
-		Convolutional Layer & Filter & \shortstack{aa \\ bb}\\
+		Convolutional Layer & Filter & \begin{matrix} 
+			ab \\
+			a \\
+			b \\
+			c  
+		\end{matrix}
+			 \\
 		Pooling Layer &  \textit{keine}  & 33.00 \\
 		Fully-Connected Layer & Gewichte & 33.00 \\
 		\hline
