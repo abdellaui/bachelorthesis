@@ -117,9 +117,10 @@ Ein künstliches Neuron mit der Inputsgröße $M$ ist mathematisch die nicht-lin
 	\label{fig:neuron}
 \end{figure}
 
-Künstliche Neuronen können zu einer Schicht (\textit{layer}) zusammengeführt werden. Verbindungen solcher Schichten bilden einen neuronales Netzwerk. Diese Arbeit beschränkt sich einfachhaltshalber nur auf die fully-connected Verbindungsart der Schichten.
-Bei einem \textit{feedforward} Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output $y_{l}$ an die Neuronen der Schicht $l+1$ weiter. Ebenso sind Neuronen aus der gleichen Schicht untereinander nicht verbunden \cite{Goodfellow-et-al-2016}. 
-Eine Schicht $l$ operiert somit auf das Ouput $y_{l-1}$ und stellt die nicht-lineare Funktion $f_l :  \mathbb{R}^{M_{l-1}} \mapsto \mathbb{R}^{M_l}$ dar \cite{bauckhageInformedMachineLearning}:
+Künstliche Neuronen können zu einer Schicht (\textit{layer}) zusammengeführt werden. Verbindungen solcher Schichten bilden einen neuronales Netzwerk.
+Ist jedes Neuron aus der Schicht $l$ mit jedem Neuron aus der Schicht $l+1$ verbunden, so ist die Rede von einem \textit{fully-connected} Netzwerk  \cite{CS231nConvolutionalNeural}. Im weiteren Verlauf dieses Kapitels wird einfachheitshalber bei einem Netzwerk immer ein fully-connected Netz angenommen.
+Bei einem \textit{feedforward} Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output $y_{l}$ nur an die Neuronen der Schicht $l+1$ weiter. Ebenso sind Neuronen aus der gleichen Schicht untereinander nicht verbunden \cite{Goodfellow-et-al-2016}.
+Eine Schicht $l$ eines feedforward Netzwerkes operiert somit auf das Ouput $y_{l-1}$ und stellt die nicht-lineare Funktion $f_l :  \mathbb{R}^{M_{l-1}} \mapsto \mathbb{R}^{M_l}$ dar \cite{bauckhageInformedMachineLearning}:
 \begin{equation}
 \label{eq:layer}
 y_l = f_l(y_{l-1}) = \phi(W^T_lx_{l-1}+b_{l})
@@ -128,11 +129,11 @@ y_l = f_l(y_{l-1}) = \phi(W^T_lx_{l-1}+b_{l})
 
 Bei \textit{feedback} Netzwerken, auch bekannt als \textit{Recurrent Neural Networks}, können Neuronen untereinander aus jeder Schicht, sowie zu sich selbst, verbunden sein \cite{Goodfellow-et-al-2016}. Da feedback Netzwerke keinen Einsatz in dieser Arbeit haben, ist im weiteren Verlauf dieser Arbeit bei einem Netzwerk immer ein feedforward Ansatz gemeint.
  
-Die erste Schicht eines Netzwerk wird als Input-, die letzte Schicht als Ouput-\textit{Layer} bezeichnet. Alle Schichten dazwischen sind Hidden-Layer \cite{Goodfellow-et-al-2016}. Der Ouput-Layer liefert zugleich auch das Ergebniss eines Netzwerks, daher haben die Neuronen des Ouput-Layers meist keine Aktivierungsfunktion \cite{CS231nConvolutionalNeural}.
+Die erste Schicht eines Netzwerk wird als Input-, die letzte Schicht als Ouput-Layer bezeichnet. Alle Schichten dazwischen sind Hidden-Layer \cite{Goodfellow-et-al-2016}. Der Ouput-Layer liefert zugleich auch das Ergebniss eines Netzwerks, daher haben die Neuronen des Ouput-Layers meist keine Aktivierungsfunktion \cite{CS231nConvolutionalNeural}.
 
 
 Die Tiefe (\textit{depth}) eines Netzwerks ist gegeben durch die Anzahl der Layers \footnote{der Input-Layer ist ausgeschloßen} und die Breite (\textit{width}) eines Layers wird durch die Anzahl der Neuronen bestimmt \cite{Goodfellow-et-al-2016}. 
-Abilldung \ref{fig:neural_net} illustriert ein \textit{feedforward} neuronales Netz als ein azyklischer Graph.
+Abilldung \ref{fig:neural_net} illustriert ein fully-connected feedforward neuronales Netz als ein azyklischer Graph.
 
 
 Ziel eines KNNs ist es eine Funktion $f^*$ zu approximieren, dass einen Input $x$ auf einen Output $y$ abbildet. Durch das Output $y$ kann das Input $x$ klassifiziert oder ein Wert regressiert werden. Sei $y = f(x; \theta)$  solch eine Funktion, dann besetzt ein KNN die Werte des $\theta$ Parameters mit eines der besten Approximierung. Der Parameter $\theta$ stellt hierbei die Gewichte dar, welche erlernt werden sollen \cite{Goodfellow-et-al-2016}. 
@@ -152,13 +153,13 @@ y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L \circ ... \circ f_2 \circ f_1)(x)
 \begin{figure}[hbt]
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/neural_net.png}
-	\caption{Ein \textit{feedforward} neuronales Netz mit der Tiefe 3 bestehend aus einem Input der Breite 3, aus zwei \textit{Hidden-Layer }der Breite 4 und einem \textit{Output-Layer} der Breite 1. Mit der Gleichung \ref{eq:network}  lässt sich dieses Netzwerk als die Funktion $f :  \mathbb{R}^{3} \mapsto \mathbb{R}^{1}$ mit $f(x)=f_3(f_2(f_1(x)))$ darstellen  }
+	\caption{Ein fully-connected feedforward neuronales Netz mit der Tiefe 3 bestehend aus einem Input-Layer der Breite 3, aus zwei Hidden-Layer der Breite 4 und einem Output-Layer der Breite 1. Mit der Gleichung \ref{eq:network}  lässt sich dieses Netzwerk als die Funktion $f :  \mathbb{R}^{3} \mapsto \mathbb{R}^{1}$ mit $f(x)=f_3(f_2(f_1(x)))$ darstellen  }
 	\label{fig:neural_net}
 \end{figure}
 
 \subsection{Convolutional Neural Networks}
 
-Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben wurden, arbeitet auf ein Inputsvektor $x \in \mathbb{R}^{M}.
+Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben wurden, arbeitet auf einem Inputsvektor $x \in \mathbb{R}^{M}$.
 
 CNNs haben eine ähnliche Struktur zu dem einfacheh beschriebene Netzwerk in Abschnitt \ref{sec:KNN} 
 onvolutional Neural Networks are very similar to ordinary Neural Networks from the previous chapter:
