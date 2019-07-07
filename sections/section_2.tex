@@ -91,7 +91,8 @@ Im weiteren Verlauf des Kapitels werden einige grundlegende Themen erläutert. Z
 %Bei der Erzeugung von Gradienten- bzw. Kantenbilder gehen einerseits wichtige Informationen im Hinblick auf das Ursprungsbild verloren, andererseits bleiben wichtige Informationen wie z.B. die geometrische Struktur erhalten.
 
 \subsection{Künstliche neuronale Netzwerke}
-Inspiriert von ihren biologischen Vorbildern \footnote{das Nervensystem eines Lebewesen, z.B. des Menschen}, vernetzen künstliche neuronale Netzwerke (\textit{KNN}) künstliche Neuronen miteinander.
+\label{sec:KNN}
+Inspiriert von ihren biologischen Vorbildern \footnote{das Nervensystem eines Lebewesen, z.B. des Menschen}, vernetzen künstliche neuronale Netzwerke (\textit{KNN}) künstliche Neuronen miteinander \cite{CS231nConvolutionalNeural}.
 
 Ein einzelnes Neuron erhält einen Inputsignal auf mehreren Kanälen und löst erst ein Signal (\textit{output}) aus, falls die gewichtete Summe des Inputs einen gewissen Schwellwert erreicht \cite{CS231nConvolutionalNeural}. Abbildung \ref{fig:neuron} stellt eine beispielhafte Visualisierung eines künstlichen Neurons dar.
 
@@ -155,7 +156,11 @@ y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L \circ ... \circ f_2 \circ f_1)(x)
 \end{figure}
 
 \subsection{Convolutional Neural Networks}
-Convolutional Neural Networks are very similar to ordinary Neural Networks from the previous chapter:
+
+In Abschnitt \ref{sec:KNN} arbeitet ein neuronales Netz auf ein Inputsvektor $x \in \mathbb{R}^{M}
+
+CNNs haben eine ähnliche Struktur zu dem einfacheh beschriebene Netzwerk in Abschnitt \ref{sec:KNN} 
+onvolutional Neural Networks are very similar to ordinary Neural Networks from the previous chapter:
 
 ConvNet architectures make the explicit assumption that the inputs are images, which allows us to encode certain properties into the architecture. These then make the forward function more efficient to implement and vastly reduce the amount of parameters in the network.
 
