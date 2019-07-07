@@ -117,7 +117,8 @@ Ein künstliches Neuron mit der Inputsgröße $M$ ist mathematisch die nicht-lin
 	\label{fig:neuron}
 \end{figure}
 
-Künstliche Neuronen können zu einer Schicht (\textit{layer}) zusammengeführt werden. Mehrere solcher Schichten bilden einen Netzwerk. Bei einem \textit{feedforward} Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output $y_{l}$ an die Neuronen des Schichtes $l+1$ weiter. Ebenso sind Neuronen aus der gleichen Schicht untereinander nicht verbunden \cite{Goodfellow-et-al-2016}.
+Künstliche Neuronen können zu einer Schicht (\textit{layer}) zusammengeführt werden. Verbindungen solcher Schichten bilden einen neuronales Netzwerk. Diese Arbeit beschränkt sich einfachhaltshalber nur auf die fully-connected Verbindungsart der Schichten.
+Bei einem \textit{feedforward} Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output $y_{l}$ an die Neuronen der Schicht $l+1$ weiter. Ebenso sind Neuronen aus der gleichen Schicht untereinander nicht verbunden \cite{Goodfellow-et-al-2016}. 
 Eine Schicht $l$ operiert somit auf das Ouput $y_{l-1}$ und stellt die nicht-lineare Funktion $f_l :  \mathbb{R}^{M_{l-1}} \mapsto \mathbb{R}^{M_l}$ dar \cite{bauckhageInformedMachineLearning}:
 \begin{equation}
 \label{eq:layer}
@@ -157,7 +158,7 @@ y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L \circ ... \circ f_2 \circ f_1)(x)
 
 \subsection{Convolutional Neural Networks}
 
-In Abschnitt \ref{sec:KNN} arbeitet ein neuronales Netz auf ein Inputsvektor $x \in \mathbb{R}^{M}
+Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben wurden, arbeitet auf ein Inputsvektor $x \in \mathbb{R}^{M}.
 
 CNNs haben eine ähnliche Struktur zu dem einfacheh beschriebene Netzwerk in Abschnitt \ref{sec:KNN} 
 onvolutional Neural Networks are very similar to ordinary Neural Networks from the previous chapter:
