@@ -158,9 +158,9 @@ y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L \circ ... \circ f_2 \circ f_1)(x)
 
 \subsection{Convolutional Neural Networks}
 
-Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben wurden, arbeitet auf einem Inputsvektor $x \in \mathbb{R}^{M}$ und reichen diesen Input durch eine Kette von fully-connected Schichten. Hingegen arbeiten CNNs auf einem drei-dimensionalen Inputsvolumen $x \in \mathbb{R}^{x} \times \mathbb{R}^{y} \times \mathbb{R}^{d}$ und verarbeiten den Input durch eine von \textit{Convolution Layer}, \textit{Pooling Layer} und \textit{Fully-Connected Layer} zusammengesetzte Netzwerkarchitektur. 
+Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben wurden, arbeitet auf einem Inputsvektor $x \in \mathbb{R}^{M}$ und reichen diesen Input durch eine Kette von fully-connected Schichten. Hingegen arbeiten CNNs auf einem drei-dimensionalen Inputsvolumen $x \in \mathbb{R}^{x} \times \mathbb{R}^{y} \times \mathbb{R}^{d}$ und verarbeiten den Input durch eine von Sequenz \textit{Convolution Layer}, \textit{Pooling Layer} und \textit{Fully-Connected Layer} zusammengesetzte Netzwerkarchitektur \cite{CS231nConvolutionalNeurala}. 
 
-CNNs werden hauptsächlich im Kontext von Bildern eingesetzt, dabei stellt ein RGB-Bild ein Volumen von Breite $\times$ Höhe $\times$ Kanäle dar.
+CNNs werden hauptsächlich im Kontext von Bildern eingesetzt, dabei stellt z.B. ein 32 $\times$ 32 RGB-Bild ein Volumen von 32 $\times$ 32 $\times$ 3 dar \cite{CS231nConvolutionalNeurala}.
  
  
 \subsubsection{Convolution Layer}
