@@ -145,7 +145,7 @@ y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L \circ ... \circ f_2 \circ f_1)(x)
 
 
 
-\begin{figure}[hbt]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/neural_net.png}
 	\caption{Ein feedforward neuronales Netz mit der Tiefe 3 bestehend aus einem Input-Layer der Breite 3, aus zwei Hidden-Layer der Breite 4 und einem Output-Layer der Breite 1. Mit der Gleichung \ref{eq:network}  lässt sich dieses Netzwerk als die Funktion $f :  \mathbb{R}^{3} \mapsto \mathbb{R}^{1}$ mit $f(x)=f_3(f_2(f_1(x)))$ darstellen. }
@@ -158,7 +158,7 @@ Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben wurden,
 
 Eine Convolutional Neural Network Architektur setzt sich aus einer Sequenz von unterschiedlichen Schichtarten zusammen \cite{CS231nConvolutionalNeurala}. Im weiteren Verlauf dieses Kapitels werden die Arten der Schichten beschrieben. Tabelle \ref{tab:layer_param} gibt eine Übersicht der Schichten und Ihrer Parameter an.
 
-\begin{table}
+\begin{table}{H}
 	\centering
 	\caption{Übersicht der Paramter und Hyperparamter der Schichten eines Convolutional Neural Networks. Parameter werden während der Trainingsphase optimiert und Hyperparameter werden vorab fest definiert \cite{yamashitaConvolutionalNeuralNetworks2018}. }
 	\begin{tabularx}{0.9\textwidth}{X X X}
@@ -191,7 +191,7 @@ Eine Convolutional Neural Network Architektur setzt sich aus einer Sequenz von u
 
 \subsubsection{Convolution Layer}
 Der Convolutional Layer ist der Hauptbestandteil eines CNNs, welches die Kombination eines Convolution Operationen und einer Aktivierungsfunktion ist \cite{yamashitaConvolutionalNeuralNetworks2018}.
-\begin{figure}[htb]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/convolution_layer.png}
 	\caption{Ein Beispiel für die  Convolution Operation mit 3 Filtern der Größe 3 $\times$ 3, einem Stride von 1 und keinem Padding. Ein Filter bewegt sich entlang des gesamten Inputs mit der Schrittweite \textit{Stride} und bildet die Summe der elementweise multiplizierten Werte. Die Summe wird dann im Output an die korrespondierende Position geschrieben. Dieser Vorgang wiederholt sich für jedes Filter. \cite{yamashitaConvolutionalNeuralNetworks2018}. }
