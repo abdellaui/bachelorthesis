@@ -92,8 +92,12 @@ Im weiteren Verlauf des Kapitels werden einige grundlegende Themen erläutert. Z
 
 \subsection{Künstliche neuronale Netzwerke}
 \label{sec:KNN}
-Inspiriert von ihren biologischen Vorbildern \footnote{das Nervensystem eines Lebewesen, z.B. des Menschen}, vernetzen künstliche neuronale Netzwerke (\textit{KNN}) künstliche Neuronen miteinander \cite{CS231nConvolutionalNeural}.
+Künstliche neuronale Netze sind ein Forschungsgebiet der \textit{künstlichen Intelligenz} und imitieren die Beschaffenheit natürlicher neuronale Netze, um komplexe Probleme zu lösen. Inspiriert von ihren biologischen Vorbildern \footnote{das Nervensystem eines Lebewesen, z.B. des Menschen}, vernetzen künstliche neuronale Netzwerke (\textit{KNN}) künstliche Neuronen miteinander \cite{CS231nConvolutionalNeural}. Dabei kann die Verbindung unidirektional (\textit{feedforward}) oder bidirektion (\textit{feedback}) sein. 
 
+Bei einem feedforward Netzwerk werden die Daten im Netz immer vorwärts übertragen, hingegen kann ein \textit{feedback} Netzwerkn, auch bekannt als \textit{Recurrent Neural Networks}, Daten rückwärts, sowie in einer Schleife zum selben Neuron, übergeben \cite{Goodfellow-et-al-2016}. Da feedback Netzwerke keinen Einsatz in dieser Arbeit haben, ist im weiteren Verlauf dieser Arbeit bei einem Netzwerk immer ein feedforward Ansatz gemeint.
+
+
+\subsubsection{Künstliches Neuron}
 Ein einzelnes Neuron erhält einen Inputsignal auf mehreren Kanälen und löst erst ein Signal (\textit{output}) aus, falls die gewichtete Summe des Inputs einen gewissen Schwellwert erreicht \cite{CS231nConvolutionalNeural}. Abbildung \ref{fig:neuron} stellt eine beispielhafte Visualisierung eines künstlichen Neurons dar.
 
 Ein künstliches Neuron mit der Inputsgröße $M$ ist mathematisch die nicht-lineare Funktion $y : \mathbb{R}^M \mapsto \mathbb{R}$ mit den Parametern $x$ als Input, $w$ als Gewichtsvektor, $b$ als ein Bias, $\phi$ als eine nicht-lineare \textit{Aktivierungsfunktion} \cite{CS231nConvolutionalNeural}:
@@ -102,20 +106,15 @@ Ein künstliches Neuron mit der Inputsgröße $M$ ist mathematisch die nicht-lin
 	y(x)=\phi\left(\sum_{m=1}^{M} w_{i} x_{i} + b\right) = \phi(W^Tx+b)
 \end{equation}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.4\textwidth]{images/ReLU.png}
-	\caption{Ein Beispiel für eine Aktivierungsfunktion. Die ReLU (\textit{rectified liniear unit}) Aktivierungsfunktion wird typischerweise in CNNs eingesetzt und ist mathematisch definiert als: $f(x) = max(0,x)$ \cite{Goodfellow-et-al-2016} }
-	\label{fig:relu}
-\end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/neuron.png}
 	\caption{Visualisierung eines künstlichen Neurons definiert nach der Gleichung \ref{eq:neuron}. Dieser Neuron summiert das Produkt des Inputvektors $x$  mit den jeweiligen Gewichten $w$ und addiert einen Bias $b$. Durch die Summe erzeugt die Aktivierungsfunktion $\phi$ das Output $y$ des Neurons. Entnommen aus \cite{deoliveiraSystemBasedArtificial2017}. }
 	\label{fig:neuron}
 \end{figure}
 
+\subsubsection{Feedforward Neural Networks}
 Künstliche Neuronen können zu einer Schicht (\textit{layer}) zusammengeführt werden. Verbindungen solcher Schichten bilden einen neuronales Netzwerk.
 Bei einem \textit{feedforward} (\textit{fully-connected}) Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output $y_{l}$ an jedes Neuron der Schicht $l+1$ weiter. Ebenso sind Neuronen aus der gleichen Schicht untereinander nicht verbunden \cite{Goodfellow-et-al-2016}.
 Eine Schicht $l$ eines feedforward Netzwerkes operiert somit auf das Ouput $y_{l-1}$ und stellt die nicht-lineare Funktion $f_l :  \mathbb{R}^{M_{l-1}} \mapsto \mathbb{R}^{M_l}$ dar \cite{bauckhageInformedMachineLearning}:
@@ -124,8 +123,7 @@ Eine Schicht $l$ eines feedforward Netzwerkes operiert somit auf das Ouput $y_{l
 y_l = f_l(y_{l-1}) = \phi(W^T_lx_{l-1}+b_{l})
 \end{equation}
 
-Bei \textit{feedback} Netzwerken, auch bekannt als \textit{Recurrent Neural Networks}, können Neuronen untereinander aus jeder Schicht, sowie zu sich selbst, verbunden sein \cite{Goodfellow-et-al-2016}. Da feedback Netzwerke keinen Einsatz in dieser Arbeit haben, ist im weiteren Verlauf dieser Arbeit bei einem Netzwerk immer ein feedforward Ansatz gemeint.
- 
+
 Die erste Schicht eines Netzwerk wird als Input-, die letzte Schicht als Ouput-Layer bezeichnet. Alle Schichten dazwischen sind Hidden-Layer \cite{Goodfellow-et-al-2016}. Der Ouput-Layer liefert zugleich auch das Ergebniss eines Netzwerks, daher haben die Neuronen des Ouput-Layers meist keine Aktivierungsfunktion \cite{CS231nConvolutionalNeural}.
 
 Die Tiefe (\textit{depth}) eines Netzwerks ist gegeben durch die Anzahl der Layers \footnote{der Input-Layer ist ausgeschloßen} und die Breite (\textit{width}) eines Layers wird durch die Anzahl der Neuronen bestimmt \cite{Goodfellow-et-al-2016}. 
@@ -140,10 +138,6 @@ Die Funktion $y = f(x; \theta)$ bildet sich aus den Funktionen der Schichten (Gl
 \label{eq:network}
 y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L \circ ... \circ f_2 \circ f_1)(x)
 \end{equation}
-
-
-
-
 
 \begin{figure}[H]
 	\centering
@@ -188,6 +182,13 @@ Eine Convolutional Neural Network Architektur setzt sich aus einer Sequenz von u
 	\label{tab:layer_param}
 \end{table}
 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{images/ReLU.png}
+	\caption{Ein Beispiel für eine Aktivierungsfunktion. Die ReLU (\textit{rectified liniear unit}) Aktivierungsfunktion wird typischerweise in CNNs eingesetzt und ist mathematisch definiert als: $f(x) = max(0,x)$ \cite{Goodfellow-et-al-2016} }
+	\label{fig:relu}
+\end{figure}
 
 \subsubsection{Convolution Layer}
 Der Convolutional Layer ist der Hauptbestandteil eines CNNs, welches die Kombination eines Convolution Operationen und einer Aktivierungsfunktion ist \cite{yamashitaConvolutionalNeuralNetworks2018}.
