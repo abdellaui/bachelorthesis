@@ -222,8 +222,16 @@ Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer redu
 Nach einer Periode von Convolution und Pooling Layers folgt meist eine fully-connected Layer, auch bekannt als \textit{Dense Layer}. Dieser Layer folgt den gleichen Konzept, wie in Abschnitt \ref{sec:feedforwardNN} beschrieben. Der Output dieses Layers wird meist einer weiteren Aktivierungsfunktion übergeben \cite{yamashitaConvolutionalNeuralNetworks2018} und i.d.R. dadurch der Output des CNNs bestimmt.
 
 \subsection{Bekannte CNN Modelle}
-Es gibt zahlreiche bekannte CNN Modelle. Meist sind bekannte CNN Modelle Sieger von populären Wettbewerben, solche wie die  Large Scale Visual Recognition Challenge (\textit{ILSVRC}) \cite{russakovskyImageNetLargeScale2014}.
-\subsubsection{GoogLeNet} 
+Es gibt zahlreiche bekannte CNN Modelle. Meist sind diese Modelle Sieger von populären Wettbewerben, solche wie die Large Scale Visual Recognition Challenge (\textit{ILSVRC}) \cite{russakovskyImageNetLargeScale2014}. Diese Arbeit behandelt nur das GoogLeNet Model und dessen Modifaktion PoseNet. \subsubsection{GoogLeNet} 
+GoogleNet wurde von \citet{szegedyGoingDeeperConvolutions2015} vorgestellt und gewann das ILSVRC14 Wettbewerb. In dem selben Paper stellen die Autoren das \textit{Inception Modul} dar.
+
+ \begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{images/inception_module.png}
+	\caption{Inception moduke. Entnommen aus \cite{szegedyGoingDeeperConvolutions2015}.}
+	\label{fig:pooling_layer}
+\end{figure}
+
 \subsubsection{PoseNet}
 
 \pagebreak
