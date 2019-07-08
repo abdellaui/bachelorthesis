@@ -94,7 +94,9 @@ Im weiteren Verlauf des Kapitels werden einige grundlegende Themen erläutert. Z
 \label{sec:KNN}
 Künstliche neuronale Netze sind ein Forschungsgebiet der \textit{künstlichen Intelligenz} und imitieren die Beschaffenheit natürlicher neuronale Netze, um komplexe Probleme zu lösen. Inspiriert von ihren biologischen Vorbildern \footnote{das Nervensystem eines Lebewesen, z.B. des Menschen}, vernetzen künstliche neuronale Netzwerke (\textit{KNN}) künstliche Neuronen miteinander \cite{CS231nConvolutionalNeural}. Dabei kann die Verbindung unidirektional (\textit{feedforward}) oder bidirektion (\textit{feedback}) sein. 
 
-Bei einem feedforward Netzwerk werden die Daten im Netz immer vorwärts übertragen, hingegen kann ein \textit{feedback} Netzwerk, auch bekannt als \textit{Recurrent Neural Networks}, Daten rückwärts, sowie in einer Schleife zum selben Neuron, übergeben \cite{Goodfellow-et-al-2016}. Da feedback Netzwerke keinen Einsatz in dieser Arbeit haben, ist im weiteren Verlauf dieser Arbeit bei einem Netzwerk immer ein feedforward Ansatz gemeint.
+Bei einem feedforward Netzwerk werden die Daten im Netz immer vorwärts übertragen, hingegen kann ein feedback Netzwerk, auch bekannt als \textit{Recurrent Neural Networks}, Daten rückwärts, sowie in einer Schleife zum selben Neuron, übergeben \cite{Goodfellow-et-al-2016}. Da feedback Netzwerke keinen Einsatz in dieser Arbeit haben, ist im weiteren Verlauf dieser Arbeit bei einem Netzwerk immer ein feedforward Ansatz gemeint. 
+
+In diesem Kapitel werden als Nächstes ein künstliches Neuron definiert und anschließend ein feedforward Netzwerk beschrieben.
 
 
 \subsubsection{Künstliches Neuron}
@@ -117,7 +119,7 @@ Ein künstliches Neuron mit der Inputsgröße $M$ ist mathematisch die nicht-lin
 \subsubsection{Feedforward Neural Networks}
 \label{sec:feedforwardNN}
 Künstliche Neuronen können zu einer Schicht (\textit{layer}) zusammengeführt werden. Verbindungen solcher Schichten bilden einen neuronales Netzwerk.
-Bei einem \textit{feedforward} (\textit{fully-connected}) Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output $y_{l}$ an jedes Neuron der Schicht $l+1$ weiter. Ebenso sind Neuronen aus der gleichen Schicht untereinander nicht verbunden \cite{Goodfellow-et-al-2016}.
+Bei einem \textit{feedforward} (\textit{fully-connected}) Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output $y_{l}$ an jedem Neuron der Schicht $l+1$ weiter. Ebenso sind Neuronen aus der gleichen Schicht untereinander nicht verbunden \cite{Goodfellow-et-al-2016}.
 Eine Schicht $l$ eines feedforward Netzwerkes operiert somit auf das Ouput $y_{l-1}$ und stellt die nicht-lineare Funktion $f_l :  \mathbb{R}^{M_{l-1}} \mapsto \mathbb{R}^{M_l}$ dar \cite{bauckhageInformedMachineLearning}:
 \begin{equation}
 \label{eq:layer}
