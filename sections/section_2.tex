@@ -83,7 +83,7 @@ in der Position und
 in der Orientierung.
 \\\\// Anbindung zu meinem Beitrag
 \\\\
-Im weiteren Verlauf des Kapitels werden einige grundlegende Themen erläutert. Zuerst werden künstliche neuronale Netze definiert. Danach wird ein elementares Wissen an CNN vermittelt und anschließend bekannte CNN Modelle näher erläutert.
+Im weiteren Verlauf des Kapitels werden einige grundlegende Themen erläutert. Zuerst werden künstliche neuronale Netze definiert. Danach wird ein elementares Wissen an Convolutional Neural Networks vermittelt und anschließend bekannte CNN Modelle näher erläutert.
 
 %\subsection{Lineare Faltung}
 %\subsubsection{Sobelfilter}
@@ -115,6 +115,7 @@ Ein künstliches Neuron mit der Inputsgröße $M$ ist mathematisch die nicht-lin
 \end{figure}
 
 \subsubsection{Feedforward Neural Networks}
+\label{sec:feedforwardNN}
 Künstliche Neuronen können zu einer Schicht (\textit{layer}) zusammengeführt werden. Verbindungen solcher Schichten bilden einen neuronales Netzwerk.
 Bei einem \textit{feedforward} (\textit{fully-connected}) Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output $y_{l}$ an jedes Neuron der Schicht $l+1$ weiter. Ebenso sind Neuronen aus der gleichen Schicht untereinander nicht verbunden \cite{Goodfellow-et-al-2016}.
 Eine Schicht $l$ eines feedforward Netzwerkes operiert somit auf das Ouput $y_{l-1}$ und stellt die nicht-lineare Funktion $f_l :  \mathbb{R}^{M_{l-1}} \mapsto \mathbb{R}^{M_l}$ dar \cite{bauckhageInformedMachineLearning}:
@@ -214,7 +215,7 @@ Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer redu
 
 
 \subsubsection{Fully-Connected Layer}
-Nach einer Periode von Convolution und Pooling Layers folgt meist eine fully-connected Layer, auch bekannt als \textit{Dense Layer}. Dieser Layer folgt den gleichen Konzept, wie in Abschnitt \ref{sec:KNN} beschrieben. Der Output dieses Layers wird meist einer weiteren Aktivierungsfunktion übergeben \cite{yamashitaConvolutionalNeuralNetworks2018} und i.d.R. wird durch die Aktivierungsfunktion der Output des CNNs bestimmt.
+Nach einer Periode von Convolution und Pooling Layers folgt meist eine fully-connected Layer, auch bekannt als \textit{Dense Layer}. Dieser Layer folgt den gleichen Konzept, wie in Abschnitt \ref{sec:feedforwardNN} beschrieben. Der Output dieses Layers wird meist einer weiteren Aktivierungsfunktion übergeben \cite{yamashitaConvolutionalNeuralNetworks2018} und i.d.R. wird durch die Aktivierungsfunktion der Output des CNNs bestimmt.
 
 \subsection{Bekannte CNN Modelle}
 \subsubsection{GoogLeNet}
