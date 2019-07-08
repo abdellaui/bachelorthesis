@@ -184,12 +184,6 @@ Eine Convolutional Neural Network Architektur setzt sich aus einer Sequenz von u
 \end{table}
 
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.4\textwidth]{images/ReLU.png}
-	\caption{Ein Beispiel für eine Aktivierungsfunktion. Die ReLU (\textit{rectified liniear unit}) Aktivierungsfunktion wird typischerweise in CNNs eingesetzt und ist mathematisch definiert als: $f(x) = max(0,x)$ \cite{Goodfellow-et-al-2016} }
-	\label{fig:relu}
-\end{figure}
 
 \subsubsection{Convolution Layer}
 Der Convolutional Layer ist der Hauptbestandteil eines CNNs, welches die Kombination eines Convolution Operationen und einer Aktivierungsfunktion ist \cite{yamashitaConvolutionalNeuralNetworks2018}.
@@ -199,7 +193,15 @@ Der Convolutional Layer ist der Hauptbestandteil eines CNNs, welches die Kombina
 	\caption{Ein Beispiel für die  Convolution Operation mit 3 Filtern der Größe 3 $\times$ 3, einem Stride von 1 und keinem Padding. Ein Filter bewegt sich entlang des gesamten Inputs mit der Schrittweite \textit{Stride} und bildet die Summe der elementweise multiplizierten Werte. Die Summe wird dann im Output an die korrespondierende Position geschrieben. Dieser Vorgang wiederholt sich für jedes Filter. \cite{yamashitaConvolutionalNeuralNetworks2018}. }
 	\label{fig:convolution_layer}
 \end{figure}
-\newpage
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{images/ReLU.png}
+	\caption{Ein Beispiel für eine Aktivierungsfunktion. Die ReLU (\textit{rectified liniear unit}) Aktivierungsfunktion wird typischerweise in CNNs eingesetzt und ist mathematisch definiert als: $f(x) = max(0,x)$ \cite{Goodfellow-et-al-2016} }
+	\label{fig:relu}
+\end{figure}
+
+
 \subsubsection{Pooling Layer}
 Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer reduzieren die Größe eines Inputsvolumen und verringert somit die Anzahl der erlernbaren Parameter. Die Pooling Operation wird auf jeder Schicht der Eingabe ausgeführt \cite{CS231nConvolutionalNeurala}. Die meist verbreitete \textit{Pooling Methode} ist die Max-Pooling. Beim Max-Pooling iteriert ein Filter einer bestimmten Größe mit einer Schrittweite, gegeben durch dem Stride, über das Inputsvolumen und extrahiert das Maximum im aktuellen Filterbereich. Das Maximum wird für die weitere Berechnung beibehalten und die restlichen Werte verworfen
  \cite{CS231nConvolutionalNeurala}. In dieser Arbeit wird neben der Max-Pooling Operation auch die Average-Pooling Operation eingesetzt. Das Average-Pooling behält im aktuellen Filterbereich,  statt das Maximum, den Durchschnittswert \cite{CS231nConvolutionalNeurala}.
