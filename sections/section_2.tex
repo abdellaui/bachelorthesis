@@ -206,6 +206,8 @@ Der Convolutional Layer ist der Hauptbestandteil eines CNNs, welches die Kombina
 Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer reduzieren die Größe eines Inputsvolumen und verringert somit die Anzahl der erlernbaren Parameter. Die Pooling Operation wird auf jeder Schicht der Eingabe ausgeführt \cite{CS231nConvolutionalNeurala}. Die meist verbreitete \textit{Pooling Methode} ist die Max-Pooling. Beim Max-Pooling iteriert ein Filter einer bestimmten Größe mit einer Schrittweite, gegeben durch dem Stride, über das Inputsvolumen und extrahiert das Maximum im aktuellen Filterbereich. Das Maximum wird für die weitere Berechnung beibehalten und die restlichen Werte verworfen
  \cite{CS231nConvolutionalNeurala}. In dieser Arbeit wird neben der Max-Pooling Operation auch die Average-Pooling Operation eingesetzt. Das Average-Pooling behält im aktuellen Filterbereich,  statt das Maximum, den Durchschnittswert \cite{CS231nConvolutionalNeurala}.
  
+ 
+ Sei 
  Im Vergleich zu einem Convolutional Layers wird ein Pooling Layer nur aus Hyperparameter definiert und bleibt daher statisch \cite{yamashitaConvolutionalNeuralNetworks2018}. Abbildung \ref{fig:pooling_layer} zeigt eine beispielhafte Ausführung einer Max-Pooling Operation. Tabelle \ref{tab:layer_param} listet die Hyperparameter eines Pooling Layers auf.
  \begin{figure}[H]
 	\centering
@@ -220,7 +222,8 @@ Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer redu
 Nach einer Periode von Convolution und Pooling Layers folgt meist eine fully-connected Layer, auch bekannt als \textit{Dense Layer}. Dieser Layer folgt den gleichen Konzept, wie in Abschnitt \ref{sec:feedforwardNN} beschrieben. Der Output dieses Layers wird meist einer weiteren Aktivierungsfunktion übergeben \cite{yamashitaConvolutionalNeuralNetworks2018} und i.d.R. dadurch der Output des CNNs bestimmt.
 
 \subsection{Bekannte CNN Modelle}
-\subsubsection{GoogLeNet}
+Es gibt zahlreiche bekannte CNN Modelle. Meist sind bekannte CNN Modelle Sieger von bekannten CNN Wettbewerben, solche wie die  Large Scale Visual Recognition Challenge (\textit{ILSVRC} \cite{russakovskyImageNetLargeScale2014}.
+\subsubsection{GoogLeNet} 
 \subsubsection{PoseNet}
 
 \pagebreak
