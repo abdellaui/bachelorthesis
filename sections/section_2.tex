@@ -199,7 +199,8 @@ Der Convolutional Layer ist der Hauptbestandteil eines CNNs, welches die Kombina
 \end{figure}
 
 \subsubsection{Pooling Layer}
-Es ist gewöhnlich einen Pooling Layer suksessiv zwischen . Pooling Layer reduzieren die Größe eines Inputvolumen und verringert somit die Anzahl der erlernbaren Parameter. Die Pooling Operation wird auf jeder Schicht der Eingabe ausgeführt \cite{CS231nConvolutionalNeurala}. Der meist verbreiteste Pooling Operation ist die Max-Pooling. Beim Max-Pooling wird der Input in 2 $\times$ 2 Quadrate eingeteilt und nur der Maximum der Quadrate für die weitere Berechnung beibehalten und die restlichen Werte verworfen \cite{CS231nConvolutionalNeurala}.
+Es ist gewöhnlich einen Pooling Layer suksessiv zwischen . Pooling Layer reduzieren die Größe eines Inputvolumen und verringert somit die Anzahl der erlernbaren Parameter. Die Pooling Operation wird auf jeder Schicht der Eingabe ausgeführt \cite{CS231nConvolutionalNeurala}. Die meist verbreitete Pooling Operation ist die Max-Pooling. Beim Max-Pooling wird der Input in 2 $\times$ 2 Quadrate eingeteilt und nur der Maximum der Quadrate für die weitere Berechnung beibehalten und die restlichen 75\% Werte verworfen.
+ \cite{CS231nConvolutionalNeurala}.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/max_pool.png}
