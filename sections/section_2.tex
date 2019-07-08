@@ -131,7 +131,6 @@ Die erste Schicht eines Netzwerk wird als Input-, die letzte Schicht als Ouput-L
 Die Tiefe (\textit{depth}) eines Netzwerks ist gegeben durch die Anzahl der Layers \footnote{der Input-Layer ist ausgeschloßen} und die Breite (\textit{width}) eines Layers wird durch die Anzahl der Neuronen bestimmt \cite{Goodfellow-et-al-2016}. 
 Abilldung \ref{fig:neural_net} illustriert ein feedforward neuronales Netz als ein azyklischer Graph.
 
-
 Ziel eines KNNs ist es eine Funktion $f^*$ zu approximieren, dass einen Input $x$ auf einen Output $y$ abbildet. Durch das Output $y$ kann das Input $x$ klassifiziert oder ein Wert regressiert werden. Sei $y = f(x; \theta)$  solch eine Funktion, dann besetzt ein KNN die Werte des $\theta$ Parameters mit eines der besten Approximierung. Der Parameter $\theta$ stellt hierbei die Gewichte dar, welche erlernt werden sollen \cite{Goodfellow-et-al-2016}. 
 Das Lernen ist die strategische Anpassung der Gewichte über Input-Output Paare (\textit{Trainingsdaten}) und findet i.d.R. durch ein \textit{Backpropagation}-Verfahren statt \cite{Goodfellow-et-al-2016}. 
 
