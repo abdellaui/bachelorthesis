@@ -100,7 +100,7 @@ Bei einem feedforward Netzwerk werden die Daten im Netz immer vorwärts übertra
 \subsubsection{Künstliches Neuron}
 Ein einzelnes Neuron erhält einen Inputsignal auf mehreren Kanälen und löst erst ein Signal (\textit{output}) aus, falls die gewichtete Summe des Inputs einen gewissen Schwellwert erreicht \cite{CS231nConvolutionalNeural}. Abbildung \ref{fig:neuron} stellt eine beispielhafte Visualisierung eines künstlichen Neurons dar.
 
-Ein künstliches Neuron mit der Inputsgröße $M$ ist mathematisch die nicht-lineare Funktion $y : \mathbb{R}^M \mapsto \mathbb{R}$ mit dem Parameter $x$ als Input, $w$ als Gewichtsvektor, $b$ als ein Bias, $\phi$ als eine nicht-lineare \textit{Aktivierungsfunktion} \cite{CS231nConvolutionalNeural}:
+Ein künstliches Neuron mit der Inputgröße $M$ ist mathematisch die nicht-lineare Funktion $y : \mathbb{R}^M \mapsto \mathbb{R}$ mit dem Parameter $x$ als Input, $w$ als Gewichtsvektor, $b$ als ein Bias, $\phi$ als eine nicht-lineare \textit{Aktivierungsfunktion} \cite{CS231nConvolutionalNeural}:
 \begin{equation}
 	\label{eq:neuron}
 	y(x)=\phi\left(\sum_{m=1}^{M} w_{i} x_{i} + b\right) = \phi(W^Tx+b)
@@ -149,7 +149,7 @@ y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L \circ ... \circ f_2 \circ f_1)(x)
 
 \subsection{Convolutional Neural Networks}
 
-Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben wurden, arbeitet auf einem Inputsvektor $x \in \mathbb{R}^{M}$. Hingegen arbeiten CNNs auf einem drei-dimensionalen Inputsvolumen $x \in \mathbb{R}^{width} \times \mathbb{R}^{heigth} \times \mathbb{R}^{depth}$. CNNs werden hauptsächlich im Kontext von Bildern eingesetzt, dabei stellt z.B. ein 32 $\times$ 32 RGB-Bild ein Volumen von 32 $\times$ 32 $\times$ 3 dar \cite{CS231nConvolutionalNeurala}.
+Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben wurden, arbeitet auf einem Inputvektor $x \in \mathbb{R}^{M}$. Hingegen arbeiten CNNs auf einem drei-dimensionalen Inputvolumen $x \in \mathbb{R}^{width} \times \mathbb{R}^{heigth} \times \mathbb{R}^{depth}$. CNNs werden hauptsächlich im Kontext von Bildern eingesetzt, dabei stellt z.B. ein 32 $\times$ 32 RGB-Bild ein Volumen von 32 $\times$ 32 $\times$ 3 dar \cite{CS231nConvolutionalNeurala}.
 
 Eine Convolutional Neural Network Architektur setzt sich aus einer Sequenz von unterschiedlichen Schichtarten zusammen \cite{CS231nConvolutionalNeurala}. Im weiteren Verlauf dieses Kapitels werden die Arten der Schichten beschrieben. Tabelle \ref{tab:layer_param} gibt eine Übersicht der Schichten und Ihrer Parameter an.
 
@@ -203,7 +203,7 @@ Der Convolutional Layer ist der Hauptbestandteil eines CNNs, welches die Kombina
 
 
 \subsubsection{Pooling Layer}
-Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer reduzieren die Größe eines Inputsvolumen und verringert somit die Anzahl der erlernbaren Parameter. Die Pooling Operation wird auf jeder Schicht der Eingabe ausgeführt \cite{CS231nConvolutionalNeurala}. Die meist verbreitete \textit{Pooling Methode} ist die Max-Pooling. Beim Max-Pooling iteriert ein Filter einer bestimmten Größe mit einer Schrittweite, gegeben durch dem Stride, über das Inputsvolumen und extrahiert das Maximum im aktuellen Filterbereich. Das Maximum wird für die weitere Berechnung beibehalten und die restlichen Werte verworfen
+Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer reduzieren die Größe eines Inputvolumens und verringert somit die Anzahl der erlernbaren Parameter. Die Pooling Operation wird auf jeder Schicht der Eingabe ausgeführt \cite{CS231nConvolutionalNeurala}. Die meist verbreitete \textit{Pooling Methode} ist die Max-Pooling. Beim Max-Pooling iteriert ein Filter einer bestimmten Größe mit einer Schrittweite, gegeben durch dem Stride, über das Inputvolumen und extrahiert das Maximum im aktuellen Filterbereich. Das Maximum wird für die weitere Berechnung beibehalten und die restlichen Werte verworfen
  \cite{CS231nConvolutionalNeurala}. In dieser Arbeit wird neben der Max-Pooling Operation auch die Average-Pooling Operation eingesetzt. Das Average-Pooling behält im aktuellen Filterbereich,  statt das Maximum, den Durchschnittswert \cite{CS231nConvolutionalNeurala}.
  
  
@@ -219,10 +219,10 @@ Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer redu
 
 
 \subsubsection{Fully-Connected Layer}
-Nach einer Periode von Convolution und Pooling Layers folgt meist eine fully-connected Layer, auch bekannt als \textit{Dense Layer}. Dieser Layer folgt den gleichen Konzept, wie in Abschnitt \ref{sec:feedforwardNN} beschrieben. Der Output dieses Layers wird meist einer weiteren Aktivierungsfunktion übergeben \cite{yamashitaConvolutionalNeuralNetworks2018} und i.d.R. dadurch der Output des CNNs bestimmt.
+Nach einer Periode von Convolution und Pooling Layers folgt meist eine fully-connected Layer, auch bekannt als \textit{Dense Layer}. Dieser Layer folgt den gleichen Konzept der feedforward Neural Networks, wie in Abschnitt \ref{sec:feedforwardNN} beschrieben. Der Output dieses Layers wird meist einer weiteren Aktivierungsfunktion übergeben \cite{yamashitaConvolutionalNeuralNetworks2018} und i.d.R. dadurch der Output des CNNs bestimmt.
 
 \subsection{Bekannte CNN Modelle}
-Es gibt zahlreiche bekannte CNN Modelle. Meist sind diese Modelle Sieger von populären Wettbewerben, solche wie die Large Scale Visual Recognition Challenge (\textit{ILSVRC}) \cite{russakovskyImageNetLargeScale2014}. Diese Arbeit behandelt nur das GoogLeNet Model und dessen Modifaktion PoseNet. \subsubsection{GoogLeNet} 
+Es gibt zahlreiche bekannte CNN Modelle. Meist sind diese Modelle Sieger von internationalen Wettbewerben, solche wie die Large Scale Visual Recognition Challenge (\textit{ILSVRC}) \cite{russakovskyImageNetLargeScale2014}. Diese Arbeit behandelt nur das GoogLeNet Model und dessen Modifaktion PoseNet. \subsubsection{GoogLeNet} 
 GoogleNet wurde von \citet{szegedyGoingDeeperConvolutions2015} vorgestellt und gewann das ILSVRC14 Wettbewerb. In dem selben Paper stellen die Autoren das \textit{Inception Modul} dar.
 
  \begin{figure}[H]
