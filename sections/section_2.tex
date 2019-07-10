@@ -145,11 +145,10 @@ y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L \circ ... \circ f_2 \circ f_1)(x)
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.75\textwidth]{images/neural_net.png}
+	\includegraphics[width=0.7\textwidth]{images/neural_net.png}
 	\caption{Ein feedforward neuronales Netz mit der Tiefe 3 bestehend aus einem Input-Layer der Breite 3, aus zwei Hidden-Layer der Breite 4 und einem Output-Layer der Breite 1. Mit der Gleichung \ref{eq:network}  lässt sich dieses Netzwerk als die Funktion $f :  \mathbb{R}^{3} \mapsto \mathbb{R}^{1}$ mit $f(x)=f_3(f_2(f_1(x)))$ darstellen. }
 	\label{fig:neural_net}
 \end{figure}
-\vspace*{1.5cm}
 
 \subsection{Convolutional Neural Networks}
 
@@ -227,11 +226,11 @@ Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer redu
 Nach einer Periode von Convolution und Pooling Layer folgt meist eine fully-connected (\textit{FC}) Layer, auch bekannt als \textit{Dense Layer}. Dieser Layer folgt den gleichen Konzept der feedforward Neural Networks, wie in Abschnitt \ref{sec:feedforwardNN} beschrieben. Der Output dieses Layers wird häufig einer weiteren Aktivierungsfunktion übergeben \cite{yamashitaConvolutionalNeuralNetworks2018} und prinzipiell wird dadurch der Output des CNNs bestimmt.
 
 \subsection{Bekannte CNN Modelle}
-Es gibt zahlreiche bekannte CNN Modelle. Grundsätzlich erzielen diese Modelle in internationalen Wettbewerben, solche wie die ILSVRC \cite{russakovskyImageNetLargeScale2014}, hervorragende Ergebnisse. Dieses Kapitel behandelt nur die Architektur des GoogLeNet Models und dessen Modifaktion PoseNet.
+Es gibt zahlreiche bekannte CNN Modelle. Grundsätzlich erzielen diese Modelle in internationalen Wettbewerben, solche wie die ILSVRC \cite{russakovskyImageNetLargeScale2014}, ausgezeichnete Ergebnisse. Dieses Kapitel behandelt nur die Architektur des GoogLeNet Models und dessen Modifaktion PoseNet.
 
 \subsubsection{GoogLeNet}
 \label{sec:googlenet}
-GoogLeNet wurde von \citet{szegedyGoingDeeperConvolutions2015} vorgestellt und gewann das ILSVRC14 Wettbewerb. In dem selben Paper stellen die Autoren das \textit{Inception Modul} dar.
+Das GoogLeNet Model, konstruiert von \citet{szegedyGoingDeeperConvolutions2015} im Jahr 2014, ist der Sieger des ILSVRC14 Wettbewerbes. In dem selben Paper stellen die Autoren das \textit{Inception Modul} dar.
 
  \begin{figure}[H]
 	\centering
