@@ -242,18 +242,26 @@ GoogleNet wurde von \citet{szegedyGoingDeeperConvolutions2015} vorgestellt und g
  \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/googlenet/googlenet_diagram.pdf}
-	\caption{Inception module. Diagramm basiert auf \cite{szegedyGoingDeeperConvolutions2015}.}
+	\caption{Der architektonische Aufbau des GoogLeNet Models. Das Inception-Block wird in Abbildung \ref{fig:inception_module} detallierter dargestellt. Diagramm basiert auf \cite{szegedyGoingDeeperConvolutions2015}.}
 	\label{fig:googlenet}
 \end{figure}
 
 
 \subsubsection{PoseNet}
 \label{sec:posenet}
-PoseNet modifiziert die im Kapitel \ref{sec:googlenet} eingeführte GoogleNet Architektur. Statt eine Wahrscheinlichkeitsverteilung der Klassifierungsergebnisse, liefert PoseNet die 6 Freiheitsgrade einer Pose $y = [\pmb{p};\pmb{q}]$, bestehend aus einem Positionsvektor $\pmb{p} \in  \mathbb{R}^{3}$ und einem Quaternion der  Orientierung $ \pmb{q} \in  \mathbb{R}^{4}.$
+PoseNet basiert auf die, im Kapitel \ref{sec:googlenet} eingeführte, GoogLeNet Architektur. Statt eine Wahrscheinlichkeitsverteilung der Klassifierungsergebnisse, liefert PoseNet die 6 Freiheitsgrade einer Pose $y = [\pmb{p};\pmb{q}]$, bestehend aus einem Positionsvektor $\pmb{p} \in  \mathbb{R}^{3}$ und einem Quaternion der  Orientierung $ \pmb{q} \in  \mathbb{R}^{4}$.
+
+PoseNet modifiziert die GoogLeNet Architektur folgend:
+\begin{itemize}
+	\item softmax classifer affine regressoren
+	\item ajjaa
+	\item afasdadas
+\end{itemize}
+Abilldung \ref{fig:posenet_mods} veranschaulicht die Modifikation von GoogLeNet durch PoseNet.
 
  \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.94\textwidth]{images/googlenet/posenet_diagram2.pdf}
-	\caption{Visualisierung der Modifikation von den Output-Modulen der GoogLeNet Architektur durch PoseNet. Die Softmax Aktivierungsfunktion sowie das fully-connected Layer mit Anzahl der Klassifizierungskategorien als Breite wurde von allen Output-Modulen entfernt. Jedes Output-Modul hat einen FC Regressions-Layer erhalten, welches die 6 Freiheitsgrade einer Pose bestimmt. Das erste Output-Modul wird zusätzlich mit einer weiteren FC-Layer der Breite 2048 vor dem Regressions-Layer erweitert \cite{kendallPoseNetConvolutionalNetwork2015}.}
+	\caption{Veranschaulichung der Modifikation von den Output-Zweigen der GoogLeNet Architektur durch PoseNet. Die Softmax Aktivierungsfunktion sowie das fully-connected Layer mit Anzahl der Klassifizierungskategorien als Breite wurde von allen Output-Modulen entfernt. Jeder Output-Zweig hat einen FC Regressions-Layer erhalten, welches die 6 Freiheitsgrade einer Pose bestimmt. Der erste Output-Zweig wird zusätzlich mit einer weiteren FC-Layer der Breite 2048 vor dem Regressions-Layer erweitert \cite{kendallPoseNetConvolutionalNetwork2015}.}
 	\label{fig:posenet_mods}
 \end{figure}
