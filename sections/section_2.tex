@@ -208,7 +208,7 @@ Abbildung \ref{fig:relu} stellt eine Aktivierungsfunktion dar.
 
 \subsubsection{Pooling Layer}
 Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer reduzieren die Größe eines Inputvolumens und verringert somit die Anzahl der erlernbaren Parameter. Die Pooling Operation wird auf jeder Schicht der Eingabe ausgeführt \cite{CS231nConvolutionalNeurala}. Die meist verbreitete \textit{Pooling Methode} ist die Max-Pooling. Beim Max-Pooling iteriert ein Filter einer bestimmten Größe mit einer Schrittweite, gegeben durch dem Stride, über das Inputvolumen und extrahiert das Maximum im aktuellen Filterbereich. Das Maximum wird für die weitere Berechnung beibehalten und die restlichen Werte verworfen
- \cite{CS231nConvolutionalNeurala}. In dieser Arbeit wird neben der Max-Pooling Operation auch die Average-Pooling Operation eingesetzt. Das Average-Pooling behält im aktuellen Filterbereich,  statt das Maximum, den Durchschnittswert \cite{CS231nConvolutionalNeurala}.
+ \cite{CS231nConvolutionalNeurala}. In dieser Arbeit wird neben der Max-Pooling Operation auch die Average-Pooling Operation eingesetzt. Das Average-Pooling behält im aktuellen Filterbereich den Durchschnittswert, statt das Maximum, \cite{CS231nConvolutionalNeurala}.
  
  
  Sei 
@@ -249,7 +249,7 @@ GoogleNet wurde von \citet{szegedyGoingDeeperConvolutions2015} vorgestellt und g
 
 \subsubsection{PoseNet}
 \label{sec:posenet}
-PoseNet modifiziert die im Kapitel \ref{sec:googlenet} eingeführte GoogleNet Architektur. Statt eine Wahrscheinlichkeitsverteilung der Klassifierungsergebnisse liefert PoseNet die 6 Freiheitsgrade einer Pose $y = [\pmb{p},\pmb{q}]$, bestehend aus einem Positionsvektor $\pmb{p} \in  \mathbb{R}^{3}$ und einem Quaternion der  Orientierung $ \pmb{q} \in  \mathbb{R}^{4}.$
+PoseNet modifiziert die im Kapitel \ref{sec:googlenet} eingeführte GoogleNet Architektur. Statt eine Wahrscheinlichkeitsverteilung der Klassifierungsergebnisse, liefert PoseNet die 6 Freiheitsgrade einer Pose $y = [\pmb{p};\pmb{q}]$, bestehend aus einem Positionsvektor $\pmb{p} \in  \mathbb{R}^{3}$ und einem Quaternion der  Orientierung $ \pmb{q} \in  \mathbb{R}^{4}.$
 
  \begin{figure}[H]
 	\centering
