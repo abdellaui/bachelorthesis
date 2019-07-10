@@ -106,6 +106,7 @@ Ein künstliches Neuron mit der Inputgröße $M$ ist mathematisch die nicht-line
 	y(x)=\phi\left(\sum_{m=1}^{M} w_{i} x_{i} + b\right) = \phi(W^Tx+b)
 \end{equation}
 
+\vspace*{0.5cm}
 
 \begin{figure}[H]
 	\centering
@@ -140,12 +141,15 @@ Die Funktion $y = f(x; \theta)$ bildet sich aus den Funktionen der Schichten (Gl
 y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L \circ ... \circ f_2 \circ f_1)(x)
 \end{equation}
 
+\vspace*{1.5cm}
+
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{images/neural_net.png}
+	\includegraphics[width=0.7\textwidth]{images/neural_net.png}
 	\caption{Ein feedforward neuronales Netz mit der Tiefe 3 bestehend aus einem Input-Layer der Breite 3, aus zwei Hidden-Layer der Breite 4 und einem Output-Layer der Breite 1. Mit der Gleichung \ref{eq:network}  lässt sich dieses Netzwerk als die Funktion $f :  \mathbb{R}^{3} \mapsto \mathbb{R}^{1}$ mit $f(x)=f_3(f_2(f_1(x)))$ darstellen. }
 	\label{fig:neural_net}
 \end{figure}
+\vspace*{1.5cm}
 
 \subsection{Convolutional Neural Networks}
 
@@ -153,7 +157,7 @@ Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben wurden,
 
 Eine Convolutional Neural Network Architektur setzt sich aus einer Sequenz von unterschiedlichen Schichtarten zusammen \cite{CS231nConvolutionalNeurala}. Im weiteren Verlauf dieses Kapitels werden die Arten der Schichten beschrieben. Tabelle \ref{tab:layer_param} gibt eine Übersicht der Schichten und Ihrer Parameter an.
 
-\begin{table}
+\begin{table}[H]
 	\centering
 	\caption{Übersicht der Paramter und Hyperparamter der Schichten eines Convolutional Neural Networks. Die Parameter werden während der Trainingsphase optimiert und Hyperparameter werden vorab fest definiert \cite{yamashitaConvolutionalNeuralNetworks2018}. }
 	\begin{tabularx}{1.0\textwidth}{X X X}
@@ -183,14 +187,13 @@ Eine Convolutional Neural Network Architektur setzt sich aus einer Sequenz von u
 	\label{tab:layer_param}
 \end{table}
 
-
-
 \subsubsection{Convolution Layer}
 Der Convolutional Layer ist der Hauptbestandteil eines CNNs, welches die Kombination eines Convolution Operationen und einer Aktivierungsfunktion ist \cite{yamashitaConvolutionalNeuralNetworks2018}. 
+Abbildung \ref{fig:convolution_layer} illustriert eine Convolution Operation. Abbildung \ref{fig:relu} stellt eine Aktivierungsfunktion dar.
 
-Abilldung \ref{fig:convolution_layer} illustriert eine Convolution Operation.
 
-Abbildung \ref{fig:relu} stellt eine Aktivierungsfunktion dar.
+\pagebreak
+\vspace*{\fill}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/convolution_layer.png}
@@ -205,12 +208,12 @@ Abbildung \ref{fig:relu} stellt eine Aktivierungsfunktion dar.
 	\label{fig:relu}
 \end{figure}
 
-
 \subsubsection{Pooling Layer}
 Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer reduzieren die Größe eines Inputvolumens und verringert somit die Anzahl der erlernbaren Parameter. Die Pooling Operation wird auf jeder Schicht der Eingabe ausgeführt \cite{CS231nConvolutionalNeurala}. Die meist verbreitete \textit{Pooling Methode} ist die Max-Pooling. Beim Max-Pooling iteriert ein Filter einer bestimmten Größe mit einer Schrittweite, gegeben durch dem Stride, über das Inputvolumen und extrahiert das Maximum im aktuellen Filterbereich. Das Maximum wird für die weitere Berechnung beibehalten und die restlichen Werte verworfen
  \cite{CS231nConvolutionalNeurala}. In dieser Arbeit wird neben der Max-Pooling Operation auch die Average-Pooling Operation eingesetzt. Das Average-Pooling behält im aktuellen Filterbereich den Durchschnittswert, statt das Maximum \cite{CS231nConvolutionalNeurala}.
  
  Im Vergleich zu einem Convolutional Layers wird ein Pooling Layer nur aus Hyperparameter definiert und bleibt daher statisch \cite{yamashitaConvolutionalNeuralNetworks2018}. Abbildung \ref{fig:pooling_layer} zeigt eine beispielhafte Ausführung einer Max-Pooling Operation. Tabelle \ref{tab:layer_param} listet die Hyperparameter eines Pooling Layers auf.
+ \vspace*{1cm}
  \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/max_pool.png}
@@ -240,15 +243,15 @@ GoogleNet wurde von \citet{szegedyGoingDeeperConvolutions2015} vorgestellt und g
 \vspace*{\fill}
 	 \begin{figure}[H]
 		\centering
-		\includegraphics[width=0.8\textwidth]{images/googlenet/googlenet_diagram.pdf}
+		\includegraphics[width=0.85\textwidth]{images/googlenet/googlenet_diagram.pdf}
 		\caption{Der architektonische Aufbau des GoogLeNet Models. Das Inception-Block wird in Abbildung \ref{fig:inception_module} detaillierter dargestellt. Es gibt 3 Ouput-Zweige, die mit einer identisch aufgebauten Output-Knoten enden. Die Werte der Output-Zweige 2 \& 3 haben nur während der Trainingsphase einen Einfluss und werden in der Evaluationsphase verworfen. In der Trainingsphase wird vor jedem Output-Knoten ein Dropout von 40\% angewandt. Jedes Convolution Layer hat die ReLU (Abbildung \ref{fig:relu}) als Aktivierungsfunktion. Die \textit{Local-Response-Normalization} \cite{krizhevskyImageNetClassificationDeep2012a} ist ein bekanntes Normierungsverfahren und kommt prinzipiell in Verbindung mit der ReLU Aktivierungsfunktion vor. Abbildung basiert auf \cite{szegedyGoingDeeperConvolutions2015}.}
 		\label{fig:googlenet}
 	\end{figure}
-\vspace*{\fill}
-
+%\vspace*{\fill}
+%\pagebreak
 \subsubsection{PoseNet}
 \label{sec:posenet}
-PoseNet basiert auf die, im Kapitel \ref{sec:googlenet} eingeführte, GoogLeNet Architektur. Statt eine Wahrscheinlichkeitsverteilung der Klassifierungsergebnisse, liefert PoseNet die 6 Freiheitsgrade einer Pose $y = [\pmb{p};\pmb{q}]$, bestehend aus einem Positionsvektor $\pmb{p} \in  \mathbb{R}^{3}$ und eine Quaternion der Orientierung $ \pmb{q} \in  \mathbb{R}^{4}$.
+PoseNet, vorgestellt von \citet{kendallPoseNetConvolutionalNetwork2015} im Jahr 2015, basiert auf die im Kapitel \ref{sec:googlenet} eingeführte GoogLeNet Architektur. Statt eine Wahrscheinlichkeitsverteilung der Klassifierungsergebnisse, liefert PoseNet die 6 Freiheitsgrade einer Pose $y = [\pmb{p};\pmb{q}]$, bestehend aus einem Positionsvektor $\pmb{p} \in  \mathbb{R}^{3}$ und eine Quaternion der Orientierung $ \pmb{q} \in  \mathbb{R}^{4}$.
 
 PoseNet modifiziert die GoogLeNet Architektur an den Output-Knoten, dargestellt in Abbildung \ref{fig:googlenet}, wie folgt \cite{kendallPoseNetConvolutionalNetwork2015}:
 \begin{itemize}
@@ -257,15 +260,18 @@ PoseNet modifiziert die GoogLeNet Architektur an den Output-Knoten, dargestellt 
 
 \end{itemize}
 Abbildung \ref{fig:posenet_mods} veranschaulicht die Modifikation von GoogLeNet durch PoseNet.
-
-Die Autoren \citet{kendallPoseNetConvolutionalNetwork2015} stellen zusätzlich eine neue Kostenfunktion vor, mit den Parametern $\hat{y} = [\hat{\pmb{p}};\hat{\pmb{q}}]$ als Soll-Wert und $y = [\pmb{p};\pmb{q}]$ als Ist-Wert. Der Hyperparameter $\beta$ stellt eine Balance der Kosten zwischen den Positions- und Orientierungsdiskrepanz und wird in Gebäuden im Wertebereich zwischen 120 bis 750, außerhalb des Gebäudes zwischen 250 bis 2000 empfohlen  \citet{kendallPoseNetConvolutionalNetwork2015}. 
-\begin{equation}
-	loss(I) = \norm{ \hat{\pmb{p}} - \pmb{p} }_2 + \beta \norm{ \hat{\pmb{p}} - \frac{\pmb{q}}{\norm{\pmb{q}}}}_2
-\end{equation}
-
+\vspace*{1cm}
  \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.94\textwidth]{images/googlenet/posenet_diagram2.pdf}
+	\includegraphics[width=\textwidth]{images/googlenet/posenet_diagram2.pdf}
 	\caption{Veranschaulichung der Modifikation von den Output-Zweigen der GoogLeNet Architektur durch PoseNet. Die Softmax Aktivierungsfunktion sowie das fully-connected Layer mit Anzahl der Klassifizierungskategorien als Breite wurde von allen Output-Modulen entfernt. Jeder Output-Zweig hat einen FC-Regressionsschicht erhalten, welches die 6 Freiheitsgrade einer Pose bestimmt. Der Output-Zweig 1 wird zusätzlich mit einer weiteren FC-Layer der Breite 2048 vor dem Regressionsschicht erweitert \cite{kendallPoseNetConvolutionalNetwork2015}.}
 	\label{fig:posenet_mods}
 \end{figure}
+\vspace*{2cm}
+
+Die Autoren \citet{kendallPoseNetConvolutionalNetwork2015} stellen zusätzlich eine neue Kostenfunktion vor, mit den Parametern $\hat{y} = [\hat{\pmb{p}};\hat{\pmb{q}}]$ als Soll-Wert und $y = [\pmb{p};\pmb{q}]$ als Ist-Wert. Der Hyperparameter $\beta$ soll eine Balance der Kosten zwischen dem Positions- und Orientierungsdiskrepanz darstellen und wird in Gebäuden im Wertebereich zwischen 120 bis 750, sowie außerhalb des Gebäudes zwischen 250 bis 2000, empfohlen  \citet{kendallPoseNetConvolutionalNetwork2015}. 
+\begin{equation}
+	\label{eq:kendal_loss}
+	loss(I) = \norm{ \hat{\pmb{p}} - \pmb{p} }_2 + \beta \norm{ \hat{\pmb{p}} - \frac{\pmb{q}}{\norm{\pmb{q}}}}_2
+\end{equation}
+
