@@ -226,7 +226,10 @@ Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer redu
 Nach einer Periode von Convolution und Pooling Layers folgt meist eine fully-connected (\textit{FC}) Layer, auch bekannt als \textit{Dense Layer}. Dieser Layer folgt den gleichen Konzept der feedforward Neural Networks, wie in Abschnitt \ref{sec:feedforwardNN} beschrieben. Der Output dieses Layers wird häufig einer weiteren Aktivierungsfunktion übergeben \cite{yamashitaConvolutionalNeuralNetworks2018} und prinzipiell wird dadurch der Output des CNNs bestimmt.
 
 \subsection{Bekannte CNN Modelle}
-Es gibt zahlreiche bekannte CNN Modelle. Meist sind diese Modelle Sieger von internationalen Wettbewerben, solche wie die Large Scale Visual Recognition Challenge (\textit{ILSVRC}) \cite{russakovskyImageNetLargeScale2014}. Diese Arbeit behandelt nur das GoogLeNet Model und dessen Modifaktion PoseNet. \subsubsection{GoogLeNet} 
+Es gibt zahlreiche bekannte CNN Modelle. Meist sind diese Modelle Sieger von internationalen Wettbewerben, solche wie die Large Scale Visual Recognition Challenge (\textit{ILSVRC}) \cite{russakovskyImageNetLargeScale2014}. Diese Arbeit behandelt nur das GoogLeNet Model und dessen Modifaktion PoseNet. 
+
+\subsubsection{GoogLeNet}
+\label{sec:googlenet}
 GoogleNet wurde von \citet{szegedyGoingDeeperConvolutions2015} vorgestellt und gewann das ILSVRC14 Wettbewerb. In dem selben Paper stellen die Autoren das \textit{Inception Modul} dar.
 
  \begin{figure}[H]
@@ -245,12 +248,12 @@ GoogleNet wurde von \citet{szegedyGoingDeeperConvolutions2015} vorgestellt und g
 
 
 \subsubsection{PoseNet}
-
+\label{sec:posenet}
+PoseNet modifiziert die im Kapitel \ref{sec:googlenet} eingeführte GoogleNet Architektur. Statt eine Wahrscheinlichkeitsverteilung der Klassifierungsergebnisse liefert PoseNet die 6 Freiheitsgrade einer Pose $y = [\pmb{p},\pmb{q}]$, bestehend aus einem Positionsvektor $\pmb{p} \in  \mathbb{R}^{3}$ und einem Quaternion der  Orientierung $ \pmb{q} \in  \mathbb{R}^{4}.$
 
  \begin{figure}[H]
-	\centering\pagebreak
+	\centering
 	\includegraphics[width=0.94\textwidth]{images/googlenet/posenet_diagram2.pdf}
 	\caption{Visualisierung der Modifikation von den Output-Modulen der GoogLeNet Architektur durch PoseNet. Die Softmax Aktivierungsfunktion sowie das fully-connected Layer mit Anzahl der Klassifizierungskategorien als Breite wurde von allen Output-Modulen entfernt. Jedes Output-Modul hat einen FC Regressions-Layer erhalten, welches die 6 Freiheitsgrade einer Pose bestimmt. Das erste Output-Modul wird zusätzlich mit einer weiteren FC-Layer der Breite 2048 vor dem Regressions-Layer erweitert \cite{kendallPoseNetConvolutionalNetwork2015}.}
 	\label{fig:posenet_mods}
 \end{figure}
-	\centering
