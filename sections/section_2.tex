@@ -250,9 +250,9 @@ GoogleNet wurde von \citet{szegedyGoingDeeperConvolutions2015} vorgestellt und g
 \label{sec:posenet}
 PoseNet basiert auf die, im Kapitel \ref{sec:googlenet} eingeführte, GoogLeNet Architektur. Statt eine Wahrscheinlichkeitsverteilung der Klassifierungsergebnisse, liefert PoseNet die 6 Freiheitsgrade einer Pose $y = [\pmb{p};\pmb{q}]$, bestehend aus einem Positionsvektor $\pmb{p} \in  \mathbb{R}^{3}$ und eine Quaternion der Orientierung $ \pmb{q} \in  \mathbb{R}^{4}$.
 
-PoseNet modifiziert die GoogLeNet Architektur folgend:
+PoseNet modifiziert die GoogLeNet Architektur an den Output-Knoten, dargestellt in Abbildung \ref{fig:googlenet}, wie folgend:
 \begin{itemize}
-	\item softmax classifer affine regressoren
+	\item Jedes der Softmax-Klassifikatoren werden ersetzt durch Regressoren. 
 	\item ajjaa
 	\item afasdadas
 \end{itemize}
