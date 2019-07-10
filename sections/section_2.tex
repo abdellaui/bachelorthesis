@@ -242,7 +242,7 @@ GoogleNet wurde von \citet{szegedyGoingDeeperConvolutions2015} vorgestellt und g
  \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/googlenet/googlenet_diagram.pdf}
-	\caption{Der architektonische Aufbau des GoogLeNet Models. Das Inception-Block wird in Abbildung \ref{fig:inception_module} detallierter dargestellt. Diagramm basiert auf \cite{szegedyGoingDeeperConvolutions2015}.}
+	\caption{Der architektonische Aufbau des GoogLeNet Models. Das Inception-Block wird in Abbildung \ref{fig:inception_module} detaillierter dargestellt. Es gibt 3 Ouput-Zweige die mit einer identisch aufgebauten Output-Knoten enden. Die Werte der Output-Zweige 2 und 3 haben nur während der Trainingsphase einen Einfluss und werden in der Evaluationsphase verworfen. Diagramm basiert auf \cite{szegedyGoingDeeperConvolutions2015}.}
 	\label{fig:googlenet}
 \end{figure}
 
