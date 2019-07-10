@@ -250,17 +250,22 @@ GoogleNet wurde von \citet{szegedyGoingDeeperConvolutions2015} vorgestellt und g
 \label{sec:posenet}
 PoseNet basiert auf die, im Kapitel \ref{sec:googlenet} eingeführte, GoogLeNet Architektur. Statt eine Wahrscheinlichkeitsverteilung der Klassifierungsergebnisse, liefert PoseNet die 6 Freiheitsgrade einer Pose $y = [\pmb{p};\pmb{q}]$, bestehend aus einem Positionsvektor $\pmb{p} \in  \mathbb{R}^{3}$ und eine Quaternion der Orientierung $ \pmb{q} \in  \mathbb{R}^{4}$.
 
-PoseNet modifiziert die GoogLeNet Architektur an den Output-Knoten, dargestellt in Abbildung \ref{fig:googlenet}, wie folgend:
+PoseNet modifiziert die GoogLeNet Architektur an den Output-Knoten, dargestellt in Abbildung \ref{fig:googlenet}, wie folgt \cite{kendallPoseNetConvolutionalNetwork2015}:
 \begin{itemize}
-	\item Jedes der Softmax-Klassifikatoren werden ersetzt durch Regressoren. 
-	\item ajjaa
-	\item afasdadas
+	\item Jedes der Softmax-Klassifikatoren werden ersetzt durch Regressoren. Dabei wird der Softmax-Activation Layer entfernt und der FC-Layer so modifiziert, dass es einen 7-dimensionalen Vektor\footnote{(3) für die Position und (4) für die Orientierung} ausgibt.
+	\item Vor dem finalen Regressor des Output-Zweiges 1 wird ein weiteres FC-Layer der Breite 2048 eingefügt.
+
 \end{itemize}
-Abilldung \ref{fig:posenet_mods} veranschaulicht die Modifikation von GoogLeNet durch PoseNet.
+Abbildung \ref{fig:posenet_mods} veranschaulicht die Modifikation von GoogLeNet durch PoseNet.
+
+Die Autoren \citet{kendallPoseNetConvolutionalNetwork2015} stellen zusätzlich eine neue Kostenfunktion vor, mit den Parametern $\hat{y} = [\hat{\pmb{p}};\hat{\pmb{q}}]$ als Soll-Wert und $y = [\pmb{p};\pmb{q}]$ als Ist-Wert. Der Hyperparameter $\beta$ stellt eine Balance der Kosten zwischen den Positions- und Orientierungsdiskrepanz und wird in Gebäuden im Wertebereich zwischen 120 bis 750, außerhalb des Gebäudes zwischen 250 bis 2000 empfohlen  \citet{kendallPoseNetConvolutionalNetwork2015}. 
+\begin{equation}
+	loss(I) = \norm{ \hat{\pmb{p}} - \pmb{p} }_2 + \beta \norm{ \hat{\pmb{p}} - \frac{\pmb{q}}{\norm{\pmb{q}}}}_2
+\end{equation}
 
  \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.94\textwidth]{images/googlenet/posenet_diagram2.pdf}
-	\caption{Veranschaulichung der Modifikation von den Output-Zweigen der GoogLeNet Architektur durch PoseNet. Die Softmax Aktivierungsfunktion sowie das fully-connected Layer mit Anzahl der Klassifizierungskategorien als Breite wurde von allen Output-Modulen entfernt. Jeder Output-Zweig hat einen FC-Regressionsschicht erhalten, welches die 6 Freiheitsgrade einer Pose bestimmt. Der erste Output-Zweig wird zusätzlich mit einer weiteren FC-Layer der Breite 2048 vor dem Regressionsschicht erweitert \cite{kendallPoseNetConvolutionalNetwork2015}.}
+	\caption{Veranschaulichung der Modifikation von den Output-Zweigen der GoogLeNet Architektur durch PoseNet. Die Softmax Aktivierungsfunktion sowie das fully-connected Layer mit Anzahl der Klassifizierungskategorien als Breite wurde von allen Output-Modulen entfernt. Jeder Output-Zweig hat einen FC-Regressionsschicht erhalten, welches die 6 Freiheitsgrade einer Pose bestimmt. Der Output-Zweig 1 wird zusätzlich mit einer weiteren FC-Layer der Breite 2048 vor dem Regressionsschicht erweitert \cite{kendallPoseNetConvolutionalNetwork2015}.}
 	\label{fig:posenet_mods}
 \end{figure}
