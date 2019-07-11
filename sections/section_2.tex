@@ -2,7 +2,7 @@
 \pagebreak
 \section{Stand der Forschung und Grundlagen}
 
-Dieses Kapitel versucht einen Überblick des Forschungsstandes in den unterschiedlichen Aspekten der Arbeit zu verschaffen. Anschließend vermittelt das Kapitel notwendige Grundkenntnisse.
+Das vorliegende Kapitel versucht einen Überblick des Forschungsstandes in den unterschiedlichen Aspekten der Arbeit zu verschaffen. Anschließend vermittelt das Kapitel notwendige Grundkenntnisse.
 
 \subsection{Einführung}
 
@@ -154,7 +154,7 @@ y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L \circ ... \circ f_2 \circ f_1)(x)
 
 Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben werden, arbeitet auf einem Inputvektor $x \in \mathbb{R}^{M}$. Hingegen arbeiten CNNs auf einem drei-dimensionalen Inputvolumen $x \in \mathbb{R}^{width} \times \mathbb{R}^{heigth} \times \mathbb{R}^{depth}$. CNNs werden hauptsächlich im Kontext von Bildern eingesetzt, dabei stellt z.B. ein 32 $\times$ 32 RGB-Bild ein Volumen von 32 $\times$ 32 $\times$ 3 dar \cite{CS231nConvolutionalNeurala}.
 
-Eine Convolutional Neural Network Architektur setzt sich aus einer Sequenz von unterschiedlichen Layer-Arten zusammen \cite{CS231nConvolutionalNeurala}. Im weiteren Verlauf dieses Kapitels werden die Arten der Layer beschrieben. Tabelle \ref{tab:layer_param} gibt eine Übersicht der Layer und ihrer Parameter an.
+Angefangen mit der LeNet-5 \cite{lecunGradientBasedLearningApplied1998} Architektur, setzt sich typischerweise ein Convolutional Neural Network aus einer Sequenz von unterschiedlichen Layer-Arten zusammen \cite{CS231nConvolutionalNeurala}. Im weiteren Verlauf dieses Kapitels werden die Arten der Layer beschrieben. Tabelle \ref{tab:layer_param} gibt eine Übersicht der Layer und ihrer Parameter an.
 
 \begin{table}[H]
 	\centering
@@ -226,12 +226,11 @@ Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer redu
 Nach einer Periode von Convolution und Pooling Layer folgt meist eine fully-connected (\textit{FC}) Layer, auch bekannt als \textit{Dense Layer}. Dieser Layer folgt den gleichen Konzept der feedforward Neural Networks, wie in Abschnitt \ref{sec:feedforwardNN} beschrieben. Der Output dieses Layers wird häufig einer weiteren Aktivierungsfunktion übergeben \cite{yamashitaConvolutionalNeuralNetworks2018} und prinzipiell wird dadurch der Output des CNNs bestimmt.
 
 \subsection{Bekannte CNN Modelle}
-Grundsätzlich erzielen bekannte CNN Modelle in internationalen Wettbewerben, solche wie die ILSVRC \cite{russakovskyImageNetLargeScale2014}, ausgezeichnete Ergebnisse. Dieses Kapitel behandelt nur die Architektur des GoogLeNet Models und dessen Modifaktion PoseNet.
+Es existiert eine Menge von bekannten CNN Modellen mit ausgezeichneten Ergebnissen in internationalen Wettbewerben, solche wie die ILSVRC \cite{russakovskyImageNetLargeScale2014}. Dieses Kapitel behandelt nur die Architektur des GoogLeNet Models und dessen Modifikation zum PoseNet.
 
 \subsubsection{GoogLeNet}
 \label{sec:googlenet}
-Das GoogLeNet Model, konstruiert von \citet{szegedyGoingDeeperConvolutions2015} im Jahr 2014, ist der Sieger des ILSVRC14 Wettbewerbes. In dem selben Paper stellen die Autoren das \textit{Inception Modul} dar.
-
+Das GoogLeNet Model, konstruiert von \citet{szegedyGoingDeeperConvolutions2015} im Jahr 2014, ist der Sieger des ILSVRC14 Wettbewerbes. Das GoogLeNet Modell  kennzeichnet sich durch 
 Abbildung \ref{fig:googlenet} illustriert die GoogLeNet Architektur in Detail.
 
  \begin{figure}[H]
