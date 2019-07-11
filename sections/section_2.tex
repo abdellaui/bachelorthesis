@@ -126,7 +126,7 @@ y_l = f_l(y_{l-1}) = \phi(W^T_lx_{l-1}+b_{l})
 \end{equation}
 
 
-Die erste Schicht eines Netzwerk wird als Input-, die letzte Schicht als Ouput-Layer bezeichnet. Alle Schichten dazwischen sind Hidden-Layer \cite{Goodfellow-et-al-2016}. Der Ouput-Layer liefert zugleich auch das Ergebniss eines Netzwerks, daher haben die Neuronen des Ouput-Layers grundsätzlich keine Aktivierungsfunktion \cite{CS231nConvolutionalNeural}.
+Die erste Schicht eines Netzwerk wird als Input-, die letzte Schicht als Ouput-Layer bezeichnet. Alle Schichten dazwischen sind Hidden-Layer \cite{Goodfellow-et-al-2016}. Der Ouput-Layer liefert zugleich auch das Ergebnis eines Netzwerks, daher haben die Neuronen des Ouput-Layers grundsätzlich keine Aktivierungsfunktion \cite{CS231nConvolutionalNeural}.
 
 Die Tiefe (\textit{depth}) eines Netzwerks ist gegeben durch die Anzahl der Layer \footnote{der Input-Layer ist ausgeschloßen} und die Breite (\textit{width}) eines Layers wird durch die Anzahl der Neuronen bestimmt \cite{Goodfellow-et-al-2016}. 
 Abilldung \ref{fig:neural_net} illustriert ein feedforward neuronales Netz als ein azyklischer Graph.
@@ -145,7 +145,7 @@ y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L \circ ... \circ f_2 \circ f_1)(x)
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{images/neural_net.png}
+	\includegraphics[width=0.6\textwidth]{images/neural_net.png}
 	\caption{Ein feedforward neuronales Netz mit der Tiefe 3 bestehend aus einem Input-Layer der Breite 3, aus zwei Hidden-Layer der Breite 4 und einem Output-Layer der Breite 1. Mit der Gleichung \ref{eq:network}  lässt sich dieses Netzwerk als die Funktion $f :  \mathbb{R}^{3} \mapsto \mathbb{R}^{1}$ mit $f(x)=f_3(f_2(f_1(x)))$ darstellen. }
 	\label{fig:neural_net}
 \end{figure}
@@ -223,7 +223,7 @@ Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer redu
 
 
 \subsubsection{Fully-Connected Layer}
-Nach einer Periode von Convolution und Pooling Layer folgt meist eine fully-connected (\textit{FC}) Layer, auch bekannt als \textit{Dense Layer}. Dieser Layer folgt den gleichen Konzept der feedforward Neural Networks, wie in Abschnitt \ref{sec:feedforwardNN} beschrieben. Der Output dieses Layers wird häufig einer weiteren Aktivierungsfunktion übergeben \cite{yamashitaConvolutionalNeuralNetworks2018} und prinzipiell wird dadurch der Output des CNNs bestimmt.
+Nach einer Periode von Convolution und Pooling Layer folgt meist eine fully-connected (\textit{FC}) Layer, auch bekannt als \textit{Dense Layer}. Dieser Layer folgt den gleichen Konzept der feedforward Neural Networks, wie in Abschnitt \ref{sec:feedforwardNN} beschrieben. Das Output dieses Layers wird häufig einer weiteren Aktivierungsfunktion übergeben \cite{yamashitaConvolutionalNeuralNetworks2018} und prinzipiell wird dadurch das Output des CNNs bestimmt.
 
 \subsection{Bekannte CNN Modelle}
 Es existiert eine Menge von bekannten CNN Modellen mit ausgezeichneten Ergebnissen in internationalen Wettbewerben, z.B. Wettbewerbe wie die ILSVRC \cite{russakovskyImageNetLargeScale2014}. Dieses Kapitel behandelt nur die Architektur des GoogLeNet Modells und dessen Modifikation PoseNet.
@@ -234,17 +234,18 @@ GoogLeNet, konstruiert von \citet{szegedyGoingDeeperConvolutions2015} im Jahr 20
 %Das Netzwerk zeichnet sich mit einer raffinierten Architektur aus. Die Autoren konnten die benötigte Rechenkapazität konstant halten, während die Tiefe und Breite des neuronalen Netzes zunahm.
 %Das GoogLeNet ist ein 22 Layer tiefes Netzwerk, bestehend aus 9 sogenannten Inception Modulen. 
 GoogLeNet ist eine besondere Inkarnation des sogenannten Inception Moduls, welche zeitgleich mit GoogLeNet vorgestellt wird.
-Ein Inception Modul beinhaltet mehrere Convolutional Layer sowie einen Pooling Layer und verarbeitet das Inputvolumen parallel auf 4 Zweigen. Vor rechenintensiven Convolutional Layer werden zusätzliche 1$\times$1 dimensionsreduzierende Layer geschaltet. Abschließend werden die Zweige, welche ein Volumen mit der gleiche Breite und Höhe produzieren, zu einem Outputvolumen (in die Tiefe) zusammengeführt.  Durch die parallele Berechnung der Zweige und das Einschalten von dimensionsreduzierenden 1$\times$1 Layer vor rechenintensiven Operationen ermöglicht ein Inception Modul neuronale Netze bei zunehmender Tiefe und Breite konstante Rechenkapazität in Anspruch zu nehmen.
+Ein Inception Modul beinhaltet mehrere Convolutional sowie einen Pooling Layer und verarbeitet das Inputvolumen parallel auf 4 Zweigen. Vor rechenintensiven Convolutional Layer werden zusätzliche 1$\times$1 dimensionsreduzierende Layer geschaltet. Abschließend werden die Zweige, welche ein Volumen mit der gleiche Breite und Höhe produzieren, zu einem Outputvolumen (in die Tiefe) zusammengeführt.  Durch die parallele Berechnung der Zweige und das Einschalten von dimensionsreduzierenden 1$\times$1 Layer vor rechenintensiven Operationen ermöglicht ein Inception Modul neuronale Netze bei zunehmender Tiefe und Breite konstante Rechenkapazität in Anspruch zu nehmen.
 Inzwischen wurde das Inception Modul \cite{szegedyRethinkingInceptionArchitecture2016} und die gesamte Architektur rundherum \cite{szegedyInceptionv4InceptionResNetImpact2016} weiterentwickelt. Abbildung \ref{fig:inception_module} stellt das Inception (\textit{v1}) Modul dar.
 
-GoogLeNet ist ein 22 Layer tiefes neuronales Netz \footnote{inkl. Output Layer}, bestehend aus 9 Inception Modul (je von Tiefe 2).  Abbildung \ref{fig:googlenet} illustriert die GoogLeNet Architektur in Detail.
+GoogLeNet ist ein 22 Layer tiefes neuronales Netz \footnote{inkl. Output Layer}, bestehend aus 9 Inception Modul (je von Tiefe 2). Das Ungewöhnliche an GoogLeNet ist, das es 3 Output-Zweigen hat. Jedes der Ouput-Zweige produziert ein Klassifizierungsergebnis. Output-Zweig 2 \& 3 sind Hilfszweige, welche nur in der Trainingsphase einen Einfluss haben und in die Evaluationsphase nicht einfließen.  Abbildung \ref{fig:googlenet} illustriert die GoogLeNet Architektur in Detail.
 
  \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/googlenet/inception_module.png}
-	\caption{Darstelltung des Inception (\textit{v1}) Moduls. Das Inputvolumen wird auf 4 Zweige unabhängig verarbeitet. Die Ergebnisse der unabhängigen Operationen haben die gleiche Breite und Höhe. Der Output des Inception Moduls wird durch das Konkatenieren (in der Tiefe) der einzelnen Ergebnisse bestimmt. Die gelben 1$\times$1 Convolution Layer dienen zur Dimensionsreduktion. Entnommen aus \cite{szegedyGoingDeeperConvolutions2015}.}
+	\caption{Darstelltung des Inception (\textit{v1}) Moduls. Das Inputvolumen wird auf 4 Zweige unabhängig verarbeitet. Die Ergebnisse der unabhängigen Operationen haben die gleiche Breite und Höhe. Das Output des Inception Moduls wird durch das Konkatenieren (in der Tiefe) der einzelnen Ergebnisse bestimmt. Die gelben 1$\times$1 Convolution Layer dienen zur Dimensionsreduktion. Entnommen aus \cite{szegedyGoingDeeperConvolutions2015}.}
 	\label{fig:inception_module}
 \end{figure}
+
 
 \vspace*{\fill}
 	 \begin{figure}[H]
