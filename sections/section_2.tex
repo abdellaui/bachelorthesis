@@ -232,13 +232,14 @@ Es existiert eine Menge von bekannten CNN Modellen mit ausgezeichneten Ergebniss
 \label{sec:googlenet}
 GoogLeNet, konstruiert von \citet{szegedyGoingDeeperConvolutions2015} im Jahr 2014, ist der Sieger des ILSVRC14 Wettbewerbes. Das GoogLeNet Modell kennzeichnet sich durch.
 
-
-Abbildung \ref{fig:inception_module} stellt das Inception v1 Modul dar. Abbildung \ref{fig:googlenet} illustriert die GoogLeNet Architektur in Detail.
+Inzwischen wurde das Inception Modul \cite{szegedyRethinkingInceptionArchitecture2016} und die gesamte Architektur herum \cite{szegedyInceptionv4InceptionResNetImpact2016} weiterentwickelt.
+ 
+Abbildung \ref{fig:inception_module} stellt das Inception (\textit{v1}) Modul dar. Abbildung \ref{fig:googlenet} illustriert die GoogLeNet Architektur in Detail.
 
  \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/googlenet/inception_module.png}
-	\caption{Darstelltung des Inception v1 Moduls. Das Inputvolumen wird auf 4 Zweige unabhängig verarbeitet. Die Ergebnisse der unabhängigen Operationen haben die gleiche Breite und Höhe. Der Output des Inception Moduls wird durch das Konkatenieren (in der Tiefe) der einzelnen Ergebnisse bestimmt. Entnommen aus \cite{szegedyGoingDeeperConvolutions2015}.}
+	\caption{Darstelltung des Inception (\textit{1}) Moduls. Das Inputvolumen wird auf 4 Zweige unabhängig verarbeitet. Die Ergebnisse der unabhängigen Operationen haben die gleiche Breite und Höhe. Der Output des Inception Moduls wird durch das Konkatenieren (in der Tiefe) der einzelnen Ergebnisse bestimmt. Entnommen aus \cite{szegedyGoingDeeperConvolutions2015}.}
 	\label{fig:inception_module}
 \end{figure}
 
