@@ -36,7 +36,7 @@ Geleitet von den \textit{state-of-the-art} Lokalisierungsergebnissen der CNNs st
 
 % Varianten aufzählen
 Es gibt mehrere Ansätze, die die Genauigkeit von PoseNet übertreffen.
-Einen Fortschritt erhalten die Autoren von PoseNet durch die hier \cite{kendallModellingUncertaintyDeep2015a} vorgestellte Anpassung ihres Models an einem Bayessian Neural Network \cite{denkerTransformingNeuralNetOutput1991, mackayPracticalBayesianFramework1991}.
+Einen Fortschritt erhalten die Autoren von PoseNet durch die hier \cite{kendallModellingUncertaintyDeep2015a} vorgestellte Anpassung ihres Modells an einem Bayessian Neural Network \cite{denkerTransformingNeuralNetOutput1991, mackayPracticalBayesianFramework1991}.
 Dieselben Autoren erweitern PoseNet mit einer neuen Kostenfunktion unter Berücksichtigung von geometrischen Eigenschaften \cite{kendallGeometricLossFunctions2017}. \citet{walchImagebasedLocalizationUsing2016} und \citet{clarkVidLocDeepSpatioTemporal2017} setzen Long-Short-Term-Memory (\textit{LSTM}) \cite{hochreiterLongShortTermMemory1997a} Einheiten ein, um Wissen aus der Korrelation von Bildsequenzen zu gewinnen. \citet{wuDelvingDeeperConvolutional2017} und \citet{naseerDeepRegressionMonocular2017} augmentieren den Trainingsdatensatz. \citet{wuDelvingDeeperConvolutional2017} stocken den vorhandenen Datensatz auf, indem sie die Bilder künstlich rotieren. \citet{naseerDeepRegressionMonocular2017} erweitern zuerst über ein weiteres CNN den Datensatz um Tiefenbildern. Anschließend simulieren die Autoren RGB-Bilder aus verschiedenen Viewpoints. Im Vergleich zu PoseNet verwenden \citet{mullerSQUEEZEPOSENETIMAGEBASED2017} und \citet{melekhovImageBasedLocalizationUsing2017} eine andere Architektur. 
 Das Modell von \citet{mullerSQUEEZEPOSENETIMAGEBASED2017} basiert auf die SqueezeNet \cite{iandolaSqueezeNetAlexNetlevelAccuracy2016} Architektur. \citet{melekhovImageBasedLocalizationUsing2017} stellen HourglassNet, basierend auf einem symmetrischen Encoder-Decoder Architektur, vor. \citet{brahmbhattGeometryAwareLearningMaps2018} und \citet{valadaDeepAuxiliaryLearning2018, valadaIncorporatingSemanticGeometric} binden zusätzliche Informationen wie z.B. visuelle Odometrie, GPS oder IMU ein. 
 
@@ -226,11 +226,11 @@ Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer redu
 Nach einer Periode von Convolution und Pooling Layer folgt meist eine fully-connected (\textit{FC}) Layer, auch bekannt als \textit{Dense Layer}. Dieser Layer folgt den gleichen Konzept der feedforward Neural Networks, wie in Abschnitt \ref{sec:feedforwardNN} beschrieben. Der Output dieses Layers wird häufig einer weiteren Aktivierungsfunktion übergeben \cite{yamashitaConvolutionalNeuralNetworks2018} und prinzipiell wird dadurch der Output des CNNs bestimmt.
 
 \subsection{Bekannte CNN Modelle}
-Es existiert eine Menge von bekannten CNN Modellen mit ausgezeichneten Ergebnissen in internationalen Wettbewerben, solche wie die ILSVRC \cite{russakovskyImageNetLargeScale2014}. Dieses Kapitel behandelt nur die Architektur des GoogLeNet Models und dessen Modifikation PoseNet.
+Es existiert eine Menge von bekannten CNN Modellen mit ausgezeichneten Ergebnissen in internationalen Wettbewerben, solche wie die ILSVRC \cite{russakovskyImageNetLargeScale2014}. Dieses Kapitel behandelt nur die Architektur des GoogLeNet Modells und dessen Modifikation PoseNet.
 
 \subsubsection{GoogLeNet}
 \label{sec:googlenet}
-Das GoogLeNet Model, konstruiert von \citet{szegedyGoingDeeperConvolutions2015} im Jahr 2014, ist der Sieger des ILSVRC14 Wettbewerbes. Das GoogLeNet Modell  kennzeichnet sich durch 
+GoogLeNet, konstruiert von \citet{szegedyGoingDeeperConvolutions2015} im Jahr 2014, ist der Sieger des ILSVRC14 Wettbewerbes. Das GoogLeNet Modell kennzeichnet sich durch 
 Abbildung \ref{fig:googlenet} illustriert die GoogLeNet Architektur in Detail.
 
  \begin{figure}[H]
