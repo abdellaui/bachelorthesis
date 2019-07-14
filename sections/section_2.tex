@@ -159,8 +159,8 @@ Angefangen mit der LeNet-5 \cite{lecunGradientBasedLearningApplied1998} Architek
 		\textbf{Art des Layers} & \textbf{Parameter} & \textbf{Hyperparameter}\\
 		\hline
 		Convolutional Layer & Filter & \makecell[tl]{
-			Anzahl der Filter\\
 			Filtergröße\\
+			Anzahl der Filter (\textit{Tiefe})\\
 			Stride\\
 			Padding\\
 			Aktivierungsfunktion
@@ -183,22 +183,19 @@ Angefangen mit der LeNet-5 \cite{lecunGradientBasedLearningApplied1998} Architek
 \end{table}
 
 \subsubsection{Convolutional Layer}
-Der Convolutional Layer ist der Hauptbestandteil eines CNNs, welches die Kombination einer Convolution Operation und einer Aktivierungsfunktion ist \cite{yamashitaConvolutionalNeuralNetworks2018}. 
-Abbildung \ref{fig:convolution_layer} illustriert eine Convolution Operation. Abbildung \ref{fig:relu} stellt eine Aktivierungsfunktion dar.
+Der Convolutional Layer ist der Hauptbestandteil eines CNNs, welches die Kombination einer Convolution Operation und einer Aktivierungsfunktion ist \cite{yamashitaConvolutionalNeuralNetworks2018}.
 
+Die Convolution Operation basiert auf die mathematische Faltung (\textit{Convolution}) und wird typischerweise in CNNs, mit Verzicht auf die Kommutativität, der anliegenden diskreten Kreuzkorrelation gleichgesetzt \cite{Goodfellow-et-al-2016}.
 
+Sei $I$ ein 2D-Input, $K$ ein 2D-Filter der Größe $M \times N$, $S$ die Schrittweite (\textit{Stride}) und $O$ das Output mit der Größe $X \times Y$, dann ist die Convolution Operation mathematisch definiert als \cite{Goodfellow-et-al-2016}:
+\begin{equation}
+	\label{eq:convolution}
+	O(x,y) = (I * K)(x,y) = \sum_{m}\sum_{n}I(S_x \cdot x+m, S_y \cdot y+n)K(m,n)
+\end{equation}
 
-- geichte
--filtergröße
-- stride
-- padding
- 
+Die Werte des 2D-Filters stellen die \textit{Gewichte} dar und werden in der Trainingsphase optimiert. Ein Convolutional Layer kann aus mehreren 2D-Filter der gleichen Größe bestehen. Die Convolution Operation wird je 2D-Filter unabhängig auf das Inputvolumen ausgeführt \cite{CS231nConvolutionalNeurala}.
 
-
- The connections are local in space (along width and height), but always full along the entire depth of the input volume.
- 
-\pagebreak
-\vspace*{\fill}
+Die Randbehandlung des Inputvolumens wird \textit{Padding} genannt. Es gibt eine Reihe von Padding Methoden. CNNs verwenden grundsätzlich das Zero-Padding Verfahren, in dem der Rand des Inputs mit Nullen um eine beliebige Breite und Höhe erweitert wird \cite{CS231nConvolutionalNeurala}. Abbildung \ref{fig:convolution_layer} illustriert eine Convolution Operation. Abbildung \ref{fig:relu} stellt eine Aktivierungsfunktion dar.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/convolution_layer.png}
@@ -206,7 +203,7 @@ Abbildung \ref{fig:convolution_layer} illustriert eine Convolution Operation. Ab
 	\label{fig:convolution_layer}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{images/ReLU.png}
 	\caption{Ein Beispiel für eine Aktivierungsfunktion. Die ReLU (\textit{rectified liniear unit}) Aktivierungsfunktion wird typischerweise in CNNs eingesetzt und ist mathematisch definiert als: $f(x) = max(0,x)$ \cite{Goodfellow-et-al-2016} }
