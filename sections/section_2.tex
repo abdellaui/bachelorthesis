@@ -134,7 +134,7 @@ Die Funktion $y = f(x; \theta)$ bildet sich aus den Funktionen der im Netzwerk v
  
 \begin{equation}
 \label{eq:network}
-y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L \circ ... \circ f_2 \circ f_1)(x)
+y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L * ... * f_2 * f_1)(x)
 \end{equation}
 
 \vspace*{1.5cm}
@@ -183,15 +183,20 @@ Angefangen mit der LeNet-5 \cite{lecunGradientBasedLearningApplied1998} Architek
 \end{table}
 
 \subsubsection{Convolutional Layer}
-Der Convolutional Layer ist der Hauptbestandteil eines CNNs, welches die Kombination eines Convolution Operationen und einer Aktivierungsfunktion ist \cite{yamashitaConvolutionalNeuralNetworks2018}. 
+Der Convolutional Layer ist der Hauptbestandteil eines CNNs, welches die Kombination einer Convolution Operation und einer Aktivierungsfunktion ist \cite{yamashitaConvolutionalNeuralNetworks2018}. 
 Abbildung \ref{fig:convolution_layer} illustriert eine Convolution Operation. Abbildung \ref{fig:relu} stellt eine Aktivierungsfunktion dar.
 
+
+
+- geichte
 -filtergröße
 - stride
 - padding
  
 
 
+ The connections are local in space (along width and height), but always full along the entire depth of the input volume.
+ 
 \pagebreak
 \vspace*{\fill}
 \begin{figure}[H]
