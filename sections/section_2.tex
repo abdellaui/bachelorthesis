@@ -92,7 +92,7 @@ Im weiteren Verlauf des Kapitels werden einige grundlegende Themen erläutert. Z
 
 \subsection{Künstliche neuronale Netzwerke}
 \label{sec:KNN}
-Künstliche neuronale Netze sind ein Forschungsgebiet der \textit{künstlichen Intelligenz} und imitieren die Beschaffenheit natürlicher neuronale Netze, um komplexe Probleme zu lösen. Inspiriert von ihren biologischen Vorbildern \footnote{das Nervensystem eines Lebewesen, z.B. des Menschen}, vernetzen künstliche neuronale Netzwerke (\textit{KNN}) künstliche Neuronen miteinander \cite{CS231nConvolutionalNeural}. Dabei kann die Verbindung unidirektional (\textit{feedforward}) oder bidirektional (\textit{feedback}) sein  \cite{Goodfellow-et-al-2016}. 
+Künstliche neuronale Netze sind ein Forschungsgebiet der \textit{künstlichen Intelligenz} und imitieren die Beschaffenheit natürlicher neuronale Netze, um komplexe Probleme zu lösen. Inspiriert von ihren biologischen Vorbildern \footnote{das Nervensystem eines Lebewesen; z.B. des Menschen}, vernetzen künstliche neuronale Netzwerke (\textit{KNN}) künstliche Neuronen miteinander \cite{CS231nConvolutionalNeural}. Dabei kann die Verbindung unidirektional (\textit{feedforward}) oder bidirektional (\textit{feedback}) sein  \cite{Goodfellow-et-al-2016}. 
 
 Bei einem feedforward Netzwerk werden die Daten im Netz immer vorwärts übertragen, hingegen kann ein feedback Netzwerk, auch bekannt als \textit{Recurrent Neural Networks}, Daten rückwärts, sowie in einer Schleife zum selben Neuron, übergeben \cite{Goodfellow-et-al-2016}. Da feedback Netzwerke keinen Einsatz in dieser Arbeit haben, ist im weiteren Verlauf dieser Arbeit bei einem Netzwerk immer ein feedforward Ansatz gemeint. In diesem Kapitel werden als Nächstes ein künstliches Neuron definiert und anschließend ein feedforward Netzwerk beschrieben.
 
@@ -119,14 +119,14 @@ Ein künstliches Neuron mit der Inputgröße $M$ ist mathematisch die nicht-line
 \label{sec:feedforwardNN}
 Künstliche Neuronen können zu einer Schicht (\textit{layer}) zusammengeführt werden. Die Verbindung solcher Schichten bildet ein neuronales Netzwerk.
 Bei einem feedforward (\textit{fully-connected}) Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output $y_{l}$ an jedem Neuron der Schicht $l+1$ weiter. Ebenso sind Neuronen aus der gleichen Schicht untereinander nicht verbunden \cite{Goodfellow-et-al-2016}.
-Eine Schicht $l$ eines feedforward Netzwerkes operiert somit auf das Ouput $y_{l-1}$ und stellt die nicht-lineare Funktion $f_l :  \mathbb{R}^{M_{l-1}} \mapsto \mathbb{R}^{M_l}$ dar \cite{bauckhageInformedMachineLearning}:
+Die Schicht $l$ eines feedforward Netzwerkes operiert somit auf das Ouput $y_{l-1}$ und stellt die nicht-lineare Funktion $f_l :  \mathbb{R}^{M_{l-1}} \mapsto \mathbb{R}^{M_l}$ dar \cite{bauckhageInformedMachineLearning}:
 \begin{equation}
 \label{eq:layer}
 y_l = f_l(y_{l-1}) = \phi(W^T_lx_{l-1}+b_{l})
 \end{equation}
 
 
-Die erste Schicht eines Netzwerk wird als Input-, die letzte Schicht als Ouput-Layer bezeichnet. Alle Schichten dazwischen sind Hidden-Layer \cite{Goodfellow-et-al-2016}. Der Ouput-Layer liefert zugleich auch das Ergebnis eines Netzwerks, daher haben die Neuronen des Ouput-Layers grundsätzlich keine Aktivierungsfunktion \cite{CS231nConvolutionalNeural}.
+Die erste Schicht eines Netzwerks wird als Input-, die letzte Schicht als Ouput-Layer bezeichnet. Alle Schichten dazwischen sind Hidden-Layer \cite{Goodfellow-et-al-2016}. Der Ouput-Layer liefert zugleich auch das Ergebnis eines Netzwerks, daher haben die Neuronen des Ouput-Layers grundsätzlich keine Aktivierungsfunktion \cite{CS231nConvolutionalNeural}.
 
 Die Tiefe (\textit{depth}) eines Netzwerks ist gegeben durch die Anzahl der Layer \footnote{der Input-Layer ist ausgeschloßen} und die Breite (\textit{width}) eines Layers wird durch die Anzahl der Neuronen bestimmt \cite{Goodfellow-et-al-2016}. 
 Abilldung \ref{fig:neural_net} illustriert ein feedforward neuronales Netz als ein azyklischer Graph.
@@ -158,7 +158,7 @@ Angefangen mit der LeNet-5 \cite{lecunGradientBasedLearningApplied1998} Architek
 
 \begin{table}[H]
 	\centering
-	\caption{Übersicht der Paramter und Hyperparamter der Layer eines Convolutional Neural Networks. Die Parameter werden während der Trainingsphase optimiert und Hyperparameter werden vorab fest definiert \cite{yamashitaConvolutionalNeuralNetworks2018}. }
+	\caption{Übersicht der Parameter und Hyperparameter der Layer eines Convolutional Neural Networks. Die Parameter werden während der Trainingsphase optimiert und Hyperparameter werden vorab fest definiert \cite{yamashitaConvolutionalNeuralNetworks2018}. }
 	\begin{tabularx}{1.0\textwidth}{X X X}
 		\textbf{Art des Layers} & \textbf{Parameter} & \textbf{Hyperparameter}\\
 		\hline
@@ -196,7 +196,7 @@ Abbildung \ref{fig:convolution_layer} illustriert eine Convolution Operation. Ab
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/convolution_layer.png}
-	\caption{Ein Beispiel für die  Convolution Operation mit 3 Filtern der Größe 3 $\times$ 3, einem Stride von 1 und keinem Padding. Ein Filter bewegt sich entlang des gesamten Inputs mit der Schrittweite \textit{Stride} und bildet die Summe der elementweise multiplizierten Werte. Die Summe wird dann im Output an die korrespondierende Position geschrieben. Dieser Vorgang wiederholt sich für jedes Filter. \cite{yamashitaConvolutionalNeuralNetworks2018}. }
+	\caption{Ein Beispiel für die  Convolution Operation mit 3 Filtern der Größe 3 $\times$ 3, einem Stride von 1 und keinem Padding. Ein Filter bewegt sich entlang des gesamten Inputs mit der Schrittweite \textit{Stride} und bildet die Summe der elementweise multiplizierten Werte. Die Summe wird dann im Output an die korrespondierende Position geschrieben. Dieser Vorgang wiederholt sich für jedes Filter \cite{yamashitaConvolutionalNeuralNetworks2018}. }
 	\label{fig:convolution_layer}
 \end{figure}
 
@@ -234,15 +234,15 @@ GoogLeNet, konstruiert von \citet{szegedyGoingDeeperConvolutions2015} im Jahr 20
 %Das Netzwerk zeichnet sich mit einer raffinierten Architektur aus. Die Autoren konnten die benötigte Rechenkapazität konstant halten, während die Tiefe und Breite des neuronalen Netzes zunahm.
 %Das GoogLeNet ist ein 22 Layer tiefes Netzwerk, bestehend aus 9 sogenannten Inception Modulen. 
 GoogLeNet ist eine besondere Inkarnation des sogenannten Inception Moduls, welche zeitgleich mit GoogLeNet vorgestellt wird.
-Ein Inception Modul beinhaltet mehrere Convolutional sowie einen Pooling Layer und verarbeitet das Inputvolumen parallel auf 4 Zweigen. Vor rechenintensiven Convolutional Layer werden zusätzliche 1$\times$1 dimensionsreduzierende Layer geschaltet. Abschließend werden die Zweige, welche ein Volumen mit der gleiche Breite und Höhe produzieren, zu einem Outputvolumen (in die Tiefe) zusammengeführt.  Durch die parallele Berechnung der Zweige und das Einschalten von dimensionsreduzierenden 1$\times$1 Layer vor rechenintensiven Operationen ermöglicht ein Inception Modul neuronale Netze bei zunehmender Tiefe und Breite konstante Rechenkapazität in Anspruch zu nehmen.
+Ein Inception Modul beinhaltet mehrere Convolutional sowie einen Pooling Layer und verarbeitet das Inputvolumen parallel auf 4 Zweigen. Vor rechenintensiven Convolutional Layer werden zusätzliche 1$\times$1 dimensionsreduzierende Layer geschaltet. Abschließend werden die Zweige, welche ein Volumen mit der gleichen Breite und Höhe produzieren, zu einem Outputvolumen (in die Tiefe) zusammengeführt.  Durch die parallele Berechnung der Zweige und das Einschalten von dimensionsreduzierenden 1$\times$1 Layer vor rechenintensiven Operationen ermöglicht ein Inception Modul neuronale Netze bei zunehmender Tiefe und Breite konstante Rechenkapazität in Anspruch zu nehmen.
 Inzwischen wurde das Inception Modul \cite{szegedyRethinkingInceptionArchitecture2016} und die gesamte Architektur rundherum \cite{szegedyInceptionv4InceptionResNetImpact2016} weiterentwickelt. Abbildung \ref{fig:inception_module} stellt das Inception (\textit{v1}) Modul dar.
 
-GoogLeNet ist ein 22 Layer tiefes neuronales Netz \footnote{inkl. Output Layer}, bestehend aus 9 Inception Modul (je von Tiefe 2). Das Ungewöhnliche an GoogLeNet ist, das es 3 Output-Zweigen hat. Jedes der Ouput-Zweige produziert ein Klassifizierungsergebnis. Output-Zweig 2 \& 3 sind Hilfszweige, welche nur in der Trainingsphase einen Einfluss haben und in die Evaluationsphase nicht einfließen.  Abbildung \ref{fig:googlenet} illustriert die GoogLeNet Architektur in Detail.
+GoogLeNet ist ein 22 Layer tiefes neuronales Netz \footnote{inkl. Output Layer}, bestehend aus 9 Inception Modul (je von Tiefe 2). Das Ungewöhnliche an GoogLeNet ist, dass es 3 Output-Zweigen hat. Jedes der Ouput-Zweige produziert ein Klassifizierungsergebnis. Output-Zweig 2 \& 3 sind Hilfszweige, welche nur in der Trainingsphase einen Einfluss haben und in die Evaluationsphase nicht einfließen.  Abbildung \ref{fig:googlenet} illustriert die GoogLeNet Architektur in Detail.
 
  \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/googlenet/inception_module.png}
-	\caption{Darstelltung des Inception (\textit{v1}) Moduls. Das Inputvolumen wird auf 4 Zweige unabhängig verarbeitet. Die Ergebnisse der unabhängigen Operationen haben die gleiche Breite und Höhe. Das Output des Inception Moduls wird durch das Konkatenieren (in der Tiefe) der einzelnen Ergebnisse bestimmt. Die gelben 1$\times$1 Convolution Layer dienen zur Dimensionsreduktion. Entnommen aus \cite{szegedyGoingDeeperConvolutions2015}.}
+	\caption{Darstellung des Inception (\textit{v1}) Moduls. Das Inputvolumen wird auf 4 Zweige unabhängig verarbeitet. Die Ergebnisse der unabhängigen Operationen haben die gleiche Breite und Höhe. Das Output des Inception Moduls wird durch das Konkatenieren (in der Tiefe) der einzelnen Ergebnisse bestimmt. Die gelben 1$\times$1 Convolution Layer dienen zur Dimensionsreduktion. Entnommen aus \cite{szegedyGoingDeeperConvolutions2015}.}
 	\label{fig:inception_module}
 \end{figure}
 
@@ -258,7 +258,7 @@ GoogLeNet ist ein 22 Layer tiefes neuronales Netz \footnote{inkl. Output Layer},
 %\pagebreak
 \subsubsection{PoseNet}
 \label{sec:posenet}
-PoseNet, vorgestellt von \citet{kendallPoseNetConvolutionalNetwork2015} im Jahr 2015, basiert auf die im Kapitel \ref{sec:googlenet} eingeführte GoogLeNet Architektur. Statt eine Wahrscheinlichkeitsverteilung der Klassifierungsergebnisse, liefert PoseNet die 6 Freiheitsgrade einer Pose $y = [\pmb{p};\pmb{q}]$, bestehend aus einem Positionsvektor $\pmb{p} \in  \mathbb{R}^{3}$ und eine Quaternion der Orientierung $ \pmb{q} \in  \mathbb{R}^{4}$.
+PoseNet, vorgestellt von \citet{kendallPoseNetConvolutionalNetwork2015} im Jahr 2015, basiert auf die im Kapitel \ref{sec:googlenet} eingeführte GoogLeNet Architektur. Statt eine Wahrscheinlichkeitsverteilung der Klassifizierungsergebnisse, liefert PoseNet die 6 Freiheitsgrade einer Pose $y = [\pmb{p};\pmb{q}]$, bestehend aus einem Positionsvektor $\pmb{p} \in  \mathbb{R}^{3}$ und eine Quaternion der Orientierung $ \pmb{q} \in  \mathbb{R}^{4}$.
 
 PoseNet modifiziert die GoogLeNet Architektur an den Output-Knoten, dargestellt in Abbildung \ref{fig:googlenet}, wie folgt \cite{kendallPoseNetConvolutionalNetwork2015}:
 \begin{itemize}
