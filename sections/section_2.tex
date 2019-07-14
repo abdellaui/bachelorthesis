@@ -151,7 +151,7 @@ y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L * ... * f_2 * f_1)(x)
 Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben werden, arbeitet auf einem Inputvektor $x \in \mathbb{R}^{M}$. Im Vergleich dazu arbeiten CNNs auf einem drei-dimensionalen Inputvolumen $x \in \mathbb{R}^{width} \times \mathbb{R}^{heigth} \times \mathbb{R}^{depth}$. CNNs werden hauptsächlich im Kontext von Bildern eingesetzt, dabei stellt z.B. ein 32 $\times$ 32 RGB-Bild ein Volumen von 32 $\times$ 32 $\times$ 3 dar \cite{CS231nConvolutionalNeurala}.
 
 Angefangen mit der LeNet-5 \cite{lecunGradientBasedLearningApplied1998} Architektur, setzt sich typischerweise ein Convolutional Neural Network aus einer Sequenz von unterschiedlichen Layer-Arten zusammen \cite{szegedyGoingDeeperConvolutions2015, CS231nConvolutionalNeurala}. Im weiteren Verlauf dieses Kapitels werden die Arten der Layer beschrieben. Tabelle \ref{tab:layer_param} gibt eine Übersicht der Layer und ihrer Parameter an.
-
+\vspace*{\fill}
 \begin{table}[H]
 	\centering
 	\caption{Übersicht der Parameter und Hyperparameter der Layer eines Convolutional Neural Networks. Die Parameter werden während der Trainingsphase optimiert und Hyperparameter werden zuvor fest definiert \cite{yamashitaConvolutionalNeuralNetworks2018}. }
@@ -181,7 +181,8 @@ Angefangen mit der LeNet-5 \cite{lecunGradientBasedLearningApplied1998} Architek
 	\end{tabularx}
 	\label{tab:layer_param}
 \end{table}
-
+\vspace*{\fill}
+\pagebreak
 \subsubsection{Convolutional Layer}
 Der Convolutional Layer ist der Hauptbestandteil eines CNNs, welches die Kombination einer Convolution Operation und einer Aktivierungsfunktion ist \cite{yamashitaConvolutionalNeuralNetworks2018}.
 
@@ -192,16 +193,13 @@ Sei $I$ ein 2D-Input, $K$ ein 2D-Filter der Größe $M \times N$, $S$ die Schrit
 	\label{eq:convolution}
 	O(x,y) = (I * K)(x,y) = \sum_{m}\sum_{n}I(S_x \cdot x+m, S_y \cdot y+n)K(m,n)
 \end{equation}
+Abbildung \ref{fig:convolution_layer} illustriert eine beispielhafte Convolution Operation.
 
-Die Werte des 2D-Filters stellen die \textit{Gewichte} dar und werden in der Trainingsphase optimiert. Ein Convolutional Layer kann aus mehreren 2D-Filter der gleichen Größe bestehen. Die Convolution Operation wird je 2D-Filter unabhängig auf das Inputvolumen ausgeführt \cite{CS231nConvolutionalNeurala}.
+Die Randbehandlung des Inputvolumens wird \textit{Padding} genannt. Es gibt eine Reihe von Padding Methoden. CNNs setzen grundsätzlich das Zero-Padding Verfahren ein. Das Zero-Padding Verfahren erweitert den Rand  des Inputvolumens um eine beliebige Breite und Höhe mit Nullen \cite{CS231nConvolutionalNeurala}. 
 
-Die Randbehandlung des Inputvolumens wird \textit{Padding} genannt. Es gibt eine Reihe von Padding Methoden. CNNs verwenden grundsätzlich das Zero-Padding Verfahren, in dem der Rand des Inputs mit Nullen um eine beliebige Breite und Höhe erweitert wird \cite{CS231nConvolutionalNeurala}. Abbildung \ref{fig:convolution_layer} illustriert eine Convolution Operation. Abbildung \ref{fig:relu} stellt eine Aktivierungsfunktion dar.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{images/convolution_layer.png}
-	\caption{Ein Beispiel für die  Convolution Operation mit 3 Filtern der Größe 3 $\times$ 3, je einem Stride von 1 und keinem Padding. Ein Filter bewegt sich entlang des gesamten Inputs mit der Schrittweite (\textit{Stride}) 1 und bildet die Summe der elementweise multiplizierten Werte. Die Summe wird dann im Output an die korrespondierende Position geschrieben. Dieser Vorgang wiederholt sich für jedes Filter \cite{yamashitaConvolutionalNeuralNetworks2018}. }
-	\label{fig:convolution_layer}
-\end{figure}
+Die Werte des 2D-Filters stellen die \textit{Gewichte} dar und werden in der Trainingsphase optimiert. Ein Convolutional Layer kann aus mehreren 2D-Filter der gleichen Größe bestehen. Die Convolution Operation wird je 2D-Filter unabhängig auf das Inputvolumen ausgeführt \cite{CS231nConvolutionalNeurala}. Das Output des Convolution Operation wird auch \textit{Feature Map} genannt. Die Tiefe des Feature Maps ist gegeben durch die Anzahl der 2D-Filter \cite{yamashitaConvolutionalNeuralNetworks2018}.
+
+Prinzipiell wird das Output des Convolutional Layers durch die Übergabe des Feature Maps an eine Aktivierungsfunktion bestimmt.  Abbildung \ref{fig:relu} stellt eine Aktivierungsfunktion dar.
 
 \begin{figure}[H]
 	\centering
@@ -210,6 +208,16 @@ Die Randbehandlung des Inputvolumens wird \textit{Padding} genannt. Es gibt eine
 	\label{fig:relu}
 \end{figure}
 
+\pagebreak
+\vspace*{\fill}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/convolution_layer.png}
+	\caption{Ein Beispiel für die  Convolution Operation mit 3 Filtern der Größe 3 $\times$ 3, je einem Stride von 1 und keinem Padding. Ein Filter bewegt sich entlang des gesamten Inputs mit der Schrittweite (\textit{Stride}) 1 und bildet die Summe der elementweise multiplizierten Werte. Die Summe wird dann im Feature Map an die korrespondierende Position geschrieben. Dieser Vorgang wiederholt sich für jedes Filter \cite{yamashitaConvolutionalNeuralNetworks2018}. }
+	\label{fig:convolution_layer}
+\end{figure}
+\vspace*{\fill}
+\pagebreak
 \subsubsection{Pooling Layer}
 Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer reduzieren die Größe eines Inputvolumens und verringert somit die Anzahl der erlernbaren Parameter. Die Pooling Operation wird auf jeder Schicht der Eingabe ausgeführt \cite{CS231nConvolutionalNeurala}. Die meist verbreitete \textit{Pooling Methode} ist die Max-Pooling. Beim Max-Pooling iteriert ein Filter einer bestimmten Größe mit einer Schrittweite, gegeben durch den Stride, über das Inputvolumen und extrahiert das Maximum im aktuellen Filterbereich. Das Maximum wird für die weitere Berechnung beibehalten und die restlichen Werte verworfen
  \cite{CS231nConvolutionalNeurala}. In dieser Arbeit wird neben der Max-Pooling Operation auch die Average-Pooling Operation eingesetzt. Das Average-Pooling behält im aktuellen Filterbereich den Durchschnittswert, statt das Maximum \cite{CS231nConvolutionalNeurala}.
@@ -243,14 +251,16 @@ Ein Inception Modul beinhaltet mehrere Convolution- sowie einen Pooling Layer un
 Inzwischen wurde das Inception Modul \cite{szegedyRethinkingInceptionArchitecture2016} und die gesamte Architektur rundherum \cite{szegedyInceptionv4InceptionResNetImpact2016} weiterentwickelt. Abbildung \ref{fig:inception_module} stellt das Inception (\textit{v1}) Modul dar.
 
 GoogLeNet ist ein 22 Layer tiefes\footnote{Anzahl der trainierbaren Layer inkl. Output Layer} neuronales Netz, bestehend aus 9 Inception Modul (je von Tiefe 2). Das Ungewöhnliche an GoogLeNet ist, dass es 3 Output-Zweigen hat. Jedes der Ouput-Zweige produziert ein Klassifizierungsergebnis. Output-Zweig 2 \& 3 sind Hilfszweige, die nur in der Trainingsphase einen Einfluss haben und in der Evaluationsphase verworfen werden \cite{szegedyGoingDeeperConvolutions2015}. Abbildung \ref{fig:googlenet} illustriert die GoogLeNet Architektur in Detail.
-
+\pagebreak
+\vspace*{\fill}
  \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/googlenet/inception_module.png}
 	\caption{Darstellung des Inception (\textit{v1}) Moduls. Das Inputvolumen wird auf 4 Zweige unabhängig verarbeitet. Die Ergebnisse der unabhängigen Operationen haben die gleiche Breite und Höhe. Das Output des Inception Moduls wird durch das Konkatenieren (in der Tiefe) der einzelnen Ergebnisse bestimmt. Die gelben 1$\times$1 Convolutional Layer dienen zur Dimensionsreduktion. Entnommen aus \cite{szegedyGoingDeeperConvolutions2015}.}
 	\label{fig:inception_module}
 \end{figure}
-
+\vspace*{\fill}
+\pagebreak
 
 \vspace*{\fill}
 	 \begin{figure}[H]
