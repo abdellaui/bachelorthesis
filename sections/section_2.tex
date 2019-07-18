@@ -127,7 +127,7 @@ Die erste Schicht eines Netzwerks wird als Input-, die letzte Schicht als Ouput 
 Die Tiefe (\textit{depth}) eines Netzwerks ist gegeben durch die Anzahl der Layer \footnote{der Input Layer ist ausgeschloßen} und die Breite (\textit{width}) eines Layers wird durch die Anzahl der Neuronen bestimmt \cite{Goodfellow-et-al-2016}. 
 Abbildung \ref{fig:neural_net} illustriert ein feedforward neuronales Netz als ein azyklischer Graph.
 
-Ziel eines KNNs ist es eine Funktion $f^*$ zu approximieren, dass einen Input $x$ auf einen Output $y$ abbildet. Durch das Output $y$ kann das Input $x$ klassifiziert oder anhand dessen ein Wert regressiert werden. Sei $y = f(x; \theta)$ eine derartige Funktion, dann besetzt ein KNN die Werte des $\theta$ Parameters mit eines der besten Approximierung von $f^*$. Der Parameter $\theta$ stellt hierbei die Gewichte dar, welche erlernt werden sollen \cite{Goodfellow-et-al-2016}. 
+Ziel eines KNNs ist es eine Funktion $f^*$ zu approximieren, dass einen Input $x$ auf einen Output $y$ abbildet. Durch das Output $y$ kann das Input $x$ klassifiziert oder anhand dessen ein Wert regressiert werden. Sei $y = f(x; \theta)$ eine derartige Funktion, dann besetzt ein KNN die Werte des $\theta$ Parameters mit eines der besten Approximierung von $f^*$. Der Parameter $\theta$ stellt hierbei die Gewichte dar, die erlernt werden sollen \cite{Goodfellow-et-al-2016}. 
 Das Lernen ist die strategische Anpassung der Gewichte über Input-Output Paare (\textit{Trainingsdaten}) und findet grundsätzlich durch ein \textit{Backpropagation}-Verfahren statt \cite{Goodfellow-et-al-2016}. 
 
 Die Funktion $y = f(x; \theta)$ bildet sich aus den Funktionen der im Netzwerk vorhandenen Schichten (Gleichung \ref{eq:layer}) und kann bei einer Tiefe $L$ repräsentiert werden als die folgende Funktion $f :  \mathbb{R}^{M_0} \mapsto \mathbb{R}^{M_L}$ \cite{Goodfellow-et-al-2016, bauckhageInformedMachineLearning}:
@@ -184,7 +184,7 @@ Angefangen mit der LeNet-5 \cite{lecunGradientBasedLearningApplied1998} Architek
 \vspace*{\fill}
 \pagebreak
 \subsubsection{Convolutional Layer}
-Der Convolutional Layer ist der Hauptbestandteil eines CNNs, welches die Kombination einer Convolution Operation und einer Aktivierungsfunktion ist \cite{yamashitaConvolutionalNeuralNetworks2018}.
+Der Convolutional Layer ist der Hauptbestandteil eines CNNs, der die Kombination einer Convolution Operation und einer Aktivierungsfunktion ist \cite{yamashitaConvolutionalNeuralNetworks2018}.
 
 Die Convolution Operation basiert auf die mathematische Faltung (\textit{Convolution}) und wird typischerweise in CNNs, mit Verzicht auf die Kommutativität, der anliegenden diskreten Kreuzkorrelation gleichgesetzt \cite{Goodfellow-et-al-2016}.
 
@@ -283,7 +283,7 @@ Abbildung \ref{fig:posenet_mods} veranschaulicht die Modifikation von GoogLeNet 
  \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{images/googlenet/posenet_diagram2.pdf}
-	\caption{Veranschaulichung der Modifikation von den Output-Zweigen der GoogLeNet Architektur durch PoseNet. Die Softmax Aktivierungsfunktion sowie das fully-connected Layer mit Anzahl der Klassifizierungskategorien als Breite wurde von allen Output-Modulen entfernt. Jeder Output-Zweig hat einen FC-Regressionsschicht erhalten, welches die 6 Freiheitsgrade einer Pose bestimmt. Der Output-Zweig 1 wird zusätzlich mit einer weiteren FC-Layer der Breite 2048 vor dem Regressionsschicht erweitert \cite{kendallPoseNetConvolutionalNetwork2015}.}
+	\caption{Veranschaulichung der Modifikation von den Output-Zweigen der GoogLeNet Architektur durch PoseNet. Die Softmax Aktivierungsfunktion sowie das fully-connected Layer mit Anzahl der Klassifizierungskategorien als Breite wurde von allen Output-Modulen entfernt. Jeder Output-Zweig hat einen FC-Regressionsschicht erhalten, das die 6 Freiheitsgrade einer Pose bestimmt. Der Output-Zweig 1 wird zusätzlich mit einer weiteren FC-Layer der Breite 2048 vor dem Regressionsschicht erweitert \cite{kendallPoseNetConvolutionalNetwork2015}.}
 	\label{fig:posenet_mods}
 \end{figure}
 \vspace*{1.5cm}
