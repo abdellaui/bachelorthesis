@@ -1,17 +1,22 @@
 % !TEX root = ../my_thesis.tex
 
-\section{Training des CNNs}
+\section{Training des Convolutional Neural Networks}
 cnns werden erst modelliert und anschließend traniert.
 posenet caffe implementierung
 Trainingsdaten sind die synthetischen Daten und Testdaten sind die realen Daten
 
+\subsection{Erhebung der echten Daten}
+
+Die Aufnahmen der echten Daten wurden mit einem Konstrukt, bestehend aus 
+
+Für die Aufnahmen wurden zeitgleich zwei unterschiedliche Kameras der Intel Realsense Reihe verwenden. Es wurde eine Intel Realsense T265, die über Inertial Measurement Units (\textit{IMU}) und 2 Fischaugenkameras die Odometrie ermittelt, eingesetzt. Die T265 wurde über die D435 montiert.
+Zuerst wurden für die Aufgabenstellung interessante Aufnahmezonen im Gebäudesimulation festgelegt und anschließend diese über eine
+Intel RealSense T265 D435, ROS; imu/image data
+
 
 \subsection{Generierung der synthetischen Daten}
 Blender,
-eigenes Addons erstellt ein Kamerakonstrukt, welches ein NURBs-Pfad entlag Aufnahmen erstellt.
-
-\subsection{Erhebung der realen Daten}
-Intel RealSense T265 D435, ROS
+eigenes Addons erstellt ein Kamerakonstrukt, welches ein NURBs-Pfad entlag aufnimmt; Variation der Orientierung; ...
 
 \subsection{Verarbeitung der Daten}
 // gradienten\\
@@ -20,4 +25,4 @@ Bei der Erzeugung von Gradienten- bzw. Kantenbilder gehen einerseits wichtige In
 \subsection{Trainingsparameter}
 optimizer, beta,
 learningrate,
-weights decay, anz. data
+weights decay, anz. data; ...
