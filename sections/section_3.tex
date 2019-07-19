@@ -6,7 +6,7 @@ posenet caffe implementierung
 Trainingsdaten sind die synthetischen Daten und Testdaten sind die realen Daten
 
 \subsection{Erhebung der echten Daten}
-Es wurden für die Aufgabenstellung interessante Aufnahmezonen in der Gebäudesimulation festgelegt und anschließend die Aufnahmen durchgeführt.  Für die Aufnahmen wurden zeitgleich zwei unterschiedliche Kameras der Intel Realsense Reihe verwenden. Eine Intel Realsense T265\footnote{\url{https://www.intelrealsense.com/tracking-camera-t265/} (abgerufen am: 18.07.2019)}, die über Inertial Measurement Units (\textit{IMU}) und zwei Fischaugenkameras die Odometrie mit einer Abweichung von 1\% ermittelt, wurde eingesetzt. Zudem wurde eine Intel Realsense D435\footnote{ \url{https://www.intelrealsense.com/depth-camera-d435/} (abgerufen am: 18.07.2019)}, die eine 3D Punktwolke, ein Tiefenbild sowie ein RGB-Bild einer Szene liefert, benutzt. Die T265 wurde über die D435 Kamera montiert, siehe Abbildung .... Über das Robot Operating System\footnote{\url{https://www.ros.org/about-ros/} (abgerufen am: 18.07.2019)} (\textit{ROS}) Framework wurden die Kameras zeitgleich angesprochen und der Datenfluss der Kameras synchronisiert. Somit beinhaltet jeder Datensatz ein Bild je Fischaugenkamera, ein Tiefenbild, ein RGB-Bild, eine 3D Punktwolke und die dazugehörige Odometrie pro Frame (siehe Abbildung \ref{fig:dataset}). Die resultierenden Datensätze können Teil anderer Forschungsprojekte sein. Für diese Arbeit sind nur die Odometrie-Daten der T265 sowie die RGB-Bilder der D435 relevant.
+Es wurden für die Aufgabenstellung interessante Aufnahmezonen in der Gebäudesimulation festgelegt und anschließend die Aufnahmen so durchgeführt, dass diverse Projekte damit Forschung betreiben können .  Für die Aufnahmen wurden zeitgleich zwei unterschiedliche Kameras der Intel Realsense Reihe verwenden. Eine Intel Realsense T265\footnote{\url{https://www.intelrealsense.com/tracking-camera-t265/} (abgerufen am: 18.07.2019)}, die über Inertial Measurement Units (\textit{IMU}) und zwei Fischaugenkameras die Odometrie mit einer Abweichung von 1\% ermittelt, wurde eingesetzt. Zudem wurde eine Intel Realsense D435\footnote{ \url{https://www.intelrealsense.com/depth-camera-d435/} (abgerufen am: 18.07.2019)}, die eine 3D Punktwolke, ein Tiefenbild sowie ein RGB-Bild einer Szene liefert, benutzt. Die T265 wurde über die D435 Kamera montiert, siehe Abbildung .... Über das Robot Operating System\footnote{\url{https://www.ros.org/about-ros/} (abgerufen am: 18.07.2019)} (\textit{ROS}) Framework wurden die Kameras zeitgleich angesprochen und der Datenfluss der Kameras synchronisiert. Somit beinhaltet jeder Datensatz ein Bild je Fischaugenkamera, ein Tiefenbild, ein RGB-Bild, eine 3D Punktwolke und die dazugehörige Odometrie pro Frame (siehe Abbildung \ref{fig:dataset}). Für die vorliegende Arbeit sind nur die Odometrie-Daten der T265 sowie die RGB-Bilder der D435 relevant.
 
 
 
@@ -57,8 +57,8 @@ Blender,
 eigenes Addons erstellt ein Kamerakonstrukt, das ein NURBs-Pfad entlag aufnimmt; Variation der Orientierung; ...
 
 
-
-\begin{figure}[H]
+\vspace{\fill}
+\begin{figure}[htp]
 	\centering
 	\begin{subfigure}[b]{0.45\linewidth}
 		\centering
@@ -114,6 +114,7 @@ eigenes Addons erstellt ein Kamerakonstrukt, das ein NURBs-Pfad entlag aufnimmt;
 	\caption{Ein Auszug}
 	\label{fig:dataset}
 \end{figure}
+\vspace{\fill}
 
 \subsection{Verarbeitung der Daten}
 // gradienten\\
