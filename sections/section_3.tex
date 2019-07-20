@@ -10,7 +10,6 @@ Diese Arbeit folgt den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} mit 
 Im weiteren Verlauf dieses Kapitel werden die verwendeten Datensätze gelistet, die Erhebung bzw. Generierung der realen bzw syntethischen Daten erläutert und die Trainingsparameter angegeben. 
 
 
-% Die Gewichte des Netzwerks werden mit den Gewichten eines Models initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz \cite{zhouLearningDeepFeatures2014} trainiert wurde. Anschließend wird mit den erhobenen synthetischen Daten trainiert und mit den realen Daten getestet.
 \subsection{Datensätze}
 
 \subsection{Erhebung der realen Daten}
@@ -204,6 +203,8 @@ Bei der Erzeugung von Gradientenbilder gehen einerseits wichtige Informationen i
 \vspace{\fill}
 
 \subsection{Trainingsparameter}
+
+Die Gewichte des Netzwerks werden mit den Gewichten eines Models initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz \cite{zhouLearningDeepFeatures2014} trainiert wurde. Anschließend wird mit den erhobenen synthetischen Daten trainiert und mit den realen Daten getestet.
 optimizer, beta,
 learningrate,
 weights decay, anz. data; ...
