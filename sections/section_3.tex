@@ -68,13 +68,17 @@ Es wurden für die Aufgabenstellung interessante Aufnahmezonen in der Gebäudesi
 \subsection{Generierung der synthetischen Daten}
 \label{subsec:generate_synth_images}
 
+Die Gebäuden wurden in Blender 2.79b\footnote{\url{https://www.blender.org} (aufgerufen am: 20.07.2019)} simuliert. Die Strecke der echten Aufnahmen wurden in den Simulationen schwankungslos auf einer konstanten Höhe von 1.70$m$ imitiert.
 
-Die Strecke der echten Aufnahmen wurden in der Simulation schwankungslos auf einer konstanten Höhe von 1.70$m$ imitiert.
-Die intrinsischen Daten der D435 RGB-Kamera wurden auf die virtuellen Kameras übertragen. Es wurde entlang der Strecke in 0.05$m$ Intervallen und mit einer $\pm$10\° Neigung in je Y- und Z-Achse Bilder (siehe Abbildung ...) mit korrespondierenden Ground-Truth-Daten aufgenommen. 
+Bei der Generierung der Datensätze \textit{Cartoonish} und \textit{Photorealistic} wurde die Beleuchtung aus einem Netz von Punktlichtquellen nachgestellt. 
+Bei der Erzeugung des \textit{Edge}-Datensatzes wurde eine konstante Beleuchtung verschaffen und die Kanten über Blender markant sichtbar konfiguriert.
+
+Die intrinsischen Daten der D435 RGB-Kamera wurden auf die virtuellen Kameras übertragen. 
 
 
-Blender,
-eigenes Addons erstellt ein Kamerakonstrukt, das ein NURBs-Pfad entlag aufnimmt; Variation der Orientierung; ...
+Es wurde entlang der Strecke in 0.05$m$ Intervallen und mit einer $\pm$10\° Neigung in je Y- und Z-Achse Bilder (siehe Abbildung ...) mit korrespondierenden Ground-Truth-Daten aufgenommen. 
+
+
 
 % TODO: bild von den neigungen.
 
