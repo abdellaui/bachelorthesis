@@ -1,11 +1,7 @@
 % !TEX root = ../my_thesis.tex
 \newpage
 \section{Training des Convolutional Neural Networks}
-Künstliche neuronale Netze bzw. CNNs werden grundsätzlich zuerst aufgabenspezifisch modelliert und anschließend mit entsprechenden Daten trainiert. 
-
-In der vorliegenden Arbeit wird als Netzwerk das in Abschnitt \ref{sec:posenet} beschriebene PoseNet Model verwendet.
-
-Diese Arbeit folgt den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} mit Gradienten- bzw Kantenbilder der synthetischen Daten das Netzwerk zu trainieren, um anschließend mit Gradientenbilder der realen Daten das Netzwerk zu evaluieren. 
+Künstliche neuronale Netze bzw. CNNs werden grundsätzlich zuerst aufgabenspezifisch modelliert und anschließend mit entsprechenden Daten trainiert.  In der vorliegenden Arbeit wird als Netzwerk das in Abschnitt \ref{sec:posenet} beschriebene PoseNet Model verwendet. Die Arbeit folgt den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} mit Gradienten- bzw Kantenbilder der synthetischen Daten das Netzwerk zu trainieren, um anschließend mit Gradientenbilder der realen Daten das Netzwerk zu evaluieren. 
 
 Im weiteren Verlauf dieses Kapitel werden die verwendeten Datensätze gelistet, die Erhebung bzw. Generierung der realen bzw syntethischen Daten erläutert und die Trainingsparameter angegeben. 
 
@@ -203,6 +199,7 @@ Bei der Erzeugung von Gradientenbilder gehen einerseits wichtige Informationen i
 \vspace{\fill}
 
 \subsection{Trainingsparameter}
+Es wird die PoseNet Implementierung in Caffe \cite{jiaCaffeConvolutionalArchitecture2014} von den Autoren \citet{kendallPoseNetConvolutionalNetwork2015} verwendet. 
 
 Die Gewichte des Netzwerks werden mit den Gewichten eines Models initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz \cite{zhouLearningDeepFeatures2014} trainiert wurde. Anschließend wird mit den erhobenen synthetischen Daten trainiert und mit den realen Daten getestet.
 optimizer, beta,
