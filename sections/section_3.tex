@@ -75,10 +75,9 @@ In der vorliegenden Arbeit wird für die Bestimmung der Ground-Truth-Daten sowie
 \subsection{Generierung der synthetischen Daten}
 \label{subsec:generate_synth_images}
 
-Die Gebäude werden in Blender\footnote{\url{https://www.blender.org} (aufgerufen am: 20.07.2019)} Version 2.79b simuliert. Die Strecke der echten Aufnahmen werden in den Simulationen schwankungslos auf einer konstanten Höhe von 1.70$m$ imitiert.
+Die Gebäude werden in Blender\footnote{\url{https://www.blender.org} (aufgerufen am: 20.07.2019)} Version 2.79b simuliert. Die intrinsischen Daten der D435 RGB-Kamera werden auf die virtuellen Kameras übertragen.
 
-
-Die intrinsischen Daten der D435 RGB-Kamera werden auf die virtuellen Kameras übertragen. Es wird entlang der Strecke in 0.05$m$ Intervallen und mit einer $\pm$10° Neigung in je y- und z-Achse Bilder (siehe Abbildung \ref{fig:dataset_variation}) mit korrespondierenden Ground-Truth-Daten aufgenommen.
+Die Strecke der echten Aufnahmen werden in den Simulationen schwankungslos auf einer konstanten Höhe von 1.70$m$ imitiert. Es wird entlang der Strecke in 0.05$m$ Intervallen und mit einer $\pm$10° Neigung in je y- und z-Achse Bilder (siehe Abbildung \ref{fig:dataset_variation}) mit korrespondierenden Ground-Truth-Daten aufgenommen.
 
 Insgesamt werden drei synthetische Datensätze je Strecke erzeugt, die sich in ihrer Beschaffenheit von \begin{enumerate*}[label=\alph*)]
 	\item karikaturistisch zu
