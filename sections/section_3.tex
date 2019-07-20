@@ -75,7 +75,11 @@ Die intrinsischen Daten der D435 RGB-Kamera wurden auf die virtuellen Kameras ü
 
 Es wurde entlang der Strecke in 0.05$m$ Intervallen und mit einer $\pm$10° Neigung in je Y- und Z-Achse Bilder (siehe Abbildung ...) mit korrespondierenden Ground-Truth-Daten aufgenommen.
 
-Insgesamt wurden drei synthetische Datensätze je Strecke erzeugt, die sich in ihrer Beschaffenheit vom unterscheiden.
+Insgesamt wurden drei synthetische Datensätze je Strecke erzeugt, die sich in ihrer Beschaffenheit vom \begin{enumerate*}[label=\alph*)]
+	\item karikaturistisch zu
+	\item karikaturistische Kantenbilder hin über zu
+	\item fotorealistiscg
+\end{enumerate*} unterscheiden.
 
 Bei der Generierung der karikaturistischen und fotorealistischen Datensätzen wurde die Beleuchtung aus einem Netz von Punktlichtquellen nachgestellt. Die karikaturistische und fotorealistische Datensätze unterscheiden sich ausschließlich in den Render-Engines.
 Für die Erzeugung der karikaturistischen Kantenbilder wurde eine konstante Beleuchtung verschaffen und die Kanten über Blender markant sichtbar konfiguriert. Der karikaturistische Datensatz sowie die Kantenbilder wurde über die Render-Engine \textit{Blender Render} und der fotorealistischer Datensatz über die \textit{Cycles-Engine} generiert.
