@@ -6,9 +6,9 @@ posenet caffe implementierung
 Trainingsdaten sind die synthetischen Daten und Testdaten sind die realen Daten
 
 \subsection{Erhebung der realen Daten}
-In der Literatur wurden die realen Daten einer Zone grundsätzlich entlang einer Strecke aufgenommen. Daher wurden für die Aufgabenstellung interessante Aufnahmestrecken in den Gebäudesimulationen festgelegt und anschließend die Aufnahmen so durchgeführt, dass diverse Projekte damit Forschung betreiben können. 
+In der Literatur wurden die realen Daten einer Zone grundsätzlich entlang einer Strecke aufgenommen \cite{kendallPoseNetConvolutionalNetwork2015, clarkVidLocDeepSpatioTemporal2017, acharyaBIMPoseNetIndoorCamera2019}. Daher wurden für die Aufgabenstellung interessante Aufnahmestrecken in den Gebäudesimulationen festgelegt und anschließend die Aufnahmen so durchgeführt, dass diverse Projekte damit Forschung betreiben können. 
 
-In der Literatur wurden SfM-Methoden eingesetzt, um die Ground-Truth-Daten der realen Aufnahmen zu bestimmen. 
+In der Literatur wurden SfM-Methoden eingesetzt, um die Ground-Truth-Daten der realen Aufnahmen zu bestimmen \cite{kendallPoseNetConvolutionalNetwork2015, clarkVidLocDeepSpatioTemporal2017, acharyaBIMPoseNetIndoorCamera2019}. 
 In der vorliegenden Arbeit wurde für die Bestimmung der Ground-Truth-Daten sowie die Aufnahme der Bilder zeitgleich zwei unterschiedliche Kameras der Intel Realsense Reihe verwendet. Eine Intel Realsense T265\footnote{\url{https://www.intelrealsense.com/tracking-camera-t265/} (abgerufen am: 18.07.2019)}, die die Odometrie (Ground-Truth-Daten) mit einer Abweichung von 1\%  über die SfM von zwei Fischaugenkameras und Inertial Measurement Units (\textit{IMU}) ermittelt, wurde eingesetzt. Zudem wurde eine Intel Realsense D435\footnote{ \url{https://www.intelrealsense.com/depth-camera-d435/} (abgerufen am: 18.07.2019)}, die eine 3D Punktwolke, ein Tiefenbild sowie ein RGB-Bild einer Szene liefert, benutzt. Die T265 wurde über die D435 Kamera montiert (siehe Abbildung \ref{fig:t265_d435}). 
 
 Über das Robot Operating System\footnote{\url{https://www.ros.org/about-ros/} (abgerufen am: 18.07.2019)} (\textit{ROS}) Framework wurden die Kameras zeitgleich angesprochen und der Datenfluss der Kameras synchronisiert. Somit beinhaltet jeder Datensatz ein Bild je Fischaugenkamera, ein Tiefenbild, ein RGB-Bild, eine 3D Punktwolke und die dazugehörige Odometrie pro Frame (siehe Abbildung \ref{fig:dataset}). Für die vorliegende Arbeit sind nur die Odometrie-Daten der T265 sowie die RGB-Bilder der D435 relevant.
@@ -76,7 +76,7 @@ In der vorliegenden Arbeit wurde für die Bestimmung der Ground-Truth-Daten sowi
 Die Gebäude wurden in Blender\footnote{\url{https://www.blender.org} (aufgerufen am: 20.07.2019)} Version 2.79b simuliert. Die Strecke der echten Aufnahmen wurden in den Simulationen schwankungslos auf einer konstanten Höhe von 1.70$m$ imitiert.
 
 
-Die intrinsischen Daten der D435 RGB-Kamera wurden auf die virtuellen Kameras übertragen. Es wurde entlang der Strecke in 0.05$m$ Intervallen und mit einer $\pm$10° Neigung in je Y- und Z-Achse Bilder (siehe Abbildung ...) mit korrespondierenden Ground-Truth-Daten aufgenommen.
+Die intrinsischen Daten der D435 RGB-Kamera wurden auf die virtuellen Kameras übertragen. Es wurde entlang der Strecke in 0.05$m$ Intervallen und mit einer $\pm$10° Neigung in je y- und z-Achse Bilder (siehe Abbildung \ref{dataset_variation}) mit korrespondierenden Ground-Truth-Daten aufgenommen.
 
 Insgesamt wurden drei synthetische Datensätze je Strecke erzeugt, die sich in ihrer Beschaffenheit von \begin{enumerate*}[label=\alph*)]
 	\item karikaturistisch zu
