@@ -71,7 +71,7 @@ Es wurden für die Aufgabenstellung interessante Aufnahmezonen in der Gebäudesi
 Die Gebäuden wurden in Blender\footnote{\url{https://www.blender.org} (aufgerufen am: 20.07.2019)} Version 2.79b simuliert. Die Strecke der echten Aufnahmen wurden in den Simulationen schwankungslos auf einer konstanten Höhe von 1.70$m$ imitiert.
 
 Bei der Generierung der karikaturistischen und fotorealistischen Datensätze wurde die Beleuchtung aus einem Netz von Punktlichtquellen nachgestellt. Die karikaturistische und fotorealistische Datensätze unterscheiden sich ausschließlich in den Render-Engines.
-Für die Erzeugung Kantenbilder wurde eine konstante Beleuchtung verschaffen und die Kanten über Blender markant sichtbar konfiguriert. Der karikaturistische Datensatz sowie die Kantenbilder wurde über die Render-Engine \textit{Blender Render} und der fotorealistischer Datensatz über die \textit{Cycles-Engine} generiert.
+Für die Erzeugung karikaturistischen Kantenbilder wurde eine konstante Beleuchtung verschaffen und die Kanten über Blender markant sichtbar konfiguriert. Der karikaturistische Datensatz sowie die Kantenbilder wurde über die Render-Engine \textit{Blender Render} und der fotorealistischer Datensatz über die \textit{Cycles-Engine} generiert.
 
 Die intrinsischen Daten der D435 RGB-Kamera wurden auf die virtuellen Kameras übertragen. Es wurde entlang der Strecke in 0.05$m$ Intervallen und mit einer $\pm$10° Neigung in je Y- und Z-Achse Bilder (siehe Abbildung ...) mit korrespondierenden Ground-Truth-Daten aufgenommen. 
 
@@ -85,7 +85,7 @@ Die intrinsischen Daten der D435 RGB-Kamera wurden auf die virtuellen Kameras ü
 Synthetische Bilder, wie sie in  \ref{subsec:generate_synth_images} generiert werden, haben keine realitätsnahe Erscheinung, minimale Texture und 
 
 
-Bei der Erzeugung von Gradienten- bzw. Kantenbilder gehen einerseits wichtige Informationen im Hinblick auf das Ursprungsbild verloren, andererseits bleiben wichtige Informationen wie z.B. die geometrische Struktur erhalten.
+Bei der Erzeugung von Gradientenbilder gehen einerseits wichtige Informationen im Hinblick auf das Ursprungsbild verloren, andererseits bleiben wichtige Informationen wie z.B. die geometrische Struktur erhalten.
 
 
 \vspace{\fill}
@@ -120,7 +120,7 @@ Bei der Erzeugung von Gradienten- bzw. Kantenbilder gehen einerseits wichtige In
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/example/e00643.png}
-		\caption{Kantenbild}
+		\caption{karikaturistisches Kantenbild}
 		\label{subfig:edge}
 	\end{subfigure}
 	\hfill
