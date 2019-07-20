@@ -86,7 +86,54 @@ Insgesamt wurden drei synthetische Datensätze je Strecke erzeugt, die sich in i
 Für die Erzeugung der b) karikaturistischen Kantenbilder wurde eine konstante Beleuchtung verschaffen und die Kanten über Blender markant sichtbar konfiguriert. Der a) karikaturistische Datensatz sowie die b) Kantenbilder wurde über die Render-Engine \textit{Blender Render} und der c) fotorealistischer Datensatz über die \textit{Cycles-Engine} generiert.
 
 
-% TODO: bild von den neigungen.
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.3\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/example/b00643.png}
+		\caption{Odometrie  (T265) + \\ 3D Punktwolke (D435)}
+		\label{subfig:camera_construct}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/example/b00643.png}
+		\caption{Fischaugenkamera 1 \\ (T265)}
+		\label{subfig:iy0_x+10}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/example/b00643.png}
+		\caption{Fischaugenkamera 2 \\ (T265)}
+		\label{subfig:iy0_x-10}
+	\end{subfigure}
+	\medskip
+	\begin{subfigure}[b]{0.3\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/example/b00643.png}
+		\caption{Odometrie  (T265) + \\ 3D Punktwolke (D435)}
+		\label{subfig:iy+10_x0}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/example/b00643.png}
+		\caption{RGB-Bild \\ (D435) \hspace*{2cm}}
+		\label{subfig:iy0_x0}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/example/b00643.png}
+		\caption{Tiefenbild \\ (D435) \hspace*{2cm}}
+		\label{subfig:iy+10_x0}
+	\end{subfigure}
+	\caption{Datensatz pro Frame. \ref{subfig:odom1}  und \ref{subfig:odom2} visualisieren in unterschiedlichen Prespektiven die von der T265 ermittelte Odometrie und die von der D435 erhaltenen 3D Punktwolke. \ref{subfig:fisheye1} und \ref{subfig:fisheye2} sind die von der T265 aufgenommenen Fischaugenbilder. \ref{subfig:rgb-image} ist das RGB-Bil der D435 und \ref{subfig:depth-image} das dazugehörige Tiefenbild. }
+	\label{fig:dataset}
+\end{figure}
+
 
 \subsection{Verarbeitung der Daten}
 // gradienten\\
