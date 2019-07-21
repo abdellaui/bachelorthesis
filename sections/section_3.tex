@@ -205,32 +205,34 @@ Es wird zusätzlich ein Schwellenwertverfahren mit einer Schwelle von 64 angewen
 Die Ergebnissen der Experimente von \citet{acharyaBIMPoseNetIndoorCamera2019}, die das PoseNet Model mit Gradienten- und Kantenbilder der karikaturistischen Daten trainieren und anschließend mit den Gradientenbilder der realen Daten evaluieren, konnten näherungsweise reproduzieren. 
 
 
-\begin{table}
-\begin{tabularx}{1.0\textwidth}{X X X}
-	 & \textbf{} & \textbf{Akkuratesse (Position, Orientierung)}\\
-	\hline
-	Convolutional Layer & Filter & \makecell[tl]{
-		Filtergröße\\
-		Anzahl der Filter (\textit{Tiefe})\\
-		Stride\\
-		Padding\\
-		Aktivierungsfunktion
-	}\\
-	\hline
-	Pooling Layer &  \textit{keine}  & \makecell[tl]{
-		Pooling Methode\\
-		Filtergröße\\
-		Stride\\
-		Padding
-	}\\
-	\hline
-	Fully-Connected Layer & Gewichte & \makecell[tl]{
-		Anzahl der Gewichte\\
-		Aktivierungsfunktion
-	}\\
-	\hline
-\end{tabularx}
-\label{tab:reproduction}
+\begin{table}[H]
+	\centering
+	\caption{Übersicht der Parameter und Hyperparameter der Layer eines Convolutional Neural Networks. Die Parameter werden während der Trainingsphase optimiert und Hyperparameter werden zuvor fest definiert \cite{yamashitaConvolutionalNeuralNetworks2018}. }
+	\begin{tabularx}{1.0\textwidth}{X X X}
+		 & \textbf{} & \textbf{Akkuratesse (Position, Orientierung)}\\
+		\hline
+		Convolutional Layer & Filter & \makecell[tl]{
+			Filtergröße\\
+			Anzahl der Filter (\textit{Tiefe})\\
+			Stride\\
+			Padding\\
+			Aktivierungsfunktion
+		}\\
+		\hline
+		Pooling Layer &  \textit{keine}  & \makecell[tl]{
+			Pooling Methode\\
+			Filtergröße\\
+			Stride\\
+			Padding
+		}\\
+		\hline
+		Fully-Connected Layer & Gewichte & \makecell[tl]{
+			Anzahl der Gewichte\\
+			Aktivierungsfunktion
+		}\\
+		\hline
+	\end{tabularx}
+	\label{tab:reproduction}
 \end{table}
 
 
