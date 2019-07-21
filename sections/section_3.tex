@@ -14,6 +14,7 @@ In der Literatur wurden die realen Daten einer Zone grundsätzlich entlang einer
 
 In der Literatur wurden SfM-Methoden eingesetzt, um die Ground-Truth-Daten der realen Aufnahmen zu bestimmen \cite{kendallPoseNetConvolutionalNetwork2015, clarkVidLocDeepSpatioTemporal2017, acharyaBIMPoseNetIndoorCamera2019}. 
 In der vorliegenden Arbeit wird für die Bestimmung der Ground-Truth-Daten sowie die Aufnahme der Bilder zeitgleich zwei unterschiedliche Kameras der Intel Realsense Reihe verwendet. Eine Intel Realsense T265\footnote{\url{https://www.intelrealsense.com/tracking-camera-t265/} (abgerufen am: 18.07.2019)} wird eingesetzt, die die Odometrie (Ground-Truth-Daten) mit einer Abweichung von 1\%  über die SfM von zwei Fischaugenkameras und Inertial Measurement Units (\textit{IMU}) ermittelt. Zudem wird eine Intel Realsense D435\footnote{ \url{https://www.intelrealsense.com/depth-camera-d435/} (abgerufen am: 18.07.2019)} eingesetzt, die eine 3D Punktwolke, ein Tiefenbild sowie ein RGB-Bild einer Szene liefert. Die T265 wird über die D435 Kamera montiert (siehe Abbildung \ref{fig:t265_d435}). 
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/dataset/t265_d435_2.png}
