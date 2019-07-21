@@ -202,7 +202,40 @@ Es wird zusätzlich ein Schwellenwertverfahren mit einer Schwelle von 64 angewen
 \vspace{\fill}
 
 \subsection{Reproduktion der Ergebnisse von BIM-PoseNet}
-Die Ergebnissen der Experimente von \citet{acharyaBIMPoseNetIndoorCamera2019}, die das PoseNet Model mit Gradienten- und Kantenbilder der karikaturistischen Daten trainieren und anschließend mit den Gradientenbilder der realen Daten evaluieren, konnten näherungsweise reproduzieren.
+Die Ergebnissen der Experimente von \citet{acharyaBIMPoseNetIndoorCamera2019}, die das PoseNet Model mit Gradienten- und Kantenbilder der karikaturistischen Daten trainieren und anschließend mit den Gradientenbilder der realen Daten evaluieren, konnten näherungsweise reproduzieren. 
+
+
+
+\begin{tabularx}{1.0\textwidth}{X X X}
+	 & \textbf{} & \textbf{Akkuratesse \\ (Position, Orientierung)}\\
+	\hline
+	Convolutional Layer & Filter & \makecell[tl]{
+		Filtergröße\\
+		Anzahl der Filter (\textit{Tiefe})\\
+		Stride\\
+		Padding\\
+		Aktivierungsfunktion
+	}\\
+	\hline
+	Pooling Layer &  \textit{keine}  & \makecell[tl]{
+		Pooling Methode\\
+		Filtergröße\\
+		Stride\\
+		Padding
+	}\\
+	\hline
+	Fully-Connected Layer & Gewichte & \makecell[tl]{
+		Anzahl der Gewichte\\
+		Aktivierungsfunktion
+	}\\
+	\hline
+\end{tabularx}
+\label{tab:layer_param}
+\end{table}
+
+
+
+
 \subsection{Trainingsparameter}
 Es wird die PoseNet Caffe Implementierung \cite{jiaCaffeConvolutionalArchitecture2014} von den PoseNet Autoren  \citet{kendallPoseNetConvolutionalNetwork2015} verwendet. 
 
