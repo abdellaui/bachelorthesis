@@ -7,7 +7,9 @@ Im weiteren Verlauf dieses Kapitel werden die verwendeten Datensätze gelistet, 
 
 
 \subsection{Datensätze}
-IC Gebäude 6. Stock 
+Die Ergebnissen der Experimente von \citet{acharyaBIMPoseNetIndoorCamera2019}, die das PoseNet Model mit Gradienten- und Kantenbilder der karikaturistischen Bilder trainieren und anschließen mit den Gradientenbilder der realen Bilder evaluieren, konnten näherungsweise reproduzieren.
+In dieser Arbeit wurden zwei 3D-Modelle von unterschiedlichen Gebäuden verwendet. 
+
 \newpage
 \subsection{Erhebung der realen Daten}
 \label{subsec:record_real_data}
@@ -201,7 +203,9 @@ Es wird zusätzlich ein Schwellenwertverfahren mit einer Schwelle von 64 angewen
 \subsection{Trainingsparameter}
 Es wird die PoseNet Caffe Implementierung \cite{jiaCaffeConvolutionalArchitecture2014} von den PoseNet Autoren  \citet{kendallPoseNetConvolutionalNetwork2015} verwendet. 
 
+
 Die Gewichte des Netzwerks werden mit den Gewichten eines Models initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz \cite{zhouLearningDeepFeatures2014} trainiert wurde. Anschließend wird mit den erhobenen synthetischen Daten trainiert und mit den realen Daten getestet.
+
 optimizer, beta,
 learningrate,
 weights decay, anz. data; ...
