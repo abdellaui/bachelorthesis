@@ -3,7 +3,7 @@
 \section{Training des Convolutional Neural Networks}
 Künstliche neuronale Netze bzw. CNNs werden grundsätzlich zuerst aufgabenspezifisch modelliert und anschließend mit entsprechenden Daten trainiert.  In der vorliegenden Arbeit wird als Netzwerk das in Abschnitt \ref{sec:posenet} beschriebene PoseNet Model verwendet. Die Arbeit folgt den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} mit Gradienten- bzw Kantenbilder der synthetischen Daten das Netzwerk zu trainieren, um anschließend mit Gradientenbilder der realen Daten das Netzwerk zu evaluieren. 
 
-Im weiteren Verlauf dieses Kapitel werden die verwendeten Datensätze gelistet, die Erhebung bzw. Generierung der realen bzw. synthetischen Daten erläutert und die Trainingsparameter angegeben. 
+Im weiteren Verlauf dieses Kapitel werden die verwendeten Datensätze gelistet, die Erhebung bzw. Generierung der realen bzw. synthetischen Daten beschrieben, die Verarbeitung der Daten dargestellt und die Trainingsparameter angegeben. 
 
 
 \subsection{Datensätze}
@@ -143,53 +143,53 @@ Bei der Erzeugung von Gradientenbilder gehen einerseits wichtige Informationen i
 \vspace{\fill}
 \begin{figure}[htp]
 	\centering
-	\begin{subfigure}[t]{0.48\linewidth}
+	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/example/r000305.png}
 		\caption{reale Aufnahme}
 		\label{subfig:real}
 	\end{subfigure}
 	\hfill 
-	\begin{subfigure}[t]{0.48\linewidth}
+	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/example/rg000305.png}
 		\caption{Gradientenbild von \ref{subfig:real}}
 	\end{subfigure}
 	\hfill 
-	\begin{subfigure}[t]{0.48\linewidth}
+	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/example/b00643.png}
 		\caption{karikaturistische Simulation}
 		\label{subfig:cartoonish}
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}[t]{0.48\linewidth}
+	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/example/bg00643.png}
 		\caption{Gradientenbild von \ref{subfig:cartoonish}}
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}[t]{0.48\linewidth}
+	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/example/e00643.png}
 		\caption{karikaturistisches Kantenbild}
 		\label{subfig:edge}
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}[t]{0.48\linewidth}
+	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/example/eg00643.png}
 		\caption{Gradientenbild von \ref{subfig:edge}}
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}[t]{0.48\linewidth}
+	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/example/c00643.png}
 		\caption{fotorealistisch Simulation}
 		\label{subfig:photorealistic}
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}[t]{0.48\linewidth}
+	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/example/cg00643.png}
 		\caption{Gradientenbild von \ref{subfig:photorealistic}}
