@@ -10,6 +10,7 @@ Im weiteren Verlauf dieses Kapitel werden die verwendeten Datensätze gelistet, 
 IC Gebäude 6. Stock 
 \newpage
 \subsection{Erhebung der realen Daten}
+\ref{subsec:record_real_data}
 In der Literatur wurden die realen Daten einer Zone grundsätzlich entlang einer Strecke aufgenommen \cite{kendallPoseNetConvolutionalNetwork2015, clarkVidLocDeepSpatioTemporal2017, acharyaBIMPoseNetIndoorCamera2019}. Daher werden für die Aufgabenstellung interessante Aufnahmestrecken in den Gebäudesimulationen festgelegt und anschließend die Aufnahmen so durchgeführt, dass diverse Projekte damit Forschung betreiben können. 
 
 In der Literatur wurden SfM-Methoden eingesetzt, um die Ground-Truth-Daten der realen Aufnahmen zu bestimmen \cite{kendallPoseNetConvolutionalNetwork2015, clarkVidLocDeepSpatioTemporal2017, acharyaBIMPoseNetIndoorCamera2019}. 
@@ -76,7 +77,7 @@ In der vorliegenden Arbeit wird für die Bestimmung der Ground-Truth-Daten sowie
 \subsection{Generierung der synthetischen Daten}
 \label{subsec:generate_synth_images}
 
-Die Gebäude werden in Blender\footnote{\url{https://www.blender.org} (aufgerufen am: 20.07.2019)} Version 2.79b simuliert. Die intrinsischen Daten der D435 RGB-Kamera werden auf die virtuellen Kameras übertragen.
+Die Gebäude werden in Blender\footnote{\url{https://www.blender.org/about/} (aufgerufen am: 20.07.2019)} Version 2.79b simuliert. Die intrinsischen Daten der D435 RGB-Kamera werden auf die virtuellen Kameras übertragen.
 
 Die Strecke der echten Aufnahmen werden in den Simulationen schwankungslos auf einer konstanten Höhe von 1.70$m$ imitiert. Es wird entlang der Strecke in 0.05$m$ Intervallen und mit einer $\pm$10° Neigung in je y- und z-Achse Bilder mit korrespondierenden Ground-Truth-Daten aufgenommen. Die Abbildung \ref{fig:dataset_variation} illustriert die Variationen der Pose pro Stützpunkt auf einer Strecke.
 
@@ -131,9 +132,8 @@ Für die Erzeugung der b) karikaturistischen Kantenbilder wird eine konstante Be
 
 
 \subsection{Verarbeitung der Daten}
-// gradienten\\
+In der vorliegenden Arbeit wird das neuronale Netzwerk mit Gradientenbilder trainiert und evaluiert. Nach der Erhebung der realen Bilder (siehe Abschnitt \ref{subsec:record_real_data}) und Generierung der synthetischen Bilder (siehe Abschnitt \ref{subsec:generate_synth_images}) werden diese in ihre Gradientenbilder verarbeitet.
 
-Synthetische Bilder, wie sie in  \ref{subsec:generate_synth_images} generiert werden, haben keine realitätsnahe Erscheinung, minimale Texture und 
 
 
 Bei der Erzeugung von Gradientenbilder gehen einerseits wichtige Informationen im Hinblick auf das Ursprungsbild verloren, andererseits bleiben wichtige Informationen wie z.B. die geometrische Struktur erhalten.
