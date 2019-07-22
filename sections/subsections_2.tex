@@ -18,7 +18,7 @@ Ein künstliches Neuron mit der Inputgröße $M$ ist mathematisch die nicht-line
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{images/neuron.png}
+	\includegraphics[width=0.8\textwidth]{images/ann_conv/neuron.png}
 	\caption{Visualisierung eines künstlichen Neurons definiert nach der Gleichung \ref{eq:neuron}. Dieser Neuron summiert das Produkt des Inputvektors $x$  mit den jeweiligen Gewichten $w$ und addiert einen Bias $b$. Durch die Summe erzeugt die Aktivierungsfunktion $\phi$ das Output $y$ des Neurons. Abbildung \ref{fig:relu} zeigt ein Beispiel für eine Aktivierungsfunktion. Entnommen aus \cite{deoliveiraSystemBasedArtificial2017}. }
 	\label{fig:neuron}
 \end{figure}
@@ -53,7 +53,7 @@ y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L * ... * f_2 * f_1)(x)
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{images/neural_net.png}
+	\includegraphics[width=0.6\textwidth]{images/ann_conv/neural_net.png}
 	\caption{Ein feedforward neuronales Netz mit der Tiefe 3, bestehend aus einem Input Layer der Breite 3, aus zwei Hidden Layer der Breite 4 und einem Output Layer der Breite 1. Mit der Gleichung \ref{eq:network}  lässt sich dieses Netzwerk als die Funktion $f :  \mathbb{R}^{3} \mapsto \mathbb{R}^{1}$ mit $f(x)=f_3(f_2(f_1(x)))$ darstellen. }
 	\label{fig:neural_net}
 \end{figure}
@@ -115,7 +115,7 @@ Prinzipiell wird das Output des Convolutional Layers durch die Übergabe des Fea
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.4\textwidth]{images/ReLU.png}
+	\includegraphics[width=0.4\textwidth]{images/ann_conv/ReLU.png}
 	\caption{Ein Beispiel für eine Aktivierungsfunktion. Die ReLU (\textit{rectified liniear unit}) Aktivierungsfunktion wird typischerweise in CNNs eingesetzt und ist mathematisch definiert als: $f(x) = max(0,x)$ \cite{Goodfellow-et-al-2016} }
 	\label{fig:relu}
 \end{figure}
@@ -124,7 +124,7 @@ Prinzipiell wird das Output des Convolutional Layers durch die Übergabe des Fea
 \vspace*{\fill}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{images/convolution_layer.png}
+	\includegraphics[width=0.8\textwidth]{images/ann_conv/convolution_layer.png}
 	\caption{Ein Beispiel für die Convolution Operation mit 3 Filtern der Größe 3 $\times$ 3, je einem Stride von 1 und keinem Padding. Ein Filter bewegt sich entlang des gesamten Inputs mit der Schrittweite (\textit{Stride}) 1 und bildet die Summe der elementweise multiplizierten Werte. Die Summe wird dann im Feature Map an die korrespondierende Position geschrieben. Dieser Vorgang wiederholt sich für jedes Filter \cite{yamashitaConvolutionalNeuralNetworks2018}. }
 	\label{fig:convolution_layer}
 \end{figure}
@@ -138,7 +138,7 @@ Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer redu
  \vspace*{1cm}
  \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{images/max_pool.png}
+	\includegraphics[width=0.6\textwidth]{images/ann_conv/max_pool.png}
 	\caption{Ein Beispiel für eine Max-Pooling Operation mit einer Filtergröße von 2 $\times$ 2, einem Stride von 2 und keinem Padding. In diesem Beispiel wird der Input in 2 $\times$ 2 Bereiche unterteilt und der Maximum jedes Bereiches als Output berechnet. Es werden die markantesten Werte einer Nachbarschaft behalten und der Rest verworfen. Diese Operation führt zu einer Reduzierung der Inputgröße um den Faktor 2. Entnommen aus \cite{yamashitaConvolutionalNeuralNetworks2018}.}
 	\label{fig:pooling_layer}
 \end{figure}

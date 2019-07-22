@@ -1,5 +1,5 @@
 % !TEX root = ../my_thesis.tex
-\newpage
+
 \section{Training des Convolutional Neural Networks}
 Künstliche neuronale Netze bzw. CNNs werden grundsätzlich zuerst aufgabenspezifisch modelliert und anschließend mit entsprechenden Daten trainiert.  In der vorliegenden Arbeit wird als Netzwerk das in Abschnitt \ref{sec:posenet} beschriebene PoseNet Model verwendet. Die Arbeit folgt den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} mit Gradienten- bzw. Kantenbilder der synthetischen Daten das Netzwerk zu trainieren, um anschließend mit Gradientenbilder der realen Daten das Netzwerk zu evaluieren. 
 
@@ -21,7 +21,7 @@ In der vorliegenden Arbeit wird für die Bestimmung der Ground-Truth-Daten sowie
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{images/dataset/t265_d435_2.png}
+	\includegraphics[width=0.5\textwidth]{images/real_dataset/t265_d435_2.png}
 	\caption{Hardware für die Aufnahme der realen Daten. Die Intel Realsense T265 ist oberhalb der Intel Realsense D435 montiert. Das Konstrukt kann auf einer universalen Stativschraube befestigt werden.  }
 	\label{fig:t265_d435}
 \end{figure}
@@ -33,42 +33,42 @@ In der vorliegenden Arbeit wird für die Bestimmung der Ground-Truth-Daten sowie
 	\centering
 	\begin{subfigure}[t]{0.3\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/dataset/pointcloud3.png}
+		\includegraphics[width=\linewidth]{images/real_dataset/pointcloud3.png}
 		\caption{Odometrie  (T265) + \\ 3D Punktwolke (D435)}
 		\label{subfig:odom1}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.3\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/dataset/f1_frame000005.png}
+		\includegraphics[width=\linewidth]{images/real_dataset/f1_frame000005.png}
 		\caption{Fischaugenkamera 1 \\ (T265)}
 		\label{subfig:fisheye1}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.3\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/dataset/f2_frame000005.png}
+		\includegraphics[width=\linewidth]{images/real_dataset/f2_frame000005.png}
 		\caption{Fischaugenkamera 2 \\ (T265)}
 		\label{subfig:fisheye2}
 	\end{subfigure}
 	\hfill \medskip
 	\begin{subfigure}[t]{0.3\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/dataset/pointcloud1.png}
+		\includegraphics[width=\linewidth]{images/real_dataset/pointcloud1.png}
 		\caption{Odometrie  (T265) + \\ 3D Punktwolke (D435)}
 		\label{subfig:odom2}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.3\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/dataset/dc_frame000005.png}
+		\includegraphics[width=\linewidth]{images/real_dataset/dc_frame000005.png}
 		\caption{RGB-Bild \\ (D435) \hspace*{2cm}}
 		\label{subfig:rgb-image}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.3\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/dataset/dt_frame000005.png}
+		\includegraphics[width=\linewidth]{images/real_dataset/dt_frame000005.png}
 		\caption{Tiefenbild \\ (D435) \hspace*{2cm}}
 		\label{subfig:depth-image}
 	\end{subfigure}
@@ -89,37 +89,37 @@ Die Strecke der echten Aufnahmen werden in den Simulationen schwankungslos auf e
 	\centering
 	\begin{subfigure}[t]{0.18\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/example/00023.png}
+		\includegraphics[width=\linewidth]{images/syn_dataset/00023.png}
 		\caption{Orginal Pose \vspace{\fill}}
 		\label{subfig:iz0_y0}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[t]{0.18\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{images/example/00020.png}
-		\caption{+10° um die y-Achse}
-		\label{subfig:iz0_y+10}
 	\end{subfigure}
 	\hfill 
 	\begin{subfigure}[t]{0.18\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/example/00021.png}
+		\includegraphics[width=\linewidth]{images/syn_dataset/00021.png}
 		\caption{-10° um die y-Achse}
 		\label{subfig:iz0_y-10}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.18\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/example/00022.png}
-		\caption{+10° um die z-Achse}
-		\label{subfig:iz+10_y0}
+		\includegraphics[width=\linewidth]{images/syn_dataset/00020.png}
+		\caption{+10° um die y-Achse}
+		\label{subfig:iz0_y+10}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.18\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/example/00024.png}
+		\includegraphics[width=\linewidth]{images/syn_dataset/00024.png}
 		\caption{-10° um die z-Achse}
 		\label{subfig:iz-10_y0}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.18\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/syn_dataset/00022.png}
+		\caption{+10° um die z-Achse}
+		\label{subfig:iz+10_y0}
 	\end{subfigure}
 	\caption{Variation der Pose pro Stützpunkt auf einer Strecke.}
 	\label{fig:dataset_variation}
@@ -147,52 +147,52 @@ Es wird zusätzlich ein Schwellenwertverfahren mit einer Schwelle von 64 angewen
 	\centering
 	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/example/b00708.png}
+		\includegraphics[width=\linewidth]{images/syn_dataset/b00708.png}
 		\caption{karikaturistische Simulation}
 		\label{subfig:cartoonish}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/example/e00708.png}
+		\includegraphics[width=\linewidth]{images/syn_dataset/e00708.png}
 		\caption{synthetisches \hspace{1cm} Kantenbild}
 		\label{subfig:edge}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/example/c00708.png}
+		\includegraphics[width=\linewidth]{images/syn_dataset/c00708.png}
 		\caption{fotorealistische \hspace{1cm} Simulation}
 		\label{subfig:photorealistic}
 	\end{subfigure}
 	\hfill 
 	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/example/r000305.png}
+		\includegraphics[width=\linewidth]{images/syn_dataset/r000305.png}
 		\caption{reale Aufnahme}
 		\label{subfig:real}
 	\end{subfigure}
 	\hfill 
 	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/example/bg00708.png}
+		\includegraphics[width=\linewidth]{images/syn_dataset/bg00708.png}
 		\caption{Gradientenbild  \hspace{1cm} von \ref{subfig:cartoonish}}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/example/eg00708.png}
+		\includegraphics[width=\linewidth]{images/syn_dataset/eg00708.png}
 		\caption{Gradientenbild  \hspace{1cm} von \ref{subfig:edge}}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/example/cg00708.png}
+		\includegraphics[width=\linewidth]{images/syn_dataset/cg00708.png}
 		\caption{Gradientenbild  \hspace{1cm} von \ref{subfig:photorealistic}}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{images/example/rg000305.png}
+		\includegraphics[width=\linewidth]{images/syn_dataset/rg000305.png}
 		\caption{Gradientenbild  \hspace{1cm} von \ref{subfig:real}}
 	\end{subfigure}
 	\hfill
@@ -201,38 +201,29 @@ Es wird zusätzlich ein Schwellenwertverfahren mit einer Schwelle von 64 angewen
 \end{figure}
 \vspace{\fill}
 
-\subsection{Reproduktion der Ergebnisse von BIM-PoseNet}
-Die Ergebnissen der Experimente von \citet{acharyaBIMPoseNetIndoorCamera2019}, die das PoseNet Model mit Gradientenbilder der karikaturistischen Daten sowie synthetischen Kantenbilder trainieren und anschließend mit den Gradientenbilder der realen Daten evaluieren, konnten näherungsweise (vgl. Tabelle \ref{tab:reproduction}) reproduziert werden. Eine exakte oder bessere Reproduktion der Ergebnisse ist durch Zufall bedingt.
+\subsection{Trainingsparameter}
+Es wird die Caffe Implementierung \cite{jiaCaffeConvolutionalArchitecture2014} von PoseNet verwendet, die von den eigenen Autoren \citet{kendallPoseNetConvolutionalNetwork2015} veröffentlicht wurde.
 
-Der Trainingsprozess wurde je Datensatztyp zweimal wiederholt und die besseren Ergebnisse behalten. Die Tabelle \ref{tab:reproduction} präsentiert die Ergebnisse der Reproduktion sowie die Ergebnisse der Autoren \citet{acharyaBIMPoseNetIndoorCamera2019}.
+Die Batchsize beträgt 40. Eine NVIDIA GeForce GTX 1080 Ti mit 11GB Grafikspeicher wird verwendet und ermöglicht bei einer Batchsize von 40 drei Trainingsprozesse zeitgleich durchzuführen.
+
+Der Hyperparameter $\beta$, der von PoseNet vorgestellten Kostenfunktion (vgl. Gleichung \ref{eq:posenet_loss}), wird durch ein Grid-Search Verfahren bestimmt, indem PoseNet mit der Hälfte der realen Daten trainiert und mit der restlichen Hälfte evaluiert wird. Der Loss wird mit dem AdaGrad Gradientenabstiegsverfahren mit einer konstanten Lernrate von 0.001 optimiert bzw. minimiert. 
+
+Die Trainings- sowie Testdaten werden auf eine Auflösung von $455\times256$ skaliert. Während des Trainingsprozesses werden zufällige Ausschnitte der Größe $224 \times 224$ aus dem skalierten Datensatz genommen und für die Evaluierung wird ein zentriertes Ausschnitt der selben Größe aus dem skalierten Testdatensatz verwendet. Das Durchschnittsbild der synthetischen Daten werden beim Trainieren und bei der Evaluierung von den Inputbildern subtrahiert.
+
+Die Gewichte des Netzwerks werden mit den Gewichten eines Models initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz \cite{zhouLearningDeepFeatures2014} trainiert wurde. Anschließend wird mit den synthetischen Daten trainiert und mit den realen Daten evaluiert.
 
 
 \begin{table}[H]
 	\centering
-	\caption{Reproduktionsergebnisse. Abweichungen der Ergebnisse sind durch Zufall bedingt und können bei mehrfachem Wiederholen des Trainingsprozesses minimiert bzw. erhoben sowie verbessert werden. }
-	\begin{tabularx}{1.0\textwidth}{>{\hsize=0.7\hsize}X >{\hsize=1.3\hsize}X X}
-		 \textbf{Quelle} & \textbf{Trainingsdatensatz} \hspace{2cm} (Gradientenbild)& \textbf{Akkuratesse} \hspace{2cm} (Position, Orientierung)\\
+	\caption{aasd}
+	\begin{tabularx}{0.6\textwidth}{X X}
+		\textbf{Parameter} & \textbf{Wert}\\
 		\hline
-		BIM-PoseNet & karikaturistische Simulation & 2.63$m$, 6.99°\\
+		Batchsize & 40\\
 		\hline
-		BIM-PoseNet & synthetisches Kantenbild & 1.88$m$, 7.73°\\
+		Loss-Optimierer & AdaGrad\\
 		\hline
-		Reproduktion & karikaturistische Simulation & 2.74$m$, 12.24°\\
-		\hline
-		Reproduktion & synthetisches Kantenbild & 2.53$m$, 9.54°\\
+		Lernrate & 0.001\\
 	\end{tabularx}
-	\label{tab:reproduction}
+	\label{tab:trainingparams}
 \end{table}
-
-
-
-
-\subsection{Trainingsparameter}
-Es wird die PoseNet Caffe Implementierung \cite{jiaCaffeConvolutionalArchitecture2014} von den PoseNet Autoren  \citet{kendallPoseNetConvolutionalNetwork2015} verwendet. 
-
-
-Die Gewichte des Netzwerks werden mit den Gewichten eines Models initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz \cite{zhouLearningDeepFeatures2014} trainiert wurde. Anschließend wird mit den erhobenen synthetischen Daten trainiert und mit den realen Daten getestet.
-
-optimizer, beta,
-learningrate,
-weights decay, anz. data; ...
