@@ -206,7 +206,7 @@ Es wird die Caffe Implementierung \cite{jiaCaffeConvolutionalArchitecture2014} v
 
 Die Batchsize beträgt 40. Eine NVIDIA GeForce GTX 1080 Ti mit 11GB Grafikspeicher wird verwendet und ermöglicht bei einer Batchsize von 40 drei Trainingsprozesse zeitgleich durchzuführen.
 
-Der Hyperparameter $\beta$, der von PoseNet vorgestellten Kostenfunktion (vgl. Gleichung \ref{eq:posenet_loss}), wird durch ein Grid-Search Verfahren bestimmt, indem PoseNet mit der Hälfte der realen Daten trainiert und mit der restlichen Hälfte evaluiert wird. Der Loss wird mit dem AdaGrad Gradientenabstiegsverfahren mit einer konstanten Lernrate von 0.001 optimiert bzw. minimiert. 
+Der Hyperparameter $\beta$, der von PoseNet vorgestellten Kostenfunktion (vgl. Gleichung \ref{eq:posenet_loss}), wird durch ein Grid-Search Verfahren bestimmt, indem PoseNet mit der Hälfte der realen Daten trainiert und mit der restlichen Hälfte evaluiert wird. Der Loss wird mit dem AdaGrad Gradientenabstiegsverfahren mit einer konstanten Lernrate von $10^{-3}$ optimiert bzw. minimiert. 
 
 Die Trainings- sowie Testdaten werden auf eine Auflösung von $455\times256$ skaliert. Während des Trainingsprozesses werden zufällige Ausschnitte der Größe $224 \times 224$ aus dem skalierten Datensatz genommen und für die Evaluierung wird ein zentriertes Ausschnitt der selben Größe aus dem skalierten Testdatensatz verwendet. Das Durchschnittsbild der synthetischen Daten werden beim Trainieren und bei der Evaluierung von den Inputbildern subtrahiert.
 
@@ -219,11 +219,15 @@ Die Gewichte des Netzwerks werden mit den Gewichten eines Models initialisiert, 
 	\begin{tabularx}{0.6\textwidth}{X X}
 		\textbf{Parameter} & \textbf{Wert}\\
 		\hline
-		Batchsize & 40\\
+		Batchsize & $40$\\
 		\hline
 		Loss-Optimierer & AdaGrad\\
 		\hline
-		Lernrate & 0.001\\
+		Lernrate & $10^{-3}$\\
+		\hline
+		Anzahl der Epochen & $160$\\
+		\hline
+		Durchschnittsbildsubtraktion & $10^{-3}$\\
 	\end{tabularx}
 	\label{tab:trainingparams}
 \end{table}
