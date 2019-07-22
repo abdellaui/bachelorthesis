@@ -204,7 +204,7 @@ Es wird zusätzlich ein Schwellenwertverfahren mit einer Schwelle von 64 angewen
 \subsection{Trainingsparameter}
 Es wird die Caffe Implementierung \cite{jiaCaffeConvolutionalArchitecture2014} von PoseNet verwendet, die von den eigenen Autoren \citet{kendallPoseNetConvolutionalNetwork2015} veröffentlicht wurde.
 
-Die Batchsize beträgt 40. Eine NVIDIA GeForce GTX 1080 Ti mit 11GB Grafikspeicher wird verwendet und ermöglicht bei einer Batchsize von 40 drei Trainingsprozesse zeitgleich durchzuführen.
+Die Batchsize beträgt 40 und die Anzahl der Trainingsepochen ist 160. Eine NVIDIA GeForce GTX 1080 Ti mit 11GB Grafikspeicher wird verwendet und ermöglicht bei einer Batchsize von 40 drei Trainingsprozesse zeitgleich durchzuführen.
 
 Der Hyperparameter $\beta$, der von PoseNet vorgestellten Kostenfunktion (vgl. Gleichung \ref{eq:posenet_loss}), wird durch ein Grid-Search Verfahren bestimmt, indem PoseNet mit der Hälfte der realen Daten trainiert und mit der restlichen Hälfte evaluiert wird. Der Loss wird mit dem AdaGrad \cite{duchiAdaptiveSubgradientMethods2011} Gradientenabstiegsverfahren mit einer konstanten Lernrate von $10^{-3}$ optimiert bzw. minimiert. 
 
@@ -212,7 +212,7 @@ Die Trainings- sowie Testdaten werden auf eine Auflösung von $455\times256$ ska
 
 Die Gewichte des Netzwerks werden mit den Gewichten eines Models initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz \cite{zhouLearningDeepFeatures2014} trainiert wurde. Anschließend wird mit den synthetischen Daten trainiert und mit den realen Daten evaluiert.
 
-\vspace{\fill}
+\vspace{2cm}
 \begin{table}[H]
 	\centering
 	\caption{aasd}
@@ -221,11 +221,11 @@ Die Gewichte des Netzwerks werden mit den Gewichten eines Models initialisiert, 
 		\hline
 		Batchsize & $40$\\
 		\hline
+		Anzahl der Epochen & $160$\\
+		\hline
 		Loss-Optimierer & AdaGrad\\
 		\hline
 		Lernrate & $10^{-3}$\\
-		\hline
-		Anzahl der Epochen & $160$\\
 		\hline
 		Bildskalierung & $455 \times 256$\\
 		\hline
