@@ -1,11 +1,11 @@
 % !TEX root = ../my_thesis.tex
 
 \section{Ergebnisse}
-Im vorliegenden Kapitel werden die Ergebnisse der durchgeführten Experimente präsentiert. Zuallererst wurden die Ergebnisse von BIM-PoseNet reproduziert, um die Korrektheit der Pipeline zu überprüfen. Daher werden die Ergebnisse der Reproduktion zuerst präsentiert. Anschließend wird der Hyperparameter $\beta$ der Kostenfunktion (vgl. Gleichung \ref{eq:posenet_loss}) für jedes Datensatz (siehe Abschnitt \ref{subsec:datasets}) bestimmt und angegeben. Daraufhin werden die Evaluationsergebnisse der jeweiligen Datensätze dargestellt.
+Im vorliegenden Kapitel werden die Ergebnisse der durchgeführten Experimente präsentiert. Zuallererst wurden die Ergebnisse von BIM-PoseNet \cite{acharyaBIMPoseNetIndoorCamera2019} reproduziert, um die Korrektheit der Pipeline zu überprüfen. Daher werden die Ergebnisse der Reproduktion zuerst präsentiert. Anschließend wird der Hyperparameter $\beta$ der Kostenfunktion (vgl. Gleichung \ref{eq:posenet_loss}) für jedes Datensatz (siehe Abschnitt \ref{subsec:datasets}) bestimmt und angegeben. Daraufhin werden die Evaluationsergebnisse der jeweiligen Datensätze dargestellt.
 \subsection{Reproduktion der Ergebnisse von BIM-PoseNet}
 Die Ergebnissen der Experimente von \citet{acharyaBIMPoseNetIndoorCamera2019}, die das PoseNet Model mit Gradientenbilder der karikaturistischen Daten sowie synthetischen Kantenbilder trainieren und anschließend mit den Gradientenbilder der realen Daten evaluieren, konnten näherungsweise (vgl. Tabelle \ref{tab:reproduction}) reproduziert werden. Eine exakte oder bessere Reproduktion der Ergebnisse ist durch Zufall bedingt.
 
-Abweichend von BIM-PoseNet wurden statt 1000 reale Bilder 600 reale Bilder evaluiert. Der Trainingsprozess wurde je Datensatztyp zweimal wiederholt und die besseren Ergebnisse behalten. Die Tabelle \ref{tab:reproduction} präsentiert die Ergebnisse der Reproduktion sowie die Ergebnisse der Autoren \citet{acharyaBIMPoseNetIndoorCamera2019}.
+Abweichend von BIM-PoseNet wurden statt 1000 reale Bilder 600 reale Bilder evaluiert. Derzeit sind 600 Evaluierungsbilder veröffentlicht. Der Trainingsprozess wurde je Datensatztyp zweimal wiederholt und die besseren Ergebnisse behalten. Die Tabelle \ref{tab:reproduction} präsentiert die Ergebnisse der Reproduktion sowie die Ergebnisse der Autoren \citet{acharyaBIMPoseNetIndoorCamera2019}.
 
 
 \begin{table}[H]
