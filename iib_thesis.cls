@@ -40,7 +40,8 @@
 \RequirePackage{listings}                   % listings for code
 % bibliography
 \RequirePackage[square, numbers]{natbib}    % advanced citing commands
-\bibliographystyle{abbrvnat}            % abbreviated author names
+%\bibliographystyle{abbrvnat}            % abbreviated author names
+\bibliographystyle{my_abbrvnat}  
 
 %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %%
 
