@@ -1,0 +1,552 @@
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+Abdullah Sahin
+Bachelor
+Angewandte Informatik
+3. September 2019
+108016202304
+Prof. Dr.-Ing. Markus König
+Patrick Herbers, M.Sc.
+
+.....
+
+
+	
+
+
+Einleitung
+
+...
+
+
+
+Stand der Forschung und Grundlagen
+
+Das vorliegende Kapitel versucht einen Überblick des Forschungsstandes in den unterschiedlichen Aspekten der Arbeit zu verschaffen. Anschließend vermittelt das Kapitel notwendige Grundkenntnisse.
+
+Einführung
+
+
+
+
+
+
+
+Pose Estimation wird in dieser Arbeit als eine Methode der visuellen Lokalisierung (Visual-Based Localization, kurz VBL) betrachtet. VBL beschäftigt sich mit der Bestimmung der Pose (Position + Orientierung) eines visuellen Abfragematerials (z.B. ein RGB-Bild) in einer zuvor bekannten Szene .
+Ein naheliegendes Themengebiet der Robotik ist die visuelle Ortswiedererkennung (Visual Place Recognition, kurz VPR). Die visuelle Ortswiedererkennung fokussiert sich auf das Feststellen eines bereits besuchten Ortes und definiert sich aus einer Mapping-, Datenverarbeitungs- und einem Orientierungsmodul. Allgemein lässt sich das Prozess eines VPRs folgend beschreiben. Eine interne Karte bekannter Orte wird durch das Mappingmodul verwaltet. Die Daten werden vom Datenverarbeitungsmodul vorbereitet und anschließend an das Orientierungsmodul übergeben. Daraufhin bestimmt das Orientierungsmodul die Pose und entscheidet mit der immer aktuell gehaltenen Karte, ob ein Ort bereits besucht wurde. Im Vergleich zur VPR versucht die visuelle Lokalisierung eine Pose zu bestimmen und benötigt daher neben den zwei Modulen kein Mappingmodul.
+
+
+Die rein visuellen Methoden des VBLs unterteilen sich in indirekte und direkte Methoden. Die indirekten Methoden behandeln das Lokalisierungsproblem als eine Bildersuche in einer Datenbank, ähnlich wie das Content Based Image Retrieval Problem. Dabei wird das Abfragebild über eine Ähnlichkeitsfunktion mit den Vergleichsbildern aus der Datenbank abgeglichen. Diese Art von Methoden benötigen eine speicherintensive Bildergalerie (Datenbank) und liefern Ergebnisse bei Fund eines korrespondierenden Bildes. Hingen versuchen die direkten Methoden die Pose über eine Referenzumgebung zu bestimmen und benötigen meist daher keine große Bildergalerie . Es gibt drei Arten der direkten Methoden: 
+*[label=*)]
+	Abgleichen von Features zu Punktwolken (z.B.)
+	Pose Regression mit Tiefenbilder (z.B.)
+	Pose Regression nur mit Bildern (z.B.)
+
+Die erste Art von Methoden versucht die Pose zu bestimmen, indem die 2D-3D Korrespondenz über das Abgleichen von Features des Abfragebildes gegen die Deskriptoren der 3D-Punkte hergestellt werden. Diese Vorgehensweise hat Ähnlichkeiten zu den indirekten Methoden und benötigt statt einer Bildergalerie eine repräsentative 3D-Punktwolke der Szene. Die zweite Art von Methoden bestimmt anhand von Tiefenbilder die Pose z.B. über Regression Forests, Randomize Ferns, Coarse-to-Fine Registierung oder Neuronale Netze. Diese Forschungsprojekte liefern mit 3D-Bildern gewünschte Resultate. Die Ergebnisse sind abhängig von 3D-Kameras, die nicht verbreitet sind.
+
+Convolutional Neural Networks (CNN) werden erfolgreich im Bereich des Maschinelles Sehens, wie z.B. bei der Klassifizierung von Bildern sowie bei der Objekterkennung eingesetzt. 
+Ein verbreiteter Ansatz beim Entwurf von CNNs ist das Modifizieren der vorhandenen Netzwerkarchitekturen, die z.B. für die Bildklassifizierung angesichts der Wettbewerbe von ImageNet Large Scale Visual Recognition Challenge (ILSVRC) konstruiert wurden. Dieser Ansatz konnte beispielsweise erfolgreich in der Objekterkennung, Objektsegmentierung, semantische Segmentierung  und Tiefenbestimmung verfolgt werden.
+Seit Kurzem werden CNNs auch in den Anwendungsgebieten der Lokalisierung verwendet. Zum Beispiel verwenden  CNNs in Bezug auf das Simultaneous-Localization-and-Mapping (SLAM) Problem. schätzen anhand CNNs die relative Pose zweier Kameras. und setzen es im Bereich der visuellen Odometrie ein.
+
+
+Geleitet von den state-of-the-art Lokalisierungsergebnissen der CNNs stellen den ersten Ansatz zu direkten Posebestimmung nur mit RGB-Bildern vor. PoseNet ist die Modifikation der GoogLeNet Architektur und zweckentfremdet es von der Bildklassifizierung zu einem Pose-Regressor. Trainiert mit einem Datensatz, bestehend aus Paaren von Farbbild und Pose, kann es die sechs Freiheitsgrade der Kamerapose in unbekannten Szenen mittels eines Bildes bestimmen. Dieser Ansatz benötigt weder eine durchsuchbare Bildgalerie noch eine Punktwolke oder Tiefenbilder der Szene. Im Vergleich zu den metrischen Ansätzen wie SLAM oder visuelle Odometrie liefert es eine weniger akkurate Pose. Es bietet jedoch eine hohe Toleranz gegenüber Skalierungs- und Erscheinungsänderungen des Anfragebildes an.
+
+
+Es gibt mehrere Ansätze, die die Genauigkeit von PoseNet übertreffen.
+Einen Fortschritt erhalten die Autoren von PoseNet durch die hier vorgestellte Anpassung ihres Modells an einem Bayessian Neural Network.
+Dieselben Autoren erweitern PoseNet mit einer neuen Kostenfunktion unter Berücksichtigung von geometrischen Eigenschaften. und setzen Long-Short-Term-Memory (LSTM) Einheiten ein, um Wissen aus der Korrelation von Bildsequenzen zu gewinnen. sowie augmentieren den Trainingsdatensatz. stocken den vorhandenen Datensatz auf, indem sie die Bilder künstlich rotieren. erweitern zuerst über ein weiteres CNN den Datensatz um Tiefenbildern. Anschließend simulieren die Autoren RGB-Bilder aus verschiedenen Viewpoints. Im Vergleich zu PoseNet verwenden und eine andere Architektur. 
+Das Modell von basiert auf die SqueezeNet Architektur. stellen HourglassNet vor, das auf einem symmetrischen Encoder-Decoder Architektur basiert. und binden zusätzliche Informationen wie z.B. visuelle Odometrie, GPS oder IMU ein. 
+
+Jedes dieser Ansätze benötigen annotierte Trainingsdaten. Für die Erstellung solcher Daten wurden beispielsweise mit entsprechender Hardware ausgerüstete Trolleys, 3D-Kameras oder Structure-from-Motion (SfM) Methoden eingesetzt.
+
+
+Simulierte 3D-Daten werden in der Literatur oft eingesetzt, um das manuelle Erzeugen und Annotieren von Daten umzugehen.,, und erzeugen ihren Trainingsdaten, indem sie virtuelle Objekte auf reale Hintergrundbildern platzieren. generieren Daten zwecks Personenerkennung und Bestimmung derer körperlicher Pose. Zuvor werden auf den vorhandenen Bildern die körperliche Pose der Personen bestimmt und daran deren 3D Modelle rekonstruiert. Anschließend werden die 3D-Modelle in ihrer Pose variiert auf reale Hintergrundbildern platziert. Die Autoren konnten vergleichbare Ergebnisse zu den vorhandenen Ansätzen mit realen Daten ermitteln. erstellen Daten, um Objekte auf realen Bildern zu detektieren. Von jeder Objektklasse werden 3D-Modelle auf einem Hintergrundbild aus einer Sammlung gelegt. Die Autoren stellen fest, dass das Feintunen eines Netzwerks mit synthetischen Daten dann zu Abnahme der Akkuratesse führt, wenn das Netzwerk vorher nur für die Detektion eines Objektes trainiert worden ist. Hingegen konnten sie eine Steigung der Ergebnisse beim Feintunen mit simulierten Daten auf trainiertem Netzwerk mit einer größeren Klassifierungskatalog ermitteln. generieren einen großen Datensatz mit 3D-Modellen, um den Viewpoint von Objekten auf realen Bildern zu bestimmen. Bei dieser Datengenerierung wird jedes virtuelle Objekt auf zufällige Hintergrundbildern positioniert und mit unterschiedlichen Konfigurationen (z.B. Beleuchtung) gerendert. Die Autoren konnten mit der Datenaugmentierung state-of-the-art Viewport-Estimation Methoden zur PASCAL 3D+ Benchmark übertreffen. erstellen künstliche Personen auf Bildern, um beispielsweise den menschlichen Körper in seine Glieder zu segmentieren. Dabei rendern sie zufällige virtuelle Personen mit zufälliger Pose auf beliebige Hintergrundbildern und konnten zeigen, dass die Akkuratesse einiger CNNs durch das Trainieren mit den erzeugten Daten steigt. rendert künstliche Infrarotbilder von Händen sowie Gesichtern zwecks Tiefenerkennung und Segmentierung der Hand in den einzelnen Fingern sowie des Gesichtes in Bereiche aus einem RGB-Bild. Die Autoren konnten konventionelle Methoden über  Helligkeitsabfall übertreffen und vergleichbare Ergebnisse zu den Ansätzen mit einer herkömmlichen 3D-Kamera erzielen. erlernen mit synthetischen Daten den optischen Fluss von Bildsequenzen.  Hierbei werden auf Hintergrundbildern aus einer Sammlung mehrmals bewegte virtuelle Stühle platziert. Die Autoren konnten mit synthetischen Daten state-of-the-art Ansätze über reale Daten übertreffen.
+
+Motiviert von der Datengenerierung über 3D-simulierten Daten stellt einen Ansatz zur bildbasierten Lokalisierung in Gebäuden vor. Dieser Forschungsansatz generiert synthetische Daten aus einem Building-Information-Modeling (BIM). Bei den Daten werden die durch das vortrainierte VGG Netzwerk extrahierte Features als wesentlich erachtet und in einer Datenbank gepflegt. Ein reales Aufnahmebild im Gebäude lässt sich durch den Vergleich der Features lokalisieren. erzeugen ebenso Trainingsdaten aus einem BIM, jedoch verwenden sie zur Lokalisierung keine Datenbank bedürftiges Verfahren, sondern bestimmen die Pose direkt über PoseNet. Die Daten werden entlang einer ca. 30 langen Strecke in der Simulation eines ca. 230 Korridors gesammelt. Hierbei werden sich in der Realitätstreue vom *[label=*)]
+	karikaturistisch zu
+	fotorealistisch hin über zu
+	fotorealistisch-texturiert
+ unterscheidende Daten erzeugt.
+Traniert mit den unterschiedlichen synthetischen Daten, evaluiert mit den realen Daten, erzielen die Forscher eine Akkuratesse von
+*[label=*)]
+	6,25
+	5,99
+	3,06
+ in der Position und  
+ *[label=*)]
+ 	37,16°
+ 	11,33°
+ 	12,25°
+  in der Orientierung.
+Die besten Ergebnisse konnten die Autoren trainiert mit den 
+*[label=*)]
+		Gradientenbilder der karikaturistischen Daten und
+	synthetischen Kantenbilder
+, evaluiert mit den Gradientenbilder der realen Aufnahmen, erzielen. Die Autoren erhalten hierbei eine Akkuratesse von 
+*[label=*)]
+		2,63
+	1,88
+in der Position und  
+ *[label=*)]
+ 		6,99°
+	7,73°
+in der Orientierung.
+
+Die vorliegende Arbeit versucht den Ansatz von auf längeren Strecken in größeren Gebäudesimulationen zu untersuchen, worin das PoseNet Modell mit Gradienten- bzw. Kantenbilder der synthetischen Daten trainiert und mit Gradientenbilder der realen Daten evaluiert wird.
+
+Im weiteren Verlauf des Kapitels werden einige grundlegende Themen erläutert. Zuerst werden künstliche neuronale Netze definiert. Danach wird ein elementares Wissen an Convolutional Neural Networks vermittelt und anschließend bekannte CNN Modelle näher erläutert.
+
+Künstliche neuronale Netzwerke
+Künstliche neuronale Netze sind ein Forschungsgebiet der künstlichen Intelligenz und imitieren die Beschaffenheit natürlicher neuronale Netze, um komplexe Probleme zu lösen. Inspiriert von ihren biologischen Vorbildern(das Nervensystem eines komplexen Lebewesens; z.B. des Menschen), vernetzen künstliche neuronale Netzwerke (KNN) künstliche Neuronen miteinander. Dabei kann die Verbindung unidirektional (feedforward) oder bidirektional (feedback) sein . 
+
+Bei einem feedforward Netzwerk werden die Daten im Netz immer vorwärts übertragen, hingegen kann ein feedback Netzwerk, auch bekannt als Recurrent Neural Networks, Daten rückwärts, sowie in einer Schleife zum selben Neuron, übergeben. Da feedback Netzwerke keinen Einsatz in dieser Arbeit haben, ist im weiteren Verlauf dieser Arbeit bei einem Netzwerk immer ein feedforward Ansatz gemeint. In diesem Kapitel werden als Nächstes ein künstliches Neuron definiert und anschließend ein feedforward Netzwerk beschrieben. Convolutional Neural Networks sind eine besondere Art von künstlichen neuronalen Netzen und bilden einen sehr wichtigen Bestand dieser Arbeit. Daher werden CNNs ein eigener Abschnitt gewidmet, siehe Abschnitt  .
+
+
+Künstliches Neuron
+Ein einzelnes Neuron erhält einen Inputsignal auf mehreren Kanälen und löst erst ein Signal (output) aus, falls die gewichtete Summe des Inputs einen gewissen Schwellwert erreicht. Abbildung  stellt eine beispielhafte Visualisierung eines künstlichen Neurons dar.
+
+Ein künstliches Neuron mit der Inputgröße  ist mathematisch die nicht-lineare Funktion  mit den Parametern  als Input,  als Gewichtsvektor,  als ein Bias,  als eine nicht-lineare Aktivierungsfunktion:
+
+
+
+
+
+			Visualisierung eines künstlichen Neurons definiert nach der Gleichung . Dieser Neuron summiert das Produkt des Inputvektors   mit den jeweiligen Gewichten  und addiert einen Bias . Durch die Summe erzeugt die Aktivierungsfunktion  das Output  des Neurons. Abbildung  zeigt ein Beispiel für eine Aktivierungsfunktion. Entnommen aus. 
+	
+Feedforward Neural Networks
+Künstliche Neuronen können zu einem Schicht (layer) zusammengeführt werden. Die Verbindung solcher Schichten bildet ein neuronales Netzwerk.
+Bei einem feedforward (fully-connected) Netzwerk übergibt jedes Neuron aus der Schicht  seinen Output  an jedem Neuron der Schicht  weiter. Ebenso sind Neuronen aus der gleichen Schicht untereinander nicht verbunden.
+Die Schicht  eines feedforward Netzwerkes operiert somit auf das Ouput  und stellt die nicht-lineare Funktion  dar:
+
+
+
+Die erste Schicht eines Netzwerks wird als Input-, die letzte Schicht als Ouput Layer bezeichnet. Alle Schichten dazwischen sind Hidden Layer. Der Ouput Layer liefert zugleich auch das Ergebnis eines Netzwerks, daher haben die Neuronen des Ouput Layers grundsätzlich keine Aktivierungsfunktion.
+
+Die Tiefe (depth) eines Netzwerks ist gegeben durch die Anzahl der Layer (der Input Layer ist ausgeschlossen) und die Breite (width) eines Layers wird durch die Anzahl der Neuronen bestimmt. 
+Abbildung  illustriert ein feedforward neuronales Netz als ein azyklischer Graph.
+
+Ziel eines KNNs ist es eine Funktion  zu approximieren, dass einen Input  auf einen Output  abbildet. Durch das Output  kann das Input  klassifiziert oder anhand dessen ein Wert regressiert werden. Sei  eine derartige Funktion, dann besetzt ein KNN die Werte des  Parameters mit eines der besten Approximierung von . Der Parameter  stellt hierbei die Gewichte dar, die erlernt werden sollen. 
+Das Lernen ist die strategische Anpassung der Gewichte über Input-Output Paare (Trainingsdaten) und findet grundsätzlich durch ein Backpropagation-Verfahren statt. 
+
+Die Funktion  bildet sich aus den Funktionen der im Netzwerk vorhandenen Schichten (Gleichung ) und kann bei einer Tiefe  repräsentiert werden als die folgende Funktion :
+ 
+
+
+
+
+
+			Ein feedforward neuronales Netz mit der Tiefe 3, bestehend aus einem Input Layer der Breite 3, aus zwei Hidden Layer der Breite 4 und einem Output Layer der Breite 1. Mit der Gleichung   lässt sich dieses Netzwerk als die Funktion  mit  darstellen. 
+	
+Convolutional Neural Networks
+Einfache neuronale Netze, wie sie in Abschnitt  beschrieben werden, arbeitet auf einem Inputvektor . Im Vergleich dazu arbeiten CNNs auf einem drei-dimensionalen Inputvolumen . CNNs werden hauptsächlich im Kontext von Bildern eingesetzt, dabei stellt z.B. ein 32  32 RGB-Bild ein Volumen von 32  32  3 dar.
+
+
+	
+	Als Beispiel für ein Convolutional Neural Network wird die LeNet-5 Architektur abgebildet. Entnommen aus  
+	
+Angefangen mit der LeNet-5 Architektur, setzt sich typischerweise ein Convolutional Neural Network aus einer Sequenz von unterschiedlichen Layer-Arten zusammen. Im weiteren Verlauf dieses Kapitels werden die Arten der Layer beschrieben. Die Abbildung  illustiert die LeNet-5 Architetkur als Beispiel für ein CNN. Die Tabelle  gibt eine Übersicht der Layer und ihrer Parameter an.
+
+
+
+		Übersicht der Parameter und Hyperparameter der Layer eines Convolutional Neural Networks. Die Parameter werden während der Trainingsphase optimiert und Hyperparameter werden zuvor fest definiert. 
+	1.0X X X
+	Art des Layers & Parameter & Hyperparameter
+
+		Convolutional Layer & Filter & [tl]
+	Filtergröße
+
+	Anzahl der Filter (Tiefe)
+
+	Stride
+
+	Padding
+
+	Aktivierungsfunktion
+	
+
+		Pooling Layer &  keine  & [tl]
+	Pooling Methode
+
+	Filtergröße
+
+	Stride
+
+	Padding
+	
+
+		Fully-Connected Layer & Gewichte & [tl]
+	Anzahl der Gewichte
+
+	Aktivierungsfunktion
+	
+
+			Convolutional Layer
+Der Convolutional Layer ist der Hauptbestandteil eines CNNs, der die Kombination einer Convolution Operation und einer Aktivierungsfunktion ist.
+
+Die Convolution Operation basiert auf die mathematische Faltung (Convolution) und wird typischerweise in CNNs, mit Verzicht auf die Kommutativität, der anliegenden diskreten Kreuzkorrelation gleichgesetzt.
+
+Sei  ein 2D-Input,  ein 2D-Filter der Größe ,  die Schrittweite (Stride) und  das Output mit der Größe , dann ist die Convolution Operation mathematisch definiert als:
+
+Abbildung  illustriert eine beispielhafte Convolution Operation.
+
+Die Randbehandlung des Inputvolumens wird Padding genannt. Es gibt eine Reihe von Padding Methoden. CNNs setzen grundsätzlich das Zero-Padding Verfahren ein. Das Zero-Padding Verfahren erweitert den Rand  des Inputvolumens um eine beliebige Breite und Höhe mit Nullen. 
+
+Die Werte des 2D-Filters stellen die Gewichte dar und werden in der Trainingsphase optimiert. Ein Convolutional Layer kann aus mehreren 2D-Filter der gleichen Größe bestehen. Die Convolution Operation wird je 2D-Filter unabhängig auf die Schichten des Inputvolumens ausgeführt. Das Output des Convolution Operation wird auch Feature Map genannt. Die Tiefe des Feature Maps ist gegeben durch die Anzahl der 2D-Filter.
+
+Prinzipiell wird das Output des Convolutional Layers durch die Übergabe des Feature Maps an eine Aktivierungsfunktion bestimmt.  Abbildung  stellt eine Aktivierungsfunktion dar.
+
+
+			Ein Beispiel für eine Aktivierungsfunktion. Die ReLU (rectified liniear unit) Aktivierungsfunktion wird typischerweise in CNNs eingesetzt und ist mathematisch definiert als:  
+	
+
+
+			Ein Beispiel für die Convolution Operation mit 3 Filtern der Größe 3  3, je einem Stride von 1 und keinem Padding. Ein Filter bewegt sich entlang des gesamten Inputs mit der Schrittweite (Stride) 1 und bildet die Summe der elementweise multiplizierten Werte. Die Summe wird dann im Feature Map an die korrespondierende Position geschrieben. Dieser Vorgang wiederholt sich für jedes Filter. Abbildung basiert auf.
+	
+Pooling Layer
+Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer reduzieren die Größe eines Inputvolumens und verringern somit die Anzahl der erlernbaren Parameter. Daher werden sie in der Literatur oft auch als Supsampling Layer bezeichnet. Die Pooling Operation wird auf jeder Schicht der Eingabe ausgeführt. Die meist verbreitete Pooling Methode ist die Max-Pooling. Beim Max-Pooling iteriert ein Filter einer bestimmten Größe mit einer Schrittweite, gegeben durch den Stride, über das Inputvolumen und extrahiert das Maximum im aktuellen Filterbereich. Das Maximum wird für die weitere Berechnung beibehalten und die restlichen Werte verworfen
+. In dieser Arbeit wird neben der Max-Pooling Operation auch die Average-Pooling Operation eingesetzt. Das Average-Pooling behält im aktuellen Filterbereich den Durchschnittswert, statt das Maximum.
+ 
+ Im Vergleich zu einem Convolutional Layer wird ein Pooling Layer nur aus Hyperparameter definiert und bleibt daher statisch. Abbildung  zeigt eine beispielhafte Ausführung einer Max-Pooling Operation. Tabelle  listet die Hyperparameter eines Pooling Layers auf.
+ 
+ 
+			Ein Beispiel für eine Max-Pooling Operation mit einer Filtergröße von 2  2, einem Stride von 2 und keinem Padding. In diesem Beispiel wird der Input in 2  2 Bereiche unterteilt und der Maximum jedes Bereiches als Output berechnet. Es werden die markantesten Werte einer Nachbarschaft behalten und der Rest verworfen. Diese Operation führt zu einer Reduzierung der Inputgröße um den Faktor 2. Entnommen aus.
+	
+
+
+Fully-Connected Layer
+Nach einer Periode von Convolution- und Pooling Layer folgt meist ein fully-connected (FC) Layer, auch bekannt als Dense Layer. Dieser Layer folgt dem gleichen Konzept der feedforward Neural Networks, wie in Abschnitt  beschrieben. Das Output dieses Layers wird häufig einer weiteren Aktivierungsfunktion übergeben und prinzipiell wird dadurch das Output des CNNs bestimmt.
+
+Bekannte CNN Modelle
+Es existiert eine Menge von bekannten CNN Modellen mit ausgezeichneten Ergebnissen in internationalen Wettbewerben, derartige wie z.B. die ImageNet Large Scale Visual Recognition Challenge (ILSVRC). Dieser Arbeit behandelt nur die Architektur des GoogLeNet Modells und dessen Modifikation PoseNet.
+
+GoogLeNet
+GoogLeNet, konstruiert von im Jahr 2014, ist der Sieger des ImageNet Large Scale Visual Recognition Challenge (ILSVRC) 2014 Wettbewerbes. Die ILSVRC stellt ungefähr 1000 Bilder aus 1000 unterschiedlichen Kategorien aus der ImageNet Datensatz bereit. ImageNet ist eine Bildersammlung bestehend aus über 14 Millionen manuell annotierten Bildern in über 20 Tausend unterschiedlichen Kategorien. Die Herausforderung von ILSVRC ist, die 1000 Objekte bestmöglich auf den Bildern zu klassifizieren.
+
+GoogLeNet ist eine besondere Inkarnation des sogenannten Inception Moduls, das zeitgleich mit GoogLeNet vorgestellt wird.
+Ein Inception Modul beinhaltet mehrere Convolutional- sowie einen Pooling Layer und verarbeitet das Inputvolumen parallel auf 4 Zweigen. Vor rechenintensiven Convolutional Layer werden zusätzliche 11 dimensionsreduzierende Layer geschaltet. Abschließend werden die Zweige, die ein Volumen mit der gleichen Breite und Höhe produzieren, zu einem Outputvolumen (in die Tiefe) zusammengeführt.  Durch die parallele Berechnung der Zweige und das Einschalten von dimensionsreduzierenden 11 Layer vor rechenintensiven Operationen ermöglicht ein Inception Modul neuronale Netze, bei zunehmender Tiefe und Breite, konstante Rechenkapazität zu verlangen.
+Inzwischen wurde das Inception Modul und die gesamte Architektur rundherum weiterentwickelt. Abbildung  stellt das Inception (v1) Modul dar.
+
+Die Architektur von GoogLeNet besteht aus 9 Inception Modulen (je von Tiefe 2) und hat eine gesamte Tiefe von 22 Layer (Anzahl der trainierbaren Layer inkl. Output Layer). Das Ungewöhnliche an der Architektur ist, dass es 3 Output-Zweigen hat. Jedes der Ouput-Zweige produziert ein Klassifizierungsergebnis. Output-Zweig 2  3 sind Hilfszweige, die nur in der Trainingsphase einen Einfluss haben und in der Evaluationsphase verworfen werden. Abbildung  illustriert die GoogLeNet Architektur in Detail.
+
+
+ 
+			Darstellung des Inception (v1) Moduls. Das Inputvolumen wird auf 4 Zweige unabhängig verarbeitet. Die Ergebnisse der unabhängigen Operationen haben die gleiche Breite und Höhe. Das Output des Inception Moduls wird durch das Konkatenieren (in der Tiefe) der einzelnen Ergebnisse bestimmt. Die gelben 11 Convolutional Layer dienen zur Dimensionsreduktion. Entnommen aus.
+	
+
+
+	 
+			Der architektonische Aufbau des GoogLeNet Models. Das Inception-Block wird in Abbildung  detaillierter dargestellt. Es gibt 3 Ouput-Zweige, die mit einer identisch aufgebauten Output-Knoten enden. Die Werte der Output-Zweige 2  3 haben nur während der Trainingsphase einen Einfluss und werden in der Evaluationsphase verworfen. In der Trainingsphase wird vor dem Output-Knoten 1 ein Dropout von 40 und vor den Output-Knoten 2  3 ein Dropout von 70 angewandt. Jedes Convolutional Layer hat die ReLU (Abbildung ) als Aktivierungsfunktion. Die Local-Response-Normalization ist ein bekanntes Normierungsverfahren und kommt prinzipiell in Verbindung mit der ReLU Aktivierungsfunktion vor. Abbildung basiert auf.
+		
+
+PoseNet
+PoseNet, vorgestellt von im Jahr 2015, basiert auf die im Kapitel  eingeführte GoogLeNet Architektur. Statt eine Wahrscheinlichkeitsverteilung der Klassifizierungsergebnisse, liefert PoseNet die 6 Freiheitsgrade einer Pose , bestehend aus einem Positionsvektor  und eine Quaternion der Orientierung .
+
+PoseNet modifiziert die GoogLeNet Architektur an den Output-Knoten, dargestellt in Abbildung , wie folgt:
+
+	Jedes der Softmax-Klassifikatoren werden ersetzt durch Regressoren. Dabei wird der Softmax-Activation Layer entfernt und der FC-Layer so modifiziert, dass es einen 7-dimensionalen Vektor((3) für die Position und (4) für die Orientierung) ausgibt.
+	Vor dem finalen Regressor des Output-Zweiges 1 wird ein weiteres FC-Layer der Breite 2048 eingefügt.
+
+Abbildung  veranschaulicht die Modifikation von GoogLeNet durch PoseNet.
+
+ 
+			Veranschaulichung der Modifikation von den Output-Zweigen der GoogLeNet Architektur durch PoseNet. Die Softmax Aktivierungsfunktion sowie das fully-connected Layer mit Anzahl der Klassifizierungskategorien als Breite wurde von allen Output-Modulen entfernt. Jeder Output-Zweig hat einen FC-Regressionsschicht erhalten, dass die 6 Freiheitsgrade einer Pose bestimmt. Der Output-Zweig 1 wird zusätzlich mit einer weiteren FC-Layer der Breite 2048 vor dem Regressionsschicht erweitert.
+	
+
+Die Autoren stellen zusätzlich eine neue Kostenfunktion, mit den Parametern  als Soll-Wert und  als Ist-Wert, vor:
+
+Der Hyperparameter  soll eine Balance der Kosten zwischen dem Positions- und Orientierungsdiskrepanz darstellen und wird in Gebäuden im Wertebereich zwischen 120 bis 750, sowie außerhalb des Gebäudes zwischen 250 bis 2000, empfohlen. 
+
+
+Training des Convolutional Neural Networks
+Künstliche neuronale Netze bzw. CNNs werden grundsätzlich zuerst aufgabenspezifisch modelliert und anschließend mit entsprechenden Daten trainiert.  In der vorliegenden Arbeit wird als Netzwerk das in Abschnitt  beschriebene PoseNet Model verwendet. Die Arbeit folgt den Ansatz von mit Gradienten- bzw. Kantenbilder der synthetischen Daten das Netzwerk zu trainieren, um anschließend mit Gradientenbilder der realen Daten das Netzwerk zu evaluieren. 
+
+Im weiteren Verlauf dieses Kapitel werden die Datensätze aufgelistet. Danach wird die Erhebung / Generierung der realen / synthetischen Daten beschrieben und die Verarbeitung der Daten dargestellt. Im Anschluss werden die Trainingsparameter angegeben. 
+
+Datensätze
+In dieser Arbeit werden aus zwei unterschiedlichen Gebäuden Daten erhoben bzw. synthetische Daten aus den Gebäudesimulationen generiert. 
+Zuerst wird ein Datensatz aus der a) der nördliche Hälfte des 6. Stockwerkes des IC-Gebäudes Ruhr-Universität Bochum erhoben. Anschließend werden drei Datensätzen im b) Seminargebäude Hochschule Bochum erhoben. Die Gebäude unterscheiden sich im Detail der Simulationen. Die Simulation von der Gebäude a) enthält sehr wenige Objekte wie  z.B. Türen und Wände. Im Gegensatz dazu enthält die Gebäudesimulation b) mehr Objekte wie z.B. die Objekte der technische Gebäudeausrüstung.
+
+Alle Datensätze beinhalten Herausforderungen wie z.B. das Loop-Closure- oder Perceptual-Aliasing-Problem. Die ca.  lange Strecke im ersten Datensatz, bezeichnet als IC-Loop, bildet eine geschlossene Schleife in einem  Bereich der Gebäude a). Die  lange Strecke im HS-gamma Datensatz einhält in der Mitte eine Schleife und übergeht zu einem optisch ähnlichen Flur wie der Ausgangsflur in einem Bereich von ca.  der Gebäude b). Im Datensatz HS-stairs-up wird eine Treppe der Gebäude b) aufwärts bestiegen und im Datensatz HS-stairs-down dieselbe Treppe abgestiegen. Die Strecken auf den Treppen sind  ca.  lang und befindet sich in einer ca.  Teilzone der Gebäude b). 
+
+Die Anzahl der Daten werden auf die Tausenderstelle abgerundet und diese Anzahl an zufälligen Daten aus dem Datensatz verwendet (vgl. Tabelle  ).
+
+Die Abbildung  illustriert die Strecken der Datensätze. Die Namensgebung der Datensätze ist in Anbetracht der Abbildung  selbsterklärend. Die Tabelle  listet die approximierten metrischen Eigenschaften der Datensätze auf. Die Tabelle  stellt die Anzahl der Daten in den Datensätzen dar.
+
+
+
+
+
+		[t]1.0
+			IC-loop
+				[t]1.0
+			HS-gamma
+				[tr]0.45
+			HS-stairs-up
+				[tl]0.45
+		HS-stairs-down
+				Illustration der Aufnahmestrecken pro Datensatz.  befindet sich in der nördlichen Hälfte des 6. Stockwerkes des IC-Gebäudes Ruhr-Universität Bochum. , ,  befinden sich im Seminargebäude Hochschule Bochum.  und  sind nahe an der Position der Schleife von . Die Tabelle  listet die approximierten metrischen Eigenschaften der Aufnahmenstrecken auf.
+	
+
+
+		Approximierte metrische Eigenschaften der Datensätze.
+	1.0X X X >p1.7cm 
+	Bezeichnung & Streckenlänge & Volumen & Gebäude
+
+		IC-loop &  &  & a) 
+
+		HS-gamma &  &  & b)
+
+		HS-stairs-up &  &  & b)
+
+		HS-stairs-down &  &  & b)
+
+		
+
+		Datenanzahl der Datensätze.
+	1.0p3.5cm p1.8cm X  >p1.7cm 
+	Bezeichnung & Typ & Anzahl Daten (davon verwendet) & Gebäude
+
+		IC-loop & real & 3842 (3000) & a) 
+
+		IC-loop-syn & synth. & 11435 (11000) & a)
+
+		HS-gamma & real & 1958 (1000) & b)
+
+		HS-gamma-syn & synth &  6490 (6000) & b)
+
+		HS-stairs-up & real & 1068 (1000) & b)
+
+		HS-stairs-up-syn & synth & 3160 (3000) & b)
+
+		HS-stairs-down & real & 1161 (1000) & b)
+
+		HS-stairs-down-syn & synth &  3245 (3000) & b)
+
+		
+
+
+Erhebung der realen Daten
+In der Literatur wurden die realen Daten einer Zone grundsätzlich entlang einer Strecke aufgenommen. Daher werden zuerst die Aufnahmestrecken in den Gebäudesimulationen festgelegt und anschließend die Aufnahmen so durchgeführt, dass diverse Projekte damit Forschung betreiben können. 
+
+In der Literatur wurden SfM-Methoden eingesetzt, um die Ground-Truth-Daten der realen Aufnahmen zu bestimmen. 
+In der vorliegenden Arbeit wird für die Bestimmung der Ground-Truth-Daten sowie die Aufnahme der Bilder zeitgleich zwei unterschiedliche Kameras der Intel Realsense Reihe verwendet. Eine Intel Realsense T265(https://www.intelrealsense.com/tracking-camera-t265/ (abgerufen am: 18.07.2019)) wird eingesetzt, die die Odometrie (Ground-Truth-Daten) mit einer Abweichung von 1  über die SfM von zwei Fischaugenkameras (Auflösung von ) und Inertial Measurement Units (IMU) zu ermitteln verspricht. Zudem wird eine Intel Realsense D435( https://www.intelrealsense.com/depth-camera-d435/ (abgerufen am: 18.07.2019)) eingesetzt, die eine 3D Punktwolke, ein  Tiefenbild sowie ein  RGB-Bild einer Szene liefert. Die T265 wird über die D435 Kamera montiert (siehe Abbildung ).
+
+
+			Hardware für die Aufnahme der realen Daten. Die Intel Realsense T265 ist oberhalb der Intel Realsense D435 montiert. Das Konstrukt kann auf einer universalen Stativschraube befestigt werden.  
+	
+Über das Robot Operating System(https://www.ros.org/about-ros/ (abgerufen am: 18.07.2019)) (ROS) Framework werden die Kameras zeitgleich angesprochen und der Datenfluss der Kameras synchronisiert. Somit beinhaltet jeder Datensatz ein Bild je Fischaugenkamera, ein Tiefenbild, ein RGB-Bild, eine 3D Punktwolke und die dazugehörige Odometrie pro Frame. Für die vorliegende Arbeit sind nur die Odometrie-Daten der T265 sowie die RGB-Bilder der D435 relevant. Die Abbildung  visualisiert ein Datensatzexemplar für ein Frame.
+
+
+		[t]0.3
+			Odometrie  (T265) + 
+ 3D Punktwolke (D435)
+				[t]0.3
+			Fischaugenkamera 1 
+ (T265)
+				[t]0.3
+			Fischaugenkamera 2 
+ (T265)
+				[t]0.3
+			Odometrie  (T265) + 
+ 3D Punktwolke (D435)
+				[t]0.3
+			RGB-Bild 
+ (D435) 
+				[t]0.3
+			Tiefenbild 
+ (D435) 
+			Datensatz pro Frame.   und  visualisieren in unterschiedlichen Prespektiven die von der T265 ermittelte Odometrie und die von der D435 erhaltenen 3D Punktwolke.  und  sind die von der T265 aufgenommenen Fischaugenbilder.  ist das RGB-Bil der D435 und  das dazugehörige Tiefenbild. 
+	
+Generierung der synthetischen Daten
+
+Die Gebäude werden in Blender(https://www.blender.org/about/ (aufgerufen am: 20.07.2019)) Version 2.79b simuliert. Die intrinsischen Daten der D435 RGB-Kamera werden auf die virtuellen Kameras übertragen und aus Zeitgründen wird die Auflösung der synthetischen Bilder auf   halbiert.
+
+Die Strecken der echten Aufnahmen werden in den Simulationen schwankungslos auf einer konstanten Höhe von 1.70 imitiert. Es wird entlang der Strecke in 0.05 Intervallen und mit einer 10° Neigung in je y- und z-Achse Bilder mit korrespondierenden Ground-Truth-Daten aufgenommen, um die Invarianz der realen Daten abzudecken. Die Abbildung  illustriert die Variationen der Pose pro Stützpunkt auf einer Strecke.
+
+
+
+		[t]0.18
+			Orginal Pose 
+			
+	[t]0.18
+			-10° um die y-Achse
+				[t]0.18
+			+10° um die y-Achse
+				[t]0.18
+			-10° um die z-Achse
+				[t]0.18
+			+10° um die z-Achse
+			Variation der Pose pro Stützpunkt auf einer Strecke.
+	
+Insgesamt werden drei synthetische Datensätze je Strecke erzeugt, die sich in der Beschaffenheit von *[label=*)]
+	karikaturistische Darstellung zu
+	synthetischen Kantenbilder hin über zu
+	fotorealistische Darstellung
+ unterscheiden (siehe Abbildung ). Bei der Generierung der a) karikaturistischen und c) fotorealistischen Datensätzen wird die Beleuchtung aus einem Netz von Punktlichtquellen nachgestellt. Die a) karikaturistische und c) fotorealistische Datensätze unterscheiden sich ausschließlich in den Render-Engines.
+Für die Erzeugung der b) synthetischen Kantenbilder wird eine konstante Beleuchtung verschaffen und die Kanten über Blender markant sichtbar konfiguriert. Der a) karikaturistische Datensatz sowie die b) Kantenbilder werden über die Render-Engine Blender Render und der c) fotorealistischer Datensatz über die Cycles-Engine generiert.
+
+Verarbeitung der Daten
+In der vorliegenden Arbeit wird PoseNet mit Gradientenbilder trainiert und evaluiert. Nach der Erhebung der realen Bilder (siehe Abschnitt ) und Generierung der synthetischen Bilder (siehe Abschnitt ) werden diese in ihre Gradientenbilder verarbeitet. 
+
+
+Die realen Bilder werden vor der Verarbeitung in Gradientenbilder auf die Größe  der synthetischen Bilder verkleinert.
+
+
+Es wird zusätzlich ein Schwellenwertverfahren mit einer Schwelle von 64 angewendet, um unerwünschter Artefakte zu unterdrücken, sodass alle Pixeln im Wertebereich  liegen. Die Abbildung  visualisiert von jedem Datensatztyp ein Beispiel und die dazugehörigen Gradientenbilder.
+
+
+		[t]0.24
+			karikaturistische Simulation
+				[t]0.24
+			synthetisches  Kantenbild
+				[t]0.24
+			fotorealistische  Simulation
+			
+	[t]0.24
+			reale Aufnahme
+			
+	[t]0.24
+			Gradientenbild   von 
+			[t]0.24
+			Gradientenbild   von 
+			[t]0.24
+			Gradientenbild   von 
+		[t]0.24
+			Gradientenbild   von 
+			Beispielhafte Bilder für jeden Datensatztyp und die dazu korrespondierenden Gradientenbilden.
+	
+Trainingsparameter
+Es wird die Caffe Implementierung von PoseNet verwendet, die von den eigenen Autoren veröffentlicht wurde.
+
+Die Batchsize beträgt 40 und die Anzahl der Trainingsepochen ist 160. Eine NVIDIA GeForce GTX 1080 Ti mit 11GB Grafikspeicher wird verwendet und ermöglicht bei einer Batchsize von 40 drei Trainingsprozesse zeitgleich durchzuführen.
+
+Der Hyperparameter , der von PoseNet vorgestellten Kostenfunktion (vgl. Gleichung ), wird durch ein Grid-Search Verfahren bestimmt, indem PoseNet mit der Hälfte der realen Daten trainiert und mit der restlichen Hälfte evaluiert wird. Der Wert von  für die Datensätzen
+*[label=*)]
+	IC-loop
+	HS-gamma
+	HS-stairs-up
+	HS-stairs-down
+ beträgt
+*[label=*)]
+	680
+	x
+	y
+	z
+ (vgl. Abschnitt ). Der Loss wird mit dem AdaGrad Gradientenabstiegsverfahren mit einer konstanten Lernrate von  optimiert bzw. minimiert. 
+
+Die Trainings- sowie Evaluationsdaten werden auf eine Auflösung von  skaliert. Während des Trainingsprozesses werden zufällige Ausschnitte der Größe  aus dem skalierten Datensatz genommen und für die Evaluierung wird ein zentrierter Ausschnitt derselben Größe aus dem skalierten Evaluationsdatensatz verwendet. Das Durchschnittsbild der synthetischen Daten werden beim Trainieren und bei der Evaluierung von den Inputbildern subtrahiert.
+
+Die Gewichte des Netzwerks werden mit den Gewichten eines Models initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz trainiert wurde. Anschließend werden die Gewichte an die Trainingsdaten angepasst. Die Tabelle  gibt eine Übersicht der Hyperparameter an.
+
+
+		Übersicht der Hyperparameter.
+	1.0X X
+	Hyperparameter & Wert
+
+		Batchsize & 
+
+		Anzahl der Epochen & 
+
+		 der Kostenfunktion (vgl. Gleichung ) &
+	siehe Abschnitt 	
+
+		Loss-Optimierer & AdaGrad
+
+		Lernrate & 
+
+		Bildskalierung & 
+
+		Bildausschnitt& [tl]
+	
+
+	(Training: zufällig, Evaluation: zentriert)
+
+	
+
+		Datensatznormierung & Subtraktion des Durchschnittsbildes der synthetischen Daten 
+
+		Initialisierung der Gewichte & Gewichte eines mit dem Places Datensatz trainierten Models auf GoogLeNet 
+
+		
+
+
+Ergebnisse
+Im vorliegenden Kapitel werden die Ergebnisse der durchgeführten Experimente präsentiert. Zuallererst werden die Ergebnisse von BIM-PoseNet reproduziert und angegeben, um die Korrektheit der Pipeline zu überprüfen. Anschließend wird der Hyperparameter  der Kostenfunktion (vgl. Gleichung ) für jeden realen Datensatz (siehe Abschnitt ) bestimmt und angegeben. Mit der Bestimmung des Hyperparameters  wird das neuronale Netz für jedes der synthetischen Datensätze mit den Gradientenbildern separat trainiert. Anschließend wird das neuronale Netz mit den korrespondieren Gradientenbilder der synthetischen sowie realen Daten evaluiert.
+
+Reproduktion der Ergebnisse von BIM-PoseNet
+Die Ergebnissen der Experimente von, die das PoseNet Model mit Gradientenbilder der karikaturistischen Daten sowie synthetischen Kantenbilder trainieren und anschließend mit den Gradientenbilder der realen Daten evaluieren, konnten näherungsweise (vgl. Tabelle ) reproduziert werden. Eine exakte oder bessere Reproduktion der Ergebnisse ist durch Zufall bedingt und wird in dieser Arbeit aus Zeitgründen vernachlässigt.
+
+Abweichend von BIM-PoseNet wurden statt 1000 reale Bilder, 600 reale Bilder evaluiert, weil derzeit 600 Evaluierungsbilder veröffentlicht sind. Die Mengenunterschiede der Evaluierungsdaten sind für die Endergebnisse trivial, da die Akkuratesse sich aus den Durchschnittswerten den Evaluationsergebnissen zusammensetzt und die Daten in zufälliger Reihe evaluiert werden. 
+
+Der Trainingsprozess wurde je Datensatztyp zweimal wiederholt und die besseren Evaluationsergebnisse wurden behalten. Die Tabelle  präsentiert die Ergebnisse der Reproduktion sowie die Ergebnisse der Autoren.
+
+
+
+		Reproduktionsergebnisse. Abweichungen der Ergebnisse sind durch Zufall bedingt und können bei mehrfachem Wiederholen des Trainingsprozesses minimiert bzw. erhoben sowie verbessert werden. 
+	1.0>>X
+	Quelle & Trainingsdatensatz  (Gradientenbild)& Akkuratesse  (Position, Orientierung)
+
+		BIM-PoseNet & karikaturistische Simulation & 2.63, 6.99°
+
+		BIM-PoseNet & synthetisches Kantenbild & 1.88, 7.73°
+
+		Reproduktion & karikaturistische Simulation & 2.74, 12.24°
+
+		Reproduktion & synthetisches Kantenbild & 2.53, 9.54°
+
+		
+
+
+Bestimmung des Hyperparameters 
+gridsearch je datensatz mit realdaten, empfohlen 120-750 in gebäuden, in 9 schritten je 70 stride; plote beta ergebnisse matplotlib und evo traj-colormap
+IC-loop
+HS-gamma
+HS-stairs-up
+HS-stairs-down
+
+synth gradma vs synth gradma
+je evo traj-colormap
+IC-loop
+je blender point; edge hemi; cycl point
+HS-gamma
+je blender point; edge hemi; cycl point
+HS-stairs-up
+je blender point; edge hemi; cycl point
+HS-stairs-down
+je blender point; edge hemi; cycl point
+
+synth gradma vs real gradma
+je evo traj-colormap
+IC-loop
+je blender point; edge hemi; cycl point
+HS-gamma
+je blender point; edge hemi; cycl point
+HS-stairs-up
+je blender point; edge hemi; cycl point
+HS-stairs-down
+je blender point; edge hemi; cycl point
+
+
+
+Diskussion
+
+badabum
+
+
+Fazit
+
+
+badabäm
+
