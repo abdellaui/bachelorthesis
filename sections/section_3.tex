@@ -3,7 +3,7 @@
 \section{Training des Convolutional Neural Networks}
 Künstliche neuronale Netze bzw. CNNs werden grundsätzlich zuerst aufgabenspezifisch modelliert und anschließend mit entsprechenden Daten trainiert.  In der vorliegenden Arbeit wird als Netzwerk das in Abschnitt \ref{sec:posenet} beschriebene PoseNet Model verwendet. Die Arbeit folgt den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} mit Gradienten- bzw. Kantenbilder der synthetischen Daten das Netzwerk zu trainieren, um anschließend mit Gradientenbilder der realen Daten das Netzwerk zu evaluieren. 
 
-Im weiteren Verlauf dieses Kapitel werden die verwendeten Datensätze gelistet, die Erhebung bzw. Generierung der realen bzw. synthetischen Daten beschrieben, die Verarbeitung der Daten dargestellt und die Trainingsparameter angegeben. 
+Im weiteren Verlauf dieses Kapitel werden die verwendeten Datensätze gelistet, die Erhebung / Generierung der realen / synthetischen Daten beschrieben, die Verarbeitung der Daten dargestellt und die Trainingsparameter angegeben. 
 
 
 \subsection{Datensätze}
@@ -64,7 +64,7 @@ trajectory images
 In der Literatur wurden die realen Daten einer Zone grundsätzlich entlang einer Strecke aufgenommen \cite{kendallPoseNetConvolutionalNetwork2015, clarkVidLocDeepSpatioTemporal2017, acharyaBIMPoseNetIndoorCamera2019}. Daher werden für die Aufgabenstellung interessante Aufnahmestrecken in den Gebäudesimulationen festgelegt und anschließend die Aufnahmen so durchgeführt, dass diverse Projekte damit Forschung betreiben können. 
 
 In der Literatur wurden SfM-Methoden eingesetzt, um die Ground-Truth-Daten der realen Aufnahmen zu bestimmen \cite{kendallPoseNetConvolutionalNetwork2015, clarkVidLocDeepSpatioTemporal2017, acharyaBIMPoseNetIndoorCamera2019}. 
-In der vorliegenden Arbeit wird für die Bestimmung der Ground-Truth-Daten sowie die Aufnahme der Bilder zeitgleich zwei unterschiedliche Kameras der Intel Realsense Reihe verwendet. Eine Intel Realsense T265\footnote{\url{https://www.intelrealsense.com/tracking-camera-t265/} (abgerufen am: 18.07.2019)} wird eingesetzt, die die Odometrie (Ground-Truth-Daten) mit einer Abweichung von 1\%  über die SfM von zwei Fischaugenkameras und Inertial Measurement Units (\textit{IMU}) zu ermitteln verspricht. Zudem wird eine Intel Realsense D435\footnote{ \url{https://www.intelrealsense.com/depth-camera-d435/} (abgerufen am: 18.07.2019)} eingesetzt, die eine 3D Punktwolke, ein Tiefenbild sowie ein RGB-Bild einer Szene liefert. Die T265 wird über die D435 Kamera montiert (siehe Abbildung \ref{fig:t265_d435}). 
+In der vorliegenden Arbeit wird für die Bestimmung der Ground-Truth-Daten sowie die Aufnahme der Bilder zeitgleich zwei unterschiedliche Kameras der Intel Realsense Reihe verwendet. Eine Intel Realsense T265\footnote{\url{https://www.intelrealsense.com/tracking-camera-t265/} (abgerufen am: 18.07.2019)} wird eingesetzt, die die Odometrie (Ground-Truth-Daten) mit einer Abweichung von 1\%  über die SfM von zwei Fischaugenkameras und Inertial Measurement Units (\textit{IMU}) zu ermitteln verspricht. Zudem wird eine Intel Realsense D435\footnote{ \url{https://www.intelrealsense.com/depth-camera-d435/} (abgerufen am: 18.07.2019)} eingesetzt, die eine 3D Punktwolke, ein $1280\times720$ Tiefenbild sowie ein $1920\times1080$ RGB-Bild einer Szene liefert. Die T265 wird über die D435 Kamera montiert (siehe Abbildung \ref{fig:t265_d435}). 
 
 \begin{figure}[H]
 	\centering
@@ -127,7 +127,7 @@ In der vorliegenden Arbeit wird für die Bestimmung der Ground-Truth-Daten sowie
 \subsection{Generierung der synthetischen Daten}
 \label{subsec:generate_synth_images}
 
-Die Gebäude werden in Blender\footnote{\url{https://www.blender.org/about/} (aufgerufen am: 20.07.2019)} Version 2.79b simuliert. Die intrinsischen Daten der D435 RGB-Kamera werden auf die virtuellen Kameras übertragen.
+Die Gebäude werden in Blender\footnote{\url{https://www.blender.org/about/} (aufgerufen am: 20.07.2019)} Version 2.79b simuliert. Die intrinsischen Daten der D435 RGB-Kamera werden auf die virtuellen Kameras übertragen und die Auflösung wird aus Zeit gründen halbiert auf  $960\times540$.
 
 Die Strecke der echten Aufnahmen werden in den Simulationen schwankungslos auf einer konstanten Höhe von 1.70$m$ imitiert. Es wird entlang der Strecke in 0.05$m$ Intervallen und mit einer $\pm$10° Neigung in je y- und z-Achse Bilder mit korrespondierenden Ground-Truth-Daten aufgenommen. Die Abbildung \ref{fig:dataset_variation} illustriert die Variationen der Pose pro Stützpunkt auf einer Strecke.
 
