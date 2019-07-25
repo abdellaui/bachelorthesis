@@ -56,6 +56,45 @@ Die Abbildung x illustriert die Strecken der Datensätze. Die Namensgebung der D
 	\end{tabularx}
 	\label{tab:datasets}
 \end{table}
+
+
+
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[t]{0.9\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/real_dataset/pointcloud3.png}
+		\caption{Odometrie  (T265) + \\ 3D Punktwolke (D435)}
+		\label{subfig:odom1}
+	\end{subfigure}
+	\hfill \medskip
+	\begin{subfigure}[t]{0.9\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/real_dataset/f1_frame000005.png}
+		\caption{Fischaugenkamera 1 \\ (T265)}
+		\label{subfig:fisheye1}
+	\end{subfigure}
+	\hfill \medskip
+	\begin{subfigure}[t]{0.45\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/real_dataset/f2_frame000005.png}
+		\caption{Fischaugenkamera 2 \\ (T265)}
+		\label{subfig:fisheye2}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.45\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/real_dataset/f2_frame000005.png}
+		\caption{Fischaugenkamera 2 \\ (T265)}
+		\label{subfig:fisheye2}
+	\end{subfigure}
+	\hfill
+	\caption{Datensatz pro Frame. \ref{subfig:odom1}  und \ref{subfig:odom2} visualisieren in unterschiedlichen Prespektiven die von der T265 ermittelte Odometrie und die von der D435 erhaltenen 3D Punktwolke. \ref{subfig:fisheye1} und \ref{subfig:fisheye2} sind die von der T265 aufgenommenen Fischaugenbilder. \ref{subfig:rgb-image} ist das RGB-Bil der D435 und \ref{subfig:depth-image} das dazugehörige Tiefenbild. }
+	\label{fig:dataset}
+\end{figure}
+
+
 \cleardoublepage
 
 \subsection{Erhebung der realen Daten}
