@@ -16,15 +16,15 @@ In der vorliegenden Arbeit wird für die Bestimmung der Ground-Truth-Daten sowie
 Über das Robot Operating System\footnote{\url{https://www.ros.org/about-ros/} (abgerufen am: 18.07.2019)} (\textit{ROS}) Framework werden die Kameras zeitgleich angesprochen und der Datenfluss der Kameras synchronisiert. Somit beinhaltet jeder Datensatz ein Bild je Fischaugenkamera, ein Tiefenbild, ein RGB-Bild, eine 3D Punktwolke und die dazugehörige Odometrie pro Frame. Für die vorliegende Arbeit sind nur die Odometrie-Daten der T265 sowie die RGB-Bilder der D435 relevant. Die Abbildung \ref{fig:dataset} visualisiert ein Datensatzexemplar für ein Frame.
 
 \cleardoublepage
-
-\begin{figure}[htp]
+\vspace{2cm}
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/real_dataset/t265_d435_2.png}
 	\caption{Hardware für die Aufnahme der realen Daten. Die Intel Realsense T265 ist oberhalb der Intel Realsense D435 montiert. Das Konstrukt kann auf einer universalen Stativschraube befestigt werden.  }
 	\label{fig:t265_d435}
 \end{figure}
 
-\begin{figure}[hbp]
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}[t]{0.3\linewidth}
 		\centering
