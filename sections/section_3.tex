@@ -3,64 +3,9 @@
 \section{Training des Convolutional Neural Networks}
 Künstliche neuronale Netze bzw. CNNs werden grundsätzlich zuerst aufgabenspezifisch modelliert und anschließend mit entsprechenden Daten trainiert.  In der vorliegenden Arbeit wird als Netzwerk das in Abschnitt \ref{sec:posenet} beschriebene PoseNet Model verwendet. Die Arbeit folgt den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} mit Gradienten- bzw. Kantenbilder der synthetischen Daten das Netzwerk zu trainieren, um anschließend mit Gradientenbilder der realen Daten das Netzwerk zu evaluieren. 
 
-Im weiteren Verlauf dieses Kapitel werden die verwendeten Datensätze gelistet, die Erhebung / Generierung der realen / synthetischen Daten beschrieben, die Verarbeitung der Daten dargestellt und die Trainingsparameter angegeben. 
+Im weiteren Verlauf dieses Kapitel werden die Datensätze für den Trainingsprozess gelistet. Im Anschluss wird die Erhebung / Generierung der realen / synthetischen Datensätze beschrieben. die Verarbeitung der Daten dargestellt und die Trainingsparameter angegeben. 
 
 
-\subsection{Datensätze}
-\label{subsec:datasets}
-In dieser Arbeit werden aus zwei unterschiedlichen Gebäuden Daten erhoben bzw. synthetische Daten aus den Gebäudesimulationen generiert. 
-Zuerst wird ein Datensatz aus der a) der nördliche Hälfte des 6. Stockwerkes der IC-Gebäude Ruhr-Universität Bochum erhoben. Anschließend werden drei Datensätzen im b) Seminargebäude Hochschule Bochum erhoben. Die Gebäude unterscheiden sich im Detail der Simulationen. Die Simulation von der Gebäude a) enthält sehr wenige Objekte wie  z.B. Türen und Wände. Im Gegensatz dazu enthält die Gebäudesimulation b) mehr Objekte wie z.B. die Objekte der technische Gebäudeausrüstung.
-
-Alle Datensätze beinhalten schwierige Herausforderung wie z.B. das Loop-Closure- oder Perceptual-Aliasing-Problem. Die Strecke im ersten Datensatz, bezeichnet als \textit{IC-Loop}, bildet eine geschlossene Schleife im Gebäude a). Im Datensatz \textit{HS-stairs-up} wird eine Treppe der Gebäude b) aufwärts bestiegen und im Datensatz \textit{HS-stairs-down} dieselbe Treppe abgestiegen. Die Strecke im \textit{HS-gamma} einhält in der Mitte eine Schleife. Der Anfangs- und Endpunkt der HS-gamma Strecke sind in optisch ähnlichen gegenüberliegenden Punkten der Gebäude b).
-
-TODO
-
-trajectory images
-
-
-\begin{table}[H]
-	\centering
-	\caption{Übersicht der Datensätze.}
-	\begin{tabularx}{1.0\textwidth}{X X X >{\centering\arraybackslash}p{1.7cm} }
-		\textbf{Bezeichnung} & \textbf{Streckenlänge} & \textbf{Volumen} & \textbf{Gebäude}\\
-		\hline
-		IC-loop & $115m$ & $50m \times 11m \times 3.5m$ & a) \\
-		\hline
-		HS-stairs-up & $32m$ & $30m \times 30m \times 30m$ & a)\\
-		\hline
-		HS-stairs-down & $32m$ & $30m \times 30m \times 30m$ & a)\\
-		\hline
-		HS-loop & $65m$ & $30m \times 30m \times 30m$ & a)\\
-	\end{tabularx}
-	\label{tab:dataset_metrics}
-\end{table}
-
-\begin{table}[H]
-	\centering
-	\caption{Übersicht der Datensätze.}
-	\begin{tabularx}{1.0\textwidth}{p{3.5cm} p{1.8cm} X  >{\centering\arraybackslash}p{1.7cm} }
-		\textbf{Bezeichnung} & \textbf{Typ} & \textbf{Anzahl Daten} (davon verwendet) & \textbf{Gebäude}\\
-		\hline
-		IC-loop & real & 3842 (3000) & a) \\
-		\hline
-		IC-loop-syn & synth. & 11435 (11000) & a)\\
-		\hline
-		HS-stairs-up & real & 1068 (1000) & b)\\
-		\hline
-		HS-stairs-up-syn & synth & 3160 (3000) & b)\\
-		\hline
-		HS-stairs-down & real & 1161 (1000) & b)\\
-		\hline
-		HS-stairs-down-syn & synth &  3245 (3000) & b)\\
-		\hline
-		HS-gamma & real & 1958 (1000) & b)\\
-		\hline
-		HS-gamma-syn & synth &  6490 (6000) & b)\\
-	\end{tabularx}
-	\label{tab:datasets}
-\end{table}
-
-\cleardoublepage
 \subsection{Erhebung der realen Daten}
 \label{subsec:record_real_data}
 In der Literatur wurden die realen Daten einer Zone grundsätzlich entlang einer Strecke aufgenommen \cite{kendallPoseNetConvolutionalNetwork2015, clarkVidLocDeepSpatioTemporal2017, acharyaBIMPoseNetIndoorCamera2019}. Daher werden für die Aufgabenstellung interessante Aufnahmestrecken in den Gebäudesimulationen festgelegt und anschließend die Aufnahmen so durchgeführt, dass diverse Projekte damit Forschung betreiben können. 
@@ -250,6 +195,61 @@ Es wird zusätzlich ein Schwellenwertverfahren mit einer Schwelle von 64 angewen
 	\label{fig:dataset_preprocess}
 \end{figure}
 \vspace{\fill}
+
+
+\subsection{Datensätze}
+\label{subsec:datasets}
+In dieser Arbeit werden aus zwei unterschiedlichen Gebäuden Daten erhoben bzw. synthetische Daten aus den Gebäudesimulationen generiert. 
+Zuerst wird ein Datensatz aus der a) der nördliche Hälfte des 6. Stockwerkes der IC-Gebäude Ruhr-Universität Bochum erhoben. Anschließend werden drei Datensätzen im b) Seminargebäude Hochschule Bochum erhoben. Die Gebäude unterscheiden sich im Detail der Simulationen. Die Simulation von der Gebäude a) enthält sehr wenige Objekte wie  z.B. Türen und Wände. Im Gegensatz dazu enthält die Gebäudesimulation b) mehr Objekte wie z.B. die Objekte der technische Gebäudeausrüstung.
+
+Alle Datensätze beinhalten schwierige Herausforderung wie z.B. das Loop-Closure- oder Perceptual-Aliasing-Problem. Die Strecke im ersten Datensatz, bezeichnet als \textit{IC-Loop}, bildet eine geschlossene Schleife im Gebäude a). Im Datensatz \textit{HS-stairs-up} wird eine Treppe der Gebäude b) aufwärts bestiegen und im Datensatz \textit{HS-stairs-down} dieselbe Treppe abgestiegen. Die Strecke im \textit{HS-gamma} einhält in der Mitte eine Schleife. Der Anfangs- und Endpunkt der HS-gamma Strecke sind in optisch ähnlichen gegenüberliegenden Punkten der Gebäude b).
+
+TODO
+
+trajectory images
+
+
+\begin{table}[H]
+	\centering
+	\caption{Übersicht der Datensätze.}
+	\begin{tabularx}{1.0\textwidth}{X X X >{\centering\arraybackslash}p{1.7cm} }
+		\textbf{Bezeichnung} & \textbf{Streckenlänge} & \textbf{Volumen} & \textbf{Gebäude}\\
+		\hline
+		IC-loop & $115m$ & $50m \times 11m \times 3.5m$ & a) \\
+		\hline
+		HS-stairs-up & $32m$ & $30m \times 30m \times 30m$ & a)\\
+		\hline
+		HS-stairs-down & $32m$ & $30m \times 30m \times 30m$ & a)\\
+		\hline
+		HS-loop & $65m$ & $30m \times 30m \times 30m$ & a)\\
+	\end{tabularx}
+	\label{tab:dataset_metrics}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\caption{Übersicht der Datensätze.}
+	\begin{tabularx}{1.0\textwidth}{p{3.5cm} p{1.8cm} X  >{\centering\arraybackslash}p{1.7cm} }
+		\textbf{Bezeichnung} & \textbf{Typ} & \textbf{Anzahl Daten} (davon verwendet) & \textbf{Gebäude}\\
+		\hline
+		IC-loop & real & 3842 (3000) & a) \\
+		\hline
+		IC-loop-syn & synth. & 11435 (11000) & a)\\
+		\hline
+		HS-stairs-up & real & 1068 (1000) & b)\\
+		\hline
+		HS-stairs-up-syn & synth & 3160 (3000) & b)\\
+		\hline
+		HS-stairs-down & real & 1161 (1000) & b)\\
+		\hline
+		HS-stairs-down-syn & synth &  3245 (3000) & b)\\
+		\hline
+		HS-gamma & real & 1958 (1000) & b)\\
+		\hline
+		HS-gamma-syn & synth &  6490 (6000) & b)\\
+	\end{tabularx}
+	\label{tab:datasets}
+\end{table}
 
 \subsection{Trainingsparameter}
 Es wird die Caffe Implementierung \cite{jiaCaffeConvolutionalArchitecture2014} von PoseNet verwendet, die von den eigenen Autoren \citet{kendallPoseNetConvolutionalNetwork2015} veröffentlicht wurde.
