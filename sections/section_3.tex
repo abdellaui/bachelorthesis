@@ -183,7 +183,7 @@ Für die Erzeugung der b) synthetischen Kantenbilder wird eine konstante Beleuch
 
 \subsection{Verarbeitung der Daten}
 In der vorliegenden Arbeit wird PoseNet mit Gradientenbilder trainiert und evaluiert. Nach der Erhebung der realen Bilder (siehe Abschnitt \ref{subsec:record_real_data}) und Generierung der synthetischen Bilder (siehe Abschnitt \ref{subsec:generate_synth_images}) werden diese in ihre Gradientenbilder verarbeitet. 
-Vor der Verarbeitung in Gradientenbilder werden die Bilder auf eine einheitliche Größe von $960 \times 540$ verkleinert.
+Vor der Verarbeitung in Gradientenbilder werden die realen Bilder auf die einheitliche Größe von $960 \times 540$ verkleinert.
 %Bei der Erzeugung von Gradientenbilder gehen einerseits wichtige Informationen im Hinblick auf das Ursprungsbild verloren, andererseits bleiben wichtige Informationen wie z.B. die geometrische Struktur erhalten.
 
 Es wird zusätzlich ein Schwellenwertverfahren mit einer Schwelle von 64 angewendet, um unerwünschter Artefakte zu unterdrücken, sodass alle Pixeln im Wertebereich $[64, 255]$ liegen. Die Abbildung \ref{fig:dataset_preprocess} visualisiert von jedem Datensatztyp ein Beispiel und die dazugehörigen Gradientenbilder.
