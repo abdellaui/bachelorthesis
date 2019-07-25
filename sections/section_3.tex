@@ -125,9 +125,6 @@ Insgesamt werden drei synthetische Datensätze je Strecke erzeugt, die sich in d
 	\item fotorealistische Darstellung
 \end{enumerate*} unterscheiden (siehe Abbildung \ref{fig:dataset_preprocess}). Bei der Generierung der a) karikaturistischen und c) fotorealistischen Datensätzen wird die Beleuchtung aus einem Netz von Punktlichtquellen nachgestellt. Die a) karikaturistische und c) fotorealistische Datensätze unterscheiden sich ausschließlich in den Render-Engines.
 Für die Erzeugung der b) synthetischen Kantenbilder wird eine konstante Beleuchtung verschaffen und die Kanten über Blender markant sichtbar konfiguriert. Der a) karikaturistische Datensatz sowie die b) Kantenbilder werden über die Render-Engine \textit{Blender Render} und der c) fotorealistischer Datensatz über die \textit{Cycles-Engine} generiert.
-
-
-
 \subsection{Verarbeitung der Daten}
 In der vorliegenden Arbeit wird PoseNet mit Gradientenbilder trainiert und evaluiert. Nach der Erhebung der realen Bilder (siehe Abschnitt \ref{subsec:record_real_data}) und Generierung der synthetischen Bilder (siehe Abschnitt \ref{subsec:generate_synth_images}) werden diese in ihre Gradientenbilder verarbeitet. 
 
@@ -193,7 +190,6 @@ Es wird zusätzlich ein Schwellenwertverfahren mit einer Schwelle von 64 angewen
 	\caption{Beispielhafte Bilder für jeden Datensatztyp und die dazu korrespondierenden Gradientenbilden.}
 	\label{fig:dataset_preprocess}
 \end{figure}
-
 
 \subsection{Datensätze}
 \label{subsec:datasets}
