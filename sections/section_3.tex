@@ -256,13 +256,13 @@ Es wird die Caffe Implementierung \cite{jiaCaffeConvolutionalArchitecture2014} v
 
 Die Batchsize beträgt 40 und die Anzahl der Trainingsepochen ist 160. Eine NVIDIA GeForce GTX 1080 Ti mit 11GB Grafikspeicher wird verwendet und ermöglicht bei einer Batchsize von 40 drei Trainingsprozesse zeitgleich durchzuführen.
 
-Der Hyperparameter $\beta$, der von PoseNet vorgestellten Kostenfunktion (vgl. Gleichung \ref{eq:posenet_loss}), wird durch ein Grid-Search Verfahren bestimmt, indem PoseNet mit der Hälfte der realen Daten trainiert und mit der restlichen Hälfte evaluiert wird. Der Wert von $\beta$ für die Datensätze 
+Der Hyperparameter $\beta$, der von PoseNet vorgestellten Kostenfunktion (vgl. Gleichung \ref{eq:posenet_loss}), wird durch ein Grid-Search Verfahren bestimmt, indem PoseNet mit der Hälfte der realen Daten trainiert und mit der restlichen Hälfte evaluiert wird. Der Wert von $\beta$ für die Datensätzen
 \begin{enumerate*}[label=\arabic*)]
 	\item IC-loop
 	\item HS-stairs-up
 	\item HS-stairs-down
 	\item HS-gamma
-\end{enumerate*} betragen 
+\end{enumerate*} beträgt
 \begin{enumerate*}[label=\arabic*)]
 	\item 680
 	\item x
