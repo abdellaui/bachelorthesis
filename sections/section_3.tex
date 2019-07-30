@@ -189,7 +189,7 @@ In der vorliegenden Arbeit wird für die Bestimmung der Ground-Truth-Daten sowie
 Für die Generierung der synthetischen Daten werden aus dem BIM der Gebäuden IC und HS die 3D Modelle entnommen. Die 3D Gebäudemodelle werden in Blender\footnote{\url{https://www.blender.org/about/} (aufgerufen am: 20.07.2019)} Version 2.79b simuliert. Die intrinsischen Daten der D435 RGB-Kamera werden auf die virtuellen Kameras übertragen und aus Zeitgründen wird die Auflösung der synthetischen Bilder auf  $960\times540$ halbiert.
 
 Die Strecken der echten Aufnahmen werden in den Simulationen schwankungslos auf einer konstanten Höhe von 1.70$m$ imitiert.% Die Imitation der Strecke ist nur soweit möglich, wie die Ground-Truth-Daten nicht abdriften. 
-Es wird entlang der Strecke in 0.05$m$ Intervallen und mit einer $\pm$10° Neigung in je y- und z-Achse Bilder mit korrespondierenden Ground-Truth-Daten aufgenommen, um die Invarianz der realen Daten abzudecken. Abbildung \ref{fig:dataset_variation} illustriert die Variationen der Pose pro Stützpunkt auf einer Strecke.
+Es wird entlang der Strecke in 0.05$m$ Intervallen und mit einer $\pm$10° Neigung in je y- und z-Achse Bilder mit korrespondierenden Ground-Truth-Daten aufgenommen, um die Varianz der realen Daten abzudecken. Abbildung \ref{fig:dataset_variation} illustriert die Variationen der Pose pro Stützpunkt auf einer Strecke.
 
 
 \begin{figure}[H]
@@ -236,8 +236,7 @@ Insgesamt werden drei synthetische Datensätze je Strecke erzeugt, die sich in d
 Für die Erzeugung der synthetischen Kantenbilder wird eine konstante Beleuchtung verschaffen und die Kanten über Blender markant sichtbar konfiguriert. Der karikaturistische Datensatz sowie die Kantenbilder werden über die Render-Engine \textit{Blender Render} und der fotorealistischer Datensatz über die \textit{Cycles-Engine} generiert. Die karikaturistische und fotorealistische Datensätze unterscheiden sich ausschließlich in den Render-Engines.
 
 \subsection{Verarbeitung der Daten}
-In der vorliegenden Arbeit wird PoseNet grundsätzlich mit Gradientenbilder trainiert und evaluiert. Bei der Erzeugung von Gradienten- bzw. Kantenbilder gehen einerseits Informationen wie z.B. Texturen vom Ursprungsbild verloren, anderseits bleiben wichtige Informationen wie z.B. die geometrische Strukturen erhalten. 
-
+In der vorliegenden Arbeit wird PoseNet grundsätzlich mit Gradientenbilder trainiert und evaluiert. Bei der Erzeugung von Gradienten- bzw. Kantenbilder gehen einerseits Informationen wie z.B. Texturen vom Ursprungsbild verloren, anderseits bleiben wichtige Informationen wie z.B. die geometrische Strukturen erhalten. Da die realen und synthetischen Daten sich 
 Nach der Erhebung der realen Bilder (siehe Abschnitt \ref{subsec:record_real_data}) und Generierung der synthetischen Bilder (siehe Abschnitt \ref{subsec:generate_synth_images}) werden diese in ihre Gradientenbilder verarbeitet. Die realen Bilder werden vor der Verarbeitung in Gradientenbilder auf die Größe $960 \times 540$ der synthetischen Bilder verkleinert.
 
 Die künstliche Beleuchtung in den Gebäudesimulationen führt bei den Gradientenbildern zu unerwünschten Artefakten (vgl. Abbildung \ref
