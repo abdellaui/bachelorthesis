@@ -238,8 +238,8 @@ Für die Erzeugung der synthetischen Kantenbilder wird eine konstante Beleuchtun
 \subsection{Verarbeitung der Daten}
 In der vorliegenden Arbeit wird PoseNet grundsätzlich mit Gradientenbilder trainiert und evaluiert. Nach der Erhebung der realen Bilder (siehe Abschnitt \ref{subsec:record_real_data}) und Generierung der synthetischen Bilder (siehe Abschnitt \ref{subsec:generate_synth_images}) werden diese in ihre Gradientenbilder verarbeitet. Die realen Bilder werden vor der Verarbeitung in Gradientenbilder auf die Größe $960 \times 540$ der synthetischen Bilder verkleinert.
 
-
-Es wird zusätzlich ein Schwellenwertverfahren mit einer Schwelle von 64 angewendet, um unerwünschter Artefakte zu unterdrücken, sodass alle Pixeln im Wertebereich $[64, 255]$ liegen. Abbildung \ref{fig:dataset_preprocess} visualisiert von jedem Datensatztyp ein Beispiel und die dazugehörigen Gradientenbilder.
+Die künstliche Beleuchtung in den Gebäudesimulationen führt bei den Gradientenbildern zu unerwünschten Artefakten (vgl. Abbildung \ref
+{fig:treshhold}). Für die Unterdrückung der Artefakten wird zusätzlich ein Schwellenwertverfahren angewendet, indem Pixeln eines Gradientenbildes einen Mindestwert erhalten. Es wird iterativ nach einem Wert gesucht, der die Artefakte in den Gradientenbildern unterdrückt. Der Wert x wird als geeigneter Schwelle definiert. Abbildung \ref{fig:dataset_preprocess} visualisiert von jedem Datensatztyp ein Beispiel und die dazugehörigen Gradientenbilder.
 
 
 
@@ -336,6 +336,8 @@ Es wird zusätzlich ein Schwellenwertverfahren mit einer Schwelle von 64 angewen
 	\caption{Beispielhafte Bilder für jeden Datensatztyp und die dazu korrespondierenden Gradientenbilden. Die Daten sind aus dem \textit{IC-loop} Datensatz.}
 	\label{fig:dataset_preprocess}
 \end{figure}
+
+\cleardoublepage
 
 \subsection{Trainingsparameter}
 Es wird die Caffe \cite{jiaCaffeConvolutionalArchitecture2014} Implementierung von PoseNet verwendet, die von den eigenen Autoren \citet{kendallPoseNetConvolutionalNetwork2015} veröffentlicht wurde.
