@@ -33,6 +33,41 @@ Der Trainingsprozess wurde je Datensatztyp zweimal wiederholt und die besseren E
 \subsection{Bestimmung des Hyperparameters $\beta$}
 \label{subsec:determine_beta}
 gridsearch je datensatz mit realdaten, empfohlen 120-750 in gebäuden, in 9 schritten je 70 stride; plote beta ergebnisse matplotlib und evo traj-colormap
+
+\cite{zhouLearningDeepFeatures2014} trainiert wurde. Anschließend werden die Gewichte an die Trainingsdaten angepasst. Die Tabelle \ref{tab:trainingparams} gibt eine Übersicht der Hyperparameter an.
+
+\begin{table}[H]
+	\centering
+	\caption{Übersicht der Hyperparameter.}
+	\begin{tabularx}{1.0\textwidth}{X X}
+		\textbf{Hyperparameter} & \textbf{Wert}\\
+		\hline
+		Batchsize & $40$\\
+		\hline
+		Anzahl der Epochen & $160$\\
+		\hline
+		$\beta$ der Kostenfunktion (vgl. Gleichung \ref{eq:posenet_loss}) &
+		siehe Tabelle \ref{tab:betas} im Abschnitt \ref{subsec:determine_beta}
+		\\
+		\hline
+		Loss-Optimierer & AdaGrad\\
+		\hline
+		Lernrate & $10^{-3}$\\
+		\hline
+		Bildskalierung & $480 \times 270$\\
+		\hline
+		Bildausschnitt& \makecell[tl]{
+			$224 \times 244$\\
+			(Training: zufällig, Evaluation: zentriert)\\
+		}\\
+		\hline
+		Datensatznormierung & Subtraktion des Durchschnittsbildes der synthetischen Daten \\
+		\hline
+		Initialisierung der Gewichte & Gewichte eines mit dem Places Datensatz trainierten Models auf GoogLeNet \\
+	\end{tabularx}
+	\label{tab:betas}
+\end{table}
+
 \subsubsection{IC-loop}
 \subsubsection{HS-gamma}
 \subsubsection{HS-stairs-up}
