@@ -239,7 +239,7 @@ Für die Erzeugung der synthetischen Kantenbilder wird eine konstante Beleuchtun
 In der vorliegenden Arbeit wird PoseNet grundsätzlich mit Gradientenbilder trainiert und evaluiert. Nach der Erhebung der realen Bilder (siehe Abschnitt \ref{subsec:record_real_data}) und Generierung der synthetischen Bilder (siehe Abschnitt \ref{subsec:generate_synth_images}) werden diese in ihre Gradientenbilder verarbeitet. Die realen Bilder werden vor der Verarbeitung in Gradientenbilder auf die Größe $960 \times 540$ der synthetischen Bilder verkleinert.
 
 Die künstliche Beleuchtung in den Gebäudesimulationen führt bei den Gradientenbildern zu unerwünschten Artefakten (vgl. Abbildung \ref
-{fig:treshhold}). Für die Unterdrückung der Artefakten wird zusätzlich ein Schwellenwertverfahren angewendet, indem Pixeln eines Gradientenbildes einen Mindestwert erhalten. Es wird iterativ nach einem Wert gesucht, der die Artefakte in den Gradientenbildern unterdrückt. Der Wert x wird als geeigneter Schwelle definiert. Abbildung \ref{fig:dataset_preprocess} visualisiert von jedem Datensatztyp ein Beispiel und die dazugehörigen Gradientenbilder.
+{fig:treshhold}) . Für die Unterdrückung der Artefakten wird zusätzlich ein Schwellenwertverfahren angewendet, indem Pixeln eines Gradientenbildes einen Mindestwert erhalten. Es wird iterativ nach einem Wert gesucht, der die Artefakte in den Gradientenbildern unterdrückt. Der Wert x wird als geeigneter Schwelle definiert. Abbildung \ref{fig:dataset_preprocess} visualisiert von jedem Datensatztyp ein Beispiel und die dazugehörigen Gradientenbilder.
 
 
 
