@@ -236,7 +236,8 @@ Insgesamt werden drei synthetische Datensätze je Strecke erzeugt, die sich in d
 Für die Erzeugung der synthetischen Kantenbilder wird eine konstante Beleuchtung verschaffen und die Kanten über Blender markant sichtbar konfiguriert. Der karikaturistische Datensatz sowie die Kantenbilder werden über die Render-Engine \textit{Blender Render} und der fotorealistischer Datensatz über die \textit{Cycles-Engine} generiert. Die karikaturistische und fotorealistische Datensätze unterscheiden sich ausschließlich in den Render-Engines.
 
 \subsection{Verarbeitung der Daten}
-In der vorliegenden Arbeit wird PoseNet grundsätzlich mit Gradientenbilder trainiert und evaluiert. Bei der Erzeugung von Gradienten- bzw. Kantenbilder gehen einerseits Informationen wie z.B. Texturen vom Ursprungsbild verloren, anderseits bleiben wichtige Informationen wie z.B. die geometrische Strukturen erhalten. 
+In der vorliegenden Arbeit wird PoseNet grundsätzlich mit Gradientenbilder trainiert und evaluiert. Bei der Erzeugung von Gradienten- bzw. Kantenbilder gehen einerseits Informationen wie z.B. Texturen vom Ursprungsbild verloren, anderseits bleiben wichtige Informationen wie z.B. die geometrische Strukturen erhalten.
+ 
 Nach der Erhebung der realen Bilder (siehe Abschnitt \ref{subsec:record_real_data}) und Generierung der synthetischen Bilder (siehe Abschnitt \ref{subsec:generate_synth_images}) werden diese in ihre Gradientenbilder verarbeitet. Die realen Bilder werden vor der Verarbeitung in Gradientenbilder auf die Größe $960 \times 540$ der synthetischen Bilder verkleinert.
 
 Die künstliche Beleuchtung in den Gebäudesimulationen führt bei den Gradientenbildern zu unerwünschten Artefakten (vgl. Abbildung \ref
