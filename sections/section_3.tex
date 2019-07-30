@@ -219,6 +219,47 @@ In der vorliegenden Arbeit wird PoseNet grundsätzlich mit Gradientenbilder trai
 
 
 Es wird zusätzlich ein Schwellenwertverfahren mit einer Schwelle von 64 angewendet, um unerwünschter Artefakte zu unterdrücken, sodass alle Pixeln im Wertebereich $[64, 255]$ liegen. Abbildung \ref{fig:dataset_preprocess} visualisiert von jedem Datensatztyp ein Beispiel und die dazugehörigen Gradientenbilder.
+
+
+
+
+
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[t]{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/syn_dataset/b00708.png}
+		\caption{karikaturistische Simulation}
+		\label{subfig:cartoonish}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/syn_dataset/e00708.png}
+		\caption{synthetisches \hspace{1cm} Kantenbild}
+		\label{subfig:edge}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/syn_dataset/c00708.png}
+		\caption{fotorealistische \hspace{1cm} Simulation}
+		\label{subfig:photorealistic}
+	\end{subfigure}
+	\hfill 
+	\begin{subfigure}[t]{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{images/syn_dataset/r000305.png}
+		\caption{reale Aufnahme}
+		\label{subfig:real}
+	\end{subfigure}
+	\hfill
+	\caption{Beispielhafte Bilder für jeden Datensatztyp und die dazu korrespondierenden Gradientenbilden. Die Daten sind aus dem \textit{IC-loop} Datensatz.}
+	\label{fig:dataset_preprocess}
+\end{figure}
+
+
 \vspace{1cm}
 \begin{figure}[H]
 	\centering
@@ -267,6 +308,7 @@ Es wird zusätzlich ein Schwellenwertverfahren mit einer Schwelle von 64 angewen
 		\includegraphics[width=\linewidth]{images/syn_dataset/cg00708.png}
 		\caption{Gradientenbild  \hspace{1cm} von \subref{subfig:photorealistic}}
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/syn_dataset/rg000305.png}
