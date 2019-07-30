@@ -221,7 +221,18 @@ In der vorliegenden Arbeit wird PoseNet grundsätzlich mit Gradientenbilder trai
 Es wird zusätzlich ein Schwellenwertverfahren mit einer Schwelle von 64 angewendet, um unerwünschter Artefakte zu unterdrücken, sodass alle Pixeln im Wertebereich $[64, 255]$ liegen. Abbildung \ref{fig:dataset_preprocess} visualisiert von jedem Datensatztyp ein Beispiel und die dazugehörigen Gradientenbilder.
 
 
-
+\begin{tikzpicture}[zoomboxarray,
+zoomboxes below,
+zoomboxarray columns=3,
+zoomboxarray rows=1,
+connect zoomboxes,
+zoombox paths/.append style={ultra thick, red}]
+\node [image node] { 			   \includegraphics[width=\textwidth]{images/treshold/0_treshold.png} 
+};
+\zoombox[magnification=2]{0.175,0.72}
+\zoombox[magnification=2]{0.71,0.5}
+\zoombox[magnification=10]{0.86,0.38}
+\end{tikzpicture}
 
 
 
