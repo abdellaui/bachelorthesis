@@ -4,20 +4,12 @@ ngerman,        % (ngerman/english) internationalisation
 %  listoftables,
 %  listoflistings,
 %  twoside,        % double sided layout
-]{article}
+]{iib_thesis}
 
 
 \setlength\extrarowheight{3pt}
 \usepackage{makecell}
 \usepackage[inline]{enumitem}
-
-\usepackage{graphicx}
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{tikz}
-\usepackage{pgfplots}
-\usetikzlibrary{spy,calc}
-\usepackage{hyperref}
 
 
 \usepackage{textcomp}
@@ -29,6 +21,32 @@ ngerman,        % (ngerman/english) internationalisation
 % norm
 \newcommand\norm[1]{\left\lVert#1\right\rVert}
 
+
+
+\title{Pose Estimation in Gebäuden anhand von Convolutional Neural Networks und simulierten 3D-Daten}
+\author{Abdullah Sahin}
+\degree{Bachelor}
+\studyprogram{Angewandte Informatik}
+\date{3. September 2019}
+\matno{108016202304}
+\firstadviser{Prof. Dr.-Ing. Markus König}
+\secondadviser{Patrick Herbers, M.\,Sc.}
+\myabstract{
+.....
+}
+
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{spy,calc}
+\usepackage{hyperref}
+
+
+\newif\ifblackandwhitecycle
+\gdef\patternnumber{0}
 
 \pgfkeys{/tikz/.cd,
 	zoombox paths/.style={
@@ -226,19 +244,6 @@ ngerman,        % (ngerman/english) internationalisation
 	\end{scope}
 }
 
-
-
-\title{Pose Estimation in Gebäuden anhand von Convolutional Neural Networks und simulierten 3D-Daten}
-\author{Abdullah Sahin}
-\degree{Bachelor}
-\studyprogram{Angewandte Informatik}
-\date{3. September 2019}
-\matno{108016202304}
-\firstadviser{Prof. Dr.-Ing. Markus König}
-\secondadviser{Patrick Herbers, M.\,Sc.}
-\myabstract{
-.....
-}
 
 \begin{document}
 	
