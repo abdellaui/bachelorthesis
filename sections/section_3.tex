@@ -333,14 +333,16 @@ Die künstliche Beleuchtung in den Gebäudesimulationen führt bei den Gradiente
 \cleardoublepage
 
 \subsection{Trainingsparameter}
-Die Leistung eines neuoranle Netzwerkes ist abhängig von ihren Parametern. Es gibt zwei Arten der Parameter. Eine die während des Trainingsphase angepasst wird und eine die vor dem Training definiert wird. 
+Die Leistung eines neuoranlen Netzwerkes ist abhängig von ihren Parametern. Es gibt zwei Arten der Parameter. Die erste Art von Parametern (\textit{Gewichte}) werden während der Trainingsphase an die Trainingsdaten angepasst. Overfitting underfitting. Die zweite Art von Parametern (\textit{Hyperparameter}) werden vor der Trainingsphase festgelegt.
+
+
 In der vorliegenden Arbeit die Caffe \cite{jiaCaffeConvolutionalArchitecture2014} Implementierung von PoseNet verwendet, die von den eigenen Autoren \citet{kendallPoseNetConvolutionalNetwork2015} veröffentlicht wurde.
 
 Die Batchgröße beträgt 40 und die Anzahl der Trainingsepochen ist 160. Eine NVIDIA GeForce GTX 1080 Ti mit 11GB Grafikspeicher wird verwendet und ermöglicht bei einer Batchgröße von 40 drei Trainingsprozesse zeitgleich durchzuführen.
 
 Der Hyperparameter $\beta$, der von PoseNet vorgestellten Kostenfunktion (vgl. Gleichung \ref{eq:posenet_loss}), wird für jeden realen Datensatz durch ein Grid-Search Verfahren bestimmt, indem PoseNet mit der Hälfte der realen Daten trainiert und mit der restlichen Hälfte evaluiert wird. Die Werte für den Hyperparameter werden im Abschnitt \ref{subsec:determine_beta} bestimmt und $\beta$ sind in Tabelle \ref{tab:betas} aufgelistet. Der Loss wird mit dem AdaGrad \cite{duchiAdaptiveSubgradientMethods2011} Gradientenabstiegsverfahren mit einer konstanten Lernrate von $10^{-3}$ optimiert bzw. minimiert. 
 
-Die Trainings- sowie Evaluationsdaten werden auf eine Auflösung von $480\times270$ skaliert. Während des Trainingsprozesses werden zufällige Ausschnitte der Größe $224 \times 224$ aus dem skalierten Datensatz genommen und für die Evaluierung wird ein zentrierter Ausschnitt derselben Größe aus dem skalierten Evaluationsdatensatz verwendet. Das Durchschnittsbild der synthetischen Daten werden beim Trainieren und bei der Evaluierung von den Inputbildern subtrahiert.
+Die Trainings- sowie Evaluationsdaten werden auf eine Auflösung von $480\times270$ skaliert. Während des Trainingsprozesses werden zufällige Ausschnitte der Größe $224 \times 224$ aus dem skalierten Datensatz genommen und für die Evaluierung wird ein zentrierter Ausschnitt derselben Größe aus dem skalierten Evaluationsdatensatz verwendet. Das Durchschnittsbild der synthetischen Daten werden beim Trainieren und bei der Evaluierung von den Inputbildern subtrahiert. 
 Die Gewichte des Netzwerks werden mit den Gewichten eines Modells initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz \cite{zhouLearningDeepFeatures2014} trainiert wurde. Anschließend werden die Gewichte an die Trainingsdaten angepasst. Tabelle \ref{tab:trainingparams} gibt eine Übersicht der Hyperparameter an.
 
 \begin{table}[H]
