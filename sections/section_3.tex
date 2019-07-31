@@ -333,7 +333,7 @@ Die künstliche Beleuchtung in den Gebäudesimulationen führt bei den Gradiente
 \cleardoublepage
 
 \subsection{Trainingsparameter}
-Die Leistung eines neuoranlen Netzwerkes ist abhängig von ihren Parametern. Es gibt zwei Arten der Parameter. Die erste Art von Parametern (\textit{Gewichte}) werden während der Trainingsphase an die Trainingsdaten angepasst. Overfitting underfitting. Die zweite Art von Parametern (\textit{Hyperparameter}) werden vor der Trainingsphase festgelegt.
+Die Leistung eines neuralen Netzwerkes ist abhängig von ihren Parametern. Es gibt zwei Arten der Parameter. Die erste Art von Parametern (\textit{Gewichte}) werden während der Trainingsphase an die Trainingsdaten angepasst. \textit{Underfitting} entsteht, wenn das Netzwerk anhand der Trainingsdaten unfähig ist unbekannte Daten zu generalisieren. \textit{Overfitting} entsteht, wenn das Netzwerk die Trainingsdaten auswendig lernt. Bei der Anpassung der Gewichte wird die Fähigkeit der Generalisierung bei unbekannten Daten über das Erlenen durch die Trainingsdaten gestrebt. Die zweite Art von Parametern (\textit{Hyperparameter}) werden vor der Trainingsphase festgelegt.
 
 
 In der vorliegenden Arbeit die Caffe \cite{jiaCaffeConvolutionalArchitecture2014} Implementierung von PoseNet verwendet, die von den eigenen Autoren \citet{kendallPoseNetConvolutionalNetwork2015} veröffentlicht wurde.
@@ -355,7 +355,7 @@ Die Gewichte des Netzwerks werden mit den Gewichten eines Modells initialisiert,
 		\hline
 		Architektur & PoseNet (siehe Abschnitt \ref{sec:posenet})\\
 		\hline
-		Implementierung & Caf \cite{jiaCaffeConvolutionalArchitecture2014} \\
+		Implementierung & Caffe \cite{jiaCaffeConvolutionalArchitecture2014} \\
 		\hline
 		Batchgröße & $40$\\
 		\hline
