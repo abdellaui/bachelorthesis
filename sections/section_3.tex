@@ -241,7 +241,7 @@ In der vorliegenden Arbeit wird PoseNet grundsätzlich mit Gradientenbilder trai
 Nach der Erhebung der realen Bilder (siehe Abschnitt \ref{subsec:record_real_data}) und Generierung der synthetischen Bilder (siehe Abschnitt \ref{subsec:generate_synth_images}) werden diese in ihre Gradientenbilder verarbeitet. Die realen Bilder werden vor der Verarbeitung in Gradientenbilder auf die Größe $960 \times 540$ der synthetischen Bilder verkleinert.
 
 Die künstliche Beleuchtung in den Gebäudesimulationen führt bei den Gradientenbildern zu unerwünschten Artefakten (vgl. Abbildung \ref
-{fig:treshold}). Für die Unterdrückung der Artefakten wird zusätzlich ein Schwellenwertverfahren angewendet, indem Pixeln eines Gradientenbildes auf ein Mindestwert gesetzt werden. Es wird iterativ nach einem Wert gesucht, der die Artefakte in den Gradientenbildern unterdrückt. Der Wert 8 stellt sich als geeignete Schwelle für die Gradientenbilder im Wertebereich von $[0,255]$ heraus. Abbildung \ref{fig:dataset_preprocess} visualisiert von jedem Datensatztyp ein Beispiel und die dazugehörigen Gradientenbilder.
+{fig:treshold}). Die Pixelwerte der Artefakten befinden sich im niedrigen Wertebereich. Für die Unterdrückung der Artefakten wird zusätzlich ein Schwellenwertverfahren angewendet, indem die Pixelwerte eines Gradientenbildes auf ein Mindestwert gesetzt werden. Es wird iterativ nach einem Wert gesucht, der die Pixelwerte des Gradientenbildes so anhebt, sodass die die Artefakte unterdrückt werden. Der Wert 8 stellt sich als geeignete Schwelle für die Gradientenbilder im Wertebereich von $[0,255]$ heraus. Abbildung \ref{fig:dataset_preprocess} visualisiert von jedem Datensatztyp ein Beispiel und die dazugehörigen Gradientenbilder.
 
 
 \begin{figure}[H]
