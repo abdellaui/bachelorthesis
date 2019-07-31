@@ -346,12 +346,16 @@ Die Trainings- sowie Evaluationsdaten werden auf eine Auflösung von $480\times2
 Die Gewichte des Netzwerks werden mit den Gewichten eines Modells initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz \cite{zhouLearningDeepFeatures2014} trainiert wurde. Anschließend werden die Gewichte mit einem Dropout-Rate von 70\% an die Trainingsdaten angepasst. Tabelle \ref{tab:trainingparams} gibt eine Übersicht der Hyperparameter an.
 
 \cleardoublepage
-\vspace*{\vfill}
+\vspace*{\fill}
 \begin{table}[H]
 	\centering
 	\caption{Übersicht der Hyperparameter.}
 	\begin{tabularx}{1.0\textwidth}{X X}
 		\textbf{Hyperparameter} & \textbf{Wert}\\
+		\hline
+		Architektur & PoseNet (siehe Abschnitt \ref{sec:posenet})\\
+		\hline
+		Implementierung & Caffe \cite{jiaCaffeConvolutionalArchitecture2014}  \\
 		\hline
 		Batchgröße & $40$\\
 		\hline
@@ -383,5 +387,5 @@ Die Gewichte des Netzwerks werden mit den Gewichten eines Modells initialisiert,
 	\end{tabularx}
 	\label{tab:trainingparams}
 \end{table}
-\vspace*{\vfill}
+\vspace*{\fill}
 \cleardoublepage
