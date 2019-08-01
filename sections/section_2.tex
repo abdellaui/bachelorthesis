@@ -27,6 +27,7 @@ Die erste Art von Methoden versucht die Pose zu bestimmen, indem die 2D-3D Korre
 
 \textbf{Convolutional Neural Networks} (\textit{CNN}) werden erfolgreich im Bereich des Maschinelles Sehens, wie z.B. bei der Klassifizierung von Bildern \cite{krizhevskyImageNetClassificationDeep2012, simonyanVeryDeepConvolutional2014, heDeepResidualLearning2015} sowie bei der Objekterkennung \cite{girshickRichFeatureHierarchies2013, renFasterRCNNRealTime2015b, girshickFastRCNN2015} eingesetzt. 
 Ein verbreiteter Ansatz beim Entwurf von CNNs ist das Modifizieren der vorhandenen Netzwerkarchitekturen, die z.B. für die Bildklassifizierung angesichts der Wettbewerbe von ImageNet Large Scale Visual Recognition Challenge (\textit{ILSVRC}) \cite{russakovskyImageNetLargeScale2015} konstruiert wurden. Dieser Ansatz konnte beispielsweise erfolgreich in der Objekterkennung \cite{girshickFastRCNN2015}, Objektsegmentierung \cite{kokkinosPushingBoundariesBoundary2015, maninisConvolutionalOrientedBoundaries2016}, semantische Segmentierung \cite{nohLearningDeconvolutionNetwork2015, hazirbasFuseNetIncorporatingDepth2017a} und Tiefenbestimmung \cite{liDepthSurfaceNormal2015} verfolgt werden.
+
 Seit Kurzem werden CNNs auch in den Anwendungsgebieten der Lokalisierung verwendet. Zum Beispiel verwenden  \citet{parisottoGlobalPoseEstimation2018} CNNs in Bezug auf das Simultaneous-Localization-and-Mapping (\textit{SLAM}) Problem. \citet{melekhovRelativeCameraPose2017} schätzen anhand CNNs die relative Pose zweier Kameras. \citet{costanteExploringRepresentationLearning2016} und \citet{wangDeepVOEndtoendVisual2017} setzen es im Bereich der visuellen Odometrie ein.
 
 % Posenet überführen & erklären
@@ -61,7 +62,24 @@ Traniert mit den unterschiedlichen synthetischen Daten, evaluiert mit den realen
  	\item 12,25°
  \end{enumerate*}
  in der Orientierung.
-Die besten Ergebnisse konnten die Autoren trainiert mit den Gradientenbilder der karikaturistischen Daten und  synthetischen Kantenbilder, evaluiert mit den Gradientenbilder der realen Aufnahmen, erzielen. Die Autoren erhalten hierbei eine Akkuratesse von ca. $2m$ in der Position und 7° in der Orientierung.
+Die besten Ergebnisse konnten die Autoren trainiert mit den 
+\begin{enumerate*}[label=\alph*)]
+	\addtocounter{enumi}{3}
+	\item Gradientenbilder der karikaturistischen Daten und
+	\item synthetischen Kantenbilder
+\end{enumerate*}, evaluiert mit den Gradientenbilder der realen Aufnahmen, erzielen. Die Autoren erhalten hierbei eine Akkuratesse von 
+\begin{enumerate*}[label=\alph*)]
+	\addtocounter{enumi}{3}
+	\item 2,63$m$
+	\item 1,88$m$
+\end{enumerate*}
+in der Position und  
+ \begin{enumerate*}[label=\alph*)]
+ 	\addtocounter{enumi}{3}
+	\item 6,99°
+	\item 7,73°
+\end{enumerate*}
+in der Orientierung.
 
 Die vorliegende Arbeit versucht den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} auf längeren Strecken in größeren Gebäudesimulationen zu untersuchen, worin das PoseNet Modell mit Gradienten- bzw. Kantenbilder der synthetischen Daten trainiert und mit Gradientenbilder der realen Daten evaluiert wird.
 
