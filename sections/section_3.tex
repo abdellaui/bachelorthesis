@@ -239,7 +239,7 @@ Die künstliche Beleuchtung in den Gebäudesimulationen führt bei den Gradiente
 {fig:treshold}). Die Pixelwerte der Artefakten befinden sich im niedrigen Wertebereich des Gradientenbildes, der für einen Menschen kaum wahrnehbar ist. Für die Unterdrückung der Artefakten wird zusätzlich ein Schwellenwertverfahren angewendet, indem die Pixelwerte eines Gradientenbildes unter einer gewissen Schwelle auf ein Mindestwert gesetzt werden. Es wird iterativ nach einem Minimum der Pixelwerte gesucht, sodass die von den Artefakten betroffenen Stellen eine homogene Fläche im Bild darstellen. Der Wert 8 stellt sich als geeignete Schwelle für die Gradientenbilder heraus und wird als Minimum der Pixelwerte festgelegt, sodass die Pixelwerte der Gradientenbilder im Wertebereich von $[8,255]$ liegen. Abbildung \ref{fig:dataset_preprocess} visualisiert von jedem Datensatztyp ein Beispiel und die dazugehörigen Gradientenbilder.
 
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\begin{tikzpicture}[zoomboxarray, 
 	connect zoomboxes,
@@ -267,7 +267,7 @@ Die künstliche Beleuchtung in den Gebäudesimulationen führt bei den Gradiente
 
 
 \vspace{1cm}
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
@@ -342,7 +342,7 @@ Die Gewichte des Netzwerks werden mit den Gewichten eines Modells initialisiert,
 
 \cleardoublepage
 \vspace*{\fill}
-\begin{table}[H]
+\begin{table}
 	\centering
 	\caption{Übersicht der Hyperparameter.}
 	\begin{tabularx}{1.0\textwidth}{X X}
