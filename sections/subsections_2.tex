@@ -129,7 +129,7 @@ Prinzipiell wird das Output des Convolutional Layers durch die Übergabe des Fea
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\textwidth]{images/ann_conv/convolution_layer.png}
+	\includegraphics[width=0.7\textwidth]{images/ann_conv/convolution_layer.png}
 	\caption{Ein Beispiel für die Convolution Operation mit 3 Filtern der Größe 3 $\times$ 3, je einem Stride von 1 und keinem Padding. Ein Filter bewegt sich entlang des gesamten Inputs mit der Schrittweite (\textit{Stride}) 1 und bildet die Summe der elementweise multiplizierten Werte. Die Summe wird dann im Feature Map an die korrespondierende Position geschrieben. Dieser Vorgang wiederholt sich für jedes Filter \cite{yamashitaConvolutionalNeuralNetworks2018}. Abbildung basiert auf \cite{yamashitaConvolutionalNeuralNetworks2018}.}
 	\label{fig:convolution_layer}
 \end{figure}
@@ -141,7 +141,7 @@ Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer redu
  Im Vergleich zu einem Convolutional Layer wird ein Pooling Layer nur aus Hyperparameter definiert und bleibt daher statisch \cite{yamashitaConvolutionalNeuralNetworks2018}. Abbildung \ref{fig:pooling_layer} zeigt eine beispielhafte Ausführung einer Max-Pooling Operation. Tabelle \ref{tab:layer_param} listet die Hyperparameter eines Pooling Layers auf.
  \begin{figure}
 	\centering
-	\includegraphics[width=0.6\textwidth]{images/ann_conv/max_pool.png}
+	\includegraphics[width=0.55\textwidth]{images/ann_conv/max_pool.png}
 	\caption{Ein Beispiel für eine Max-Pooling Operation mit einer Filtergröße von 2 $\times$ 2, einem Stride von 2 und keinem Padding. In diesem Beispiel wird der Input in 2 $\times$ 2 Bereiche unterteilt und der Maximum jedes Bereiches als Output berechnet. Es werden die markantesten Werte einer Nachbarschaft behalten und der Rest verworfen. Diese Operation führt zu einer Reduzierung der Inputgröße um den Faktor 2. Entnommen aus \cite{yamashitaConvolutionalNeuralNetworks2018}.}
 	\label{fig:pooling_layer}
 \end{figure}
