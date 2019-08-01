@@ -124,22 +124,21 @@ Die Werte des 2D-Filters stellen die \textit{Gewichte} dar und werden in der Tra
 
 Prinzipiell wird das Output des Convolutional Layers durch die Übergabe des Feature Maps an eine Aktivierungsfunktion bestimmt.  Abbildung \ref{fig:relu} stellt eine Aktivierungsfunktion dar.
 
-\begin{figure}[H]
+\begin{figure}[b]
 	\centering
 	\includegraphics[width=0.4\textwidth]{images/ann_conv/ReLU.png}
 	\caption{Ein Beispiel für eine Aktivierungsfunktion. Die ReLU (\textit{rectified liniear unit}) Aktivierungsfunktion wird typischerweise in CNNs eingesetzt und ist mathematisch definiert als: $f(x) = max(0,x)$ \cite{Goodfellow-et-al-2016} }
 	\label{fig:relu}
 \end{figure}
 
-\pagebreak
-\vspace*{\fill}
-\begin{figure}[H]
+\cleardoublepage
+\begin{figure}[bp]
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/ann_conv/convolution_layer.png}
 	\caption{Ein Beispiel für die Convolution Operation mit 3 Filtern der Größe 3 $\times$ 3, je einem Stride von 1 und keinem Padding. Ein Filter bewegt sich entlang des gesamten Inputs mit der Schrittweite (\textit{Stride}) 1 und bildet die Summe der elementweise multiplizierten Werte. Die Summe wird dann im Feature Map an die korrespondierende Position geschrieben. Dieser Vorgang wiederholt sich für jedes Filter \cite{yamashitaConvolutionalNeuralNetworks2018}. Abbildung basiert auf \cite{yamashitaConvolutionalNeuralNetworks2018}.}
 	\label{fig:convolution_layer}
 \end{figure}
-\vspace*{\fill}
+\cleardoublepage
 \pagebreak
 \subsubsection{Pooling Layer}
 Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer reduzieren die Größe eines Inputvolumens und verringern somit die Anzahl der erlernbaren Parameter \cite{CS231nConvolutionalNeurala}. Daher werden sie in der Literatur oft auch als \textit{Supsampling} Layer bezeichnet. Die Pooling Operation wird auf jeder Schicht der Eingabe ausgeführt \cite{CS231nConvolutionalNeurala}. Die meist verbreitete \textit{Pooling Methode} ist die Max-Pooling. Beim Max-Pooling iteriert ein Filter einer bestimmten Größe mit einer Schrittweite, gegeben durch den Stride, über das Inputvolumen und extrahiert das Maximum im aktuellen Filterbereich. Das Maximum wird für die weitere Berechnung beibehalten und die restlichen Werte verworfen
