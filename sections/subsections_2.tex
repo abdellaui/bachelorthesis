@@ -17,7 +17,7 @@ Ein künstliches Neuron mit der Inputgröße $M$ ist mathematisch die nicht-line
 \end{equation}
 
 
-\begin{figure}[t]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/ann_conv/neuron.png}
 	\caption{Visualisierung eines künstlichen Neurons definiert nach der Gleichung \ref{eq:neuron}. Dieser Neuron summiert das Produkt des Inputvektors $x$  mit den jeweiligen Gewichten $w$ und addiert einen Bias $b$. Durch die Summe erzeugt die Aktivierungsfunktion $\phi$ das Output $y$ des Neurons. Abbildung \ref{fig:relu} zeigt ein Beispiel für eine Aktivierungsfunktion. Entnommen aus \cite{deoliveiraSystemBasedArtificial2017}. }
@@ -62,7 +62,7 @@ y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L * ... * f_2 * f_1)(x)
 \label{sec:CNN}
 Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben werden, arbeiten auf einem Inputvektor $x \in \mathbb{R}^{M}$. Im Vergleich dazu arbeiten CNNs auf einem drei-dimensionalen Inputvolumen $x \in \mathbb{R}^{width} \times \mathbb{R}^{heigth} \times \mathbb{R}^{depth}$. CNNs werden hauptsächlich im Kontext von Bildern eingesetzt, dabei stellt z.B. ein 32 $\times$ 32 RGB-Bild ein Volumen von 32 $\times$ 32 $\times$ 3 dar \cite{CS231nConvolutionalNeurala}.
 
-\begin{figure}[t]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/ann_conv/lenet5.png}
 	\caption{Als Beispiel für ein Convolutional Neural Network wird die LeNet-5 Architektur abgebildet. Entnommen aus \cite{lecunGradientBasedLearningApplied1998}  }
@@ -171,7 +171,7 @@ Die Architektur von GoogLeNet besteht aus 9 Inception Modulen (je von Tiefe 2) u
 	\label{fig:inception_module}
 \end{figure}
 
-\begin{figure}[bp]
+\begin{figure}
 		\centering
 		\includegraphics[width=0.85\textwidth]{images/googlenet/googlenet_diagram.pdf}
 		\caption{Der architektonische Aufbau des GoogLeNet Modells. Das Inception-Block wird in Abbildung \ref{fig:inception_module} detaillierter dargestellt. Es gibt 3 Ouput-Zweige, die mit einer identisch aufgebauten Output-Knoten enden. Die Werte der Output-Zweige 2 \& 3 haben nur während der Trainingsphase einen Einfluss und werden in der Evaluationsphase verworfen. In der Trainingsphase wird vor dem Output-Knoten 1 ein Dropout von 40\% angewandt. Jedes Convolutional Layer hat die ReLU (Abbildung \ref{fig:relu}) als Aktivierungsfunktion. Die \textit{Local-Response-Normalization} \cite{krizhevskyImageNetClassificationDeep2012a} ist ein bekanntes Normierungsverfahren und kommt prinzipiell in Verbindung mit der ReLU Aktivierungsfunktion vor. Abbildung basiert auf \cite{szegedyGoingDeeperConvolutions2015}.}
