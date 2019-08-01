@@ -50,7 +50,6 @@ Die Funktion $y = f(x; \theta)$ bildet sich aus den Funktionen der im Netzwerk v
 y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L * ... * f_2 * f_1)(x)
 \end{equation}
 
-\vspace*{1.5cm}
 
 \begin{figure}[b]
 	\centering
@@ -63,7 +62,7 @@ y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L * ... * f_2 * f_1)(x)
 \label{sec:CNN}
 Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben werden, arbeiten auf einem Inputvektor $x \in \mathbb{R}^{M}$. Im Vergleich dazu arbeiten CNNs auf einem drei-dimensionalen Inputvolumen $x \in \mathbb{R}^{width} \times \mathbb{R}^{heigth} \times \mathbb{R}^{depth}$. CNNs werden hauptsächlich im Kontext von Bildern eingesetzt, dabei stellt z.B. ein 32 $\times$ 32 RGB-Bild ein Volumen von 32 $\times$ 32 $\times$ 3 dar \cite{CS231nConvolutionalNeurala}.
 
-\begin{figure}[H]
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/ann_conv/lenet5.png}
 	\caption{Als Beispiel für ein Convolutional Neural Network wird die LeNet-5 Architektur abgebildet. Entnommen aus \cite{lecunGradientBasedLearningApplied1998}  }
