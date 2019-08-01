@@ -164,7 +164,7 @@ Inzwischen wurde das Inception Modul \cite{szegedyRethinkingInceptionArchitectur
 
 Die Architektur von GoogLeNet besteht aus 9 Inception Modulen (je von Tiefe 2) und hat eine gesamte Tiefe von 22 Layer \footnote{Anzahl der trainierbaren Layer inkl. Output Layer}. Das Ungewöhnliche an der Architektur ist, dass es 3 Output-Zweigen hat. Jedes der Ouput-Zweige produziert ein Klassifizierungsergebnis. Output-Zweig 2 \& 3 sind Hilfszweige, die nur in der Trainingsphase einen Einfluss haben und in der Evaluationsphase verworfen werden \cite{szegedyGoingDeeperConvolutions2015}. Abbildung \ref{fig:googlenet} illustriert die GoogLeNet Architektur in Detail.
 
- \begin{figure}[b]
+ \begin{figure}[hb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/googlenet/inception_module.png}
 	\caption{Darstellung des Inception (\textit{v1}) Moduls. Das Inputvolumen wird auf 4 Zweige unabhängig verarbeitet. Die Ergebnisse der unabhängigen Operationen haben die gleiche Breite und Höhe. Das Output des Inception Moduls wird durch das Konkatenieren (in der Tiefe) der einzelnen Ergebnisse bestimmt. Die gelben 1$\times$1 Convolutional Layer dienen zur Dimensionsreduktion. Entnommen aus \cite{szegedyGoingDeeperConvolutions2015}.}
