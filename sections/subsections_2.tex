@@ -16,9 +16,7 @@ Ein künstliches Neuron mit der Inputgröße $M$ ist mathematisch die nicht-line
 	y(x)=\phi\left(\sum_{m=1}^{M} w_{i} x_{i} + b\right) = \phi(W^Tx+b)
 \end{equation}
 
-\vspace*{0.5cm}
-
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/ann_conv/neuron.png}
 	\caption{Visualisierung eines künstlichen Neurons definiert nach der Gleichung \ref{eq:neuron}. Dieser Neuron summiert das Produkt des Inputvektors $x$  mit den jeweiligen Gewichten $w$ und addiert einen Bias $b$. Durch die Summe erzeugt die Aktivierungsfunktion $\phi$ das Output $y$ des Neurons. Abbildung \ref{fig:relu} zeigt ein Beispiel für eine Aktivierungsfunktion. Entnommen aus \cite{deoliveiraSystemBasedArtificial2017}. }
@@ -53,7 +51,7 @@ y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L * ... * f_2 * f_1)(x)
 
 \vspace*{1.5cm}
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/ann_conv/neural_net.png}
 	\caption{Ein feedforward neuronales Netz mit der Tiefe 3, bestehend aus einem Input Layer der Breite 3, aus zwei Hidden Layer der Breite 4 und einem Output Layer der Breite 1. Mit der Gleichung \ref{eq:network} lässt sich dieses Netzwerk als die Funktion $f :  \mathbb{R}^{3} \mapsto \mathbb{R}^{1}$ mit $f(x)=f_3(f_2(f_1(x)))$ darstellen. }
@@ -64,7 +62,7 @@ y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L * ... * f_2 * f_1)(x)
 \label{sec:CNN}
 Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben werden, arbeiten auf einem Inputvektor $x \in \mathbb{R}^{M}$. Im Vergleich dazu arbeiten CNNs auf einem drei-dimensionalen Inputvolumen $x \in \mathbb{R}^{width} \times \mathbb{R}^{heigth} \times \mathbb{R}^{depth}$. CNNs werden hauptsächlich im Kontext von Bildern eingesetzt, dabei stellt z.B. ein 32 $\times$ 32 RGB-Bild ein Volumen von 32 $\times$ 32 $\times$ 3 dar \cite{CS231nConvolutionalNeurala}.
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/ann_conv/lenet5.png}
 	\caption{Als Beispiel für ein Convolutional Neural Network wird die LeNet-5 Architektur abgebildet. Entnommen aus \cite{lecunGradientBasedLearningApplied1998}  }
@@ -75,7 +73,7 @@ Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben werden,
 Angefangen mit der LeNet-5 \cite{lecunGradientBasedLearningApplied1998} Architektur, setzt sich typischerweise ein Convolutional Neural Network aus einer Sequenz von unterschiedlichen Layer-Arten zusammen \cite{szegedyGoingDeeperConvolutions2015, CS231nConvolutionalNeurala}. Im weiteren Verlauf dieses Kapitels werden die Arten der Layer beschrieben. Abbildung \ref{fig:lenet5} illustriert die LeNet-5 Architektur als Beispiel für ein CNN. Tabelle \ref{tab:layer_param} gibt eine Übersicht der Layer und ihrer Parameter an.
 
 \vspace{0.1cm}
-\begin{table}[H]
+\begin{table}
 	\centering
 	\caption{Übersicht der Parameter und Hyperparameter der Layer eines Convolutional Neural Networks. Die Parameter werden während der Trainingsphase optimiert und Hyperparameter werden zuvor fest definiert \cite{yamashitaConvolutionalNeuralNetworks2018}. }
 	\begin{tabularx}{1.0\textwidth}{X X X}
@@ -123,7 +121,7 @@ Die Werte des 2D-Filters stellen die \textit{Gewichte} dar und werden in der Tra
 
 Prinzipiell wird das Output des Convolutional Layers durch die Übergabe des Feature Maps an eine Aktivierungsfunktion bestimmt.  Abbildung \ref{fig:relu} stellt eine Aktivierungsfunktion dar.
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.4\textwidth]{images/ann_conv/ReLU.png}
 	\caption{Ein Beispiel für eine Aktivierungsfunktion. Die ReLU (\textit{rectified liniear unit}) Aktivierungsfunktion wird typischerweise in CNNs eingesetzt und ist mathematisch definiert als: $f(x) = max(0,x)$ \cite{Goodfellow-et-al-2016} }
@@ -132,7 +130,7 @@ Prinzipiell wird das Output des Convolutional Layers durch die Übergabe des Fea
 
 \pagebreak
 \vspace*{\fill}
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/ann_conv/convolution_layer.png}
 	\caption{Ein Beispiel für die Convolution Operation mit 3 Filtern der Größe 3 $\times$ 3, je einem Stride von 1 und keinem Padding. Ein Filter bewegt sich entlang des gesamten Inputs mit der Schrittweite (\textit{Stride}) 1 und bildet die Summe der elementweise multiplizierten Werte. Die Summe wird dann im Feature Map an die korrespondierende Position geschrieben. Dieser Vorgang wiederholt sich für jedes Filter \cite{yamashitaConvolutionalNeuralNetworks2018}. Abbildung basiert auf \cite{yamashitaConvolutionalNeuralNetworks2018}.}
@@ -146,7 +144,7 @@ Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer redu
  
  Im Vergleich zu einem Convolutional Layer wird ein Pooling Layer nur aus Hyperparameter definiert und bleibt daher statisch \cite{yamashitaConvolutionalNeuralNetworks2018}. Abbildung \ref{fig:pooling_layer} zeigt eine beispielhafte Ausführung einer Max-Pooling Operation. Tabelle \ref{tab:layer_param} listet die Hyperparameter eines Pooling Layers auf.
  \vspace*{1cm}
- \begin{figure}[H]
+ \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/ann_conv/max_pool.png}
 	\caption{Ein Beispiel für eine Max-Pooling Operation mit einer Filtergröße von 2 $\times$ 2, einem Stride von 2 und keinem Padding. In diesem Beispiel wird der Input in 2 $\times$ 2 Bereiche unterteilt und der Maximum jedes Bereiches als Output berechnet. Es werden die markantesten Werte einer Nachbarschaft behalten und der Rest verworfen. Diese Operation führt zu einer Reduzierung der Inputgröße um den Faktor 2. Entnommen aus \cite{yamashitaConvolutionalNeuralNetworks2018}.}
@@ -172,7 +170,7 @@ Inzwischen wurde das Inception Modul \cite{szegedyRethinkingInceptionArchitectur
 Die Architektur von GoogLeNet besteht aus 9 Inception Modulen (je von Tiefe 2) und hat eine gesamte Tiefe von 22 Layer \footnote{Anzahl der trainierbaren Layer inkl. Output Layer}. Das Ungewöhnliche an der Architektur ist, dass es 3 Output-Zweigen hat. Jedes der Ouput-Zweige produziert ein Klassifizierungsergebnis. Output-Zweig 2 \& 3 sind Hilfszweige, die nur in der Trainingsphase einen Einfluss haben und in der Evaluationsphase verworfen werden \cite{szegedyGoingDeeperConvolutions2015}. Abbildung \ref{fig:googlenet} illustriert die GoogLeNet Architektur in Detail.
 
 \vspace*{\fill}
- \begin{figure}[H]
+ \begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/googlenet/inception_module.png}
 	\caption{Darstellung des Inception (\textit{v1}) Moduls. Das Inputvolumen wird auf 4 Zweige unabhängig verarbeitet. Die Ergebnisse der unabhängigen Operationen haben die gleiche Breite und Höhe. Das Output des Inception Moduls wird durch das Konkatenieren (in der Tiefe) der einzelnen Ergebnisse bestimmt. Die gelben 1$\times$1 Convolutional Layer dienen zur Dimensionsreduktion. Entnommen aus \cite{szegedyGoingDeeperConvolutions2015}.}
@@ -182,7 +180,7 @@ Die Architektur von GoogLeNet besteht aus 9 Inception Modulen (je von Tiefe 2) u
 \pagebreak
 
 \vspace*{\fill}
-	 \begin{figure}[H]
+	 \begin{figure}
 		\centering
 		\includegraphics[width=0.85\textwidth]{images/googlenet/googlenet_diagram.pdf}
 		\caption{Der architektonische Aufbau des GoogLeNet Modells. Das Inception-Block wird in Abbildung \ref{fig:inception_module} detaillierter dargestellt. Es gibt 3 Ouput-Zweige, die mit einer identisch aufgebauten Output-Knoten enden. Die Werte der Output-Zweige 2 \& 3 haben nur während der Trainingsphase einen Einfluss und werden in der Evaluationsphase verworfen. In der Trainingsphase wird vor dem Output-Knoten 1 ein Dropout von 40\% angewandt. Jedes Convolutional Layer hat die ReLU (Abbildung \ref{fig:relu}) als Aktivierungsfunktion. Die \textit{Local-Response-Normalization} \cite{krizhevskyImageNetClassificationDeep2012a} ist ein bekanntes Normierungsverfahren und kommt prinzipiell in Verbindung mit der ReLU Aktivierungsfunktion vor. Abbildung basiert auf \cite{szegedyGoingDeeperConvolutions2015}.}
@@ -201,14 +199,12 @@ PoseNet modifiziert die GoogLeNet Architektur an den Output-Knoten, dargestellt 
 
 \end{itemize}
 Abbildung \ref{fig:posenet_mods} veranschaulicht die Modifikation von GoogLeNet durch PoseNet.
-\vspace*{1.2cm}
- \begin{figure}[H]
+ \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{images/googlenet/posenet_diagram2.pdf}
 	\caption{Veranschaulichung der Modifikation von den Output-Zweigen der GoogLeNet Architektur durch PoseNet. Die Softmax Aktivierungsfunktion sowie das fully-connected Layer mit Anzahl der Klassifizierungskategorien als Breite wurde von allen Output-Modulen entfernt. Jeder Output-Zweig hat einen FC-Regressionsschicht erhalten, dass die 6 Freiheitsgrade einer Pose bestimmt. Der Output-Zweig 1 wird zusätzlich mit einer weiteren FC-Layer der Breite 2048 vor dem Regressionsschicht erweitert \cite{kendallPoseNetConvolutionalNetwork2015}.}
 	\label{fig:posenet_mods}
 \end{figure}
-\vspace*{1.5cm}
 
 Die Autoren \citet{kendallPoseNetConvolutionalNetwork2015} stellen zusätzlich eine neue Kostenfunktion, mit den Parametern $\hat{y} = [\hat{\pmb{p}};\hat{\pmb{q}}]$ als Soll-Wert und $y = [\pmb{p};\pmb{q}]$ als Ist-Wert, vor:
 \begin{equation}
