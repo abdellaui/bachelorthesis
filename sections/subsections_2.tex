@@ -176,12 +176,12 @@ Die Architektur von GoogLeNet besteht aus 9 Inception Modulen (je von Tiefe 2) u
 	\label{fig:inception_module}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[bp]
 		\centering
 		\includegraphics[width=0.85\textwidth]{images/googlenet/googlenet_diagram.pdf}
 		\caption{Der architektonische Aufbau des GoogLeNet Modells. Das Inception-Block wird in Abbildung \ref{fig:inception_module} detaillierter dargestellt. Es gibt 3 Ouput-Zweige, die mit einer identisch aufgebauten Output-Knoten enden. Die Werte der Output-Zweige 2 \& 3 haben nur während der Trainingsphase einen Einfluss und werden in der Evaluationsphase verworfen. In der Trainingsphase wird vor dem Output-Knoten 1 ein Dropout von 40\% angewandt. Jedes Convolutional Layer hat die ReLU (Abbildung \ref{fig:relu}) als Aktivierungsfunktion. Die \textit{Local-Response-Normalization} \cite{krizhevskyImageNetClassificationDeep2012a} ist ein bekanntes Normierungsverfahren und kommt prinzipiell in Verbindung mit der ReLU Aktivierungsfunktion vor. Abbildung basiert auf \cite{szegedyGoingDeeperConvolutions2015}.}
 		\label{fig:googlenet}
-\end{figure}[bp]
+\end{figure}
 \subsubsection{PoseNet}
 \label{sec:posenet}
 PoseNet, vorgestellt von \citet{kendallPoseNetConvolutionalNetwork2015} im Jahr 2015, basiert auf die im Kapitel \ref{sec:googlenet} eingeführte GoogLeNet Architektur. Statt eine Wahrscheinlichkeitsverteilung der Klassifizierungsergebnisse, liefert PoseNet die 6 Freiheitsgrade einer Pose $y = [\pmb{p};\pmb{q}]$, bestehend aus einem Positionsvektor $\pmb{p} \in  \mathbb{R}^{3}$ und eine Quaternion der Orientierung $ \pmb{q} \in  \mathbb{R}^{4}$.
