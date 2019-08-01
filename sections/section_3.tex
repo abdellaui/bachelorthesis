@@ -12,7 +12,7 @@ In dieser Arbeit werden aus zwei unterschiedlichen Gebäuden Daten erhoben bzw. 
 Zuerst wird ein Datensatz aus der nördlichen Hälfte des 6. Stockwerkes des IC-Gebäudes Ruhr-Universität Bochum (\textit{IC}) erhoben. Anschließend werden drei Datensätzen im Seminargebäude Hochschule Bochum (\textit{HS}) erhoben. Die Gebäude unterscheiden sich im Detail der Simulationen. Die Simulation vom IC enthält sehr wenige Objekte wie z.B. Türen und Wände. Im Gegensatz dazu enthält die HS Simulation mehr Objekte wie z.B. die Objekte der technischen Gebäudeausrüstung. Abbildung \ref{fig:difference_3d} veranschaulicht die Simulationen.
 
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\begin{subfigure}[t]{0.48\linewidth}
 		\centering
@@ -35,7 +35,7 @@ Die ca. $115m$ lange Strecke im ersten Datensatz, bezeichnet als \textit{IC-loop
 Alle Datensätze beinhalten Herausforderungen wie z.B. das \textit{Loop-Closure}- oder \textit{Perceptual-Aliasing}-Problem.
 Tabelle \ref{tab:dataset_metrics} listet die approximierten metrischen Eigenschaften der Datensätze auf. 
 
-\begin{table}[H]
+\begin{table}
 	\centering
 	\caption{Approximierte metrische Eigenschaften der Datensätze.}
 	\begin{tabularx}{1.0\textwidth}{X X X >{\centering\arraybackslash}p{1.7cm} }
@@ -59,7 +59,7 @@ Die Variation der Streckenlänge führt in den Datensätzen zu unterschiedlicher
 Abbildung \ref{fig:trajectories} illustriert die Strecken der synthetischen Datensätze. 
 
 
-\begin{table}[H]
+\begin{table}
 	\centering
 	\caption{Datenanzahl der Datensätze.}
 	\begin{tabularx}{1.0\textwidth}{p{3.5cm} p{1.8cm} X  >{\centering\arraybackslash}p{1.7cm} }
@@ -87,7 +87,7 @@ Abbildung \ref{fig:trajectories} illustriert die Strecken der synthetischen Date
 
 \cleardoublepage
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\begin{subfigure}[t]{1.0\linewidth}
 		\centering
@@ -128,7 +128,7 @@ In der Literatur wurden die realen Daten einer Zone grundsätzlich entlang einer
 In der Literatur wurden SfM-Methoden eingesetzt, um die Ground-Truth-Daten der realen Aufnahmen zu bestimmen \cite{kendallPoseNetConvolutionalNetwork2015, clarkVidLocDeepSpatioTemporal2017, acharyaBIMPoseNetIndoorCamera2019}. 
 In der vorliegenden Arbeit wird für die Bestimmung der Ground-Truth-Daten sowie die Aufnahme der Bilder zeitgleich zwei unterschiedliche Kameras der Intel Realsense Reihe verwendet. Eine Intel Realsense T265\footnote{\url{https://www.intelrealsense.com/tracking-camera-t265/} (abgerufen am: 18.07.2019)} wird eingesetzt, die die Odometrie (Ground-Truth-Daten) mit einer Abweichung von 1\%  über die SfM von zwei Fischaugenkameras (Auflösung von $848 \times 800$ ) und Inertial Measurement Units (\textit{IMU}) zu ermitteln verspricht. Zudem wird eine Intel Realsense D435\footnote{ \url{https://www.intelrealsense.com/depth-camera-d435/} (abgerufen am: 18.07.2019)} eingesetzt, die eine 3D Punktwolke, ein $1280\times720$ Tiefenbild sowie ein $1920\times1080$ RGB-Bild einer Szene liefert. Die T265 wird über die D435 Kamera montiert (siehe Abbildung \ref{fig:t265_d435}).
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/real_dataset/t265_d435_2.png}
 	\caption{Hardware für die Aufnahme der realen Daten. Die Intel Realsense T265 ist oberhalb der Intel Realsense D435 montiert. Das Konstrukt kann auf einer universalen Stativschraube befestigt werden.  }
@@ -137,7 +137,7 @@ In der vorliegenden Arbeit wird für die Bestimmung der Ground-Truth-Daten sowie
 
 Über das Robot Operating System\footnote{\url{https://www.ros.org/about-ros/} (abgerufen am: 18.07.2019)} (\textit{ROS}) Framework werden die Kameras zeitgleich angesprochen und der Datenfluss der Kameras synchronisiert. Somit beinhaltet jeder Datensatz ein Bild je Fischaugenkamera, ein Tiefenbild, ein RGB-Bild, eine 3D Punktwolke und die dazugehörige Odometrie pro Frame. Für die vorliegende Arbeit sind nur die Odometrie-Daten der T265 sowie die RGB-Bilder der D435 relevant. Abbildung \ref{fig:dataset} visualisiert ein Datensatzexemplar für einen Frame.
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\begin{subfigure}[t]{0.3\linewidth}
 		\centering
@@ -192,7 +192,7 @@ Die Strecken der echten Aufnahmen werden in den Simulationen schwankungslos auf 
 Es wird entlang der Strecke in 0.05$m$ Intervallen und mit einer $\pm$10° Neigung in je y- und z-Achse Bilder mit korrespondierenden Ground-Truth-Daten aufgenommen, um die Varianz der realen Daten abzudecken. Abbildung \ref{fig:dataset_variation} illustriert die Variationen der Pose pro Stützpunkt auf einer Strecke.
 
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\begin{subfigure}[t]{0.18\linewidth}
 		\centering
@@ -244,7 +244,7 @@ Die künstliche Beleuchtung in den Gebäudesimulationen führt bei den Gradiente
 {fig:treshold}). Die Pixelwerte der Artefakten befinden sich im niedrigen Wertebereich des Gradientenbildes, der für einen Menschen kaum wahrnehbar ist. Für die Unterdrückung der Artefakten wird zusätzlich ein Schwellenwertverfahren angewendet, indem die Pixelwerte eines Gradientenbildes unter einer gewissen Schwelle auf ein Mindestwert gesetzt werden. Es wird iterativ nach einem Minimum der Pixelwerte gesucht, sodass die von den Artefakten betroffenen Stellen eine homogene Fläche im Bild darstellen. Der Wert 8 stellt sich als geeignete Schwelle für die Gradientenbilder heraus und wird als Minimum der Pixelwerte festgelegt, sodass die Pixelwerte der Gradientenbilder im Wertebereich von $[8,255]$ liegen. Abbildung \ref{fig:dataset_preprocess} visualisiert von jedem Datensatztyp ein Beispiel und die dazugehörigen Gradientenbilder.
 
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\begin{tikzpicture}[zoomboxarray, 
 	connect zoomboxes,
@@ -272,7 +272,7 @@ Die künstliche Beleuchtung in den Gebäudesimulationen führt bei den Gradiente
 
 
 \vspace{1cm}
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
@@ -347,7 +347,7 @@ Die Gewichte des Netzwerks werden mit den Gewichten eines Modells initialisiert,
 
 \cleardoublepage
 \vspace*{\fill}
-\begin{table}[H]
+\begin{table}
 	\centering
 	\caption{Übersicht der Hyperparameter.}
 	\begin{tabularx}{1.0\textwidth}{X X}
