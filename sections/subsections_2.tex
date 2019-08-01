@@ -51,12 +51,14 @@ y = f(x; \theta)=  f_L(...f_2(f_1(x))) = (f_L * ... * f_2 * f_1)(x)
 \end{equation}
 
 
-\begin{figure}[hb]
+\begin{figure}[bh]
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/ann_conv/neural_net.png}
 	\caption{Ein feedforward neuronales Netz mit der Tiefe 3, bestehend aus einem Input Layer der Breite 3, aus zwei Hidden Layer der Breite 4 und einem Output Layer der Breite 1. Mit der Gleichung \ref{eq:network} lässt sich dieses Netzwerk als die Funktion $f :  \mathbb{R}^{3} \mapsto \mathbb{R}^{1}$ mit $f(x)=f_3(f_2(f_1(x)))$ darstellen. }
 	\label{fig:neural_net}
 \end{figure}
+
+\cleardoublepage
 
 \subsection{Convolutional Neural Networks}
 \label{sec:CNN}
@@ -68,12 +70,11 @@ Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben werden,
 	\caption{Als Beispiel für ein Convolutional Neural Network wird die LeNet-5 Architektur abgebildet. Entnommen aus \cite{lecunGradientBasedLearningApplied1998}  }
 	\label{fig:lenet5}
 \end{figure}
-\vspace{0.2cm}
+
 
 Angefangen mit der LeNet-5 \cite{lecunGradientBasedLearningApplied1998} Architektur, setzt sich typischerweise ein Convolutional Neural Network aus einer Sequenz von unterschiedlichen Layer-Arten zusammen \cite{szegedyGoingDeeperConvolutions2015, CS231nConvolutionalNeurala}. Im weiteren Verlauf dieses Kapitels werden die Arten der Layer beschrieben. Abbildung \ref{fig:lenet5} illustriert die LeNet-5 Architektur als Beispiel für ein CNN. Tabelle \ref{tab:layer_param} gibt eine Übersicht der Layer und ihrer Parameter an.
 
-\vspace{0.1cm}
-\begin{table}[H]
+\begin{table}[b]
 	\centering
 	\caption{Übersicht der Parameter und Hyperparameter der Layer eines Convolutional Neural Networks. Die Parameter werden während der Trainingsphase optimiert und Hyperparameter werden zuvor fest definiert \cite{yamashitaConvolutionalNeuralNetworks2018}. }
 	\begin{tabularx}{1.0\textwidth}{X X X}
