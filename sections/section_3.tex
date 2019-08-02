@@ -8,9 +8,8 @@
 
 
 
-Die Forscher \citet{acharyaBIMPoseNetIndoorCamera2019} konnten die Pose mit einer Akkuratesse von ca. $2m$ in der Position und 7° in der Orientierung auf einer ca. 30$m$ langen Strecke in einem ca. 43 $m^2$ großen Korridor bestimmen. Dabei haben die Forscher entlang des Korridors reale Daten mit einem Smartphone erhoben und die korrespondierende Pose (\textit{Ground-Truth-Daten}) mit SfM-Methoden bestimmt. Daraufhin wurden  in der 3D-Simulation des Korridors synthetische Daten entlang derselben Aufnahmestrecke generiert.
+Die Forscher \citet{acharyaBIMPoseNetIndoorCamera2019} konnten die Pose mit einer Akkuratesse von ca. $2m$ in der Position und 7° in der Orientierung auf einer ca. 30$m$ langen Strecke in einem ca. 43 $m^2$ großen Korridor bestimmen. Dabei haben die Forscher entlang des Korridors reale Daten mit einem Smartphone erhoben und die korrespondierende Pose (\textit{Ground-Truth-Daten}) mit SfM-Methoden bestimmt. Daraufhin wurden entlang derselben Aufnahmestrecke  in der 3D-Simulation des Korridors synthetische Daten generiert. Anschließend wurde das PoseNet Modell (siehe Abschnitt \ref{sec:posenet}) mit Gradienten- bzw. Kantenbilder der synthetischen Daten trainiert und mit Gradientenbilder der realen Daten evaluiert.
 
-Anschließend wurde das PoseNet Modell (siehe Abschnitt \ref{sec:posenet}) mit Gradienten- bzw. Kantenbilder der synthetischen Daten trainiert und mit Gradientenbilder der realen Daten evaluiert.
 
 
 Die vorliegende Arbeit versucht den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} zur Pose Estimation in Gebäuden anhand von Convolutional Neural Network und simulierten 3D-Daten auf längeren Strecken in größeren Gebäudesimulationen zu untersuchen.
