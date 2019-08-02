@@ -139,7 +139,7 @@ In der vorliegenden Arbeit wird für die Bestimmung der Ground-Truth-Daten sowie
 	\label{fig:t265_d435}
 \end{figure}
 
-Über das Robot Operating System\footnote{\url{https://www.ros.org/about-ros/} (abgerufen am: 18.07.2019)} (\textit{ROS}) Framework wurden die Kameras zeitgleich angesprochen und der Datenfluss der Kameras synchronisiert. Somit beinhaltet jeder Datensatz ein Bild je Fischaugenkamera, ein Tiefenbild, ein RGB-Bild, eine 3D Punktwolke und die dazugehörige Odometrie pro Frame. Für die vorliegende Arbeit waren nur die Odometrie-Daten der T265 sowie die RGB-Bilder der D435 relevant, da PoseNet  mit RGB-Bild. Abbildung \ref{fig:dataset} visualisiert ein Datensatzexemplar für einen Frame.
+Über das Robot Operating System\footnote{\url{https://www.ros.org/about-ros/} (abgerufen am: 18.07.2019)} (\textit{ROS}) Framework wurden die Kameras zeitgleich angesprochen und der Datenfluss der Kameras synchronisiert. Somit beinhaltet jeder Datensatz ein Bild je Fischaugenkamera, ein Tiefenbild, ein RGB-Bild, eine 3D Punktwolke und die dazugehörige Odometrie pro Frame. Für die vorliegende Arbeit waren nur die Odometrie-Daten der T265 sowie die RGB-Bilder der D435 relevant, da PoseNet RGB-Bilder annotiert mit der Kamerapose erwartet. Abbildung \ref{fig:dataset} visualisiert ein Datensatzexemplar für einen Frame.
 
 \begin{figure}
 	\centering
