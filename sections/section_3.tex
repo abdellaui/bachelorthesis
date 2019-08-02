@@ -8,11 +8,11 @@
 
 
 
-Die Forscher \citet{acharyaBIMPoseNetIndoorCamera2019} konnten die Pose mit einer Akkuratesse von ca. $2m$ in der Position und 7° in der Orientierung auf einer ca. 30$m$ langen Strecke in einem ca. 43 $m^2$ großen Korridor bestimmen. Dabei haben die Forscher entlang des Korridors reale Daten mit einem Smartphone erhoben und die korrespondierende Pose (\textit{Ground-Truth-Daten}) mit SfM-Methoden bestimmt. Daraufhin wurden unterschiedliche synthetische Daten entlang derselben Aufnahmestrecke in der 3D-Simulation des Korridors generiert, die sich in ihrer Realitätstreue vom Karikaturistischem, zur Totorealistischem, hin über zur fotorealistisch Texturiertem variieren. Anschließend wurde das PoseNet Modell (siehe Abschnitt \ref{sec:posenet}) mit Gradienten- bzw. Kantenbilder der synthetischen Daten trainiert und mit Gradientenbilder der realen Daten evaluiert.
+Die Forscher \citet{acharyaBIMPoseNetIndoorCamera2019} konnten die Pose mit einer Akkuratesse von ca. $2m$ in der Position und 7° in der Orientierung auf einer ca. 30$m$ langen Strecke in einem ca. 43 $m^2$ großen Korridor bestimmen. Dabei haben die Forscher entlang des Korridors reale Daten mit einem Smartphone erhoben und die korrespondierende Pose (\textit{Ground-Truth-Daten}) mit SfM-Methoden bestimmt. Daraufhin wurden unterschiedliche synthetische Daten entlang derselben Aufnahmestrecke in der 3D-Simulation des Korridors generiert, die sich in ihrer Realitätstreue vom Karikaturistischem, zur Fototorealistischem, hin über zur fotorealistisch Texturiertem variieren. Anschließend wurde das PoseNet Modell (siehe Abschnitt \ref{sec:posenet}) mit Gradienten- bzw. Kantenbilder der synthetischen Daten trainiert und mit Gradientenbilder der realen Daten evaluiert.
 
 
 
-Die vorliegende Arbeit versucht den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} zur Pose Estimation in Gebäuden anhand von Convolutional Neural Network und simulierten 3D-Daten auf längeren Strecken in größeren Gebäudesimulationen zu untersuchen.
+Die vorliegende Arbeit versucht den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} zur Pose Estimation in Gebäuden anhand von Convolutional Neural Network und simulierten 3D-Daten auf längeren Strecken in größeren Gebäudesimulationen zu untersuchen. Daher wurden zuerst Datensätze erstellt und 
 
 
 Im weiteren Verlauf dieses Kapitel werden die Datensätze angegeben. Danach wird die Erhebung / Generierung der realen / synthetischen Daten beschrieben und die Verarbeitung der Daten dargestellt. Im Anschluss werden die Trainingsparameter angegeben. 
