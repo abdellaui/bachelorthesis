@@ -2,7 +2,8 @@
 
 \section{Methodik}
 
-Die vorliegende Arbeit versucht den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} auf längeren Strecken in größeren Gebäudesimulationen zu untersuchen, worin das PoseNet Modell mit Gradienten- bzw. Kantenbilder der synthetischen Daten trainiert und mit Gradientenbilder der realen Daten evaluiert wird.
+Die vorliegende Arbeit versucht den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} zur Pose Estimation in Gebäuden anhand von Convolutional Neural Network und simulierten 3D-Daten auf längeren Strecken in größeren Gebäudesimulationen zu untersuchen.
+\citet{acharyaBIMPoseNetIndoorCamera2019} haben Daten entlang einer ca. 30$m$ langen Strecke in der 3D-Simulation eines ca. 43$m^2$ Korridors gesammelt. Anschließend wurde das PoseNet Modell (siehe Abschnitt \ref{sec:posenet}) mit Gradienten- bzw. Kantenbilder der synthetischen Daten trainiert und mit Gradientenbilder der realen Daten evaluiert. Dabei erhielten die Autoren  eine Akkuratesse von ca. $2m$ in der Position und 7° in der Orientierung.
 
 Die Architektur der künstlichen neuronalen Netzen bzw. CNNs werden grundsätzlich zuerst aufgabenspezifisch konstruiert und anschließend die Netze mit entsprechenden Daten trainiert. In der vorliegenden Arbeit wird als Netzwerk das in Abschnitt \ref{sec:posenet} beschriebene PoseNet Modell verwendet. 
 
