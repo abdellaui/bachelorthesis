@@ -27,7 +27,7 @@ In der vorliegenden Arbeit wurde für die Bestimmung der Ground-Truth-Daten sowi
 	\label{fig:t265_d435}
 \end{figure}
 
-Über das Robot Operating System\footnote{\url{https://www.ros.org/about-ros/} (abgerufen am: 18.07.2019)} (\textit{ROS}) Framework wurden die Kameras zeitgleich angesprochen und der Datenfluss der Kameras synchronisiert. Anschließend wurde der notierte Offset zur Bestimmung der absoluten Position im Gebäude zu dem Ausgangspunkt relativen Posen der T265 addiert. Somit beinhaltet jeder Datensatz ein Bild je Fischaugenkamera, ein Tiefenbild, ein RGB-Bild, eine 3D Punktwolke und die dazugehörige absolute Pose im Gebäude pro Frame. Für die vorliegende Arbeit waren nur die Pose-Daten der T265 sowie die RGB-Bilder der D435 relevant, da PoseNet RGB-Bilder annotiert mit der Kamerapose erwartet. Abbildung \ref{fig:dataset} visualisiert ein Datensatzexemplar für einen Frame.
+Über das Robot Operating System\footnote{\url{https://www.ros.org/about-ros/} (abgerufen am: 18.07.2019)} (\textit{ROS}) Framework wurden die Kameras zeitgleich angesprochen und der Datenfluss der Kameras synchronisiert. Anschließend wurde der notierte Offset zur Bestimmung der absoluten Position im Gebäude zu dem Ausgangspunkt relativen Posen der T265 addiert. Somit beinhaltet jeder Datensatz ein Bild je Fischaugenkamera, ein Tiefenbild, ein RGB-Bild, eine 3D Punktwolke und die dazugehörige absolute Pose im Gebäude pro Frame. Für die vorliegende Arbeit waren nur die Pose-Daten der T265 sowie die RGB-Bilder der D435 relevant, da PoseNet ausschließlich RGB-Bilder annotiert mit der Kamerapose erwartet. Abbildung \ref{fig:dataset} visualisiert ein Datensatzexemplar für einen Frame.
 
 \begin{figure}
 	\centering
