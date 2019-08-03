@@ -139,9 +139,7 @@ Es wurde entlang der Strecke in 0.05$m$ Intervallen und mit einer $\pm$10° Neig
 	\label{fig:dataset_variation}
 \end{figure}
 
-Insgesamt wurden drei synthetische Datensätze je Strecke erzeugt, die sich in der Beschaffenheit von karikaturistische Darstellung, zu synthetischen Kantenbilder, hin über zu fotorealistische Darstellung unterscheiden (siehe Abbildung \ref{fig:dataset_preprocess}). 
-
-Bei der Generierung der karikaturistischen und fotorealistischen Datensätzen wurde die Beleuchtung aus einem Netz von Punktlichtquellen nachgestellt, um die Lichteffekte realitätsnäher zu simulieren.
+Insgesamt wurden drei synthetische Datensätze je Strecke erzeugt, angelehnt an die synthethischen Datensätzen von \citet{acharyaBIMPoseNetIndoorCamera2019}, die sich in der Beschaffenheit von karikaturistische Darstellung, zu synthetischen Kantenbilder, hin über zu fotorealistische Darstellung unterscheiden (siehe Abbildung \ref{fig:dataset_preprocess}). Bei der Generierung der karikaturistischen und fotorealistischen Datensätzen wurde die Beleuchtung aus einem Netz von Punktlichtquellen nachgestellt, um die Lichteffekte realitätsnäher zu simulieren.
 Für die Erzeugung der synthetischen Kantenbilder wurden die Kanten der 3D-Objekte über Blender markant sichtbar konfiguriert und eine homogene Beleuchtung verschaffen, damit die Kanten hervorstechen und unberührt von Beleuchtungseffekte bleiben (vgl. Abbildung \ref{fig:dataset}). 
 
  Die karikaturistische und fotorealistische Datensätze unterscheiden sich ausschließlich in den Render-Engines. Blender 2.79b bietet die Render-Engines \textit{Blender-Internal} und \textit{Blender-Cycles}. Während die Blender-Internal Engine beim Rendern die Berechnung der Lichtstrahlen abkürzt, versucht die Blender-Cycles Engine über Raytracing-Algorithmen das Verhalten des Lichtes mit ihren physikalischen Eigenschaften zu simulieren. Daher wurden die karikaturistischen Datensätze sowie die Kantenbilder über die Render-Engine \textit{Blender-Internal} und der fotorealistischer Datensatz über die \textit{Blender-Cycles} Engine generiert.
