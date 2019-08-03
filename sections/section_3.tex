@@ -6,12 +6,12 @@
 
 Die Forscher \citet{acharyaBIMPoseNetIndoorCamera2019} konnten die Pose mit einer Akkuratesse von ca. $2m$ in der Position und 7° in der Orientierung auf einer ca. 18$m$ langen Strecke in einem ca. $18m \times 4m$ großen Korridor bestimmen. Dabei haben die Forscher entlang des Korridors reale Daten mit einem Smartphone erhoben und die korrespondierende Pose (\textit{Ground-Truth-Daten}) mit SfM-Methoden bestimmt. Daraufhin wurden unterschiedliche synthetische Daten entlang derselben Aufnahmestrecke in der 3D-Simulation des Korridors generiert, die sich in ihrer Realitätstreue vom Karikaturistischem zur fotorealistisch Texturiertem variieren. Anschließend wurde das PoseNet Modell (siehe Abschnitt \ref{sec:posenet}) mit Gradienten- bzw. Kantenbilder der synthetischen Daten trainiert und mit Gradientenbilder der realen Daten evaluiert.
 
-Die Aufnahmen (siehe Abbildung \ref{fig:acharya_traj}) verläuft überwiegend in einer 
+Die Aufnahmen (siehe Abbildung \ref{fig:acharya_traj}) verliefen überwiegend in einer Richtung
 
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{images/trajectories/acharya_traj.png}
-	\caption{Darstellung des Lokalisierungsergebnisses von \citet{acharyaBIMPoseNetIndoorCamera2019}, die durch das Trainieren mit den synthetischen Kantenbildern und der anschließenden Evaluierung mit den Gradientenbilder der echten Daten resultierte. Die Aufnahmestrecke der echten Daten ist in Rot dargestellt. Entnommen aus \cite{acharyaBIMPoseNetIndoorCamera2019}.}
+	\caption{Darstellung des Lokalisierungsergebnisses von \citet{acharyaBIMPoseNetIndoorCamera2019}, die durch das Trainieren mit den synthetischen Kantenbildern und der anschließenden Evaluierung mit den Gradientenbilder der echten Daten resultierte. Die Aufnahmestrecke der echten Daten ist in Rot dargestellt. Die Aufnahem verlief von Rechts nach Links. Entnommen aus \cite{acharyaBIMPoseNetIndoorCamera2019}.}
 	\label{fig:acharya_traj}
 \end{figure}
 
