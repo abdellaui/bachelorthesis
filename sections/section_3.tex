@@ -238,9 +238,7 @@ Die künstliche Beleuchtung in den Gebäudesimulationen führte bei den Gradient
 
 \subsection{Datensätze}
 \label{subsec:datasets}
-
-
-Der Datensatz von \citet{acharyaBIMPoseNetIndoorCamera2019} erstreckt sich über ca. 18$m$ in einem ca. $20m \times 5m$ großen Korridor auf einer Etagenebene und die Aufnahme verlief überwiegen in einer Richtung (vgl. Abb. \ref{fig:acharya_traj}). 
+Diese Arbeit versucht den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} auf längeren Strecken in größeren Gebäudesimulation zu untersuchen. Der Datensatz von \citet{acharyaBIMPoseNetIndoorCamera2019} erstreckt sich über ca. 18$m$ in einem ca. $20m \times 5m$ großen Korridor auf einer Etagenebene und die Aufnahme verlief überwiegen in einer Richtung (vgl. Abb. \ref{fig:acharya_traj}). Daher wurden längere Aufnahmestrecken festgelegt, die einerseits in mehrere Richtungen verlaufen und anderseits sich auf mehreren. Etagenebnen erstrecken. Zudem beinhalteten die Aufnahmestrecken Herausforderungen wie z.B. das \textit{Loop-Closure}- oder \textit{Perceptual-Aliasing}-Problem.
 
 \begin{figure}
 	\centering
@@ -362,7 +360,7 @@ Abbildung \ref{fig:trajectories} illustriert die Strecken der Datensätze.
 
 \subsection{Trainingsparameter}
 Künstlichen neuronalen Netzwerke (\textit{KNN}) besitzen zwei Arten von Parametern. Die erste Art von Parametern (\textit{Gewichte}) werden während der Trainingsphase über \textit{Backpropagation}-Verfahren an die Trainingsdaten angepasst.
-Die zweite Art von Parametern (\textit{Hyperparameter}) werden vor der Trainingsphase festgelegt und geben besondere Einstellungen des Netzwerkes wie z.B. das Lernverhalten an. Die Performance eines KNNs ist abhängig von seinen Parametern \cite{Goodfellow-et-al-2016}. Da diese Arbeit den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} auf längere Strecken in größeren Gebäudesimulation zu untersuchen versucht, wurde die Performance des KKNs bestmöglich von den verwendeten Datensätzen abhängig gehalten, indem die Hyperparametern von \citet{acharyaBIMPoseNetIndoorCamera2019} übernommen bzw. gleichermaßen bestimmt oder im selben Verhältnis zur Datensatz gewählt wurden.
+Die zweite Art von Parametern (\textit{Hyperparameter}) werden vor der Trainingsphase festgelegt und geben besondere Einstellungen des Netzwerkes wie z.B. das Lernverhalten an. Die Performance eines KNNs ist abhängig von seinen Parametern \cite{Goodfellow-et-al-2016}. Da diese Arbeit den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} auf längeren Strecken in größeren Gebäudesimulation zu untersuchen versucht, wurde die Performance des KKNs bestmöglich von den verwendeten Datensätzen abhängig gehalten, indem die Hyperparametern von \citet{acharyaBIMPoseNetIndoorCamera2019} übernommen bzw. gleichermaßen bestimmt oder im selben Verhältnis zur Datensatz gewählt wurden.
 
 % Hyperparameter können über Grid-Search Verfahren optimiert werden, indem die Akkuratesse der Netzwerke mit variierenden Hyperparametern paarweise verglichen werden
 
