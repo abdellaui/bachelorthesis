@@ -4,6 +4,7 @@
 
 Das vorliegende Kapitel versucht die Methodik dieser Arbeit wiederzugeben.
 
+Die Forscher \citet{acharyaBIMPoseNetIndoorCamera2019} konnten die Pose mit einer Akkuratesse von ca. $2m$ in der Position und 7° in der Orientierung auf einer ca. 18$m$ langen Strecke in einem ca. $20m \times 5m$ großen Korridor bestimmen (siehe Abb. \ref{fig:acharya_traj}). Dabei haben die Forscher entlang des Korridors reale Daten mit einem Smartphone erhoben und die korrespondierende Pose (\textit{Ground-Truth-Daten}) mit SfM-Methoden bestimmt. Daraufhin wurden unterschiedliche synthetische Daten entlang derselben Aufnahmestrecke in der 3D-Simulation des Korridors generiert, die sich in ihrer Realitätstreue vom Karikaturistischem zur fotorealistisch Texturiertem variieren. Anschließend wurde das PoseNet Modell (siehe Abschnitt \ref{sec:posenet}) mit Gradientenbilder der synthetischen Daten trainiert und mit Gradientenbilder der realen Daten evaluiert.
 
 Der Datensatz von \citet{acharyaBIMPoseNetIndoorCamera2019} erstreckt sich über ca. 18$m$ in einem ca. $20m \times 5m$ großen Korridor auf einer Etagenebene und die Aufnahme verlief überwiegen in einer Richtung (vgl. Abb. \ref{fig:acharya_traj}). 
 
