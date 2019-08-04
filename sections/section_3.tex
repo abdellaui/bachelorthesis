@@ -364,7 +364,7 @@ Die zweite Art von Parametern (\textit{Hyperparameter}) werden vor der Trainings
 % Hyperparameter können über Grid-Search Verfahren optimiert werden, indem die Akkuratesse der Netzwerke mit variierenden Hyperparametern paarweise verglichen werden
 
 
-In der vorliegenden Arbeit wurde für das Training des Netzwerkes die Caffe \cite{jiaCaffeConvolutionalArchitecture2014} Implementierung von PoseNet verwendet, die von den eigenen Autoren \citet{kendallPoseNetConvolutionalNetwork2015} veröffentlicht wurde. Die Batchgröße betrug 40 und die Anzahl der Trainingsepochen war 160. Eine NVIDIA GeForce GTX 1080 Ti mit 11GB Grafikspeicher wurde verwendet und ermöglicht bei einer Batchgröße von 40 drei Trainingsprozesse zeitgleich durchzuführen.
+In der vorliegenden Arbeit wurde für das Training des Netzwerkes die Caffe \cite{jiaCaffeConvolutionalArchitecture2014} Implementierung von PoseNet verwendet, die von den eigenen Autoren \citet{kendallPoseNetConvolutionalNetwork2015} veröffentlicht wurde. Die Batchgröße betrug 40 und die Anzahl der Trainingsepochen war 160. Eine NVIDIA GeForce GTX 1080 Ti mit 11GB Grafikspeicher wurde verwendet und ermöglichte bei einer Batchgröße von 40 drei Trainingsprozesse zeitgleich durchzuführen.
 
 Der Hyperparameter $\beta$, der von PoseNet vorgestellten Kostenfunktion (vgl. Gleichung \ref{eq:posenet_loss}), wurde wie empfohlen für jeden realen Datensatz durch ein Grid-Search Verfahren bestimmt, indem PoseNet mit der Hälfte der realen Daten trainiert und mit der restlichen Hälfte evaluiert wurde. Der Loss wurde mit dem AdaGrad \cite{duchiAdaptiveSubgradientMethods2011} Gradientenabstiegsverfahren mit einer konstanten Lernrate von $10^{-3}$ optimiert bzw. minimiert. 
 
