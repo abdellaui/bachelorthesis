@@ -27,7 +27,9 @@ Abweichend von BIM-PoseNet wurden statt 1000 reale Bilder, 600 reale Bilder eval
 
 
 \subsection{Evaluation der trainierten Netzwerke}
-Für jeder synthetische Datensatz wurde das Netzwerk seperat 5-mal mit den Gradientenbilder trainiert. Eine Evaluierung folgte mit den Gradientenbilder der korrespondierenden synthetischen sowie realen Evaluationsdaten. Es wurden nur die besten Ergebnisse je Strecke (s. Tabelle \ref{tab:dataset_metrics}) behalten. Tabelle \ref{tab:results_ic} bis \ref{tab:results_hs_stairs_down} geben die Akkuratesse des Netzwerkes auf der jeweiligen Strecken an.
+Für jeder synthetische Datensatz wurde das Netzwerk seperat 5-mal mit den Gradientenbilder trainiert. Eine Evaluierung folgte mit den Gradientenbilder der korrespondierenden synthetischen sowie realen Evaluationsdaten. Es wurden nur die besten Ergebnisse je Strecke (s. Tabelle \ref{tab:dataset_metrics}) behalten. Tabelle \ref{tab:results_ic} bis \ref{tab:results_hs_stairs_down} geben die Akkuratesse des KNN auf der jeweiligen Strecken an.
+
+Für ein besseres Verständnis der Akkuratesse wurden die anhand der realen Daten durch das KNN bestimmten Postionen je Strecke in Diagrammen visualisiert. Ebenso wurden die Positions- und Orientierungsfehler der jeweiligen Evaluierungsdaten je Strecke dargestellt. Abbildungen. 
 
 \begin{table}
 	\centering
@@ -54,6 +56,7 @@ Für jeder synthetische Datensatz wurde das Netzwerk seperat 5-mal mit den Gradi
 		  \subcaption{} \label{subfig:ic_fig6} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/ic_cycl/resultsfig_6.pdf} }\\
 	\end{tabularx}
 	\caption{\subref{subfig:ic_fig2} IC-loop}
+	\label{fig:result_ic_loop}
 \end{figure}
 
 \begin{table}
@@ -80,6 +83,7 @@ Für jeder synthetische Datensatz wurde das Netzwerk seperat 5-mal mit den Gradi
 		\subcaption{} \label{subfig:hs_gamma_fig6} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/hs_gamma/resultsfig_6.pdf} }\\
 	\end{tabularx}
 	\caption{\subref{subfig:hs_gamma_fig6} HS-gamma}
+	\label{fig:result_hs_gamma}
 \end{figure}
 
 
@@ -107,6 +111,7 @@ Für jeder synthetische Datensatz wurde das Netzwerk seperat 5-mal mit den Gradi
 		\subcaption{} \label{subfig:hs_up_fig7} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/hs_up/resultsfig_7.pdf} }\\
 	\end{tabularx}
 	\caption{\subref{subfig:hs_up_fig7} HS-stairs-up}
+	\label{fig:result_hs_stairs_up}
 \end{figure}
 
 
@@ -134,6 +139,7 @@ Für jeder synthetische Datensatz wurde das Netzwerk seperat 5-mal mit den Gradi
 		\subcaption{} \label{subfig:hs_down_fig7} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/hs_down/resultsfig_7.pdf} }\\
 	\end{tabularx}
 	\caption{\subref{subfig:hs_down_fig7} HS-stairs-down}
+	\label{fig:result_hs_stairs_down}
 \end{figure}
 
 
