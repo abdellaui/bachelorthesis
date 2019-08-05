@@ -26,37 +26,14 @@ Der Trainingsprozess wurde je Datensatztyp 5-mal wiederholt und die besseren Eva
 \end{table}
 
 
-\subsubsection{IC-loop}
 
-
-\begin{table}[H]
+\begin{table}
 	\centering
 	\caption{Übersicht der Hyperparameter.}
-	\begin{tabularx}{1.0\textwidth}{X X}
-		\textbf{Hyperparameter} & \textbf{Wert}\\
+	\begin{tabularx}{1.0\textwidth}{X X X}
+		\textbf{Strecke} & \textbf{Datensatztyp} & \textbf{Akkuratesse} \hspace{2cm} (Position, Orientierung)\\
 		\hline
 		Batchsize & $40$\\
-		\hline
-		Anzahl der Epochen & $160$\\
-		\hline
-		$\beta$ der Kostenfunktion (vgl. Gleichung \ref{eq:posenet_loss}) &
-		siehe Tabelle \ref{tab:betas} im Abschnitt \ref{subsec:determine_beta}
-		\\
-		\hline
-		Loss-Optimierer & AdaGrad\\
-		\hline
-		Lernrate & $10^{-3}$\\
-		\hline
-		Bildskalierung & $480 \times 270$\\
-		\hline
-		Bildausschnitt& \makecell[tl]{
-			$224 \times 244$\\
-			(Training: zufällig, Evaluation: zentriert)\\
-		}\\
-		\hline
-		Datensatznormierung & Subtraktion des Durchschnittsbildes der synthetischen Daten \\
-		\hline
-		Initialisierung der Gewichte & Gewichte eines mit dem Places Datensatz trainierten Models auf GoogLeNet \\
 	\end{tabularx}
 	\label{tab:betas}
 \end{table}
