@@ -21,7 +21,8 @@ ngerman,        % (ngerman/english) internationalisation
 % norm
 \newcommand\norm[1]{\left\lVert#1\right\rVert}
 
-
+%\renewcommand{\tabularxcolumn}[1]{m{#1}}
+\def\imagetop#1{\vtop{\null\hbox{#1}}}
 % defines \RaggedRight
 \usepackage{ragged2e}
 
@@ -37,6 +38,7 @@ ngerman,        % (ngerman/english) internationalisation
 .....
 }
 \usetikzlibrary{spy,calc}
+
 
 
 \newif\ifblackandwhitecycle
