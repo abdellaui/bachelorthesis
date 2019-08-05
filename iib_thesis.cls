@@ -22,6 +22,13 @@
 \RequirePackage[T1]{fontenc}                % switch to a font including special european characters
 % layout
 \RequirePackage{scrlayer-scrpage}           % format page layout
+
+
+
+\RequirePackage{tikz}
+\RequirePackage{pgfplots}
+\RequirePackage{hyperref}
+
 % navigate in document
 \RequirePackage{hyperref}                   % set references to sections in the document
 % handle urls
