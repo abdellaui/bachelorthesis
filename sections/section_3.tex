@@ -2,7 +2,7 @@
 
 \section{Methodik}
 
-Das vorliegende Kapitel versucht die Methodik dieser Arbeit wiederzugeben. Die Forscher \citet{acharyaBIMPoseNetIndoorCamera2019} konnten die Pose mit einer Akkuratesse von ca. $2m$ in der Position und 7° in der Orientierung auf einer ca. 18$m$ langen Strecke in einem ca. $20m \times 5m$ großen Korridor bestimmen (siehe Abb. \ref{fig:acharya_traj}). Dabei haben die Forscher reale Daten entlang des Korridors mit einem Smartphone erhoben und die korrespondierende Pose (\textit{Ground-Truth-Daten}) mit SfM-Methoden bestimmt. Daraufhin wurden entlang derselben Aufnahmestrecke in der 3D-Simulation des Korridors mehrere synthetische Daten generiert, die sich in ihrer Realitätstreue vom Karikaturistischem zur fotorealistisch Texturiertem variieren. Anschließend wurde das in Abschnitt \ref{sec:posenet} beschriebene PoseNet Modell mit Gradientenbilder der synthetischen Daten trainiert und mit Gradientenbilder der realen Daten evaluiert. Vorab wurde das PoseNet Modell mit den Gewichten eines Modells initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz \cite{zhouLearningDeepFeatures2014} trainiert wurde. 
+Das vorliegende Kapitel versucht die Methodik dieser Arbeit wiederzugeben. Die Forscher \citet{acharyaBIMPoseNetIndoorCamera2019} konnten die Pose mit einer Akkuratesse von ca. $2m$ in der Position und 7° in der Orientierung auf einer ca. 18$m$ langen Strecke in einem ca. $20m \times 5m$ großen Korridor bestimmen (s. Abb. \ref{fig:acharya_traj}). Dabei haben die Forscher reale Daten entlang des Korridors mit einem Smartphone erhoben und die korrespondierende Pose (\textit{Ground-Truth-Daten}) mit SfM-Methoden bestimmt. Daraufhin wurden entlang derselben Aufnahmestrecke in der 3D-Simulation des Korridors mehrere synthetische Daten generiert, die sich in ihrer Realitätstreue vom Karikaturistischem zur fotorealistisch Texturiertem variieren. Anschließend wurde das in Abschnitt \ref{sec:posenet} beschriebene PoseNet Modell mit Gradientenbilder der synthetischen Daten trainiert und mit Gradientenbilder der realen Daten evaluiert. Vorab wurde das PoseNet Modell mit den Gewichten eines Modells initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz \cite{zhouLearningDeepFeatures2014} trainiert wurde. 
 
 Die vorliegende Arbeit versucht den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} zur Pose Estimation in Gebäuden anhand von Convolutional Neural Network und simulierten 3D-Daten auf längeren Strecken in größeren Gebäudesimulationen zu untersuchen. Daher wurden zuerst entsprechende Datensätze erstellt und anschließend gleicherweise das PoseNet Modell mit den Gradientbilder der synthetischen Daten trainiert sowie mit Gradientenbilder der realen Daten evaluiert. Abbildung \ref{fig:methodik} visualisiert die Methodik dieser Arbeit.
 
@@ -21,7 +21,7 @@ Im weiteren Verlauf dieses Kapitels wird die Erhebung / Generierung der realen /
 \subsection{Erhebung der realen Daten}
 \label{subsec:record_real_data}
 In der Literatur wurden beliebige Kameras für die Aufnahme der realen Bilder verwendet und anschließend SfM-Methoden eingesetzt, um die Pose (\textit{Ground-Truth-Daten}) der realen Aufnahmen zu bestimmen \cite{kendallPoseNetConvolutionalNetwork2015, clarkVidLocDeepSpatioTemporal2017, acharyaBIMPoseNetIndoorCamera2019}. 
-In der vorliegenden Arbeit wurde für die Bestimmung der Ground-Truth-Daten sowie die Aufnahme der Bilder zeitgleich zwei unterschiedliche Kameras der Intel Realsense Reihe verwendet. Eine Intel Realsense T265\footnote{\url{https://www.intelrealsense.com/tracking-camera-t265/} (abgerufen am: 18.07.2019)} wurde eingesetzt, die die relative Pose zum Ausgangspunkt, bei gegebener Bestkonditionen, mit einer Abweichung von weniger als 1\% über die SfM von zwei Fischaugenkameras (Auflösung von $848 \times 800$) und Inertial Measurement Units (\textit{IMU}) zu ermitteln verspricht. Zudem wurde eine Intel Realsense D435\footnote{ \url{https://www.intelrealsense.com/depth-camera-d435/} (abgerufen am: 18.07.2019)} eingesetzt, die eine 3D Punktwolke, ein $1280\times720$ Tiefenbild sowie ein $1920\times1080$ RGB-Bild einer Szene liefert. Die T265 wurde über die D435 montiert (siehe Abb. \ref{fig:t265_d435}), um die RGB-Bilder der D435 mit den Ground-Truth-Daten der T265 annotieren zu können.
+In der vorliegenden Arbeit wurde für die Bestimmung der Ground-Truth-Daten sowie die Aufnahme der Bilder zeitgleich zwei unterschiedliche Kameras der Intel Realsense Reihe verwendet. Eine Intel Realsense T265\footnote{\url{https://www.intelrealsense.com/tracking-camera-t265/} (abgerufen am: 18.07.2019)} wurde eingesetzt, die die relative Pose zum Ausgangspunkt, bei gegebener Bestkonditionen, mit einer Abweichung von weniger als 1\% über die SfM von zwei Fischaugenkameras (Auflösung von $848 \times 800$) und Inertial Measurement Units (\textit{IMU}) zu ermitteln verspricht. Zudem wurde eine Intel Realsense D435\footnote{ \url{https://www.intelrealsense.com/depth-camera-d435/} (abgerufen am: 18.07.2019)} eingesetzt, die eine 3D Punktwolke, ein $1280\times720$ Tiefenbild sowie ein $1920\times1080$ RGB-Bild einer Szene liefert. Die T265 wurde über die D435 montiert (s. Abb. \ref{fig:t265_d435}), um die RGB-Bilder der D435 mit den Ground-Truth-Daten der T265 annotieren zu können.
 
 \begin{figure}
 	\centering
@@ -87,7 +87,7 @@ Aus Zeitgründen konnten die Bestkonditionen für die T265 nicht hergestellt wer
 
 \subsection{Generierung der synthetischen Daten}
 \label{subsec:generate_synth_images}
-Für die Generierung der synthetischen Daten wurden die 3D-Gebäudemodelle  aus dem BIM der Gebäuden entnommen. Die 3D-Gebäudemodelle wurden in Blender\footnote{\url{https://www.blender.org/about/} (aufgerufen am: 20.07.2019)} in der derzeitig aktuellen Version 2.79b simuliert. Die Strecken der realen Aufnahmen wurden in den Simulationen Konsistenz halber auf einer konstanten Höhe von 1.70$m$ bestmöglich schwankungslos imitiert. Eine exakte Imitation der Aufnahmestrecke der realen Daten war wegen des Abdriftens der von der T265 berechneten Ground-Truth-Daten nicht möglich (siehe Abschnitt \ref{subsec:record_real_data}).
+Für die Generierung der synthetischen Daten wurden die 3D-Gebäudemodelle  aus dem BIM der Gebäuden entnommen. Die 3D-Gebäudemodelle wurden in Blender\footnote{\url{https://www.blender.org/about/} (aufgerufen am: 20.07.2019)} in der derzeitig aktuellen Version 2.79b simuliert. Die Strecken der realen Aufnahmen wurden in den Simulationen Konsistenz halber auf einer konstanten Höhe von 1.70$m$ bestmöglich schwankungslos imitiert. Eine exakte Imitation der Aufnahmestrecke der realen Daten war wegen des Abdriftens der von der T265 berechneten Ground-Truth-Daten nicht möglich (s. Abschn. \ref{subsec:record_real_data}).
 
 In Anlehnung an \citet{acharyaBIMPoseNetIndoorCamera2019} wurde entlang der imitierten Strecke in 0.05$m$ Intervallen und mit einer $\pm$10° Neigung in je y- und z-Achse Bilder mit korrespondierenden Ground-Truth-Daten aufgenommen, um die Varianz der realen Daten abzudecken. Die intrinsischen Daten der D435 RGB-Kamera wurden auf die virtuellen Kameras übertragen. Aus Gründen der Performance wurde die Auflösung der synthetischen Bilder von $1920\times1080$ auf  $960\times540$ halbiert. Abbildung \ref{fig:dataset_variation} illustriert die Variationen der Pose pro Stützpunkt auf einer Strecke.
 
@@ -132,7 +132,7 @@ In Anlehnung an \citet{acharyaBIMPoseNetIndoorCamera2019} wurde entlang der imit
 	\label{fig:dataset_variation}
 \end{figure}
 
-Insgesamt wurden drei synthetische Datensätze je Strecke erzeugt, gleicherweise wie die synthetischen Datensätze von \citet{acharyaBIMPoseNetIndoorCamera2019}, die sich in der Beschaffenheit von karikaturistische Darstellung, zu synthetischen Kantenbilder, hin über zu fotorealistische Darstellung unterscheiden (siehe Abb. \ref{fig:dataset_preprocess}). Bei der Generierung der karikaturistischen und fotorealistischen Datensätzen wurde die Beleuchtung aus einem Netz von Punktlichtquellen nachgestellt, um die Lichteffekte realitätsnäher zu simulieren.
+Insgesamt wurden drei synthetische Datensätze je Strecke erzeugt, gleicherweise wie die synthetischen Datensätze von \citet{acharyaBIMPoseNetIndoorCamera2019}, die sich in der Beschaffenheit von karikaturistische Darstellung, zu synthetischen Kantenbilder, hin über zu fotorealistische Darstellung unterscheiden (s. Abb. \ref{fig:dataset_preprocess}). Bei der Generierung der karikaturistischen und fotorealistischen Datensätzen wurde die Beleuchtung aus einem Netz von Punktlichtquellen nachgestellt, um die Lichteffekte realitätsnäher zu simulieren.
 Für die Erzeugung der synthetischen Kantenbilder wurden die Kanten der 3D-Objekte über Blender markant sichtbar konfiguriert und eine homogene Beleuchtung verschaffen, damit die Kanten hervorstechen und unberührt von Beleuchtungseffekte bleiben (vgl. Abb. \ref{fig:dataset}). 
 
  Die karikaturistische und fotorealistische Datensätze unterscheiden sich ausschließlich in den Render-Engines. Blender 2.79b bietet die Render-Engines \textit{Blender-Internal} und \textit{Blender-Cycles}. Während die Blender-Internal Engine beim Rendern die Berechnung der Lichtstrahlen abkürzt, versucht die Blender-Cycles Engine über Raytracing-Algorithmen das Verhalten des Lichtes mit ihren physikalischen Eigenschaften realistischer zu simulieren. Daher wurden die karikaturistischen Datensätze sowie die Kantenbilder über die Render-Engine \textit{Blender-Internal} und der fotorealistischer Datensatz über die \textit{Blender-Cycles} Engine generiert.
@@ -363,7 +363,7 @@ Die Gewichte des Netzwerks wurden mit den Gewichten eines Modells initialisiert,
 	\begin{tabularx}{1.0\textwidth}{X X}
 		\textbf{Hyperparameter} & \textbf{Wert}\\
 		\hline
-		Architektur & PoseNet (siehe Abschnitt \ref{sec:posenet})\\
+		Architektur & PoseNet (s. Abschn. \ref{sec:posenet})\\
 		\hline
 		Implementierung & Caffe \cite{jiaCaffeConvolutionalArchitecture2014} \\
 		\hline
@@ -373,7 +373,7 @@ Die Gewichte des Netzwerks wurden mit den Gewichten eines Modells initialisiert,
 		\hline
 		\makecell[tl]{
 			$\beta$ der Kostenfunktion\\
-			(siehe Gleichung \ref{eq:posenet_loss}) 
+			(s. Gleichung \ref{eq:posenet_loss}) 
 		} &
 		\makecell[tl]{
 			IC-loop: 680\\
