@@ -64,29 +64,27 @@ Der Trainingsprozess wurde je Datensatztyp 5-mal wiederholt und die besseren Eva
 \begin{table}
 	\centering
 	\caption{Evaluationsergebnisse von HS-stairs-up}
-	\begin{tabularx}{0.75\textwidth}{X X}\textbf{Datensatztyp} \hspace{2cm} (Gradientenbild)& \textbf{Akkuratesse} \hspace{2cm} (Position, Orientierung)\\
+	\begin{tabularx}{1.0\textwidth}{>{\RaggedRight}X >{\RaggedRight}X >{\RaggedRight}X}\textbf{Datensatztyp} \hspace{2cm} (Gradientenbild) & \textbf{synthetische Daten} \hspace{1cm} (Position, Orientierung) & \textbf{reale Daten} \hspace{2cm} (Position, Orientierung)\\
+	\hline
+		karikaturistische Simulation & 0.82$m$, 7.76° & 4.77$m$, 23.43°\\
 		\hline
-		karikaturistische Simulation & 0.82$m$, 7.76°\\
+		synthetisches Kantenbild & 0.82$m$, 8.48° & 4.33$m$, 51.64°\\
 		\hline
-		synthetisches Kantenbild & 0.82$m$, 8.48°\\
-		\hline
-		fotorealistische Simulation & 0.92$m$, 7.98°\\
+		fotorealistische Simulation & 0.92$m$, 7.98° & 5.16$m$, 93.38°\\
 	\end{tabularx}
 	\label{tab:synth_hs_stairs_up}
 \end{table}
 
-
-
 \begin{table}
 	\centering
 	\caption{Evaluationsergebnisse von HS-stairs-down}
-	\begin{tabularx}{0.75\textwidth}{X X}\textbf{Datensatztyp} \hspace{2cm} (Gradientenbild)& \textbf{Akkuratesse} \hspace{2cm} (Position, Orientierung)\\
+	\begin{tabularx}{1.0\textwidth}{>{\RaggedRight}X >{\RaggedRight}X >{\RaggedRight}X}\textbf{Datensatztyp} \hspace{2cm} (Gradientenbild) & \textbf{synthetische Daten} \hspace{1cm} (Position, Orientierung) & \textbf{reale Daten} \hspace{2cm} (Position, Orientierung)\\
+	\hline
+		karikaturistische Simulation & 0.91$m$, 8.01° & 4.20$m$, 47.83°\\
 		\hline
-		karikaturistische Simulation & 0.91$m$, 8.01°\\
+		synthetisches Kantenbild & 0.85$m$, 7.50° & 5.59$m$, 67.34°\\
 		\hline
-		synthetisches Kantenbild & 0.85$m$, 7.50°\\
-		\hline
-		fotorealistische Simulation & 1.02$m$, 8.57°\\
+		fotorealistische Simulation & 1.02$m$, 8.57° & 5.25$m$, 32.70°\\
 	\end{tabularx}
 	\label{tab:synth_hs_stairs_down}
 \end{table}
@@ -97,47 +95,3 @@ Der Trainingsprozess wurde je Datensatztyp 5-mal wiederholt und die besseren Eva
 
 
 
-\begin{table}
-	\centering
-	\caption{Evaluationsergebnisse von HS-gamma (real vs synt).}
-	\begin{tabularx}{0.75\textwidth}{X X}\textbf{Datensatztyp} \hspace{2cm} (Gradientenbild)& \textbf{Akkuratesse} \hspace{2cm} (Position, Orientierung)\\
-		\hline
-		karikaturistische Simulation & 8.60$m$, 19.59°\\
-		\hline
-		synthetisches Kantenbild & 10.15$m$, 35.11°\\
-		\hline
-		fotorealistische Simulation & 10.27$m$, 41.60°\\
-	\end{tabularx}
-	\label{tab:synth_hs_gamma}
-\end{table}
-
-
-\begin{table}
-	\centering
-	\caption{Evaluationsergebnisse von HS-stairs-up (real vs synt).}
-	\begin{tabularx}{0.75\textwidth}{X X}\textbf{Datensatztyp} \hspace{2cm} (Gradientenbild)& \textbf{Akkuratesse} \hspace{2cm} (Position, Orientierung)\\
-		\hline
-		karikaturistische Simulation & 4.77$m$, 23.43°\\
-		\hline
-		synthetisches Kantenbild & 4.33$m$, 51.64°\\
-		\hline
-		fotorealistische Simulation & 5.16$m$, 93.38°\\
-	\end{tabularx}
-	\label{tab:synth_hs_stairs_up}
-\end{table}
-
-
-
-\begin{table}
-	\centering
-	\caption{Evaluationsergebnisse von HS-stairs-down (real vs synt).}
-	\begin{tabularx}{0.75\textwidth}{X X}\textbf{Datensatztyp} \hspace{2cm} (Gradientenbild)& \textbf{Akkuratesse} \hspace{2cm} (Position, Orientierung)\\
-		\hline
-		karikaturistische Simulation & 4.20$m$, 47.83°\\
-		\hline
-		synthetisches Kantenbild & 5.59$m$, 67.34°\\
-		\hline
-		fotorealistische Simulation & 5.25$m$, 32.70°\\
-	\end{tabularx}
-	\label{tab:synth_hs_stairs_down}
-\end{table}
