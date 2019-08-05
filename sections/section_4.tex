@@ -1,7 +1,8 @@
 % !TEX root = ../my_thesis.tex
 
 \section{Ergebnisse}
-Im vorliegenden Kapitel werden die Ergebnisse der durchgeführten Experimente präsentiert. Zuallererst werden die Ergebnisse von BIM-PoseNet \cite{acharyaBIMPoseNetIndoorCamera2019} reproduziert und angegeben, um die Korrektheit der Pipeline zu überprüfen. Anschließend wird der Hyperparameter $\beta$ der Kostenfunktion (vgl. Gleichung \ref{eq:posenet_loss}) für jeden realen Datensatz (siehe Abschnitt \ref{subsec:datasets}) bestimmt und angegeben. Mit der Bestimmung des Hyperparameters $\beta$ wird das neuronale Netz für jedes der synthetischen Datensätze mit den Gradientenbildern separat trainiert. Anschließend wird das neuronale Netz mit den korrespondieren Gradientenbilder der synthetischen sowie realen Daten evaluiert.
+Im vorliegenden Kapitel werden die Ergebnisse der durchgeführten Experimente präsentiert. Zuallererst wurden die Ergebnisse von BIM-PoseNet \cite{acharyaBIMPoseNetIndoorCamera2019} reproduziert und angegeben, um die Korrektheit der Pipeline zu überprüfen. Danach wurde das neuronale Netz für jedes synthetische Datensatz mit den Gradientenbilder seperat trainiert. Anschließend wurde das neuronale Netz mit den korrespondieren Gradientenbilder der synthetischen sowie realen Daten evaluiert.
+
 
 \subsection{Reproduktion der Ergebnisse von BIM-PoseNet}
 Die Ergebnisse der Experimente von \citet{acharyaBIMPoseNetIndoorCamera2019}, die das PoseNet Model mit Gradientenbilder der karikaturistischen Daten sowie synthetischen Kantenbilder trainieren und anschließend mit den Gradientenbilder der realen Daten evaluieren, konnten näherungsweise (vgl. Tabelle \ref{tab:reproduction}) reproduziert werden. Eine exakte oder bessere Reproduktion der Ergebnisse ist durch Zufall bedingt und wird in dieser Arbeit aus Zeitgründen vernachlässigt.
@@ -11,7 +12,7 @@ Abweichend von BIM-PoseNet wurden statt 1000 reale Bilder, 600 reale Bilder eval
 Der Trainingsprozess wurde je Datensatztyp 5-mal wiederholt und die besseren Evaluationsergebnisse wurden behalten. Tabelle \ref{tab:reproduction} präsentiert die Ergebnisse der Reproduktion sowie die Ergebnisse der Autoren \citet{acharyaBIMPoseNetIndoorCamera2019}.
 
 
-\begin{table}[b]
+\begin{table}
 	\centering
 	\caption{Reproduktionsergebnisse. Abweichungen der Ergebnisse sind durch Zufall bedingt und können bei mehrfachem Wiederholen des Trainingsprozesses minimiert bzw. erhoben sowie verbessert werden. }
 	\begin{tabularx}{1.0\textwidth}{>{\hsize=1.1\hsize}X >{\hsize=0.95\hsize}X >{\hsize=0.95\hsize}X}
@@ -25,12 +26,8 @@ Der Trainingsprozess wurde je Datensatztyp 5-mal wiederholt und die besseren Eva
 \end{table}
 
 
+\subsubsection{IC-loop}
 
-\subsection{Bestimmung des Hyperparameters $\beta$}
-\label{subsec:determine_beta}
-gridsearch je datensatz mit realdaten, empfohlen 120-750 in gebäuden, in 9 schritten je 70 stride; plote beta ergebnisse matplotlib und evo traj-colormap
-
-\cite{zhouLearningDeepFeatures2014} trainiert wurde. Anschließend werden die Gewichte an die Trainingsdaten angepasst. Tabelle \ref{tab:trainingparams} gibt eine Übersicht der Hyperparameter an.
 
 \begin{table}[H]
 	\centering
@@ -65,28 +62,3 @@ gridsearch je datensatz mit realdaten, empfohlen 120-750 in gebäuden, in 9 schr
 \end{table}
 
 \subsubsection{IC-loop}
-\subsubsection{HS-gamma}
-\subsubsection{HS-stairs-up}
-\subsubsection{HS-stairs-down}
-
-\subsection{synth gradma vs synth gradma}
-je evo traj-colormap
-\subsubsection{IC-loop}
-je blender point; edge hemi; cycl point
-\subsubsection{HS-gamma}
-je blender point; edge hemi; cycl point
-\subsubsection{HS-stairs-up}
-je blender point; edge hemi; cycl point
-\subsubsection{HS-stairs-down}
-je blender point; edge hemi; cycl point
-
-\subsection{synth gradma vs real gradma}
-je evo traj-colormap
-\subsubsection{IC-loop}
-je blender point; edge hemi; cycl point
-\subsubsection{HS-gamma}
-je blender point; edge hemi; cycl point
-\subsubsection{HS-stairs-up}
-je blender point; edge hemi; cycl point
-\subsubsection{HS-stairs-down}
-je blender point; edge hemi; cycl point
