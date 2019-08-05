@@ -23,7 +23,7 @@ Im weiteren Verlauf dieses Kapitels wird die Erhebung / Generierung der realen /
 In der Literatur wurden beliebige Kameras für die Aufnahme der realen Bilder verwendet und anschließend SfM-Methoden eingesetzt, um die Pose (\textit{Ground-Truth-Daten}) der realen Aufnahmen zu bestimmen \cite{kendallPoseNetConvolutionalNetwork2015, clarkVidLocDeepSpatioTemporal2017, acharyaBIMPoseNetIndoorCamera2019}. 
 In der vorliegenden Arbeit wurde für die Bestimmung der Ground-Truth-Daten sowie die Aufnahme der Bilder zeitgleich zwei unterschiedliche Kameras der Intel Realsense Reihe verwendet. Eine Intel Realsense T265\footnote{\url{https://www.intelrealsense.com/tracking-camera-t265/} (abgerufen am: 18.07.2019)} wurde eingesetzt, die die relative Pose zum Ausgangspunkt, bei gegebener Bestkonditionen, mit einer Abweichung von weniger als 1\% über die SfM von zwei Fischaugenkameras (Auflösung von $848 \times 800$) und Inertial Measurement Units (\textit{IMU}) zu ermitteln verspricht. Zudem wurde eine Intel Realsense D435\footnote{ \url{https://www.intelrealsense.com/depth-camera-d435/} (abgerufen am: 18.07.2019)} eingesetzt, die eine 3D Punktwolke, ein $1280\times720$ Tiefenbild sowie ein $1920\times1080$ RGB-Bild einer Szene liefert. Die T265 wurde über die D435 montiert (s. Abb. \ref{fig:t265_d435}), um die RGB-Bilder der D435 mit den Ground-Truth-Daten der T265 annotieren zu können.
 
-\begin{figure}[b]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/real_dataset/t265_d435_2.png}
 	\caption{Hardware für die Aufnahme der realen Daten. Die Intel Realsense T265 ist oberhalb der Intel Realsense D435 montiert.}
