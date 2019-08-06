@@ -46,19 +46,6 @@ Für ein besseres Verständnis der Akkuratesse wurden die anhand der realen Date
 	\label{tab:results_ic}
 \end{table}
 
-
-\begin{figure}
-	\setlength\extrarowheight{-15pt}
-	\centering
-	\begin{tabularx}{1.0\textwidth}{>{\centering\arraybackslash}p{0.05\textwidth} X}
-		  \subcaption{} \label{subfig:ic_fig2} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/ic_cycl/resultsfig_2.pdf} }\\
-		  \subcaption{} \label{subfig:ic_fig4} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/ic_cycl/resultsfig_4.pdf} }\\
-		  \subcaption{} \label{subfig:ic_fig6} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/ic_cycl/resultsfig_6.pdf} }\\
-	\end{tabularx}
-	\caption{\subref{subfig:ic_fig2} IC-loop}
-	\label{fig:result_ic_loop}
-\end{figure}
-
 \begin{table}
 	\centering
 	\caption{Evaluationsergebnisse von HS-gamma}
@@ -74,6 +61,51 @@ Für ein besseres Verständnis der Akkuratesse wurden die anhand der realen Date
 	\label{tab:results_hs_gamma}
 \end{table}
 
+
+\begin{table}
+	\centering
+	\caption{Evaluationsergebnisse von HS-stairs-up}
+	\begin{tabularx}{1.0\textwidth}{>{\hsize=1.1\hsize \RaggedRight}X >{\hsize=0.95\hsize \RaggedRight}X >{\hsize=0.95\hsize \RaggedRight}X}
+		\textbf{Trainingsdatensatz} \hspace{2cm} (Gradientenbild) & \textbf{synthetische Daten} \hspace{2cm} (Position, Orientierung) & \textbf{reale Daten} \hspace{2cm} (Position, Orientierung)\\
+		\hline
+		karikaturistische Simulation & 0.82$m$, 7.76° & 4.77$m$, 23.43°\\
+		\hline
+		synthetisches Kantenbild & 0.82$m$, 8.48° & 4.33$m$, 51.64°\\
+		\hline
+		fotorealistische Simulation & 0.92$m$, 7.98° & 5.16$m$, 93.38°\\
+	\end{tabularx}
+	\label{tab:results_hs_stairs_up}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{Evaluationsergebnisse von HS-stairs-down}
+	\begin{tabularx}{1.0\textwidth}{>{\hsize=1.1\hsize \RaggedRight}X >{\hsize=0.95\hsize \RaggedRight}X >{\hsize=0.95\hsize \RaggedRight}X}
+		\textbf{Trainingsdatensatz} \hspace{2cm} (Gradientenbild) & \textbf{synthetische Daten} \hspace{2cm} (Position, Orientierung) & \textbf{reale Daten} \hspace{2cm} (Position, Orientierung)\\
+		\hline
+		karikaturistische Simulation & 0.91$m$, 8.01° & 4.20$m$, 47.83°\\
+		\hline
+		synthetisches Kantenbild & 0.85$m$, 7.50° & 5.59$m$, 67.34°\\
+		\hline
+		fotorealistische Simulation & 1.02$m$, 8.57° & 5.25$m$, 32.70°\\
+	\end{tabularx}
+	\label{tab:results_hs_stairs_down}
+\end{table}
+
+
+
+\begin{figure}
+	\setlength\extrarowheight{-15pt}
+	\centering
+	\begin{tabularx}{1.0\textwidth}{>{\centering\arraybackslash}p{0.05\textwidth} X}
+		\subcaption{} \label{subfig:ic_fig2} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/ic_cycl/resultsfig_2.pdf} }\\
+		\subcaption{} \label{subfig:ic_fig4} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/ic_cycl/resultsfig_4.pdf} }\\
+		\subcaption{} \label{subfig:ic_fig6} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/ic_cycl/resultsfig_6.pdf} }\\
+	\end{tabularx}
+	\caption{\subref{subfig:ic_fig2} IC-loop}
+	\label{fig:result_ic_loop}
+\end{figure}
+
 \begin{figure}
 	\setlength\extrarowheight{-15pt}
 	\centering
@@ -85,22 +117,6 @@ Für ein besseres Verständnis der Akkuratesse wurden die anhand der realen Date
 	\caption{\subref{subfig:hs_gamma_fig6} HS-gamma}
 	\label{fig:result_hs_gamma}
 \end{figure}
-
-
-\begin{table}
-	\centering
-	\caption{Evaluationsergebnisse von HS-stairs-up}
-	\begin{tabularx}{1.0\textwidth}{>{\hsize=1.1\hsize \RaggedRight}X >{\hsize=0.95\hsize \RaggedRight}X >{\hsize=0.95\hsize \RaggedRight}X}
-	\textbf{Trainingsdatensatz} \hspace{2cm} (Gradientenbild) & \textbf{synthetische Daten} \hspace{2cm} (Position, Orientierung) & \textbf{reale Daten} \hspace{2cm} (Position, Orientierung)\\
-	\hline
-		karikaturistische Simulation & 0.82$m$, 7.76° & 4.77$m$, 23.43°\\
-		\hline
-		synthetisches Kantenbild & 0.82$m$, 8.48° & 4.33$m$, 51.64°\\
-		\hline
-		fotorealistische Simulation & 0.92$m$, 7.98° & 5.16$m$, 93.38°\\
-	\end{tabularx}
-	\label{tab:results_hs_stairs_up}
-\end{table}
 
 \begin{figure}
 	\setlength\extrarowheight{-15pt}
@@ -114,21 +130,6 @@ Für ein besseres Verständnis der Akkuratesse wurden die anhand der realen Date
 	\label{fig:result_hs_stairs_up}
 \end{figure}
 
-
-\begin{table}
-	\centering
-	\caption{Evaluationsergebnisse von HS-stairs-down}
-	\begin{tabularx}{1.0\textwidth}{>{\hsize=1.1\hsize \RaggedRight}X >{\hsize=0.95\hsize \RaggedRight}X >{\hsize=0.95\hsize \RaggedRight}X}
-	\textbf{Trainingsdatensatz} \hspace{2cm} (Gradientenbild) & \textbf{synthetische Daten} \hspace{2cm} (Position, Orientierung) & \textbf{reale Daten} \hspace{2cm} (Position, Orientierung)\\
-	\hline
-		karikaturistische Simulation & 0.91$m$, 8.01° & 4.20$m$, 47.83°\\
-		\hline
-		synthetisches Kantenbild & 0.85$m$, 7.50° & 5.59$m$, 67.34°\\
-		\hline
-		fotorealistische Simulation & 1.02$m$, 8.57° & 5.25$m$, 32.70°\\
-	\end{tabularx}
-	\label{tab:results_hs_stairs_down}
-\end{table}
 
 \begin{figure}
 	\setlength\extrarowheight{-15pt}
