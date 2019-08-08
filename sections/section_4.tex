@@ -29,13 +29,13 @@ Abweichend von BIM-PoseNet wurden statt 1000 reale Bilder, 600 reale Bilder eval
 
 
 \subsection{Evaluation der trainierten Netzwerke}
-Für alle synthetischen Datensätze wurde das Netzwerk separat 5-mal mit den korrespondierenden Gradientenbilder trainiert. Eine Evaluierung folgte mit den Gradientenbilder der korrespondierenden synthetischen sowie realen Evaluationsdaten. Es wurden je Strecke (s. Tabelle \ref{tab:dataset_metrics})  nur die bessere Akkuratesse behalten. Tabelle \ref{tab:results_ic} bis \ref{tab:results_hs_stairs_down} geben die Akkuratesse des KNN auf der jeweiligen Strecken an.
+Für alle synthetischen Datensätze wurde das Netzwerk separat 5-mal mit den korrespondierenden Gradientenbilder trainiert. Eine Evaluierung folgte mit den Gradientenbilder der korrespondierenden synthetischen sowie realen Evaluationsdaten. Es wurden je Strecke (s. Tabelle \ref{tab:dataset_metrics})  nur die bessere Akkuratesse behalten. Tabelle \ref{tab:results_ic} bis \ref{tab:results_hs_stairs_down} geben die Akkuratesse des KNN auf der jeweiligen Strecken an. Im weiteren Verlauf dieses Kapitels ist bei einem Datensatz immer die Gradientenbilder des jeweiligen Datensatzes gemeint.
 
 Für ein besseres Verständnis der Akkuratesse wurden je Strecke die, anhand der realen Daten, durch das KNN bestimmten Positionen dargestellt. Ebenso wurden je Strecke die Positions- und Orientierungsfehler der jeweiligen Evaluierungsdaten dargestellt. Abbildungen \ref{tab:results_ic} bis \ref{tab:results_hs_stairs_down} illustrieren die Evaluationsergebnisse.
 
 
 \subsubsection{IC-loop}
-In diesem Experiment wurden alle Datensätze zu 50\% Trainingsdaten und zu 50\% Evalierungsdaten zufällig aufgeteilt. für alle synthetischen Datensatztypen der IC-loop Strecke mit je 5718 Daten ein Netzwerk trainiert. Anschließend wurden die Netzwerke mit den korrespondierenden synthetischen Evaluierungsdatensätze mit je 5717 Daten getestet.
+In diesem Experiment wurden alle Datensätze zu 50\% Trainingsdaten und zu 50\% Evalierungsdaten zufällig aufgeteilt. Es wurde für alle synthetischen Datensatztypen der Strecke \textit{IC-loop} mit je 5718 Daten ein Netzwerk trainiert. Anschließend wurden die Netzwerke mit den korrespondierenden synthetischen Evaluierungsdatensätze mit je 5717 Daten getestet. Eine weitere Evaluierung folgte mit den realen Evaluierungsdaten mit 1921 Daten.
 
 Trainiert und Evaluiert mit ausschließlich synthetischen Daten konnte eine Akkuratesse von 1.61$m$ in der Position und 8.17° in der Orientierung bei den Gradietenbilder der karikaturistischen Simulation erreicht werden. Bei der Evaluierung mit den Gradientenbilder der realen Daten konnte eine Akkuratesse von 16.68$m$ in der Position und 73.25° in der Orientierung auf dem mit den Gradietenbilder der fotorealistische Simulation trainierten Netzwerk erreicht werden. Abbildung \ref{fig:result_ic_loop} visualisiert die Evaluierungsergebnisse von diesem künstlichen neuronalen Netzwerk.
 \begin{table}
