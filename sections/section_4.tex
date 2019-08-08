@@ -42,14 +42,14 @@ Trainiert und Evaluiert mit ausschließlich synthetischen Daten konnte eine Akku
 \begin{table}
 	\centering
 	\caption{Evaluationsergebnisse von der Strecke \textit{IC-loop}. Es wird die Akkuratesse der mit den jeweiligen Trainingsdaten trainierten Netzwerke angegeben, die mit den korrespondierenden synthetischen Evaluierungsdaten sowie jeweils mit den realen Evaluationsdaten evaluiert wurden.  }
-	\begin{tabularx}{1.0\textwidth}{>{\hsize=1.1\hsize \RaggedRight}X >{\hsize=0.95\hsize \RaggedRight}X >{\hsize=0.95\hsize \RaggedRight}X}
+	\begin{tabularx}{1.0\textwidth}{X X X}
 	\textbf{Trainingsdatensatz} \hspace{2cm} (Gradientenbild) & \textbf{synthetische Daten} \hspace{2cm} (Position, Orientierung) & \textbf{reale Daten} \hspace{2cm} (Position, Orientierung)\\
 	\hline
-		karikaturistische Simulation & 1.61$m$, 8.17° & 23.56$m$, 51.30°\\
+		grad-cartoon & 1.61$m$, 8.17° & 23.56$m$, 51.30°\\
 		\hline
-		synthetisches Kantenbild & 2.00$m$, 8.29° & 32.91$m$, 59.17°\\
+		grad-edge & 2.00$m$, 8.29° & 32.91$m$, 59.17°\\
 \hline
-		fotorealistische Simulation & 1.80$m$, 7.70° & 16.68$m$, 73.25°\\
+		grad-photoreal & 1.80$m$, 7.70° & 16.68$m$, 73.25°\\
 	\end{tabularx}
 	\label{tab:results_ic}
 \end{table}
