@@ -385,12 +385,8 @@ Der Hyperparameter $\beta$, der von PoseNet vorgestellten Kostenfunktion (s. Gle
 			\textit{HS-stairs-down}: 610\\
 		}\\
 		\hline
-		Loss-Optimierer & AdaGrad\\
-		\hline
-		Lernrate & $10^{-3}$\\
-		\hline
-		Datenaufteilung & \makecell[tl]{
-		   	50\% Trainingsdaten\\
+				Datenaufteilung & \makecell[tl]{
+			50\% Trainingsdaten\\
 			50\% Evaluationsdaten\\
 		}\\
 		\hline
@@ -402,6 +398,10 @@ Der Hyperparameter $\beta$, der von PoseNet vorgestellten Kostenfunktion (s. Gle
 		}\\
 		\hline
 		Datensatznormierung & Subtraktion des Durchschnittsbildes der Trainingsdaten \\
+		\hline
+		Loss-Optimierer & AdaGrad\\
+		\hline
+		Lernrate & $10^{-3}$\\
 		\hline
 		Initialisierung der Gewichte & Gewichte eines mit dem Places Datensatz trainierten Modells auf GoogLeNet \\
 	\end{tabularx}
