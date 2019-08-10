@@ -374,18 +374,7 @@ Der Hyperparameter $\beta$, der von PoseNet vorgestellten Kostenfunktion (s. Gle
 		\hline
 		Anzahl der Epochen & $160$\\
 		\hline
-		\makecell[tl]{
-			$\beta$ der Kostenfunktion\\
-			(s. Gleichung \ref{eq:posenet_loss}) 
-		} &
-		\makecell[tl]{
-			\textit{IC-loop}: 680\\
-			\textit{HS-gamma}: 120\\
-			\textit{HS-stairs-up}: 470\\
-			\textit{HS-stairs-down}: 610\\
-		}\\
-		\hline
-				Datenaufteilung & \makecell[tl]{
+		Datenaufteilung & \makecell[tl]{
 			50\% Trainingsdaten\\
 			50\% Evaluationsdaten\\
 		}\\
@@ -398,6 +387,17 @@ Der Hyperparameter $\beta$, der von PoseNet vorgestellten Kostenfunktion (s. Gle
 		}\\
 		\hline
 		Datensatznormierung & Subtraktion des Durchschnittsbildes der Trainingsdaten \\
+		\hline
+		\makecell[tl]{
+			$\beta$ der Kostenfunktion\\
+			(s. Gleichung \ref{eq:posenet_loss}) 
+		} &
+		\makecell[tl]{
+			\textit{IC-loop}: 680\\
+			\textit{HS-gamma}: 120\\
+			\textit{HS-stairs-up}: 470\\
+			\textit{HS-stairs-down}: 610\\
+		}\\
 		\hline
 		Loss-Optimierer & AdaGrad\\
 		\hline
