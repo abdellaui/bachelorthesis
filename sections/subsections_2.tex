@@ -1,6 +1,6 @@
 \subsection{Künstliche neuronale Netzwerke}
 \label{sec:KNN}
-Künstliche neuronale Netze sind ein Forschungsgebiet der \textit{künstlichen Intelligenz} und imitieren die Beschaffenheit natürlicher neuronale Netze, um komplexe Probleme zu lösen. Inspiriert von ihren biologischen Vorbildern\footnote{das Nervensystem eines komplexen Lebewesens; z.B. des Menschen}, vernetzen künstliche neuronale Netzwerke (\textit{KNN}) künstliche Neuronen miteinander \cite{CS231nConvolutionalNeural}. Dabei kann die Verbindung unidirektional (\textit{feedforward}) oder bidirektional (\textit{feedback}) sein  \cite{Goodfellow-et-al-2016}. 
+Künstliche neuronale Netze sind ein Forschungsgebiet der \textit{künstlichen Intelligenz} und imitieren die Beschaffenheit natürlicher neuronale Netze, um komplexe Probleme zu lösen. Inspiriert von ihren biologischen Vorbildern\footnote{das Nervensystem eines komplexen Lebewesens; z.B. des Menschen}, vernetzen künstliche neuronale Netzwerke (KNN) künstliche Neuronen miteinander \cite{CS231nConvolutionalNeural}. Dabei kann die Verbindung unidirektional (\textit{feedforward}) oder bidirektional (\textit{feedback}) sein  \cite{Goodfellow-et-al-2016}. 
 
 Bei einem feedforward Netzwerk werden die Daten im Netz immer vorwärts übertragen, hingegen kann ein feedback Netzwerk, auch bekannt als \textit{Recurrent Neural Networks}, Daten rückwärts, sowie in einer Schleife zum selben Neuron, übergeben \cite{Goodfellow-et-al-2016}. Da feedback Netzwerke keinen Einsatz in dieser Arbeit haben, ist im weiteren Verlauf dieser Arbeit bei einem Netzwerk immer ein feedforward Ansatz gemeint. 
 
@@ -149,16 +149,16 @@ Auf einen Convolutional Layer folgt i.d.R. ein Pooling Layer. Pooling Layer redu
 
 
 \subsubsection{Fully-Connected Layer}
-Nach einer Periode von Convolution- und Pooling Layer folgt meist ein fully-connected (\textit{FC}) Layer, auch bekannt als \textit{Dense Layer}. Dieser Layer folgt dem gleichen Konzept der feedforward Neural Networks, wie in Abschnitt \ref{sec:feedforwardNN} beschrieben. Das Output dieses Layers wird häufig einer weiteren Aktivierungsfunktion übergeben \cite{yamashitaConvolutionalNeuralNetworks2018} und prinzipiell wird dadurch das Output des CNNs bestimmt.
+Nach einer Periode von Convolution- und Pooling Layer folgt meist ein \textit{fully-connected} (FC) Layer, auch bekannt als \textit{Dense Layer}. Dieser Layer folgt dem gleichen Konzept der feedforward Neural Networks, wie in Abschnitt \ref{sec:feedforwardNN} beschrieben. Das Output dieses Layers wird häufig einer weiteren Aktivierungsfunktion übergeben \cite{yamashitaConvolutionalNeuralNetworks2018} und prinzipiell wird dadurch das Output des CNNs bestimmt.
 
 \subsection{Bekannte CNN Modelle}
-Es existiert eine Menge von bekannten CNN Modellen mit ausgezeichneten Ergebnissen in internationalen Wettbewerben, derartige wie z.B. die ImageNet Large Scale Visual Recognition Challenge (\textit{ILSVRC}) \cite{russakovskyImageNetLargeScale2015}. Dieser Arbeit behandelt nur die Architektur des GoogLeNet Modells und dessen Modifikation PoseNet.
+Es existiert eine Menge von bekannten CNN Modellen mit ausgezeichneten Ergebnissen in internationalen Wettbewerben, derartige wie z.B. ILSVRC \cite{russakovskyImageNetLargeScale2015}. Dieser Arbeit behandelt nur die Architektur des GoogLeNet Modells und dessen Modifikation PoseNet.
 
 \subsubsection{GoogLeNet}
 \label{sec:googlenet}
-GoogLeNet, konstruiert von \citet{szegedyGoingDeeperConvolutions2015} im Jahr 2014, ist der Sieger des ImageNet Large Scale Visual Recognition Challenge (\textit{ILSVRC}) 2014 Wettbewerbes. Die ILSVRC stellt ungefähr 1000 Bilder aus 1000 unterschiedlichen Kategorien aus der ImageNet Datensatz bereit. ImageNet ist eine Bildersammlung bestehend aus über 14 Millionen manuell annotierten Bildern in über 20 Tausend unterschiedlichen Kategorien. Die Herausforderung von ILSVRC ist, die 1000 Objekte bestmöglich auf den Bildern zu klassifizieren.
+GoogLeNet, konstruiert von \citet{szegedyGoingDeeperConvolutions2015} im Jahr 2014, ist der Sieger des ILSVRC 2014 Wettbewerbes. Die ILSVRC stellt ungefähr 1000 Bilder aus 1000 unterschiedlichen Kategorien aus der ImageNet Datensatz bereit. ImageNet ist eine Bildersammlung bestehend aus über 14 Millionen manuell annotierten Bildern in über 20 Tausend unterschiedlichen Kategorien. Die Herausforderung von ILSVRC ist, die 1000 Objekte bestmöglich auf den Bildern zu klassifizieren.
 
-GoogLeNet ist eine besondere Inkarnation des sogenannten\textit{ Inception Moduls}, das zeitgleich mit GoogLeNet vorgestellt wird.
+GoogLeNet ist eine besondere Inkarnation des sogenannten \textit{Inception Moduls}, das zeitgleich mit GoogLeNet vorgestellt wird.
 Ein Inception Modul beinhaltet mehrere Convolutional- sowie einen Pooling Layer und verarbeitet das Inputvolumen parallel auf 4 Zweigen. Vor rechenintensiven Convolutional Layer werden zusätzliche 1$\times$1 dimensionsreduzierende Layer geschaltet. Abschließend werden die Zweige, die ein Volumen mit der gleichen Breite und Höhe produzieren, zu einem Outputvolumen (in die Tiefe) zusammengeführt.  Durch die parallele Berechnung der Zweige und das Einschalten von dimensionsreduzierenden 1$\times$1 Layer vor rechenintensiven Operationen ermöglicht ein Inception Modul neuronale Netze, bei zunehmender Tiefe und Breite, konstante Rechenkapazität zu verlangen \cite{szegedyGoingDeeperConvolutions2015}.
 Inzwischen wurde das Inception Modul \cite{szegedyRethinkingInceptionArchitecture2016} und die gesamte Architektur rundherum \cite{szegedyInceptionv4InceptionResNetImpact2016} weiterentwickelt. Abbildung \ref{fig:inception_module} stellt das Inception (\textit{v1}) Modul dar.
 
