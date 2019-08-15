@@ -48,7 +48,7 @@ visuelle Odemetrie (\textit{VO}) oder Simultaneous-Localization-and-Mapping (\te
 
 Die absolute Lokalisierung des visuellen Abfragematerials ist über das Suchen eines korrespondierendes Bildes in einer Bildergalerie oder über die Regression der Pose anhand der Bild-Features möglich \cite{piascoSurveyVisualBasedLocalization2018}. Diese Verfahren benötigen entweder eine Datenbank aus Bildern mit bekannten Posen \cite{zhangImageBasedLocalization2006, arandjelovicThreeThingsEveryone2012, radenovicCNNImageRetrieval2016} oder zusätzliche Daten wie die 3D Punktwolke \cite{irscharaStructurefrommotionPointClouds2009, liWorldwidePoseEstimation2012, svarmCityScaleLocalizationCameras2017} oder Tiefenbilder der Szene \cite{shottonSceneCoordinateRegression2013a}. Allerdings ist die Beschaffung der Bilder mit bekannter Pose und der zusätzlichen Daten bei großen Gebäuden zeit- und kostenaufwendig.
 
-
+% Die Strecke in \cite{acharyaBIMPoseNetIndoorCamera2019} verläuft überwiegend in einer Richtung und auf einer Etagenebene.
 
 %Über Structure-from-Motion (\textit{SfM}) Methoden konnten 
 %\citet{kendallPoseNetConvolutionalNetwork2015} trainierten mit Datensätzen bestehend aus einem Bild und die dazu korrespondierende Pose, die sie über Structure-from-Motion (\textit{SfM}) Methoden erhalten dem Sie Pose der 
@@ -57,9 +57,9 @@ Die absolute Lokalisierung des visuellen Abfragematerials ist über das Suchen e
 %ziele
 %results
 
-\citet{acharyaBIMPoseNetIndoorCamera2019} erzeugten synthetische Bilder mit korrespondierender Pose entlang einer ca. 18$m$ langen Strecke in der 3D-Simulation eines Korridors. Die Strecke verläuft auf einer Etagenebene und überwiegend in einer Richtung. Trainiert mit den Gradientenbildern der synthetischen Daten auf dem PoseNet Modell konnten die Forscher \citet{acharyaBIMPoseNetIndoorCamera2019} bei der Evaluierung mit den Gradientenbildern der realen Daten eine Akkuratesse von ca. $2m$ in der Position und 7° in der Orientierung erzielen.
+\citet{acharyaBIMPoseNetIndoorCamera2019} erzeugten synthetische Bilder mit korrespondierender Pose  entlang einer ca. 18$m$ langen Strecke in der 3D-Simulation eines Korridors. Trainiert mit den Gradientenbildern der synthetischen Daten auf dem PoseNet Modell konnten die Forscher \citet{acharyaBIMPoseNetIndoorCamera2019} bei der Evaluierung mit den Gradientenbildern der realen Daten eine Akkuratesse von ca. $2m$ in der Position und 7° in der Orientierung erzielen.
 
-Ziel der vorliegenden Arbeit ist, den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} auf längeren Strecken in größeren Gebäudesimulationen zu untersuchen.
+Ziel der vorliegenden Arbeit ist es, den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} auf längeren Strecken in größeren Gebäudesimulationen zu untersuchen. 
 
 %In Kapitel \ref{sec:kapitel_2} wird in den Stand der Forschung eingeführt und die Grundlagen von künstlichen neuronalen Netzwerken behandelt. Insbesondere wird auf Convolutional Neural Networks eingegangen und bekannte Netzwerkarchitekturen vorgestellt, die in dieser Arbeit die Basis zur Untersuchung darstellen. Im Anschluss daran wird in Kapitel \ref{sec:kapitel_3} die Methodik dieser Arbeit wiedergegeben. Dort wird die Erhebung der Datensätze beschrieben und die Trainingsparameter der Untersuchungen angeben. Die Evaluationsergebnisse der trainierten künstlichen neuronale Netzwerken werden in Kapitel \ref{sec:kapitel_4} präsentiert. Danach werden über die Ergebnisse in Kapitel \ref{sec:kapitel_5} diskutiert. Abschließend wird in Kapitel \ref{sec:kapitel_6} ein Fazit gezogen. 
 
