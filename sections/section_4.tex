@@ -5,7 +5,7 @@
 
 Im vorliegenden Kapitel werden die Ergebnisse der durchgeführten Experimente präsentiert. In dieser Arbeit gibt ein Evaluationsergebnis die Abweichung der Position in Metern sowie den Orientierungsfehler in Grad an. Ferner wird in dieser Arbeit ein Evaluationsergebnis gegenüber Seinesgleichen anhand seines Positionsfehlers verglichen. Außerdem wird die Akkuratesse eines KNNs durch den Median aller Evaluationsergebnisse bestimmt.
 
-Im weiteren Verlauf dieses Kapitels werden zuerst die Reproduktionsergebnisse von BIM-PoseNet \cite{acharyaBIMPoseNetIndoorCamera2019} angegeben. Anschließend werden die Evaluationsergebnisse der trainierten Netzwerke dargestellt.
+Im weiteren Verlauf dieses Kapitels werden zuerst die Reproduktionsergebnisse von BIM-PoseNet \cite{acharyaBIMPoseNetIndoorCamera2019} angegeben. Anschließend werden die Evaluationsergebnisse der trainierten Netzwerken dargestellt.
 
 \subsection{Reproduktion der Ergebnisse von BIM-PoseNet}
 Die Ergebnisse der Experimente von \citet{acharyaBIMPoseNetIndoorCamera2019} (\textit{BIM-PoseNet}), die das PoseNet Model mit den Gradientenbildern der karikaturistischen Daten (\textit{grad-cartoon}) sowie synthetischen Kantenbilder trainierten (\textit{grad-edge}) und anschließend mit den Gradientenbildern der realen Daten (\textit{grad-real}) evaluierten, konnten näherungsweise reproduziert werden (vgl. Tab. \ref{tab:reproduction}). Abweichend von BIM-PoseNet wurden statt 1000 \textit{grad-real} Daten, 600 \textit{grad-real} Daten evaluiert, weil zu derzeit 600 Evaluierungsbilder veröffentlicht waren. Der Trainingsprozess wurde pro Datensatztyp 5-mal wiederholt und die bessere Akkuratesse wurde behalten. Eine exakte oder bessere Reproduktion der Ergebnisse ist durch Zufall bedingt und wurde in dieser Arbeit aus Zeitgründen vernachlässigt. Tabelle \ref{tab:reproduction} präsentiert die Ergebnisse der Reproduktion.
@@ -31,7 +31,7 @@ Die Ergebnisse der Experimente von \citet{acharyaBIMPoseNetIndoorCamera2019} (\t
 \subsection{Evaluation der trainierten KNNs}
 Für alle synthetischen Datensätze wurde separat das Trainingsprozess 5-mal mit den korrespondierenden Gradientenbildern der Trainingsdaten wiederholt. Eine Evaluierung folgte mit den Gradientenbildern der korrespondierenden synthetischen und realen Evaluationsdaten. Es wurden pro Strecke je Datensatztyp nur die beste Akkuratesse behalten. Tabelle \ref{tab:results_ic} bis \ref{tab:results_hs_stairs_down} geben die Akkuratesse der KNNs auf den jeweiligen Strecken an. 
 
-Für ein besseres Verständnis der durch die Evaluierung mit den \textit{grad-real} Datensätzen resultierenden Akkuratessen wurden pro Strecke für die besten Netzwerke die bestimmten Positionen in der xy-Ebene dargestellt. Ebenso wurden pro Strecke der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten dargestellt. Abbildungen \ref{fig:result_ic_loop} bis \ref{fig:result_hs_stairs_down} illustrieren die Evaluationsergebnisse.
+Für ein besseres Verständnis der durch die Evaluierung mit den \textit{grad-real} Datensätzen resultierenden Akkuratesse wurden pro Strecke für die besten Netzwerke die bestimmten Positionen in der xy-Ebene dargestellt. Ebenso wurden pro Strecke der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten dargestellt. Abbildungen \ref{fig:result_ic_loop} bis \ref{fig:result_hs_stairs_down} illustrieren die Evaluationsergebnisse.
 
 
 \subsubsection{IC-loop}
@@ -50,7 +50,7 @@ In Abbildung \ref{subfig:ic_fig2} ist deutlich zu erkennen, dass das \textit{gra
 
 \begin{table}
 	\centering
-	\caption{Evaluationsergebnisse von der Strecke \textit{IC-loop}. Es wird die Akkuratesse der mit den jeweiligen Trainingsdaten trainierten Netzwerke angegeben, die mit den korrespondierenden synthetischen Evaluationsdaten sowie jeweils mit den realen Evaluationsdaten evaluiert wurden.  }
+	\caption{Evaluationsergebnisse von der Strecke \textit{IC-loop}. Es wird die Akkuratesse der mit den jeweiligen Trainingsdaten trainierten Netzwerken angegeben, die mit den korrespondierenden synthetischen Evaluationsdaten sowie jeweils mit den realen Evaluationsdaten evaluiert wurden.  }
 	\begin{tabularx}{1.0\textwidth}{X >{\RaggedRight}X >{\RaggedRight}X}
 	\textbf{Trainingsdatensatz} \hspace{2cm} (Gradientenbild) & \textbf{synthetische Daten} \hspace{2cm} (Position, Orientierung) & \textbf{reale Daten} \hspace{2cm} (Position, Orientierung)\\
 	\hline
@@ -73,7 +73,7 @@ In Abbildung \ref{subfig:ic_fig2} ist deutlich zu erkennen, dass das \textit{gra
 		\subcaption{} \label{subfig:ic_fig4} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/ic_cycl/resultsfig_4.pdf} }\\
 		\subcaption{} \label{subfig:ic_fig6} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/ic_cycl/resultsfig_6.pdf} }\\
 	\end{tabularx}
-	\caption{Visualisierung der Evaluationsergebnisse von der Strecke \textit{IC-loop} (s. Abb. \ref{subfig:traj_ic}). Die Evaluation folgte mit den Gradietenbildern der realen Daten auf dem mit \textit{grad-photoreal} trainiertem Netzwerk. \subref{subfig:ic_fig2} illustriert die Positionen auf der xy-Ebene, die von dem KNN bestimmt wurden. Der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten werden in  \subref{subfig:ic_fig4} und  \subref{subfig:ic_fig6} dargestellt.}
+	\caption{Visualisierung der Evaluationsergebnisse der Strecke \textit{IC-loop} (s. Abb. \ref{subfig:traj_ic}). Die Evaluation folgte mit den Gradietenbildern der realen Daten auf dem mit \textit{grad-photoreal} trainiertem Netzwerk. \subref{subfig:ic_fig2} illustriert die Positionen auf der xy-Ebene, die von dem KNN bestimmt wurden. Der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten werden in  \subref{subfig:ic_fig4} und  \subref{subfig:ic_fig6} dargestellt.}
 	\label{fig:result_ic_loop}
 \end{figure}
 
@@ -81,16 +81,16 @@ In Abbildung \ref{subfig:ic_fig2} ist deutlich zu erkennen, dass das \textit{gra
 \subsubsection{HS-gamma}
 
 %Dies stellt bei dem betroffenen Gebäudevolumen von $54m \times 10m \times 3m$ ein Potenzial zur Pose Estimation mit Daten der gleichen Beschaffenheit dar.
-Ein weiteres Experiment folgte mit dem \textit{HS-gamma} Datensatz. Trainiert und Evaluiert mit nur synthetischen Daten konnte durch den \textit{grad-cartoon} Datensatz eine Akkuratesse von 1.00$m$ in der Position und 9.92° in der Orientierung erzielt werden. Die Evaluierung, mit den \textit{grad-real} Evaluationsdaten auf dem \textit{grad-cartoon} Netzwerk, führte zur einer Akkuratesse von 8.60$m$ in der Position und 19.59° in der Orientierung (vgl. Tab. \ref{tab:results_hs_gamma}). 
+Ein weiteres Experiment folgte mit dem \textit{HS-gamma} Datensatz. Trainiert und evaluiert mit nur synthetischen Daten konnte durch den \textit{grad-cartoon} Datensatz eine Akkuratesse von 1.00$m$ in der Position und 9.92° in der Orientierung erzielt werden. Die Evaluierung, mit den \textit{grad-real} Evaluationsdaten auf dem \textit{grad-cartoon} Netzwerk, führte zur einer Akkuratesse von 8.60$m$ in der Position und 19.59° in der Orientierung (vgl. Tab. \ref{tab:results_hs_gamma}). 
 
 % Bei oben genannten Gebäudemaßen ist eine Positionsgenauigkeit von 8.60$m$ sowie ein Orientierungsfehler von 19.59° unzureichend für die Bestimmung der Pose auf der \textit{HS-gamma} Strecke. Abbildung \ref{fig:result_hs_gamma} visualisiert die Evaluationsergebnisse von dem mit \textit{grad-cartoon} trainiertem und \textit{grad-real} evaluiertem Netzwerk.
 
-Das \textit{grad-cartoon} Netzwerk bestimmte die Positionen aller \textit{grad-real} Evaluationsdaten nahe der erwähnten Schleife der \textit{HS-gamma} Strecke auf ein ca. 20$m$ langem Teilbereich (vgl. Abb.  \ref{subfig:hs_gamma_fig2}). Deshalb weisen die Evaluationsdaten nahe der Schleife die geringsten Positionsfehler auf. Zudem zeigen die Evaluationsdaten des zum Ausgangspunkt optisch ähnlichen Flures die größten Positionsfehlern auf (vgl. Abb. \ref{subfig:ic_fig4}). Ebenso bestimmte  das oben erwähnte Netzwerk mehrheitlich die Orientierung der Evaluationsdaten als die Orientierung der dominierenden Aufnahmerichtung. Daher sind die größten Orientierungsfehler bei den Evaluationsdaten der Schleife sowie der vertikal verlaufenden Strecke aufzufinden (vgl. Abb. \ref{subfig:ic_fig4}). 
+Das \textit{grad-cartoon} Netzwerk bestimmte die Positionen aller \textit{grad-real} Evaluationsdaten nahe der erwähnten Schleife der \textit{HS-gamma} Strecke auf ein ca. 20$m$ langem Teilbereich (vgl. Abb.  \ref{subfig:hs_gamma_fig2}). Deshalb weisen die Evaluationsdaten nahe der Schleife die geringsten Positionsfehler auf. Zudem zeigen die Evaluationsdaten des zum Ausgangspunkt optisch ähnlichen Flures die größten Positionsfehlern auf (vgl. Abb. \ref{subfig:ic_fig4}). Ebenso bestimmte das oben erwähnte Netzwerk mehrheitlich die Orientierung der Evaluationsdaten als die Orientierung der dominierenden Aufnahmerichtung. Daher sind die größten Orientierungsfehler bei den Evaluationsdaten der Schleife sowie der vertikal verlaufenden Strecke aufzufinden (vgl. Abb. \ref{subfig:ic_fig4}). 
 
 
 \begin{table}
 	\centering
-	\caption{Evaluationsergebnisse von der Strecke \textit{HS-gamma}. Es wird die Akkuratesse der mit den jeweiligen Trainingsdaten trainierten Netzwerke angegeben, die mit den korrespondierenden synthetischen Evaluationsdaten sowie jeweils mit den realen Evaluationsdaten evaluiert wurden.}
+	\caption{Evaluationsergebnisse der Strecke \textit{HS-gamma}. Es wird die Akkuratesse der mit den jeweiligen Trainingsdaten trainierten Netzwerke angegeben, die mit den korrespondierenden synthetischen Evaluationsdaten sowie jeweils mit den realen Evaluationsdaten evaluiert wurden.}
 	\begin{tabularx}{1.0\textwidth}{X >{\RaggedRight}X >{\RaggedRight}X}
 		\textbf{Netzwerk} \hspace{2cm} (Trainingsdatensatz) & \textbf{synthetische Daten} \hspace{2cm} (Position, Orientierung) & \textbf{reale Daten} \hspace{2cm} (Position, Orientierung)\\
 	\hline
@@ -111,7 +111,7 @@ Das \textit{grad-cartoon} Netzwerk bestimmte die Positionen aller \textit{grad-r
 		\subcaption{} \label{subfig:hs_gamma_fig4} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/hs_gamma/resultsfig_4.pdf} }\\
 		\subcaption{} \label{subfig:hs_gamma_fig6} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/hs_gamma/resultsfig_6.pdf} }\\
 	\end{tabularx}
-	\caption{Visualisierung der Evaluationsergebnisse von der Strecke \textit{HS-gamma} (s. Abb. \ref{subfig:traj_hs_gamma}). Die Evaluation folgte mit den Gradietenbildern der realen Daten auf dem mit \textit{grad-cartoon} trainiertem Netzwerk. \subref{subfig:hs_gamma_fig2} illustriert die Positionen auf der xy-Ebene, die von dem KNN bestimmt wurden. Der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten werden in  \subref{subfig:hs_gamma_fig4} und  \subref{subfig:hs_gamma_fig6} dargestellt.}
+	\caption{Visualisierung der Evaluationsergebnisse der Strecke \textit{HS-gamma} (s. Abb. \ref{subfig:traj_hs_gamma}). Die Evaluation folgte mit den Gradietenbildern der realen Daten auf dem mit \textit{grad-cartoon} trainiertem Netzwerk. \subref{subfig:hs_gamma_fig2} illustriert die Positionen auf der xy-Ebene, die von dem KNN bestimmt wurden. Der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten werden in  \subref{subfig:hs_gamma_fig4} und  \subref{subfig:hs_gamma_fig6} dargestellt.}
 	\label{fig:result_hs_gamma}
 \end{figure}
 
@@ -149,7 +149,7 @@ Die vom \textit{grad-edge} Netzwerk bestimmten Positionen aller \textit{grad-rea
 		\subcaption{} \label{subfig:hs_up_fig5} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/hs_up/resultsfig_5.pdf} }\\
 		\subcaption{} \label{subfig:hs_up_fig7} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/hs_up/resultsfig_7.pdf} }\\
 	\end{tabularx}
-	\caption{Visualisierung der Evaluationsergebnisse von der Strecke \textit{HS-stairs-up}. Die Evaluation folgte mit den Gradietenbildern der realen Daten auf dem mit \textit{grad-edge} trainiertem Netzwerk. \subref{subfig:hs_up_fig3} illustriert die Positionen auf der xy-Ebene, die von dem KNN bestimmt wurden. Der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten werden in  \subref{subfig:hs_up_fig5} und  \subref{subfig:hs_up_fig7} dargestellt.}
+	\caption{Visualisierung der Evaluationsergebnisse der Strecke \textit{HS-stairs-up}. Die Evaluation folgte mit den Gradietenbildern der realen Daten auf dem mit \textit{grad-edge} trainiertem Netzwerk. \subref{subfig:hs_up_fig3} illustriert die Positionen auf der xy-Ebene, die von dem KNN bestimmt wurden. Der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten werden in  \subref{subfig:hs_up_fig5} und  \subref{subfig:hs_up_fig7} dargestellt.}
 	\label{fig:result_hs_stairs_up}
 \end{figure}
 
@@ -188,7 +188,7 @@ Das mit \textit{grad-cartoon} trainierte Netzwerk bestimmte die Positionen aller
 		\subcaption{} \label{subfig:hs_down_fig5} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/hs_down/resultsfig_5.pdf} }\\
 		\subcaption{} \label{subfig:hs_down_fig7} & \imagetop{ \includegraphics[width=1.0\linewidth]{images/results/hs_down/resultsfig_7.pdf} }\\
 	\end{tabularx}
-	\caption{Visualisierung der Evaluationsergebnisse von der Strecke \textit{HS-stairs-up}. Die Evaluation folgte mit den Gradietenbildern der realen Daten auf dem mit \textit{grad-cartoon} trainiertem Netzwerk. \subref{subfig:hs_down_fig3} illustriert die Positionen auf der xy-Ebene, die von dem KNN bestimmt wurden. Der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten werden in  \subref{subfig:hs_down_fig5} und  \subref{subfig:hs_down_fig7} dargestellt.}
+	\caption{Visualisierung der Evaluationsergebnisse der Strecke \textit{HS-stairs-up}. Die Evaluation folgte mit den Gradietenbildern der realen Daten auf dem mit \textit{grad-cartoon} trainiertem Netzwerk. \subref{subfig:hs_down_fig3} illustriert die Positionen auf der xy-Ebene, die von dem KNN bestimmt wurden. Der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten werden in  \subref{subfig:hs_down_fig5} und  \subref{subfig:hs_down_fig7} dargestellt.}
 	\label{fig:result_hs_stairs_down}
 \end{figure}
 
