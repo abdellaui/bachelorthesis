@@ -169,7 +169,7 @@ Die künstliche Beleuchtung in den Gebäudesimulationen führte bei den Gradient
 	\zoombox[magnification=10]{0.15,0.8}
 	\zoombox[magnification=10]{0.5,0.25}
 	\end{tikzpicture}
-	\caption{Darstellung der durch die künstliche Beleuchtung entstehenden Artefakten in den \textit{grad-cartoon} Daten. Für eine bessere Visualisierung der Artefakten wurden die Gradientenbild binarisiert. \subref{notresh-image} ist ein Gradientenbild ohne Anwendung eines Schwellenwertverfahrens. \subref{treshed-image} ist ein Gradientenbild mit Anwendung eines Schwellenwertverfahrens.}
+	\caption{Darstellung der durch die künstliche Beleuchtung entstehenden Artefakten in den \textit{grad-cartoon} Daten. Für eine bessere Visualisierung der Artefakte wurden die Gradientenbild binarisiert. \subref{notresh-image} ist ein Gradientenbild ohne Anwendung eines Schwellenwertverfahrens. \subref{treshed-image} ist ein Gradientenbild mit Anwendung eines Schwellenwertverfahrens.}
 	\label{fig:treshold}
 \end{figure}
 
@@ -358,7 +358,7 @@ In der vorliegenden Arbeit wurde für das Training der Netzwerke die Caffe \cite
 
 Jeder reale sowie synthetische Datensatz (s. Tab. \ref{tab:datasets}) wurde je in 50\% Trainings- und 50\% Evaluationsdaten zufällig aufgeteilt. Die Trainings- sowie Evaluationsdaten wurden auf eine Auflösung von $480\times270$ skaliert. Während des Trainingsprozesses wurden zufällige Ausschnitte der Größe $224 \times 224$ aus dem skalierten Trainingsdatensatz genommen und für die Evaluierung wurde ein zentrierter Ausschnitt derselben Größe aus dem skalierten Evaluationsdatensatz verwendet. Das Durchschnittsbild der Trainingsdaten wurde sowohl beim Trainieren als auch bei der Evaluierung von den Inputbildern subtrahiert. 
 
-Der Hyperparameter $\beta$, der von PoseNet vorgestellten Kostenfunktion (s. Gleichung \ref{eq:posenet_loss}), wurde wie empfohlen für jeden realen Datensatz durch ein Grid-Search Verfahren bestimmt, indem mit den \textit{real} Trainingsdaten trainiert und mit den \textit{real}  Evaluationsdaten evaluiert wurde. Die Werte für den Hyperparameter $\beta$ werden in Tabelle \ref{tab:trainingparams} aufgelistet. Der Loss wurde mit dem AdaGrad \cite{duchiAdaptiveSubgradientMethods2011} Gradientenabstiegsverfahren mit einer konstanten Lernrate von $10^{-3}$ optimiert bzw. minimiert. Vorab wurden die Gewichte des Netzwerks mit den Gewichten eines Modells initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz trainiert wurde. Tabelle \ref{tab:trainingparams} gibt eine Übersicht der Hyperparameter an.
+Der Hyperparameter $\beta$, der von PoseNet vorgestellten Kostenfunktion (s. Gleichung \ref{eq:posenet_loss}), wurde wie empfohlen für jeden realen Datensatz durch ein Grid-Search Verfahren bestimmt, indem mit den \textit{real} Trainingsdaten trainiert und mit den \textit{real}  Evaluationsdaten evaluiert wurde. Die Werte für den Hyperparameter $\beta$ werden in Tabelle \ref{tab:trainingparams} aufgelistet. Der Loss wurde mit dem \textit{AdaGrad} \cite{duchiAdaptiveSubgradientMethods2011} Gradientenabstiegsverfahren mit einer konstanten Lernrate von $10^{-3}$ optimiert bzw. minimiert. Vorab wurden die Gewichte des Netzwerks mit den Gewichten eines Modells initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz trainiert wurde. Tabelle \ref{tab:trainingparams} gibt eine Übersicht der Hyperparameter an.
 
 \cleardoublepage
 \begin{table}[bp]
