@@ -1,6 +1,6 @@
 \subsection{Künstliche neuronale Netzwerke}
 \label{sec:KNN}
-Künstliche neuronale Netze sind ein Forschungsgebiet der \textit{künstlichen Intelligenz} und imitieren die Beschaffenheit natürlicher neuronale Netze, um komplexe Probleme zu lösen. Inspiriert von ihren biologischen Vorbildern\footnote{das Nervensystem eines komplexen Lebewesens; z.B. des Menschen}, vernetzen künstliche neuronale Netzwerke (KNN) künstliche Neuronen miteinander \cite{CS231nConvolutionalNeural}. Dabei kann die Verbindung unidirektional (\textit{feedforward}) oder bidirektional (\textit{feedback}) sein  \cite{Goodfellow-et-al-2016}. 
+Künstliche neuronale Netze sind ein Forschungsgebiet der \textit{künstlichen Intelligenz} und imitieren die Beschaffenheit natürlicher neuronale Netze, um komplexe Probleme zu lösen. Inspiriert von ihren biologischen Vorbildern\footnote{das Nervensystem eines komplexen Lebewesens; z.B. des Menschen}, vernetzen künstliche neuronale Netzwerke (KNN) künstliche Neuronen miteinander \cite{johnsonCS231nConvolutionalNeural}. Dabei kann die Verbindung unidirektional (\textit{feedforward}) oder bidirektional (\textit{feedback}) sein  \cite{Goodfellow-et-al-2016}. 
 
 Bei einem feedforward Netzwerk werden die Daten im Netz immer vorwärts übertragen, hingegen kann ein feedback Netzwerk, auch bekannt als \textit{Recurrent Neural Networks}, Daten rückwärts, sowie in einer Schleife zum selben Neuron, übergeben \cite{Goodfellow-et-al-2016}. Da feedback Netzwerke keinen Einsatz in dieser Arbeit haben, ist im weiteren Verlauf dieser Arbeit bei einem Netzwerk immer ein feedforward Ansatz gemeint. 
 
@@ -8,9 +8,9 @@ In diesem Kapitel wird als Nächstes ein künstliches Neuron definiert und ansch
 
 
 \subsubsection{Künstliches Neuron}
-Ein einzelnes Neuron erhält einen Inputsignal auf mehreren Kanälen und löst erst ein Signal (\textit{output}) aus, falls die gewichtete Summe des Inputs einen gewissen Schwellwert erreicht \cite{CS231nConvolutionalNeural}. Abbildung \ref{fig:neuron} stellt eine beispielhafte Visualisierung eines künstlichen Neurons dar.
+Ein einzelnes Neuron erhält einen Inputsignal auf mehreren Kanälen und löst erst ein Signal (\textit{output}) aus, falls die gewichtete Summe des Inputs einen gewissen Schwellwert erreicht \cite{johnsonCS231nConvolutionalNeural}. Abbildung \ref{fig:neuron} stellt eine beispielhafte Visualisierung eines künstlichen Neurons dar.
 
-Ein künstliches Neuron mit der Inputgröße $M$ ist mathematisch die nicht-lineare Funktion $y : \mathbb{R}^M \mapsto \mathbb{R}$ mit den Parametern $x$ als Input, $w$ als Gewichtsvektor, $b$ als ein Bias, $\phi$ als eine nicht-lineare \textit{Aktivierungsfunktion} \cite{CS231nConvolutionalNeural}:
+Ein künstliches Neuron mit der Inputgröße $M$ ist mathematisch die nicht-lineare Funktion $y : \mathbb{R}^M \mapsto \mathbb{R}$ mit den Parametern $x$ als Input, $w$ als Gewichtsvektor, $b$ als ein Bias, $\phi$ als eine nicht-lineare \textit{Aktivierungsfunktion} \cite{johnsonCS231nConvolutionalNeural}:
 \begin{equation}
 	\label{eq:neuron}
 	y(x)=\phi\left(\sum_{m=1}^{M} w_{i} x_{i} + b\right) = \phi(W^Tx+b)
@@ -35,7 +35,7 @@ y_l = f_l(y_{l-1}) = \phi(W^T_lx_{l-1}+b_{l})
 \end{equation}
 
 
-Die erste Schicht eines Netzwerks wird als Input-, die letzte Schicht als Ouput Layer bezeichnet. Alle Schichten dazwischen sind Hidden Layer \cite{Goodfellow-et-al-2016}. Der Ouput Layer liefert zugleich auch das Ergebnis eines Netzwerks, daher haben die Neuronen des Ouput Layers grundsätzlich keine Aktivierungsfunktion \cite{CS231nConvolutionalNeural}.
+Die erste Schicht eines Netzwerks wird als Input-, die letzte Schicht als Ouput Layer bezeichnet. Alle Schichten dazwischen sind Hidden Layer \cite{Goodfellow-et-al-2016}. Der Ouput Layer liefert zugleich auch das Ergebnis eines Netzwerks, daher haben die Neuronen des Ouput Layers grundsätzlich keine Aktivierungsfunktion \cite{johnsonCS231nConvolutionalNeural}.
 
 Die Tiefe (\textit{depth}) eines Netzwerks ist gegeben durch die Anzahl der Layer \footnote{der Input Layer ist ausgeschlossen} und die Breite (\textit{width}) eines Layers wird durch die Anzahl der Neuronen bestimmt \cite{Goodfellow-et-al-2016}. 
 Abbildung \ref{fig:neural_net} illustriert ein feedforward neuronales Netz als ein azyklischer Graph.
