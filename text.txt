@@ -258,12 +258,12 @@ Die absolute Lokalisierung eines visuellen Abfragematerials ist über das Suchen
 
 
 
-Hierfür versuchen Pose Estimation Ansätze mit künstlichen neuronalen Netzwerken wie z.B. PoseNet eine geeignete Lösung zu bieten. PoseNet wird mit Datenpaaren bestehend aus RGB-Bildern und Pose trainiert, worin die Ermittlung der Posen über Structure-from-Motion (SfM) einer Videoaufnahme der Umgebung genügt. PoseNet und seine Nachfolger benötigen Trainingsdaten von SfM der Videoaufnahmen, die den gesamten Innenraum der Gebäude abdecken. Die Aufnahme der Innenräume und das Erzeugen der Trainingsdaten über langsame und fehleranfällige SfM Methoden ist mühsam.
+Hierfür versuchen Pose Estimation Ansätze mit künstlichen neuronalen Netzwerken (KNN) wie z.B. PoseNet eine geeignete Lösung zu bieten. PoseNet wird mit Datenpaaren bestehend aus RGB-Bildern und Pose trainiert, worin die Ermittlung der Posen über Structure-from-Motion (SfM) einer Videoaufnahme der Umgebung genügt. PoseNet und seine Nachfolger benötigen Trainingsdaten von SfM der Videoaufnahmen, die den gesamten Innenraum der Gebäude abdecken. Die Aufnahme der Innenräume und das Erzeugen der Trainingsdaten über langsame und fehleranfällige SfM-Methoden ist mühsam.
 
 acharyaBIMPoseNetIndoorCamera2019 versuchten deshalb die Trainingsdaten aus der Simulation eines Gebäudes zu gewinnen. Die Forscher erzeugten synthetische Bilder mit bekannter Pose entlang einer ca. 18 langen Strecke in der 3D-Simulation eines Korridors. Trainiert auf dem PoseNet Modell mit den Gradientenbildern der synthetischen Daten konnten die Forscher bei der Evaluierung mit den Gradientenbildern der realen Daten eine Akkuratesse von ca.  in der Position und 7° in der Orientierung erzielen. Allerdings verlief die kurze Strecke überwiegend in einer Richtung sowie auf einer Etagenebene in der Simulation eines ca.  großen Korridors.
 
 
-Ziel der vorliegenden Arbeit ist es, den Ansatz von auf längeren Strecken, die einerseits in mehrere Richtungen verlaufen und andererseits sich auf mehreren Etagenebenen erstrecken, in größeren Gebäudesimulationen zu untersuchen. Um die Untersuchung best möglichst an die Aufnahmestrecken und Gebäudesimulationen abhängig zu machen, wird möglichst gleichermaßen wie in reale Evaluationsdaten erhoben, synthetischen Trainingsdaten generiert und das PoseNet Modell mit übereinstimmenden Hyperparametern verwendet.
+Ziel der vorliegenden Arbeit ist es, den Ansatz von auf längeren Strecken, die einerseits in mehrere Richtungen verlaufen und andererseits sich auf mehreren Etagenebenen erstrecken, in größeren Gebäudesimulationen zu untersuchen. Um die Untersuchung bestmöglich an die Aufnahmestrecken und Gebäudesimulationen abhängig zu machen, wird möglichst gleichermaßen wie in reale Evaluationsdaten erhoben, synthetischen Trainingsdaten generiert und das PoseNet Modell mit übereinstimmenden Hyperparametern verwendet.
 
 Folgende Punkte konnte diese Arbeit in die Forschung beitragen:
 
@@ -271,7 +271,7 @@ Folgende Punkte konnte diese Arbeit in die Forschung beitragen:
 		placeholder
 		placeholder
 
-Im weiteren Verlauf dieser Arbeit wird in Kapitel  einen Überblick des Forschungsstandes vermittelt und die Grundlagen von künstlichen neuronalen Netzwerken behandelt. Insbesondere wird auf Convolutional Neural Networks eingegangen und die Netzwerkarchitektur von PoseNet vorgestellt, die in dieser Arbeit die Basis zur Untersuchung darstellt. Im Anschluss daran wird in Kapitel  die Methodik dieser Arbeit wiedergegeben. Dort wird die Erhebung der Datensätze beschrieben und die Trainingsparameter der Untersuchungen angeben. Die Evaluationsergebnisse der trainierten künstlichen neuronale Netzwerken werden in Kapitel  präsentiert. Danach werden über die Ergebnisse in Kapitel  diskutiert. Abschließend wird in Kapitel  ein Fazit gezogen. 
+Im weiteren Verlauf dieser Arbeit wird in Kapitel  einen Überblick des Forschungsstandes vermittelt und die Grundlagen von künstlichen neuronalen Netzwerken behandelt. Insbesondere wird auf Convolutional Neural Networks eingegangen und die Netzwerkarchitektur von PoseNet vorgestellt, die in dieser Arbeit die Basis zur Untersuchung darstellt. Im Anschluss daran wird in Kapitel  die Methodik dieser Arbeit wiedergegeben. Dort wird die Erhebung der Datensätze beschrieben und die Trainingsparameter der Untersuchungen angeben. Die Evaluationsergebnisse der trainierten KNN werden in Kapitel  präsentiert. Danach werden über die Ergebnisse in Kapitel  diskutiert. Abschließend wird in Kapitel  ein Fazit gezogen. 
 
 
 
@@ -307,7 +307,7 @@ Einen Fortschritt erhalten die Autoren von PoseNet durch die hier vorgestellte A
 Dieselben Autoren erweitern PoseNet mit einer neuen Kostenfunktion unter Berücksichtigung von geometrischen Eigenschaften. und setzen Long-Short-Term-Memory (LSTM) Einheiten ein, um Wissen aus der Korrelation von Bildsequenzen zu gewinnen. sowie augmentieren den Trainingsdatensatz. stocken den vorhandenen Datensatz auf, indem sie die Bilder künstlich rotieren. erweitern zuerst über ein weiteres CNN den Datensatz um Tiefenbildern. Anschließend simulieren die Autoren RGB-Bilder aus verschiedenen Viewpoints. Im Vergleich zu PoseNet verwenden und eine andere Architektur. 
 Das Modell von basiert auf die SqueezeNet Architektur. stellen HourglassNet vor, das auf einem symmetrischen Encoder-Decoder Architektur basiert. und binden zusätzliche Informationen wie z.B. VO, GPS oder Inertial-Measurement-Units (IMU) ein. 
 
-Jedes dieser Ansätze benötigen annotierte Trainingsdaten. Für die Erstellung solcher Daten wurden beispielsweise mit entsprechender Hardware ausgerüstete Trolleys, 3D-Kameras mit Iterative-Closest-Point Algorithmen oder SfM Methoden eingesetzt.
+Jedes dieser Ansätze benötigen annotierte Trainingsdaten. Für die Erstellung solcher Daten wurden beispielsweise mit entsprechender Hardware ausgerüstete Trolleys, 3D-Kameras mit Iterative-Closest-Point Algorithmen oder SfM-Methoden eingesetzt.
 
 
 
@@ -322,7 +322,7 @@ Die vorliegende Arbeit versucht den Ansatz von auf längeren Strecken in größe
 Im weiteren Verlauf des Kapitels werden einige grundlegende Themen erläutert. Zuerst werden künstliche neuronale Netze definiert. Danach wird ein elementares Wissen an Convolutional Neural Networks vermittelt und anschließend bekannte CNN Modelle näher erläutert.
 
 Künstliche neuronale Netzwerke
-Künstliche neuronale Netze sind ein Forschungsgebiet der künstlichen Intelligenz und imitieren die Beschaffenheit natürlicher neuronale Netze, um komplexe Probleme zu lösen. Inspiriert von ihren biologischen Vorbildern(das Nervensystem eines komplexen Lebewesens; z.B. des Menschen), vernetzen künstliche neuronale Netzwerke (KNN) künstliche Neuronen miteinander. Dabei kann die Verbindung unidirektional (feedforward) oder bidirektional (feedback) sein . 
+Künstliche neuronale Netze sind ein Forschungsgebiet der künstlichen Intelligenz und imitieren die Beschaffenheit natürlicher neuronale Netze, um komplexe Probleme zu lösen. Inspiriert von ihren biologischen Vorbildern(das Nervensystem eines komplexen Lebewesens; z.B. des Menschen), vernetzen künstliche neuronale Netzwerke künstliche Neuronen miteinander. Dabei kann die Verbindung unidirektional (feedforward) oder bidirektional (feedback) sein . 
 
 Bei einem feedforward Netzwerk werden die Daten im Netz immer vorwärts übertragen, hingegen kann ein feedback Netzwerk, auch bekannt als Recurrent Neural Networks, Daten rückwärts, sowie in einer Schleife zum selben Neuron, übergeben. Da feedback Netzwerke keinen Einsatz in dieser Arbeit haben, ist im weiteren Verlauf dieser Arbeit bei einem Netzwerk immer ein feedforward Ansatz gemeint. 
 
@@ -480,7 +480,7 @@ Methodik
 	
 Das vorliegende Kapitel versucht die Methodik dieser Arbeit wiederzugeben. Die Forscher konnten die Pose mit einer Akkuratesse von ca.  in der Position und 7° in der Orientierung auf einer ca. 18 langen Strecke in einem ca.  großen Korridor bestimmen (s. Abb. ). Dabei haben die Forscher reale Daten entlang des Korridors mit einem Smartphone erhoben und die korrespondierende Pose (Ground-Truth-Daten) über SfM-Methoden bestimmt. Daraufhin wurden entlang derselben Aufnahmestrecke in der 3D-Simulation des Korridors mehrere synthetische Daten generiert, die sich in ihrer Realitätstreue vom Karikaturistischem zur fotorealistisch Texturiertem variieren. Anschließend wurde das in Abschnitt  beschriebene PoseNet Modell mit Gradientenbilder der synthetischen Daten trainiert und mit Gradientenbilder der realen Daten evaluiert. Vorab wurde das PoseNet Modell mit den Gewichten eines Modells initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz trainiert wurde. 
 
-Die vorliegende Arbeit versucht den Ansatz von zur Pose Estimation in Gebäuden anhand von Convolutional Neural Network und simulierten 3D-Daten auf längeren Strecken in größeren Gebäudesimulationen zu untersuchen. Daher wurden zuerst entsprechende Datensätze erstellt und gleicherweise das PoseNet Modell trainiert sowie evaluiert. Vorab wurden die Ergebnisse von  reproduziert, um die Korrektheit des Training-Pipelines zu überprüfen. Danach wurde das PoseNet Modell mit den Gradietenbilder der synthetischen Daten trainiert und evaluiert, um die Performance des Netzwerkes mit Trainings- sowie Evaluationsdaten derselben Domäne zu beobachten. Anschließend wurden zielgemäß die trainierten Netzwerke mit den Gradientenbildern der realen Daten evaluiert. Abbildung  visualisiert die Methodik dieser Arbeit.
+Die vorliegende Arbeit versucht den Ansatz von zur Pose Estimation in Gebäuden anhand von Convolutional Neural Network und simulierten 3D-Daten auf längeren Strecken in größeren Gebäudesimulationen zu untersuchen. Daher wurden zuerst entsprechende Datensätze erstellt und gleicherweise das PoseNet Modell trainiert sowie evaluiert. Vorab wurden die Ergebnisse von  reproduziert, um die Korrektheit des Training-Pipelines zu überprüfen. Danach wurde das PoseNet Modell mit den Gradietenbildern der synthetischen Daten trainiert und evaluiert, um die Performance des Netzwerkes mit Trainings- sowie Evaluationsdaten derselben Domäne zu beobachten. Anschließend wurden zielgemäß die trainierten Netzwerken mit den Gradientenbildern der realen Daten evaluiert. Abbildung  visualisiert die Methodik dieser Arbeit.
 
 
 Im weiteren Verlauf dieses Kapitels wird die Erhebung / Generierung der realen / synthetischen Daten beschrieben und die Verarbeitung der Daten dargestellt. Im Anschluss werden die Datensätze und die Trainingsparameter angegeben. 
@@ -497,9 +497,9 @@ In der vorliegenden Arbeit wurde für die Bestimmung der Ground-Truth-Daten sowi
 In der Literatur wurden die realen Daten einer Zone grundsätzlich entlang einer Strecke aufgenommen. Daher wurden zuerst Aufnahmestrecken in den Gebäudesimulationen festgelegt und anschließend die Aufnahmen durchgeführt. Davor wurden die Ausgangspunkte der Aufnahmen zu einem Referenzpunkt in den Simulationen abgemessen und als Offset zur Bestimmung der globalen Position im Gebäude notiert.
 
 
-Über das Robot Operating System(https://www.ros.org/about-ros/ (abgerufen am: 18.07.2019)) (ROS) Framework wurden die Kameras zeitgleich angesprochen und der Datenfluss der Kameras synchronisiert. Anschließend wurde der notierte Offset zur Bestimmung der absoluten Position im Gebäude zu den von der T265 berechneten, zur Ausgangspunkt relativen, Posen addiert. Somit beinhaltet jeder erhobene Datensatz ein Bild pro Fischaugenkamera, ein Tiefenbild, ein RGB-Bild, eine 3D Punktwolke und die dazugehörige absolute Pose im Gebäude pro Frame. Für die vorliegende Arbeit waren nur die Pose-Daten der T265 sowie die RGB-Bilder der D435 relevant, da PoseNet ausschließlich RGB-Bilder mit annotiertem Kamerapose benötigt. Abbildung  visualisiert ein Datensatzexemplar für einen Frame.
+Über das Robot Operating System(https://www.ros.org/about-ros/ (abgerufen am: 18.07.2019)) (ROS) Framework wurden die Kameras zeitgleich angesprochen und der Datenfluss der Kameras synchronisiert. Anschließend wurde der notierte Offset zur Bestimmung der absoluten Position im Gebäude zu den von der T265 berechneten, zum Ausgangspunkt relativen, Posen addiert. Somit beinhaltet jeder erhobene Datensatz ein Bild pro Fischaugenkamera, ein Tiefenbild, ein RGB-Bild, eine 3D Punktwolke und die dazugehörige absolute Pose im Gebäude pro Frame. Für die vorliegende Arbeit waren nur die Pose-Daten der T265 sowie die RGB-Bilder der D435 relevant, da PoseNet ausschließlich RGB-Bilder mit annotiertem Kamerapose benötigt. Abbildung  visualisiert ein Datensatzexemplar für einen Frame.
 
-Aus Zeitgründen konnten die Bestkonditionen für die T265 nicht hergestellt werden, sodass die von der T265 berechneten Posen eine Abweichung (Drift) bis zur 5 (vgl. Abb. ) aufweisen. Da in der vorliegenden Arbeit die realen Daten zur Evaluierung eingesetzt wurden, allenfalls für die Bestimmtung eines Hyperparameters zwecks der Evaluation mit den realen Daten trainiert wurde, sowie die Akkuratesse im Meterbereich für eine Beobachtung ausreichen sollte, wurde die Abweichung der Posen nicht korrigiert.
+Aus Zeitgründen konnten die Bestkonditionen für die T265 nicht hergestellt werden, sodass die von der T265 berechneten Posen eine Abweichung (Drift) bis zur 5 (vgl. Abb. ) aufweisen. Da in der vorliegenden Arbeit die realen Daten zur Evaluierung eingesetzt wurden, allenfalls für die Bestimmung eines Hyperparameters zwecks der Evaluation mit den realen Daten trainiert wurde, sowie die Akkuratesse im Meterbereich für eine Beobachtung ausreichen sollte, wurde die Abweichung der Posen nicht korrigiert.
 
 
 
@@ -524,7 +524,7 @@ Aus Zeitgründen konnten die Bestkonditionen für die T265 nicht hergestellt wer
 			Datensatz pro Frame. subfig:odom1  und subfig:odom2 visualisieren in unterschiedlichen Prespektiven die von der T265 ermittelte Odometrie und die von der D435 erhaltenen 3D Punktwolke. subfig:fisheye1 und subfig:fisheye2 sind die von der T265 aufgenommenen Fischaugenbilder. subfig:rgb-image ist das RGB-Bild der D435 und subfig:depth-image das dazugehörige Tiefenbild. 
 	
 Generierung der synthetischen Daten
-Für die Generierung der synthetischen Daten wurden die 3D-Gebäudemodelle  aus dem BIM der Gebäuden entnommen. Die 3D-Gebäudemodelle wurden in Blender(https://www.blender.org/about/ (aufgerufen am: 20.07.2019)) in der derzeitig aktuellen Version 2.79b simuliert. Die Strecken der realen Aufnahmen wurden in den Simulationen Konsistenz halber auf einer konstanten Höhe von 1.70 bestmöglich schwankungslos imitiert. Eine exakte Imitation der Aufnahmestrecke der realen Daten war wegen des Abdriftens der von der T265 berechneten Ground-Truth-Daten nicht möglich (s. Abschn. ).
+Für die Generierung der synthetischen Daten wurden die 3D-Gebäudemodelle aus dem BIM der Gebäuden entnommen. Die 3D-Gebäudemodelle wurden in Blender(https://www.blender.org/about/ (aufgerufen am: 20.07.2019)) in der derzeitig aktuellen Version 2.79b simuliert. Die Strecken der realen Aufnahmen wurden in den Simulationen Konsistenz halber auf einer konstanten Höhe von 1.70 bestmöglich schwankungslos imitiert. Eine exakte Imitation der Aufnahmestrecke der realen Daten war wegen des Abdriftens der von der T265 berechneten Ground-Truth-Daten nicht möglich (s. Abschn. ).
 
 In Anlehnung an wurde entlang der imitierten Strecke in 0.05 Intervallen und mit einer 10° Neigung in je y- und z-Achse Bilder mit korrespondierenden Ground-Truth-Daten aufgenommen, um die Varianz der realen Daten abzudecken. Die intrinsischen Daten der D435 RGB-Kamera wurden auf die virtuellen Kameras übertragen. Aus Gründen der Performance wurde die Auflösung der synthetischen Bilder von  auf   halbiert. Abbildung  illustriert die Variationen der Pose pro Stützpunkt auf einer Strecke.
 
@@ -553,14 +553,14 @@ Die vorliegende Arbeit versucht das PoseNet Modell mit den Gradientenbildern der
 
 Bei der Aufnahme der realen Daten kam es durch die manuelle Führung des Kamerakonstrukts (s. Abb. ) in den Gebäuden zu unscharfen Bildern. Im Vergleich zu unscharfen Kanten im Bild weisen schärfere Kanten eine deutlichere Kontur im Gradientenbild auf. Daher wurden die realen Bilder vor der Verarbeitung in Gradientenbilder auf die Größe  der synthetischen Bilder verkleinert, um einerseits eine einheitliche Auflösung der Bilder zu verschaffen und andererseits unscharfe Kanten, bedingt durch Bewegung, im Bild zu einer schärferen Kante zusammenzuführen.
 
-Die künstliche Beleuchtung in den Gebäudesimulationen führte bei den Gradientenbildern der karikaturistischen Daten (grad-cartoon) zu Artefakten (s. Abb. 
-). Diese Artefakten befanden sich im niedrigen Wertebereich des Gradientenbildes. Deshalb wurde für die Unterdrückung der Artefakten zusätzlich ein Schwellenwertverfahren angewendet, indem die Pixelwerte eines Gradientenbildes unter einer gewissen Schwelle auf ein Mindestwert gesetzt werden. Nach einem Minimum der Pixelwerte wurde iterativ gesucht, sodass die von den Artefakten betroffenen Stellen eine homogene Fläche im Bild darstellten. Der Wert 8 stellte sich als geeignete Schwelle für die Gradientenbilder heraus und wurde als Minimum für die Pixelwerte festgelegt, sodass die Pixelwerte der Gradientenbilder im Wertebereich von  liegen. Da es sich bei dem Pixelwert 8 um einen kleinen Wert handelte, wurde Konsistenz halber dieses Verfahren bei allen Datensatztypen angewendet. Abbildung  visualisiert von jedem Datensatztyp ein Beispiel und die dazugehörigen Gradientenbilder.
+Die künstliche Beleuchtung in den Gebäudesimulationen führte bei den Gradientenbildern der karikaturistischen Daten (grad-cartoon) zu Artefakte (s. Abb. 
+). Diese Artefakte befanden sich im niedrigen Wertebereich des Gradientenbildes. Deshalb wurde für die Unterdrückung der Artefakte zusätzlich ein Schwellenwertverfahren angewendet, indem die Pixelwerte eines Gradientenbildes unter einer gewissen Schwelle auf ein Mindestwert gesetzt werden. Nach einem Minimum der Pixelwerte wurde iterativ gesucht, sodass die von den Artefakten betroffenen Stellen eine homogene Fläche im Bild darstellten. Der Wert 8 stellte sich als geeignete Schwelle für die Gradientenbilder heraus und wurde als Minimum für die Pixelwerte festgelegt, sodass die Pixelwerte der Gradientenbilder im Wertebereich von  liegen. Da es sich bei dem Pixelwert 8 um einen kleinen Wert handelte, wurde dieses Verfahren Konsistenz halber bei allen Datensatztypen angewendet. Abbildung  visualisiert von jedem Datensatztyp ein Beispiel und die dazugehörigen Gradientenbilder.
 
 
 
 		
 	
-	Darstellung der durch die künstliche Beleuchtung entstehenden Artefakten in den grad-cartoon Daten. Für eine bessere Visualisierung der Artefakten wurden die Gradientenbild binarisiert. notresh-image ist ein Gradientenbild ohne Anwendung eines Schwellenwertverfahrens. treshed-image ist ein Gradientenbild mit Anwendung eines Schwellenwertverfahrens.
+	Darstellung der durch die künstliche Beleuchtung entstehenden Artefakten in den grad-cartoon Daten. Für eine bessere Visualisierung der Artefakte wurden die Gradientenbild binarisiert. notresh-image ist ein Gradientenbild ohne Anwendung eines Schwellenwertverfahrens. treshed-image ist ein Gradientenbild mit Anwendung eines Schwellenwertverfahrens.
 	
 
 
@@ -655,7 +655,7 @@ Abbildung  illustriert die Strecken der Datensätze.
 				Illustration der Aufnahmestrecken der Datensätze. Die Aufnahmestrecken der synthetischen Daten werden in Grün und die von der T265 mit einer Abweichung bis zur 5 berechneten Strecke der realen Daten in Blau gekennzeichnet. Die Umrisse der virtuellen Kameras geben den Ausganspunkt  sowie die Aufnahmerichtung der Strecken an.  subfig:traj_ic befindet sich in der nördlichen Hälfte des 6. Stockwerkes des IC-Gebäudes Ruhr-Universität Bochum. subfig:traj_hs_gamma, subfig:traj_hs-up, subfig:traj_hs-down befinden sich im Seminargebäude Hochschule Bochum. subfig:traj_hs-up und subfig:traj_hs-down sind nahe an der Position der Schleife von subfig:traj_hs_gamma. Tabelle  listet die approximierten metrischen Eigenschaften der Aufnahmestrecken auf.
 	
 Trainingsparameter
-Künstlichen neuronalen Netzwerke (KNN) besitzen zwei Arten von Parametern. Die erste Art von Parametern (Gewichte) werden während der Trainingsphase über Verfahren wie z.B. Backpropagation an die Trainingsdaten angepasst.
+Künstlichen neuronalen Netzwerke besitzen zwei Arten von Parametern. Die erste Art von Parametern (Gewichte) werden während der Trainingsphase über Verfahren wie z.B. Backpropagation an die Trainingsdaten angepasst.
 Die zweite Art von Parametern (Hyperparameter) werden vor der Trainingsphase festgelegt und geben besondere Einstellungen des Netzwerkes wie z.B. das Lernverhalten an. Die Performance eines KNNs ist abhängig von seinen Parametern. Da diese Arbeit den Ansatz von auf längeren Strecken in größeren Gebäudesimulation zu untersuchen versucht, wurde die Performance des KNNs bestmöglich von den verwendeten Datensätzen abhängig gehalten, indem die Hyperparametern von übernommen bzw. gleichermaßen bestimmt oder im selben Verhältnis zur Datensatz gewählt wurden.
 
 
@@ -663,7 +663,7 @@ Die zweite Art von Parametern (Hyperparameter) werden vor der Trainingsphase fes
 
 In der vorliegenden Arbeit wurde für das Training der Netzwerke die Caffe Implementierung von PoseNet verwendet, die von den eigenen Autoren veröffentlicht wurde. Die Batchgröße betrug 40 und die Anzahl der Trainingsepochen war 160. Eine NVIDIA GeForce GTX 1080 Ti mit 11GB Grafikspeicher wurde verwendet und ermöglichte bei einer Batchgröße von 40 drei Trainingsprozesse zeitgleich durchzuführen.
 
-Jeder reale sowie synthetische Datensatz (s. Tab. ) wurde je in 50 Trainings- und 50 Evaluationsdaten zufällig aufgeteilt. Die Trainings- sowie Evaluationsdaten wurden auf eine Auflösung von  skaliert. Während des Trainingsprozesses wurden zufällige Ausschnitte der Größe  aus dem skalierten Trainingsdatensatz genommen und für die Evaluierung wurde ein zentrierter Ausschnitt derselben Größe aus dem skalierten Evaluationsdatensatz verwendet. Das Durchschnittsbild der Trainingsdaten wurde sowohl beim Trainieren als auch bei der Evaluierung von den Inputbildern subtrahiert. 
+Jeder reale sowie synthetische Datensatz (s. Tab. ) wurde je in 50 Trainings- und 50 Evaluationsdaten zufällig aufgeteilt. Die Trainings- sowie Evaluationsdaten wurden auf eine Auflösung von  skaliert. Während des Trainingsprozesses wurden zufällige Ausschnitte der Größe  aus dem skalierten Trainingsdatensatz genommen und für die Evaluierung wurde ein zentrierter Ausschnitt derselben Größe aus dem skalierten Evaluationsdatensatz verwendet. Das Durchschnittsbild der Trainingsdaten wurde sowohl beim Trainieren als auch bei der Evsaluierung von den Inputbildern subtrahiert. 
 
 Der Hyperparameter , der von PoseNet vorgestellten Kostenfunktion (s. Gleichung ), wurde wie empfohlen für jeden realen Datensatz durch ein Grid-Search Verfahren bestimmt, indem mit den real Trainingsdaten trainiert und mit den real  Evaluationsdaten evaluiert wurde. Die Werte für den Hyperparameter  werden in Tabelle  aufgelistet. Der Loss wurde mit dem AdaGrad Gradientenabstiegsverfahren mit einer konstanten Lernrate von  optimiert bzw. minimiert. Vorab wurden die Gewichte des Netzwerks mit den Gewichten eines Modells initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz trainiert wurde. Tabelle  gibt eine Übersicht der Hyperparameter an.
 
@@ -727,7 +727,7 @@ Ergebnisse
  
 Im vorliegenden Kapitel werden die Ergebnisse der durchgeführten Experimente präsentiert. In dieser Arbeit gibt ein Evaluationsergebnis die Abweichung der Position in Metern sowie den Orientierungsfehler in Grad an. Ferner wird in dieser Arbeit ein Evaluationsergebnis gegenüber Seinesgleichen anhand seines Positionsfehlers verglichen. Außerdem wird die Akkuratesse eines KNNs durch den Median aller Evaluationsergebnisse bestimmt.
 
-Im weiteren Verlauf dieses Kapitels werden zuerst die Reproduktionsergebnisse von BIM-PoseNet angegeben. Anschließend werden die Evaluationsergebnisse der trainierten Netzwerke dargestellt.
+Im weiteren Verlauf dieses Kapitels werden zuerst die Reproduktionsergebnisse von BIM-PoseNet angegeben. Anschließend werden die Evaluationsergebnisse der trainierten Netzwerken dargestellt.
 
 Reproduktion der Ergebnisse von BIM-PoseNet
 Die Ergebnisse der Experimente von (BIM-PoseNet), die das PoseNet Model mit den Gradientenbildern der karikaturistischen Daten (grad-cartoon) sowie synthetischen Kantenbilder trainierten (grad-edge) und anschließend mit den Gradientenbildern der realen Daten (grad-real) evaluierten, konnten näherungsweise reproduziert werden (vgl. Tab. ). Abweichend von BIM-PoseNet wurden statt 1000 grad-real Daten, 600 grad-real Daten evaluiert, weil zu derzeit 600 Evaluierungsbilder veröffentlicht waren. Der Trainingsprozess wurde pro Datensatztyp 5-mal wiederholt und die bessere Akkuratesse wurde behalten. Eine exakte oder bessere Reproduktion der Ergebnisse ist durch Zufall bedingt und wurde in dieser Arbeit aus Zeitgründen vernachlässigt. Tabelle  präsentiert die Ergebnisse der Reproduktion.
@@ -750,7 +750,7 @@ Die Ergebnisse der Experimente von (BIM-PoseNet), die das PoseNet Model mit den 
 Evaluation der trainierten KNNs
 Für alle synthetischen Datensätze wurde separat das Trainingsprozess 5-mal mit den korrespondierenden Gradientenbildern der Trainingsdaten wiederholt. Eine Evaluierung folgte mit den Gradientenbildern der korrespondierenden synthetischen und realen Evaluationsdaten. Es wurden pro Strecke je Datensatztyp nur die beste Akkuratesse behalten. Tabelle  bis  geben die Akkuratesse der KNNs auf den jeweiligen Strecken an. 
 
-Für ein besseres Verständnis der durch die Evaluierung mit den grad-real Datensätzen resultierenden Akkuratessen wurden pro Strecke für die besten Netzwerke die bestimmten Positionen in der xy-Ebene dargestellt. Ebenso wurden pro Strecke der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten dargestellt. Abbildungen  bis  illustrieren die Evaluationsergebnisse.
+Für ein besseres Verständnis der durch die Evaluierung mit den grad-real Datensätzen resultierenden Akkuratesse wurden pro Strecke für die besten Netzwerke die bestimmten Positionen in der xy-Ebene dargestellt. Ebenso wurden pro Strecke der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten dargestellt. Abbildungen  bis  illustrieren die Evaluationsergebnisse.
 
 
 IC-loop
@@ -768,7 +768,7 @@ Eine Akkuratesse von 1.61 in der Position und 8.17° in der Orientierung konnte 
 In Abbildung  ist deutlich zu erkennen, dass das grad-photoreal Netzwerk die Positionen aller grad-real Evaluationsdaten verteilt auf einem ca. 30 langen Teilbereich der unteren horizontalen Strecke bestimmt hat. Daher weisen Evaluationsdaten der kürzeren vertikalen sowie der obigen horizontalen Strecke die größten Positionsfehler auf (vgl. Abb. ). Ebenso kommt in Abbildung  hervor, dass das Netzwerk größtenteils die Orientierung der Evaluationsdaten als die Aufnahmerichtung der unteren horizontalen Strecke bestimmt hat.
 
 
-		Evaluationsergebnisse von der Strecke IC-loop. Es wird die Akkuratesse der mit den jeweiligen Trainingsdaten trainierten Netzwerke angegeben, die mit den korrespondierenden synthetischen Evaluationsdaten sowie jeweils mit den realen Evaluationsdaten evaluiert wurden.  
+		Evaluationsergebnisse von der Strecke IC-loop. Es wird die Akkuratesse der mit den jeweiligen Trainingsdaten trainierten Netzwerken angegeben, die mit den korrespondierenden synthetischen Evaluationsdaten sowie jeweils mit den realen Evaluationsdaten evaluiert wurden.  
 	1.0X >X >X
 	Trainingsdatensatz  (Gradientenbild) & synthetische Daten  (Position, Orientierung) & reale Daten  (Position, Orientierung)
 
@@ -790,17 +790,17 @@ In Abbildung  ist deutlich zu erkennen, dass das grad-photoreal Netzwerk die Pos
 
 	  &   
 
-		Visualisierung der Evaluationsergebnisse von der Strecke IC-loop (s. Abb. ). Die Evaluation folgte mit den Gradietenbildern der realen Daten auf dem mit grad-photoreal trainiertem Netzwerk. subfig:ic_fig2 illustriert die Positionen auf der xy-Ebene, die von dem KNN bestimmt wurden. Der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten werden in  subfig:ic_fig4 und  subfig:ic_fig6 dargestellt.
+		Visualisierung der Evaluationsergebnisse der Strecke IC-loop (s. Abb. ). Die Evaluation folgte mit den Gradietenbildern der realen Daten auf dem mit grad-photoreal trainiertem Netzwerk. subfig:ic_fig2 illustriert die Positionen auf der xy-Ebene, die von dem KNN bestimmt wurden. Der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten werden in  subfig:ic_fig4 und  subfig:ic_fig6 dargestellt.
 	
 
 HS-gamma
 
 
-Ein weiteres Experiment folgte mit dem HS-gamma Datensatz. Trainiert und Evaluiert mit nur synthetischen Daten konnte durch den grad-cartoon Datensatz eine Akkuratesse von 1.00 in der Position und 9.92° in der Orientierung erzielt werden. Die Evaluierung, mit den grad-real Evaluationsdaten auf dem grad-cartoon Netzwerk, führte zur einer Akkuratesse von 8.60 in der Position und 19.59° in der Orientierung (vgl. Tab. ). 
+Ein weiteres Experiment folgte mit dem HS-gamma Datensatz. Trainiert und evaluiert mit nur synthetischen Daten konnte durch den grad-cartoon Datensatz eine Akkuratesse von 1.00 in der Position und 9.92° in der Orientierung erzielt werden. Die Evaluierung, mit den grad-real Evaluationsdaten auf dem grad-cartoon Netzwerk, führte zur einer Akkuratesse von 8.60 in der Position und 19.59° in der Orientierung (vgl. Tab. ). 
 
 
 
-Das grad-cartoon Netzwerk bestimmte die Positionen aller grad-real Evaluationsdaten nahe der erwähnten Schleife der HS-gamma Strecke auf ein ca. 20 langem Teilbereich (vgl. Abb.  ). Deshalb weisen die Evaluationsdaten nahe der Schleife die geringsten Positionsfehler auf. Zudem zeigen die Evaluationsdaten des zum Ausgangspunkt optisch ähnlichen Flures die größten Positionsfehlern auf (vgl. Abb. ). Ebenso bestimmte  das oben erwähnte Netzwerk mehrheitlich die Orientierung der Evaluationsdaten als die Orientierung der dominierenden Aufnahmerichtung. Daher sind die größten Orientierungsfehler bei den Evaluationsdaten der Schleife sowie der vertikal verlaufenden Strecke aufzufinden (vgl. Abb. ). 
+Das grad-cartoon Netzwerk bestimmte die Positionen aller grad-real Evaluationsdaten nahe der erwähnten Schleife der HS-gamma Strecke auf ein ca. 20 langem Teilbereich (vgl. Abb.  ). Deshalb weisen die Evaluationsdaten nahe der Schleife die geringsten Positionsfehler auf. Zudem zeigen die Evaluationsdaten des zum Ausgangspunkt optisch ähnlichen Flures die größten Positionsfehlern auf (vgl. Abb. ). Ebenso bestimmte das oben erwähnte Netzwerk mehrheitlich die Orientierung der Evaluationsdaten als die Orientierung der dominierenden Aufnahmerichtung. Daher sind die größten Orientierungsfehler bei den Evaluationsdaten der Schleife sowie der vertikal verlaufenden Strecke aufzufinden (vgl. Abb. ). 
 
 
 
@@ -824,7 +824,7 @@ Das grad-cartoon Netzwerk bestimmte die Positionen aller grad-real Evaluationsda
 
 	  &   
 
-		Visualisierung der Evaluationsergebnisse von der Strecke HS-gamma (s. Abb. ). Die Evaluation folgte mit den Gradietenbildern der realen Daten auf dem mit grad-cartoon trainiertem Netzwerk. subfig:hs_gamma_fig2 illustriert die Positionen auf der xy-Ebene, die von dem KNN bestimmt wurden. Der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten werden in  subfig:hs_gamma_fig4 und  subfig:hs_gamma_fig6 dargestellt.
+		Visualisierung der Evaluationsergebnisse der Strecke HS-gamma (s. Abb. ). Die Evaluation folgte mit den Gradietenbildern der realen Daten auf dem mit grad-cartoon trainiertem Netzwerk. subfig:hs_gamma_fig2 illustriert die Positionen auf der xy-Ebene, die von dem KNN bestimmt wurden. Der Positionsfehler der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten werden in  subfig:hs_gamma_fig4 und  subfig:hs_gamma_fig6 dargestellt.
 	
 HS-stairs-up
 
@@ -857,13 +857,13 @@ Die vom grad-edge Netzwerk bestimmten Positionen aller grad-real Evaluationsdate
 
 	  &   
 
-		Visualisierung der Evaluationsergebnisse von der Strecke HS-stairs-up. Die Evaluation folgte mit den Gradietenbildern der realen Daten auf dem mit grad-edge trainiertem Netzwerk. subfig:hs_up_fig3 illustriert die Positionen auf der xy-Ebene, die von dem KNN bestimmt wurden. Der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten werden in  subfig:hs_up_fig5 und  subfig:hs_up_fig7 dargestellt.
+		Visualisierung der Evaluationsergebnisse der Strecke HS-stairs-up. Die Evaluation folgte mit den Gradietenbildern der realen Daten auf dem mit grad-edge trainiertem Netzwerk. subfig:hs_up_fig3 illustriert die Positionen auf der xy-Ebene, die von dem KNN bestimmt wurden. Der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten werden in  subfig:hs_up_fig5 und  subfig:hs_up_fig7 dargestellt.
 	
 
 HS-stairs-down
 
 
-Zuletzt wurde ein Experiment mit dem HS-stairs-down Datensatz durchgeführt. Nur mit synthetischen Daten beim Trainieren und Evaluieren konnte eine Akkuratesse von 0.85 in der Position und 7.50° in der Orientierung durch die grad-edge Daten erzielt werden. Die Evaluierung, mit den grad-real Evaluationsdaten auf dem mit grad-cartoon trainiertem Netzwerk, führte zur einer Akkuratesse von 4.20 in der Position und 47.83° in der Orientierung  (vgl. Tab. ). 
+Zuletzt wurde ein Experiment mit dem HS-stairs-down Datensatz durchgeführt. Nur mit synthetischen Daten beim Trainieren und Evaluieren konnte eine Akkuratesse von 0.85 in der Position und 7.50° in der Orientierung durch die grad-edge Daten erzielt werden. Die Evaluierung, mit den grad-real Evaluationsdaten auf dem mit grad-cartoon trainiertem Netzwerk, führte zur einer Akkuratesse von 4.20 in der Position und 47.83° in der Orientierung (vgl. Tab. ). 
 
 
 
@@ -892,7 +892,7 @@ Das mit grad-cartoon trainierte Netzwerk bestimmte die Positionen aller grad-rea
 
 	  &   
 
-		Visualisierung der Evaluationsergebnisse von der Strecke HS-stairs-up. Die Evaluation folgte mit den Gradietenbildern der realen Daten auf dem mit grad-cartoon trainiertem Netzwerk. subfig:hs_down_fig3 illustriert die Positionen auf der xy-Ebene, die von dem KNN bestimmt wurden. Der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten werden in  subfig:hs_down_fig5 und  subfig:hs_down_fig7 dargestellt.
+		Visualisierung der Evaluationsergebnisse der Strecke HS-stairs-up. Die Evaluation folgte mit den Gradietenbildern der realen Daten auf dem mit grad-cartoon trainiertem Netzwerk. subfig:hs_down_fig3 illustriert die Positionen auf der xy-Ebene, die von dem KNN bestimmt wurden. Der Positionsfehler in der xy-Ebene und der Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten werden in  subfig:hs_down_fig5 und  subfig:hs_down_fig7 dargestellt.
 	
 
 
