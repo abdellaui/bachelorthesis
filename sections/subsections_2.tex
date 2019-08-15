@@ -1,8 +1,8 @@
 \subsection{Künstliche neuronale Netzwerke}
 \label{sec:KNN}
-Künstliche neuronale Netze sind ein Forschungsgebiet der \textit{künstlichen Intelligenz} und imitieren die Beschaffenheit natürlicher neuronale Netze, um komplexe Probleme zu lösen. Inspiriert von ihren biologischen Vorbildern\footnote{das Nervensystem eines komplexen Lebewesens; z.B. des Menschen}, vernetzen künstliche neuronale Netzwerke (KNN) künstliche Neuronen miteinander \cite{johnsonCS231nConvolutionalNeural}. Dabei kann die Verbindung unidirektional (\textit{feedforward}) oder bidirektional (\textit{feedback}) sein  \cite{Goodfellow-et-al-2016}. 
+Künstliche neuronale Netze sind ein Forschungsgebiet der \textit{künstlichen Intelligenz} und imitieren die Beschaffenheit natürlicher neuronale Netze, um komplexe Probleme zu lösen. Inspiriert von ihren biologischen Vorbildern\footnote{das Nervensystem eines komplexen Lebewesens; z.B. des Menschen}, vernetzen künstliche neuronale Netzwerke (KNN) künstliche Neuronen miteinander \cite{johnsonCS231nConvolutionalNeural}. Dabei kann die Verbindung unidirektional (\textit{feedforward}) oder bidirektional (\textit{feedback}) sein  \cite{goodfellowDeepLearning2016}. 
 
-Bei einem feedforward Netzwerk werden die Daten im Netz immer vorwärts übertragen, hingegen kann ein feedback Netzwerk, auch bekannt als \textit{Recurrent Neural Networks}, Daten rückwärts, sowie in einer Schleife zum selben Neuron, übergeben \cite{Goodfellow-et-al-2016}. Da feedback Netzwerke keinen Einsatz in dieser Arbeit haben, ist im weiteren Verlauf dieser Arbeit bei einem Netzwerk immer ein feedforward Ansatz gemeint. 
+Bei einem feedforward Netzwerk werden die Daten im Netz immer vorwärts übertragen, hingegen kann ein feedback Netzwerk, auch bekannt als \textit{Recurrent Neural Networks}, Daten rückwärts, sowie in einer Schleife zum selben Neuron, übergeben \cite{goodfellowDeepLearning2016}. Da feedback Netzwerke keinen Einsatz in dieser Arbeit haben, ist im weiteren Verlauf dieser Arbeit bei einem Netzwerk immer ein feedforward Ansatz gemeint. 
 
 In diesem Kapitel wird als Nächstes ein künstliches Neuron definiert und anschließend ein feedforward Netzwerk beschrieben. Convolutional Neural Networks sind eine besondere Art von künstlichen neuronalen Netzen und bilden einen sehr wichtigen Bestand dieser Arbeit. Daher werden CNNs ein eigener Abschnitt gewidmet (s. Abschn. \ref{sec:CNN}).
 
@@ -27,7 +27,7 @@ Ein künstliches Neuron mit der Inputgröße $M$ ist mathematisch die nicht-line
 \subsubsection{Feedforward Neural Networks}
 \label{sec:feedforwardNN}
 Künstliche Neuronen können zu einem Schicht (\textit{layer}) zusammengeführt werden. Die Verbindung solcher Schichten bildet ein neuronales Netzwerk.
-Bei einem feedforward (\textit{fully-connected}) Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output $y_{l}$ an jedem Neuron der Schicht $l+1$ weiter. Ebenso sind Neuronen aus der gleichen Schicht untereinander nicht verbunden \cite{Goodfellow-et-al-2016}.
+Bei einem feedforward (\textit{fully-connected}) Netzwerk übergibt jedes Neuron aus der Schicht $l$ seinen Output $y_{l}$ an jedem Neuron der Schicht $l+1$ weiter. Ebenso sind Neuronen aus der gleichen Schicht untereinander nicht verbunden \cite{goodfellowDeepLearning2016}.
 Die Schicht $l$ eines feedforward Netzwerkes operiert somit auf das Ouput $y_{l-1}$ und stellt die nicht-lineare Funktion $f_l :  \mathbb{R}^{M_{l-1}} \mapsto \mathbb{R}^{M_l}$ dar \cite{bauckhageInformedMachineLearning}:
 \begin{equation}
 \label{eq:layer}
@@ -35,15 +35,15 @@ y_l = f_l(y_{l-1}) = \phi(W^T_lx_{l-1}+b_{l})
 \end{equation}
 
 
-Die erste Schicht eines Netzwerks wird als Input-, die letzte Schicht als Ouput Layer bezeichnet. Alle Schichten dazwischen sind Hidden Layer \cite{Goodfellow-et-al-2016}. Der Ouput Layer liefert zugleich auch das Ergebnis eines Netzwerks, daher haben die Neuronen des Ouput Layers grundsätzlich keine Aktivierungsfunktion \cite{johnsonCS231nConvolutionalNeural}.
+Die erste Schicht eines Netzwerks wird als Input-, die letzte Schicht als Ouput Layer bezeichnet. Alle Schichten dazwischen sind Hidden Layer \cite{goodfellowDeepLearning2016}. Der Ouput Layer liefert zugleich auch das Ergebnis eines Netzwerks, daher haben die Neuronen des Ouput Layers grundsätzlich keine Aktivierungsfunktion \cite{johnsonCS231nConvolutionalNeural}.
 
-Die Tiefe (\textit{depth}) eines Netzwerks ist gegeben durch die Anzahl der Layer \footnote{der Input Layer ist ausgeschlossen} und die Breite (\textit{width}) eines Layers wird durch die Anzahl der Neuronen bestimmt \cite{Goodfellow-et-al-2016}. 
+Die Tiefe (\textit{depth}) eines Netzwerks ist gegeben durch die Anzahl der Layer \footnote{der Input Layer ist ausgeschlossen} und die Breite (\textit{width}) eines Layers wird durch die Anzahl der Neuronen bestimmt \cite{goodfellowDeepLearning2016}. 
 Abbildung \ref{fig:neural_net} illustriert ein feedforward neuronales Netz als ein azyklischer Graph.
 
-Ziel eines KNNs ist es eine Funktion $f^*$ zu approximieren, dass einen Input $x$ auf einen Output $y$ abbildet. Durch das Output $y$ kann das Input $x$ klassifiziert oder anhand dessen ein Wert regressiert werden. Sei $y = f(x; \theta)$ eine derartige Funktion, dann besetzt ein KNN die Werte des $\theta$ Parameters mit eines der besten Approximation von $f^*$. Der Parameter $\theta$ stellt hierbei die Gewichte dar, die erlernt werden sollen \cite{Goodfellow-et-al-2016}. 
-Das Lernen ist die strategische Anpassung der Gewichte über Input-Output Paare (\textit{Trainingsdaten}) und findet grundsätzlich durch ein \textit{Backpropagation}-Verfahren statt \cite{Goodfellow-et-al-2016}. 
+Ziel eines KNNs ist es eine Funktion $f^*$ zu approximieren, dass einen Input $x$ auf einen Output $y$ abbildet. Durch das Output $y$ kann das Input $x$ klassifiziert oder anhand dessen ein Wert regressiert werden. Sei $y = f(x; \theta)$ eine derartige Funktion, dann besetzt ein KNN die Werte des $\theta$ Parameters mit eines der besten Approximation von $f^*$. Der Parameter $\theta$ stellt hierbei die Gewichte dar, die erlernt werden sollen \cite{goodfellowDeepLearning2016}. 
+Das Lernen ist die strategische Anpassung der Gewichte über Input-Output Paare (\textit{Trainingsdaten}) und findet grundsätzlich durch ein \textit{Backpropagation}-Verfahren statt \cite{goodfellowDeepLearning2016}. 
 
-Die Funktion $y = f(x; \theta)$ bildet sich aus den Funktionen der im Netzwerk vorhandenen Schichten (s. Gleichung \ref{eq:layer}) und kann bei einer Tiefe $L$ repräsentiert werden als die folgende Funktion $f :  \mathbb{R}^{M_0} \mapsto \mathbb{R}^{M_L}$ \cite{Goodfellow-et-al-2016, bauckhageInformedMachineLearning}:
+Die Funktion $y = f(x; \theta)$ bildet sich aus den Funktionen der im Netzwerk vorhandenen Schichten (s. Gleichung \ref{eq:layer}) und kann bei einer Tiefe $L$ repräsentiert werden als die folgende Funktion $f :  \mathbb{R}^{M_0} \mapsto \mathbb{R}^{M_L}$ \cite{goodfellowDeepLearning2016, bauckhageInformedMachineLearning}:
  
 \begin{equation}
 \label{eq:network}
@@ -105,9 +105,9 @@ Angefangen mit der LeNet-5 \cite{lecunGradientBasedLearningApplied1998} Architek
 \subsubsection{Convolutional Layer}
 Der Convolutional Layer ist der Hauptbestandteil eines CNNs, der die Kombination einer Convolution Operation und einer Aktivierungsfunktion ist \cite{yamashitaConvolutionalNeuralNetworks2018}.
 
-Die Convolution Operation basiert auf die mathematische Faltung (\textit{Convolution}) und wird typischerweise in CNNs, mit Verzicht auf die Kommutativität, der anliegenden diskreten Kreuzkorrelation gleichgesetzt \cite{Goodfellow-et-al-2016}.
+Die Convolution Operation basiert auf die mathematische Faltung (\textit{Convolution}) und wird typischerweise in CNNs, mit Verzicht auf die Kommutativität, der anliegenden diskreten Kreuzkorrelation gleichgesetzt \cite{goodfellowDeepLearning2016}.
 
-Sei $I$ ein 2D-Input, $K$ ein 2D-Filter der Größe $M \times N$, $S$ die Schrittweite (\textit{Stride}) und $O$ das Output mit der Größe $X \times Y$, dann ist die Convolution Operation mathematisch definiert als \cite{Goodfellow-et-al-2016}:
+Sei $I$ ein 2D-Input, $K$ ein 2D-Filter der Größe $M \times N$, $S$ die Schrittweite (\textit{Stride}) und $O$ das Output mit der Größe $X \times Y$, dann ist die Convolution Operation mathematisch definiert als \cite{goodfellowDeepLearning2016}:
 \begin{equation}
 	\label{eq:convolution}
 	O(x,y) = (I * K)(x,y) = \sum_{m}\sum_{n}I(S_x \cdot x+m, S_y \cdot y+n)K(m,n)
@@ -123,7 +123,7 @@ Prinzipiell wird das Output des Convolutional Layers durch die Übergabe des Fea
 \begin{figure}
 	\centering
 	\includegraphics[width=0.4\textwidth]{images/ann_conv/ReLU.png}
-	\caption{Ein Beispiel für eine Aktivierungsfunktion. Die ReLU (\textit{rectified liniear unit}) Aktivierungsfunktion wird typischerweise in CNNs eingesetzt und ist mathematisch definiert als: $f(x) = max(0,x)$ \cite{Goodfellow-et-al-2016} }
+	\caption{Ein Beispiel für eine Aktivierungsfunktion. Die ReLU (\textit{rectified liniear unit}) Aktivierungsfunktion wird typischerweise in CNNs eingesetzt und ist mathematisch definiert als: $f(x) = max(0,x)$ \cite{goodfellowDeepLearning2016} }
 	\label{fig:relu}
 \end{figure}
 
