@@ -46,7 +46,7 @@ Visuelle Lokalisierungsansätzen wie z.B.
 visuelle Odemetrie (\textit{VO}) oder Simultaneous-Localization-and-Mapping (\textit{SLAM}) sind eingeschränkt auf die Bestimmung der lokalen Position und benötigen daher die Ausgangsposition des Sensors, um die absolute Position im Gebäude zu lokalisieren \cite{stephenseGlobalLocalizationUsing2002}. Dieses Problem ist in der Literatur auch als \textit{Kidnapped-Robot-Problem} (KRP) bekannt. KRP beschäftigt sich mit einem von seiner Umpositionierung uninformierten (\textit{entführten}) Roboter, der über Sensormessungen eigenständig seine globale Position in der Umgebung lokalisieren soll.
 
 
-Die absolute Lokalisierung eines visuellen Abfragematerials ist über das Suchen eines korrespondierendes Bildes in einer Bildergalerie oder über die Regression der Pose anhand von Bild-Features möglich \cite{piascoSurveyVisualBasedLocalization2018}. Diese Verfahren benötigen entweder eine Datenbank aus Bildern mit bekannten Posen \cite{zhangImageBasedLocalization2006, arandjelovicThreeThingsEveryone2012, radenovicCNNImageRetrieval2016} oder zusätzliche Daten wie die 3D Punktwolke \cite{irscharaStructurefrommotionPointClouds2009, liWorldwidePoseEstimation2012, svarmCityScaleLocalizationCameras2017} oder Tiefenbilder der Szene \cite{shottonSceneCoordinateRegression2013a}. Allerdings ist die mit der Gebäudegröße ansteigende Beschaffung von Bildern mit bekannter Pose sowie der zusätzlichen Daten zeit- und kostenaufwendig.
+Die absolute Lokalisierung eines visuellen Abfragematerials ist über das Suchen eines korrespondierendes Bildes in einer Bildergalerie oder über die Regression der Pose anhand von Bild-Features möglich \cite{piascoSurveyVisualBasedLocalization2018}. Diese Verfahren benötigen entweder eine Datenbank aus Bildern mit bekannten Posen \cite{zhangImageBasedLocalization2006, arandjelovicThreeThingsEveryone2012, radenovicCNNImageRetrieval2016} oder zusätzliche Daten wie die 3D Punktwolke \cite{irscharaStructurefrommotionPointClouds2009, liWorldwidePoseEstimation2012, svarmCityScaleLocalizationCameras2017} oder Tiefenbilder der Szene \cite{shottonSceneCoordinateRegression2013a}. Allerdings ist die Beschaffung von Bildern sowie zusätzliche Daten, die im Gebäude alle möglichen Pose abdecken, zeit- und kostenaufwendig.
 
 
 %Über Structure-from-Motion (\textit{SfM}) Methoden konnten 
@@ -55,7 +55,9 @@ Die absolute Lokalisierung eines visuellen Abfragematerials ist über das Suchen
 %acharya
 %ziele
 %results
-Forschern gelang es in 
+Hierfür eignen sich Ansätze mit künstliche neuronale Netzwerken wie z.B. PoseNet \cite{kendallPoseNetConvolutionalNetwork2015}. PoseNet kann von  Structure-from-Motion (\textit{SfM}) Methoden gewonnen Pose. 
+
+
 \citet{acharyaBIMPoseNetIndoorCamera2019} erzeugten synthetische Bilder mit korrespondierender Pose  entlang einer ca. 18$m$ langen Strecke in der 3D-Simulation eines Korridors. Trainiert auf dem PoseNet Modell mit den Gradientenbildern der synthetischen Daten konnten die Forscher \citet{acharyaBIMPoseNetIndoorCamera2019} bei der Evaluierung mit den Gradientenbildern der realen Daten eine Akkuratesse von ca. $2m$ in der Position und 7° in der Orientierung erzielen. Allerdings verlief die \textit{kurze} Strecke überwiegend in einer Richtung sowie auf einer Etagenebene in der Simulation eines ca. $20m \times 5m$ großen Korridor.
 
 Ziel der vorliegenden Arbeit ist es, den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} auf längeren Strecken in größeren Gebäudesimulationen zu untersuchen. Um die Untersuchung best möglichst an die Aufnahmestrecken und Gebäudesimulationen abhängig zu machen, wird möglichst gleichermaßen wie in \cite{acharyaBIMPoseNetIndoorCamera2019} reale Evaluationsdaten erhoben, synthetischen Trainingsdaten generiert und das PoseNet Modell mit übereinstimmenden Hyperparametern verwendet.
