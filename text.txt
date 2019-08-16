@@ -249,7 +249,7 @@ Visuelle Lokalisierungsansätzen wie z.B.
 visuelle Odemetrie (VO) oder Simultaneous-Localization-and-Mapping (SLAM) sind eingeschränkt auf die Bestimmung der lokalen Position und benötigen daher die Ausgangsposition des Sensors, um die absolute Position im Gebäude zu lokalisieren. Dieses Problem ist in der Literatur auch als Kidnapped-Robot-Problem (KRP) bekannt. KRP beschäftigt sich mit einem von seiner Umpositionierung uninformierten (entführten) Roboter, der über Sensormessungen eigenständig seine globale Position in der Umgebung lokalisieren soll.
 
 
-Die absolute Lokalisierung eines visuellen Abfragematerials ist über das Suchen eines korrespondierendes Bildes in einer Bildergalerie oder über die Regression der Pose anhand von Bild-Features möglich. Diese Verfahren benötigen entweder eine Datenbank aus Bildern mit bekannten Posen oder zusätzliche Daten wie die 3D Punktwolke oder Tiefenbilder der Szene. Allerdings ist die Beschaffung der Bilder und zusätzlichen Daten von allen möglichen Posen im Gebäude zeit- und kostenaufwendig.
+Die absolute Lokalisierung eines visuellen Abfragematerials ist über das Suchen eines korrespondierenden Bildes in einer Bildergalerie oder über die Regression der Pose anhand von Bild-Features möglich. Diese Verfahren benötigen entweder eine Datenbank aus Bildern mit bekannten Posen oder zusätzliche Daten wie die 3D Punktwolke oder Tiefenbilder der Szene. Allerdings ist die Beschaffung der Bilder und zusätzlichen Daten von allen möglichen Posen im Gebäude zeit- und kostenaufwendig.
 
 
 
