@@ -12,7 +12,7 @@
 
 Das vorliegende Kapitel versucht die Methodik dieser Arbeit wiederzugeben. Die Forscher \citet{acharyaBIMPoseNetIndoorCamera2019} konnten die Pose mit einer Akkuratesse von ca. $2m$ in der Position und 7° in der Orientierung auf einer ca. 18$m$ langen Strecke in einem ca. $20m \times 5m$ großen Korridor bestimmen (s. Abb. \ref{fig:acharya_traj}). Dabei haben die Forscher reale Daten entlang des Korridors mit einem Smartphone erhoben und die korrespondierende Pose (\textit{Ground-Truth-Daten}) über SfM-Methoden bestimmt. Daraufhin wurden entlang derselben Aufnahmestrecke in der 3D-Simulation des Korridors mehrere synthetische Daten generiert, die sich in ihrer Realitätstreue vom Karikaturistischem zur fotorealistisch Texturiertem variieren. Anschließend wurde das in Abschnitt \ref{sec:posenet} beschriebene PoseNet Modell mit Gradientenbildern der synthetischen Daten trainiert und mit Gradientenbildern der realen Daten evaluiert. Vorab wurde das PoseNet Modell mit den Gewichten eines Modells initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz \cite{NIPS2014_5349} trainiert wurde. 
 
-Die vorliegende Arbeit versucht den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} zur Pose Estimation in Gebäuden anhand von Convolutional Neural Network und simulierten 3D-Daten auf längeren Strecken in größeren Gebäudesimulationen zu untersuchen. Daher wurden zuerst entsprechende Datensätze erstellt und gleicherweise das PoseNet Modell trainiert sowie evaluiert. Vorab wurden die Ergebnisse von  \citet{acharyaBIMPoseNetIndoorCamera2019} reproduziert, um die Korrektheit des Training-Pipelines zu überprüfen. Danach wurde das PoseNet Modell mit den Gradietenbildern der synthetischen Daten trainiert und evaluiert, um die Performance des Netzwerkes mit Trainings- sowie Evaluationsdaten derselben Domäne zu beobachten. Anschließend wurden zielgemäß die trainierten Netzwerke mit den Gradientenbildern der realen Daten evaluiert. Abbildung \ref{fig:methodik} visualisiert die Methodik dieser Arbeit.
+Die vorliegende Arbeit versucht den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} zur Pose Estimation in Gebäuden anhand von Convolutional Neural Network und simulierten 3D-Daten auf längeren Strecken in größeren Gebäudesimulationen zu untersuchen. Daher wurden zuerst entsprechende Datensätze erstellt und gleicherweise das PoseNet Modell trainiert sowie evaluiert. Vorab wurden die Ergebnisse von \citet{acharyaBIMPoseNetIndoorCamera2019} reproduziert, um die Korrektheit des Training-Pipelines zu überprüfen. Danach wurde das PoseNet Modell mit den Gradietenbildern der synthetischen Daten trainiert und evaluiert, um die Performance des Netzwerkes mit Trainings- sowie Evaluationsdaten derselben Domäne zu beobachten. Anschließend wurden zielgemäß die trainierten Netzwerke mit den Gradientenbildern der realen Daten evaluiert. Abbildung \ref{fig:methodik} visualisiert die Methodik dieser Arbeit.
 
 
 Im weiteren Verlauf dieses Kapitels wird die Erhebung / Generierung der realen / synthetischen Daten beschrieben und die Verarbeitung der Daten dargestellt. Im Anschluss werden die Datensätze und die Trainingsparameter angegeben. 
@@ -44,7 +44,7 @@ Aus Zeitgründen konnten die Bestkonditionen für die T265 nicht hergestellt wer
 	\begin{subfigure}[t]{0.3\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/real_dataset/pointcloud3.png}
-		\caption{Odometrie  (T265) + \\ 3D Punktwolke (D435)}
+		\caption{Odometrie (T265) + \\ 3D Punktwolke (D435)}
 		\label{subfig:odom1}
 	\end{subfigure}
 	\hfill
@@ -65,7 +65,7 @@ Aus Zeitgründen konnten die Bestkonditionen für die T265 nicht hergestellt wer
 	\begin{subfigure}[t]{0.3\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/real_dataset/pointcloud1.png}
-		\caption{Odometrie  (T265) + \\ 3D Punktwolke (D435)}
+		\caption{Odometrie (T265) + \\ 3D Punktwolke (D435)}
 		\label{subfig:odom2}
 	\end{subfigure}
 	\hfill
@@ -82,7 +82,7 @@ Aus Zeitgründen konnten die Bestkonditionen für die T265 nicht hergestellt wer
 		\caption{Tiefenbild \\ (D435) \hspace*{2cm}}
 		\label{subfig:depth-image}
 	\end{subfigure}
-	\caption{Datensatz pro Frame. \subref{subfig:odom1}  und \subref{subfig:odom2} visualisieren in unterschiedlichen Perspektiven die von der T265 ermittelte Odometrie und die von der D435 erhaltenen 3D Punktwolke. \subref{subfig:fisheye1} und \subref{subfig:fisheye2} sind die von der T265 aufgenommenen Fischaugenbilder. \subref{subfig:rgb-image} ist das RGB-Bild der D435 und \subref{subfig:depth-image} das dazugehörige Tiefenbild. }
+	\caption{Datensatz pro Frame. \subref{subfig:odom1} und \subref{subfig:odom2} visualisieren in unterschiedlichen Perspektiven die von der T265 ermittelte Odometrie und die von der D435 erhaltenen 3D Punktwolke. \subref{subfig:fisheye1} und \subref{subfig:fisheye2} sind die von der T265 aufgenommenen Fischaugenbilder. \subref{subfig:rgb-image} ist das RGB-Bild der D435 und \subref{subfig:depth-image} das dazugehörige Tiefenbild. }
 	\label{fig:dataset}
 \end{figure}
 
@@ -143,7 +143,7 @@ Die vorliegende Arbeit versucht das PoseNet Modell mit den Gradientenbildern der
 
 Bei der Aufnahme der realen Daten kam es durch die manuelle Führung des Kamerakonstrukts (s. Abb. \ref{fig:t265_d435}) in den Gebäuden zu unscharfen Bildern. Im Vergleich zu unscharfen Kanten im Bild weisen schärfere Kanten eine deutlichere Kontur im Gradientenbild auf. Daher wurden die realen Bilder vor der Verarbeitung in Gradientenbilder auf die Größe $960 \times 540$ der synthetischen Bilder verkleinert, um einerseits eine einheitliche Auflösung der Bilder zu verschaffen und andererseits unscharfe Kanten, bedingt durch Bewegung, im Bild zu einer schärferen Kante zusammenzuführen.
 
-Die künstliche Beleuchtung in den Gebäudesimulationen führte bei den Gradientenbildern der karikaturistischen Daten (\textit{grad-cartoon}) zur Artefakten (s. Abb. \ref
+Die künstliche Beleuchtung in den Gebäudesimulationen führte bei den Gradientenbildern der karikaturistischen Daten (\textit{grad-cartoon}) zu Artefakten (s. Abb. \ref
 {fig:treshold}). Diese Artefakte befanden sich im niedrigen Wertebereich des Gradientenbildes. Deshalb wurde für die Unterdrückung der Artefakte zusätzlich ein Schwellenwertverfahren angewendet, indem die Pixelwerte eines Gradientenbildes unter einer gewissen Schwelle auf ein Mindestwert gesetzt werden. Nach einem Minimum der Pixelwerte wurde iterativ gesucht, sodass die von den Artefakten betroffenen Stellen eine homogene Fläche im Bild darstellten. Der Wert 8 stellte sich als geeignete Schwelle für die Gradientenbilder heraus und wurde als Minimum für die Pixelwerte festgelegt, sodass die Pixelwerte der Gradientenbilder im Wertebereich von $[8,255]$ liegen. Da es sich bei dem Pixelwert 8 um einen kleinen Wert handelte, wurde dieses Verfahren Konsistenz halber bei allen Datensatztypen angewendet. Abbildung \ref{fig:dataset_preprocess} visualisiert von jedem Datensatztyp ein Beispiel und die dazugehörigen Gradientenbilder.
 
 
@@ -207,25 +207,25 @@ Die künstliche Beleuchtung in den Gebäudesimulationen führte bei den Gradient
 	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/syn_dataset/bg00188.png}
-		\caption{\RaggedRight{Gradientenbild  von \subref{subfig:cartoonish}  \hspace{2cm} (\textit{grad-cartoon})}}
+		\caption{\RaggedRight{Gradientenbild von \subref{subfig:cartoonish} \hspace{2cm} (\textit{grad-cartoon})}}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/syn_dataset/eg00188.png}
-		\caption{\RaggedRight{Gradientenbild  von \subref{subfig:edge}  \hspace{2cm} (\textit{grad-edge})}}
+		\caption{\RaggedRight{Gradientenbild von \subref{subfig:edge} \hspace{2cm} (\textit{grad-edge})}}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/syn_dataset/cg00188.png}
-		\caption{\RaggedRight{Gradientenbild  von \subref{subfig:photorealistic}  \hspace{2cm} (\textit{grad-photoreal})}}
+		\caption{\RaggedRight{Gradientenbild von \subref{subfig:photorealistic} \hspace{2cm} (\textit{grad-photoreal})}}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.24\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/syn_dataset/rg000089.png}
-		\caption{\RaggedRight{Gradientenbild  von \subref{subfig:real}  \hspace{2cm} (\textit{grad-real})}}
+		\caption{\RaggedRight{Gradientenbild von \subref{subfig:real} \hspace{2cm} (\textit{grad-real})}}
 	\end{subfigure}
 	\hfill
 	\caption{Beispielhafte Bilder für jeden Datensatztyp und die dazu korrespondierenden Gradientenbildern. Die Daten sind aus dem \textit{HS-stairs-down} Datensatz.}
@@ -250,7 +250,7 @@ Diese Arbeit versucht den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} a
 
 
 
-In dieser Arbeit wurden Daten aus der nördlichen Hälfte des 6. Stockwerkes des IC-Gebäudes Ruhr-Universität Bochum (IC) und aus dem Seminargebäude Hochschule Bochum (HS) erhoben bzw. synthetische Daten aus den Gebäudesimulationen generiert. Die Gebäude unterscheiden sich im Detail der Simulationen (s.  Abb. \ref{fig:difference_3d}). Die Simulation vom IC enthält wiederholende Gebäudemerkmale und sehr wenige Objekte. Deshalb wurde im IC nur ein Datensatz erhoben, der eine geschlossene Schleife in einem Flur bildet. Im Gegensatz dazu enthält die Simulation vom HS ein eindeutiges Treppenhaus sowie mehr Objekte wie z.B. die Objekte der technischen Gebäudeausrüstung. Demzufolge wurden drei Datensätze im HS erhoben, die einerseits auf einer ebenen Strecke in mehreren Richtungen verlaufen und anderseits sich über mehrere Etagenebenen im Treppenhauses erstrecken.
+In dieser Arbeit wurden Daten aus der nördlichen Hälfte des 6. Stockwerkes des IC-Gebäudes Ruhr-Universität Bochum (IC) und aus dem Seminargebäude Hochschule Bochum (HS) erhoben bzw. synthetische Daten aus den Gebäudesimulationen generiert. Die Gebäude unterscheiden sich im Detail der Simulationen (s. Abb. \ref{fig:difference_3d}). Die Simulation vom IC enthält wiederholende Gebäudemerkmale und sehr wenige Objekte. Deshalb wurde im IC nur ein Datensatz erhoben, der eine geschlossene Schleife in einem Flur bildet. Im Gegensatz dazu enthält die Simulation vom HS ein eindeutiges Treppenhaus sowie mehr Objekte wie z.B. die Objekte der technischen Gebäudeausrüstung. Demzufolge wurden drei Datensätze im HS erhoben, die einerseits auf einer ebenen Strecke in mehreren Richtungen verlaufen und anderseits sich über mehrere Etagenebenen im Treppenhauses erstrecken.
 
 
 
@@ -299,14 +299,14 @@ Abbildung \ref{fig:trajectories} illustriert die Strecken der Datensätze.
 \begin{table}
 	\centering
 	\caption{Datenmenge der Datensätze.}
-	\begin{tabularx}{1.0\textwidth}{p{3.5cm} X  >{\centering\arraybackslash}p{1.7cm} }
+	\begin{tabularx}{1.0\textwidth}{p{3.5cm} X >{\centering\arraybackslash}p{1.7cm} }
 		\textbf{Bezeichnung} & \textbf{Anzahl reale Daten} (synthetische Daten) & \textbf{Gebäude}\\
 		\hline
 		IC-loop & 3842 (11435) & IC\\
 		\hline
 		HS-gamma & 1958 (6490) & HS\\
 		\hline
-		HS-stairs-up  & 1068 (3160)& HS\\
+		HS-stairs-up & 1068 (3160)& HS\\
 		\hline
 		HS-stairs-down & 1161 (3245) & HS\\
 	\end{tabularx}
@@ -343,7 +343,7 @@ Abbildung \ref{fig:trajectories} illustriert die Strecken der Datensätze.
 		\label{subfig:traj_hs-down}
 	\end{subfigure}
 	\hfill
-	\caption{Illustration der Aufnahmestrecken der Datensätze. Die Aufnahmestrecken der synthetischen Daten werden in Grün und die von der T265 mit einer Abweichung bis zur 5\% berechneten Strecke der realen Daten in Blau gekennzeichnet. Die Umrisse der virtuellen Kameras geben den Ausganspunkt  sowie die Aufnahmerichtung der Strecken an.  \subref{subfig:traj_ic} befindet sich in der nördlichen Hälfte des 6. Stockwerkes des IC-Gebäudes Ruhr-Universität Bochum. \subref{subfig:traj_hs_gamma}, \subref{subfig:traj_hs-up}, \subref{subfig:traj_hs-down} befinden sich im Seminargebäude Hochschule Bochum. \subref{subfig:traj_hs-up} und \subref{subfig:traj_hs-down} sind nahe an der Position der Schleife von \subref{subfig:traj_hs_gamma}. Tabelle \ref{tab:dataset_metrics} listet die approximierten metrischen Eigenschaften der Aufnahmestrecken auf.}
+	\caption{Illustration der Aufnahmestrecken der Datensätze. Die Aufnahmestrecken der synthetischen Daten werden in Grün und die von der T265 mit einer Abweichung bis zur 5\% berechneten Strecke der realen Daten in Blau gekennzeichnet. Die Umrisse der virtuellen Kameras geben den Ausganspunkt sowie die Aufnahmerichtung der Strecken an. \subref{subfig:traj_ic} befindet sich in der nördlichen Hälfte des 6. Stockwerkes des IC-Gebäudes Ruhr-Universität Bochum. \subref{subfig:traj_hs_gamma}, \subref{subfig:traj_hs-up}, \subref{subfig:traj_hs-down} befinden sich im Seminargebäude Hochschule Bochum. \subref{subfig:traj_hs-up} und \subref{subfig:traj_hs-down} sind nahe an der Position der Schleife von \subref{subfig:traj_hs_gamma}. Tabelle \ref{tab:dataset_metrics} listet die approximierten metrischen Eigenschaften der Aufnahmestrecken auf.}
 	\label{fig:trajectories}
 \end{figure}
 
@@ -358,7 +358,7 @@ In der vorliegenden Arbeit wurde für das Training der Netzwerke die Caffe \cite
 
 Jeder reale sowie synthetische Datensatz (s. Tab. \ref{tab:datasets}) wurde je in 50\% Trainings- und 50\% Evaluationsdaten zufällig aufgeteilt. Die Trainings- sowie Evaluationsdaten wurden auf eine Auflösung von $480\times270$ skaliert. Während des Trainingsprozesses wurden zufällige Ausschnitte der Größe $224 \times 224$ aus dem skalierten Trainingsdatensatz genommen und für die Evaluierung wurde ein zentrierter Ausschnitt derselben Größe aus dem skalierten Evaluationsdatensatz verwendet. Das Durchschnittsbild der Trainingsdaten wurde sowohl beim Trainieren als auch bei der Evsaluierung von den Inputbildern subtrahiert. 
 
-Der Hyperparameter $\beta$, der von PoseNet vorgestellten Kostenfunktion (s. Gleichung \ref{eq:posenet_loss}), wurde wie empfohlen für jeden realen Datensatz durch ein Grid-Search Verfahren bestimmt, indem mit den \textit{real} Trainingsdaten trainiert und mit den \textit{real}  Evaluationsdaten evaluiert wurde. Die Werte für den Hyperparameter $\beta$ werden in Tabelle \ref{tab:trainingparams} aufgelistet. Der Loss wurde mit dem \textit{AdaGrad} \cite{duchiAdaptiveSubgradientMethods2011} Gradientenabstiegsverfahren mit einer konstanten Lernrate von $10^{-3}$ optimiert bzw. minimiert. Vorab wurden die Gewichte des Netzwerks mit den Gewichten eines Modells initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz trainiert wurde. Tabelle \ref{tab:trainingparams} gibt eine Übersicht der Hyperparameter an.
+Der Hyperparameter $\beta$, der von PoseNet vorgestellten Kostenfunktion (s. Gleichung \ref{eq:posenet_loss}), wurde wie empfohlen für jeden realen Datensatz durch ein Grid-Search Verfahren bestimmt, indem mit den \textit{real} Trainingsdaten trainiert und mit den \textit{real} Evaluationsdaten evaluiert wurde. Die Werte für den Hyperparameter $\beta$ werden in Tabelle \ref{tab:trainingparams} aufgelistet. Der Loss wurde mit dem \textit{AdaGrad} \cite{duchiAdaptiveSubgradientMethods2011} Gradientenabstiegsverfahren mit einer konstanten Lernrate von $10^{-3}$ optimiert bzw. minimiert. Vorab wurden die Gewichte des Netzwerks mit den Gewichten eines Modells initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz trainiert wurde. Tabelle \ref{tab:trainingparams} gibt eine Übersicht der Hyperparameter an.
 
 \cleardoublepage
 \begin{table}[bp]
