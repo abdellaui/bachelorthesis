@@ -13,8 +13,8 @@ Ein naheliegendes Themengebiet der Robotik ist die visuelle Ortswiedererkennung 
 % hat 2 katogiren..
 Die rein visuellen Methoden des VBLs unterteilen sich in indirekte und direkte Methoden \cite{lowryVisualPlaceRecognition2016}. Die indirekten Methoden behandeln das Lokalisierungsproblem als eine Bildersuche in einer Datenbank, ähnlich wie das \textit{Content-Based-Image-Retrieval} \cite{lewContentbasedMultimediaInformation2006} Problem. Dabei wird das Abfragebild über eine Ähnlichkeitsfunktion mit den Vergleichsbildern aus der Datenbank abgeglichen \cite{zhangImageBasedLocalization2006, arandjelovicThreeThingsEveryone2012, radenovicCNNImageRetrieval2016}. Diese Art von Methoden benötigen eine speicherintensive Bildergalerie (\textit{Datenbank}) und liefern Ergebnisse bei Fund eines korrespondierenden Bildes \cite{lowryVisualPlaceRecognition2016}. Hingen versuchen die direkten Methoden die Pose über eine Referenzumgebung zu bestimmen und benötigen meist daher keine große Bildergalerie \cite{piascoSurveyVisualBasedLocalization2018}. Es gibt drei Arten der direkten Methoden: 
 \begin{enumerate*}[label=\arabic*)]
-	\item Matching von Features zu Punktwolken (\textit{z.B. \cite{liWorldwidePoseEstimation2012}})
-	\item Pose Regression mit Tiefenbilder (\textit{z.B. \cite{shottonSceneCoordinateRegression2013}})
+	\item Matching von Features zu Punktwolken (\textit{z.B. \cite{liWorldwidePoseEstimation2012}}),
+	\item Pose Regression mit Tiefenbilder (\textit{z.B. \cite{shottonSceneCoordinateRegression2013}}),
 	\item Pose Regression nur mit Bildern (\textit{z.B. \cite{kendallPoseNetConvolutionalNetwork2015}})
 \end{enumerate*}
 
