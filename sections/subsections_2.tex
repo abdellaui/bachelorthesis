@@ -20,7 +20,7 @@ Ein künstliches Neuron mit der Inputgröße $M$ ist mathematisch die nicht-line
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/ann_conv/neuron.png}
-	\caption{Visualisierung eines künstlichen Neurons definiert nach der Gleichung \ref{eq:neuron}. Dieser Neuron summiert das Produkt des Inputvektors $x$  mit den jeweiligen Gewichten $w$ und addiert einen Bias $b$. Durch die Summe erzeugt die Aktivierungsfunktion $\phi$ das Output $y$ des Neurons. Abbildung \ref{fig:relu} zeigt ein Beispiel für eine Aktivierungsfunktion. Entnommen aus \cite{deoliveiraSystemBasedArtificial2017}. }
+	\caption{Visualisierung eines künstlichen Neurons definiert nach der Gleichung \ref{eq:neuron}. Dieser Neuron summiert das Produkt des Inputvektors $x$ mit den jeweiligen Gewichten $w$ und addiert einen Bias $b$. Durch die Summe erzeugt die Aktivierungsfunktion $\phi$ das Output $y$ des Neurons. Abbildung \ref{fig:relu} zeigt ein Beispiel für eine Aktivierungsfunktion. Entnommen aus \cite{deoliveiraSystemBasedArtificial2017}. }
 	\label{fig:neuron}
 \end{figure}
 
@@ -65,7 +65,7 @@ Einfache neuronale Netze, wie sie in Abschnitt \ref{sec:KNN} beschrieben werden,
 \begin{figure}
 	\centering
 	\includegraphics[width=0.95\textwidth]{images/ann_conv/lenet5.png}
-	\caption{Ein Beispiel für ein Convolutional Neural Network. Es wird die LeNet-5 Architektur abgebildet. Entnommen aus \cite{lecunGradientBasedLearningApplied1998}  }
+	\caption{Ein Beispiel für ein Convolutional Neural Network. Es wird die LeNet-5 Architektur abgebildet. Entnommen aus \cite{lecunGradientBasedLearningApplied1998}}
 	\label{fig:lenet5}
 \end{figure}
 
@@ -86,7 +86,7 @@ Angefangen mit der LeNet-5 \cite{lecunGradientBasedLearningApplied1998} Architek
 			Aktivierungsfunktion
 		}\\
 		\hline
-		Pooling Layer &  \textit{keine}  & \makecell[tl]{
+		Pooling Layer & \textit{keine} & \makecell[tl]{
 			Pooling Methode\\
 			Filtergröße\\
 			Stride\\
@@ -118,7 +118,7 @@ Die Randbehandlung des Inputvolumens wird \textit{Padding} genannt. Es gibt eine
 
 Die Werte des 2D-Filters stellen die \textit{Gewichte} dar und werden in der Trainingsphase optimiert. Ein Convolutional Layer kann aus mehreren 2D-Filter der gleichen Größe bestehen. Die Convolution Operation wird je 2D-Filter unabhängig auf die Schichten des Inputvolumens ausgeführt \cite{johnsonCS231nConvolutionalNeurala}. Das Output des Convolution Operation wird auch \textit{Feature-Map} genannt. Die Tiefe des Feature-Maps ist gegeben durch die Anzahl der 2D-Filter \cite{yamashitaConvolutionalNeuralNetworks2018}.
 
-Prinzipiell wird das Output des Convolutional Layers durch die Übergabe des Feature-Maps an eine Aktivierungsfunktion bestimmt.  Abbildung \ref{fig:relu} stellt eine Aktivierungsfunktion dar.
+Prinzipiell wird das Output des Convolutional Layers durch die Übergabe des Feature-Maps an eine Aktivierungsfunktion bestimmt. Abbildung \ref{fig:relu} stellt eine Aktivierungsfunktion dar.
 
 \begin{figure}
 	\centering
@@ -159,7 +159,7 @@ Es existiert eine Menge von bekannten CNN Modellen mit ausgezeichneten Ergebniss
 GoogLeNet, konstruiert von \citet{szegedyGoingDeeperConvolutions2015} im Jahr 2014, ist der Sieger des ILSVRC 2014 Wettbewerbes. Die ILSVRC stellt ungefähr 1000 Bilder aus 1000 unterschiedlichen Kategorien aus der ImageNet Datensatz bereit. ImageNet ist eine Bildersammlung bestehend aus über 14 Millionen manuell annotierten Bildern in über 20 Tausend unterschiedlichen Kategorien. Die Herausforderung von ILSVRC ist, die 1000 Objekte bestmöglich auf den Bildern zu klassifizieren.
 
 GoogLeNet ist eine besondere Inkarnation des sogenannten \textit{Inception Moduls}, das zeitgleich mit GoogLeNet vorgestellt wird.
-Ein Inception Modul beinhaltet mehrere Convolutional- sowie einen Pooling Layer und verarbeitet das Inputvolumen parallel auf 4 Zweigen. Vor rechenintensiven Convolutional Layer werden zusätzliche 1$\times$1 dimensionsreduzierende Layer geschaltet. Abschließend werden die Zweige, die ein Volumen mit der gleichen Breite und Höhe produzieren, zu einem Outputvolumen (in die Tiefe) zusammengeführt.  Durch die parallele Berechnung der Zweige und das Einschalten von dimensionsreduzierenden 1$\times$1 Layer vor rechenintensiven Operationen ermöglicht ein Inception Modul neuronale Netze, bei zunehmender Tiefe und Breite, konstante Rechenkapazität zu verlangen \cite{szegedyGoingDeeperConvolutions2015}.
+Ein Inception Modul beinhaltet mehrere Convolutional- sowie einen Pooling Layer und verarbeitet das Inputvolumen parallel auf 4 Zweigen. Vor rechenintensiven Convolutional Layer werden zusätzliche 1$\times$1 dimensionsreduzierende Layer geschaltet. Abschließend werden die Zweige, die ein Volumen mit der gleichen Breite und Höhe produzieren, zu einem Outputvolumen (in die Tiefe) zusammengeführt. Durch die parallele Berechnung der Zweige und das Einschalten von dimensionsreduzierenden 1$\times$1 Layer vor rechenintensiven Operationen ermöglicht ein Inception Modul neuronale Netze, bei zunehmender Tiefe und Breite, konstante Rechenkapazität zu verlangen \cite{szegedyGoingDeeperConvolutions2015}.
 Inzwischen wurde das Inception Modul \cite{szegedyRethinkingInceptionArchitecture2016} und die gesamte Architektur rundherum \cite{szegedyInceptionv4InceptionResNetImpact2016} weiterentwickelt. Abbildung \ref{fig:inception_module} stellt das Inception (\textit{v1}) Modul dar.
 
 Die Architektur von GoogLeNet besteht aus 9 Inception Modulen (je von Tiefe 2) und hat eine gesamte Tiefe von 22 Layer \footnote{Anzahl der trainierbaren Layern inkl. Output Layer}. Das Ungewöhnliche an der Architektur ist, dass es 3 Output-Zweigen hat. Jedes der Ouput-Zweige produziert ein Klassifizierungsergebnis. Output-Zweig 2 \& 3 sind Hilfszweige, die nur in der Trainingsphase einen Einfluss haben und in der Evaluationsphase verworfen werden \cite{szegedyGoingDeeperConvolutions2015}. Abbildung \ref{fig:googlenet} illustriert die GoogLeNet Architektur in Detail.
@@ -191,7 +191,7 @@ Abbildung \ref{fig:posenet_mods} veranschaulicht die Modifikation von GoogLeNet 
  \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{images/googlenet/posenet_diagram2.pdf}
-	\caption{Veranschaulichung der Modifikation von den Output-Zweigen der GoogLeNet Architektur durch PoseNet. Die Softmax Aktivierungsfunktion sowie das fully-connected Layer mit Anzahl der Klassifizierungskategorien als Breite wurde von allen Output-Modulen entfernt. Jeder Output-Zweig hat einen FC-Regressionsschicht erhalten, dass die 6 Freiheitsgrade einer Pose bestimmt. Der Output-Zweig 1 wird zusätzlich mit einer weiteren FC-Layer der Breite 2048 vor dem Regressionsschicht erweitert.  Die Werte der Output-Zweige 2 \& 3 haben nur während der Trainingsphase einen Einfluss und werden in der Evaluationsphase verworfen. In der Trainingsphase wird vor dem Out-Knoten 1 ein Dropout von 50\% und vor den Out-Knoten 2 \& 3 ein Dropout von 70\% angewandt \cite{kendallPoseNetConvolutionalNetwork2015}.}
+	\caption{Veranschaulichung der Modifikation von den Output-Zweigen der GoogLeNet Architektur durch PoseNet. Die Softmax Aktivierungsfunktion sowie das fully-connected Layer mit Anzahl der Klassifizierungskategorien als Breite wurde von allen Output-Modulen entfernt. Jeder Output-Zweig hat einen FC-Regressionsschicht erhalten, dass die 6 Freiheitsgrade einer Pose bestimmt. Der Output-Zweig 1 wird zusätzlich mit einer weiteren FC-Layer der Breite 2048 vor dem Regressionsschicht erweitert. Die Werte der Output-Zweige 2 \& 3 haben nur während der Trainingsphase einen Einfluss und werden in der Evaluationsphase verworfen. In der Trainingsphase wird vor dem Out-Knoten 1 ein Dropout von 50\% und vor den Out-Knoten 2 \& 3 ein Dropout von 70\% angewandt \cite{kendallPoseNetConvolutionalNetwork2015}.}
 	\label{fig:posenet_mods}
 \end{figure}
 
@@ -200,4 +200,4 @@ Die Autoren \citet{kendallPoseNetConvolutionalNetwork2015} stellen zusätzlich e
 	\label{eq:posenet_loss}
 	loss(I) = \norm{ \hat{\pmb{p}} - \pmb{p} }_2 + \beta \norm{ \hat{\pmb{q}} - \frac{\pmb{q}}{\norm{\pmb{q}}}}_2
 \end{equation}
-Der Hyperparameter $\beta$ soll eine Balance der Kosten zwischen dem Positions- und Orientierungsdiskrepanz darstellen und wird in Gebäuden im Wertebereich zwischen 120 bis 750, sowie außerhalb des Gebäudes zwischen 250 bis 2000, empfohlen \cite{kendallPoseNetConvolutionalNetwork2015}. 
+Der Hyperparameter $\beta$ soll eine Balance der Kosten zwischen dem Positions- und Orientierungsdiskrepanz darstellen. Empfohlen wird in Gebäuden ein Wert im Bereich zwischen 120 bis 750 und außerhalb des Gebäudes zwischen 250 bis 2000. \cite{kendallPoseNetConvolutionalNetwork2015}. 
