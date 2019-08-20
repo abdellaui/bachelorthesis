@@ -180,7 +180,7 @@ Die Architektur von GoogLeNet besteht aus 9 Inception Modulen (je von Tiefe 2) u
 \label{sec:posenet}
 PoseNet, vorgestellt von \citet{kendallPoseNetConvolutionalNetwork2015} im Jahr 2015, basiert auf die im Kapitel \ref{sec:googlenet} eingeführte GoogLeNet Architektur. Statt eine Wahrscheinlichkeitsverteilung der Klassifizierungsergebnisse liefert PoseNet bei Übergabe eines RGB-Bildes die 6 Freiheitsgrade der Kamerapose $y = [\pmb{p};\pmb{q}]$, bestehend aus einem Positionsvektor $\pmb{p} \in  \mathbb{R}^{3}$ und eine Quaternion der Orientierung $ \pmb{q} \in  \mathbb{R}^{4}$.
 
-PoseNet modifiziert die GoogLeNet Architektur an den Output-Knoten, dargestellt in Abbildung \ref{fig:googlenet}, wie folgt \cite{kendallPoseNetConvolutionalNetwork2015}:
+PoseNet modifiziert die GoogLeNet Architektur an den Output-Knoten wie folgt (vgl. Abb. \ref{fig:googlenet})\cite{kendallPoseNetConvolutionalNetwork2015}:
 \begin{itemize}
 	\item Jedes der Softmax-Klassifikatoren werden ersetzt durch Regressoren. Dabei wird der Softmax-Activation Layer entfernt und der FC-Layer so modifiziert, dass es einen 7-dimensionalen Vektor\footnote{(3) für die Position und (4) für die Orientierung} ausgibt.
 	\item Vor dem finalen Regressor des Output-Zweiges 1 wird ein weiteres FC-Layer der Breite 2048 eingefügt.
