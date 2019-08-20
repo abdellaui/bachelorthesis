@@ -194,7 +194,7 @@ Abbildung \ref{fig:posenet_mods} veranschaulicht die Modifikation von GoogLeNet 
 	\label{fig:posenet_mods}
 \end{figure}
 
-Die Autoren \citet{kendallPoseNetConvolutionalNetwork2015} stellen zusätzlich eine neue Kostenfunktion mit den Parametern $\hat{y} = [\hat{\pmb{p}};\hat{\pmb{q}}]$ als Soll-Wert und $y = [\pmb{p};\pmb{q}]$ als Ist-Wert vor:
+Die Autoren \citet{kendallPoseNetConvolutionalNetwork2015} stellten zusätzlich eine neue Kostenfunktion mit den Parametern $\hat{y} = [\hat{\pmb{p}};\hat{\pmb{q}}]$ als Soll-Wert und $y = [\pmb{p};\pmb{q}]$ als Ist-Wert vor:
 \begin{equation}
 	\label{eq:posenet_loss}
 	loss(I) = \norm{ \hat{\pmb{p}} - \pmb{p} }_2 + \beta \norm{ \hat{\pmb{q}} - \frac{\pmb{q}}{\norm{\pmb{q}}}}_2
