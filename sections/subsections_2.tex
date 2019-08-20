@@ -35,7 +35,7 @@ y_l = f_l(y_{l-1}) = \phi(W^T_lx_{l-1}+b_{l})
 \end{equation}
 
 
-Die erste Schicht eines Netzwerks wird als Input-, die letzte Schicht als Ouput Layer bezeichnet. Alle Schichten dazwischen sind Hidden Layer \cite{goodfellowDeepLearning2016}. Der Ouput Layer liefert zugleich auch das Ergebnis eines Netzwerks, daher haben die Neuronen des Ouput Layers grundsätzlich keine Aktivierungsfunktion \cite{johnsonCS231nConvolutionalNeural}.
+Die erste Schicht eines Netzwerks wird als Input-, die letzte Schicht als Ouput Layer bezeichnet. Alle Schichten dazwischen sind Hidden Layer \cite{goodfellowDeepLearning2016}. Der Ouput Layer liefert zugleich auch das Ergebnis eines Netzwerks. Deswegen haben die Neurone des Ouput Layers grundsätzlich keine Aktivierungsfunktion \cite{johnsonCS231nConvolutionalNeural}.
 
 Die Tiefe (\textit{depth}) eines Netzwerks ist gegeben durch die Anzahl der Layer \footnote{der Input Layer ist ausgeschlossen} und die Breite (\textit{width}) eines Layers wird durch die Anzahl der Neuronen bestimmt \cite{goodfellowDeepLearning2016}. 
 Abbildung \ref{fig:neural_net} illustriert ein feedforward neuronales Netz als ein azyklischer Graph.
