@@ -9,9 +9,11 @@ Die Ergebnisse der Untersuchungen haben gezeigt, dass der Ansatz von \citet{acha
 
 In Gebäuden kommt es häufiger vor, dass unterschiedliche Stellen eines Innenraumes ähnliche Merkmale besitzen und somit schwer voneinander zu unterscheiden sind. Dieses Problem ist in der Literatur auch als \textit{perceptual-aliasing} bekannt und stellt einen der größten Herausforderungen von Lokalisierungsverfahren dar \cite{lowryVisualPlaceRecognition2016}. Auf den \textit{HS-stairs-down} und \textit{HS-stairs-up} Strecken wurden die realen Evaluationsdaten grundsätzlich zwischen der oberen und unteren Treppenlauf lokalisiert. Eine Fähigkeit der KNNs zur Generalisierung zwischen Oben und Unten ist nicht zuerkennen. Dies kann auf perceptual-aliasing zurückgeführt werden und erklärt die abwechselnde Fehlerrate auf den Evaluationsdaten der Treppenläufe.
 
-Weiterhin haben die Ergebnisse der Strecken \textit{IC-loop} und \textit{HS-gamma} gezeigt, dass die Evaluationsdaten auf eine ca. 20$m$ bis 30$m$ langen horizontalen Teilzone verteilt werden. In \textit{IC-loop} kann das Lokalisieren auf einem ca. 30$m$ langen Teilzone ebenso auf perceptual-aliasing zurückgeführt werden, da sich die Innenräume der vertikal sowie horizontal verlaufende Strecken stark ähnelten. Im Gegensatz dazu waren in \textit{HS-gamma} die Innenräume der vertikal verlaufenden Strecke von den horizontal und entlang der Schleife verlaufenden Strecken differenzierbar. Dennoch werden in \textit{HS-gamma} die Evaluationsdaten \textit{nur} auf ein ca. 20$m$ langen Teilzone der horizontalen Strecke lokalisiert.
+Weiterhin haben die Ergebnisse der Strecken \textit{IC-loop} und \textit{HS-gamma} gezeigt, dass die Evaluationsdaten auf eine ca. 5$m$ breiten und ca. 20$m$ bis 30$m$ langen Teilzone verteilt werden. In \textit{IC-loop} kann das Lokalisieren auf einem ca. 30$m$ langen Teilzone ebenso auf perceptual-aliasing zurückgeführt werden, da sich die Innenräume der vertikal sowie horizontal verlaufende Strecken stark ähnelten. Im Gegensatz dazu waren in \textit{HS-gamma} die Innenräume der vertikal verlaufenden Strecke von den horizontal und entlang der Schleife verlaufenden Strecken differenzierbar. Dennoch werden in \textit{HS-gamma} die Evaluationsdaten \textit{nur} auf ein ca. 20$m$ langen Teilzone der horizontalen Strecke lokalisiert.
 
-\citet{walchImageBasedLocalizationUsing2017} konnten in einem vergleichbar bzw. größeren Gebäudeareale als von den Strecken \textit{IC-loop} oder \textit{HS-gamma} betroffenen Flächen mit PoseNet durch das Training und Evaluieren mit echten Daten eine Akkuratesse von 1.87$m$ in der Position und 47.34° in der Orientierung erreichen.
+% eine Akkuratesse von 1.87$m$ in der Position und 47.34° in der Orientierung
+
+\citet{walchImageBasedLocalizationUsing2017} konnten mit PoseNet durch das Training und Evaluieren mit realen Daten in einem vergleichbar bzw. größeren Gebäudeareale als von den Strecken \textit{IC-loop} oder \textit{HS-gamma} betroffenen Flächen mit einer Akkuratesse von 1.87$m$ in der Position und 47.34° in der Orientierung lokalisieren. Daher ist der Lokalisierungsansatz über PoseNet nicht auf eine ca. 20$m$ bis 30$m$ langen Gebäudeareale be   
 % Acharyas länge war 20m, posenet bzw. poselstm konnten schon auf krasseres
 
 
@@ -32,6 +34,7 @@ Weiterhin haben die Ergebnisse der Strecken \textit{IC-loop} und \textit{HS-gamm
 % Empfehlung
 
 
+Die zeitintensiven Trainingsprozesse wurden aus Zeitgründen 5-mal wiederholt. Daher ist eine bessere Akkuratesse der in dieser Arbeit evaluierten Netzwerken kann nicht ausgeschlossen werden, da der Trainingsprozess durch den Loss-Optimierer AdaGrad einem Zufall unterworfen ist.
 
 Die Hyperparameter wurden überwiegen aus \citet{acharyaBIMPoseNetIndoorCamera2019} übernommen. Die Optimierung der Hyperparameter kann zu besseren Ergebnissen auf den Datensätzen führen und ist daher eine Empfehlung für weitere Forschung. Insbesondere können die im Rahmen dieser Bachelorarbeit erhobenen Datensätze auf die Nachfolger der PoseNet Architektur wie z.B. \cite{kendallModellingUncertaintyDeep2016, walchImageBasedLocalizationUsing2017, kendallGeometricLossFunctions2017, clarkVidLocDeepSpatioTemporal2017} angewandt werden.
 
