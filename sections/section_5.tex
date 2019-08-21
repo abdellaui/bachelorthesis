@@ -39,6 +39,8 @@ Allerdings ist die betroffene Korridorfläche von \citet{acharyaBIMPoseNetIndoor
 % Empfehlung
 
 
+Die Akkuratesse eines KNNs ist in dieser Arbeit durch den stochastischen Gradietenabstiegsverfahren bei der Optimierung des \textit{Losses} im Trainingsprozess dem Zufall unterworfen.
+Es würde den Rahmen dieser Bachelorarbeit sprengen, die durch den Loss-Optimerer AdaGrad Zufall bedingten bestmögliche  Akkuratesse zu finden.
 Die zeitintensiven Trainingsprozesse wurden aus Zeitgründen 5-mal wiederholt. Daher ist eine bessere Akkuratesse der in dieser Arbeit evaluierten Netzwerken kann nicht ausgeschlossen werden, da der Trainingsprozess durch den Loss-Optimierer AdaGrad einem Zufall unterworfen ist.
 
 Die Hyperparameter wurden überwiegen aus \citet{acharyaBIMPoseNetIndoorCamera2019} übernommen. Die Optimierung der Hyperparameter kann zu besseren Ergebnissen auf den jeweiligen Datensätzen führen und ist daher eine Empfehlung für weitere Forschung. In der Literatur wurden raumzeitliche Informationen aus Bildsequenzen von aufeinanderfolgenden Frames berücksichtigt, um das perceptual-aliasing Problem zu behandeln \cite{walchImageBasedLocalizationUsing2017, clarkVidLocDeepSpatioTemporal2017}. Außerdem wurde PoseNet an einem Bayessian Neural Network angepasst, um die Unsicherheit der Ergebnisse zu modellieren. Dadurch ist es möglich in der Evaluationsphase möglich Ergebnisse zu vertrauen oder zu verwerfen \cite{kendallModellingUncertaintyDeep2016}. Daher können die im Rahmen dieser Bachelorarbeit erhobenen Datensätze auf die PoseNet Nachfolger \cite{kendallModellingUncertaintyDeep2016, walchImageBasedLocalizationUsing2017, clarkVidLocDeepSpatioTemporal2017} angewendet werden und ist ebenso eine Empfehlung für weitere Forschung.
