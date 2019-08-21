@@ -7,12 +7,13 @@
 % Zusammenfassung Ergebnisse
 Die Ergebnisse der Untersuchungen haben gezeigt, dass der Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019}, worin das PoseNet mit Gradietenbilder der synthetischen Daten trainiert und mit Gradientenbildern der realen Daten evaluiert wird, ohne Optimierung der Hyperparameter auf die im Rahmen dieser Bachelorarbeit erhobenen Datensätze eine durchschnittliche Akkuratesse von 8.45$m$ in der Position und 47.34° in der Orientierung erreichte. Die Evaluationen mit den synthetischen Gradientenbildern haben gezeigt, dass mit Daten aus der gleichen Domäne eine durchschnittliche Akkuratesse von 1.07$m$ in der Position und 8.34° in der Orientierung erzielt werden kann. 
 
+
+% Perceptual aliasing & treppen
 In Gebäuden kommt es häufiger vor, dass unterschiedliche Stellen eines Innenraumes ähnliche Merkmale besitzen und somit schwer voneinander zu unterscheiden sind. Dieses Problem ist in der Literatur auch als \textit{perceptual-aliasing} bekannt und stellt einen der größten Herausforderungen von Lokalisierungsverfahren dar \cite{lowryVisualPlaceRecognition2016}. Auf den \textit{HS-stairs-down} und \textit{HS-stairs-up} Strecken wurden die realen Evaluationsdaten grundsätzlich zwischen der oberen und unteren Treppenlauf lokalisiert. Eine Generalisierungsfähigkeit zwischen Oben und Unten der KNNs ist nicht zuerkennen. Vielmehr ist eine \textit{unsichere} (zufällige) Zuordnung der KNNs festzuhalten. Dies kann auf perceptual-aliasing zurückgeführt werden und erklärt die abwechselnde Fehlerrate auf den Evaluationsdaten der Treppenläufe.
 
-
+% loop und gamma auf fenster aufmerksam machen
 Weiterhin haben die Ergebnisse der Strecken \textit{IC-loop} und \textit{HS-gamma} gezeigt, dass die Evaluationsdaten auf eine ca. 5$m$ breiten und ca. 20$m$ bis 30$m$ langen Teilzone verteilt werden. In \textit{IC-loop} kann das Lokalisieren auf einem begrenzten Gebäudeareal auf perceptual-aliasing zurückgeführt werden, da sich die Innenräume der vertikal sowie horizontal verlaufende Strecken stark ähnelten. Im Gegensatz dazu waren in \textit{HS-gamma} die Innenräume der vertikal verlaufenden Strecke von den horizontal und entlang der Schleife verlaufenden Strecken differenzierbar. Dennoch werden in \textit{HS-gamma} die Evaluationsdaten \textit{nur} auf einen Bereich der horizontalen Strecke lokalisiert.
 
-% eine Akkuratesse von 1.87$m$ in der Position und 47.34° in der Orientierung
 
 \citet{walchImageBasedLocalizationUsing2017} konnten mit PoseNet durch das Trainieren und Evaluieren mit realen Daten in einem größeren Gebäudeareal als von den \textit{IC-loop} oder \textit{HS-gamma} Datensätzen mit einer Akkuratesse von 1.87$m$ in der Position und 6.14° in der Orientierung lokalisieren. Ebenso konnte in dieser Bachelorarbeit gezeigt werden, dass durch das Trainieren und Evaluieren mit synthetischen Daten eine durchschnittliche Akkuratesse von 1.07$m$ in der Position und 8.34° in der Orientierung erzielt werden kann. Daher ist ein Lokalisierungsverfahren über PoseNet nicht begrenzt auf einen ca. 5$m$ breiten und ca. 20$m$ bis 30$m$ langen Gebäudeareal. 
 
