@@ -28,13 +28,17 @@ Allerdings ist die betroffene Korridorfläche von \citet{acharyaBIMPoseNetIndoor
 
 
 % Beschränlen
-Ziel dieser Arbeit ist nicht eine Lokalisierungsgenauigkeit im Zentimeterbereich anzustreben. Daher ist die Abweichung (\textit{Drift}) bis zu 5\% der realen Evaluationsdaten von den synthetischen Trainingsdaten unproblematisch.
+%Ziel dieser Arbeit ist nicht eine Lokalisierungsgenauigkeit im Zentimeterbereich anzustreben. Daher ist die Abweichung (\textit{Drift}) bis zu 5\% der realen Evaluationsdaten von den synthetischen Trainingsdaten unproblematisch.
 
 
 
 Die Akkuratesse eines KNNs ist in dieser Arbeit durch den stochastischen Gradietenabstiegsverfahren \textit{AdaGrad} bei der Optimierung des \textit{Losses} im Trainingsprozess vom Zufall abhängig. Die durch den Zufall bedingten bestmöglichen Akkuratesse zu finden würde den Rahmen dieser Bachelorarbeit aus Zeitgründen sprengen. Daher wurden die Trainingsprozesse jeweils für die Strecken und Datentypen 5-mal wiederholt und die Netzwerke mit den besten Akkuratesse behalten. Weiterführende Forschungen können bei gleichen Hyperparametern die Anzahl der Trainingsprozesse erhöhen, um bessere Ergebnisse zu erzielen oder auszuschließen. Außerdem wurden die Hyperparameter überwiegen aus \citet{acharyaBIMPoseNetIndoorCamera2019} übernommen. Die Optimierung der Hyperparameter kann auf den jeweiligen Datensätzen zu besseren Ergebnissen führen und ist daher eine weitere Empfehlung für weiterführende Forschungen. 
 
-In der Literatur wurden raumzeitliche Informationen aus Bildsequenzen von aufeinanderfolgenden Frames berücksichtigt, um das perceptual-aliasing Problem zu behandeln \cite{walchImageBasedLocalizationUsing2017, clarkVidLocDeepSpatioTemporal2017}. Außerdem wurde PoseNet an einem Bayessian Neural Network angepasst, um die Unsicherheit der Ergebnisse zu modellieren. Dadurch ist es möglich in der Evaluationsphase möglich Ergebnisse zu vertrauen oder zu verwerfen \cite{kendallModellingUncertaintyDeep2016}. Daher können weitere Forschungsprojekte die im Rahmen dieser Bachelorarbeit erhobenen Datensätze auf die PoseNet Nachfolger \cite{kendallModellingUncertaintyDeep2016, walchImageBasedLocalizationUsing2017, clarkVidLocDeepSpatioTemporal2017} anwenden und die Fähigkeit zur Lokalisierung untersuchen.
+In der Literatur wurden raumzeitliche Informationen aus Bildsequenzen von aufeinanderfolgenden Frames berücksichtigt, um das perceptual-aliasing Problem zu behandeln \cite{walchImageBasedLocalizationUsing2017, clarkVidLocDeepSpatioTemporal2017}. Außerdem wurde PoseNet an einem Bayessian Neural Network angepasst, um die Unsicherheit der Ergebnisse zu modellieren. Dadurch ist es möglich in der Evaluationsphase möglich Ergebnisse zu vertrauen oder zu verwerfen \cite{kendallModellingUncertaintyDeep2016}. 
+
+% nochmal aufgreifen
+
+Daher können weitere Forschungsprojekte die im Rahmen dieser Bachelorarbeit erhobenen Datensätze auf die PoseNet Nachfolger \cite{kendallModellingUncertaintyDeep2016, walchImageBasedLocalizationUsing2017, clarkVidLocDeepSpatioTemporal2017} anwenden und die Fähigkeit zur Lokalisierung untersuchen.
 
  %Dieser Ansatz Potential eines des Experimentes zur Pose Bestimmung mit Daten derselben Domäne. 
 % Interpretation
