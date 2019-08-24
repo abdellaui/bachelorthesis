@@ -31,6 +31,8 @@ Für alle synthetischen Datensätze einer Strecke wurde das Trainingsprozess 5-m
 
 Für ein besseres Verständnis der durch die Evaluierung mit den \textit{grad-real} Datensätzen resultierenden Akkuratesse wurden pro Strecke für die besten Netzwerke die bestimmten Positionen in der xy-Ebene dargestellt. Ebenso wurden pro Strecke die Positionsfehler in der xy-Ebene und die Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten dargestellt. Abbildungen \ref{fig:result_ic_loop} bis \ref{fig:result_hs_stairs_down} illustrieren die Evaluationsergebnisse.
 
+Ferner wurde als Referenz für die Akkuratesse die bei der Bestimmung des Hyperparameters $\beta$ ermittelten Akkuratessen festgelegt. Tabelle \ref{tab:results_traj_real} gibt die Referenzwerte und die Durchschnittswerte der Experimente pro Strecke an.
+
 \subsubsection{IC-loop}
 \label{subsubsec:ic_loop}
 
@@ -189,7 +191,7 @@ Das mit \textit{grad-cartoon} trainierte Netzwerk bestimmte die Positionen aller
 
 \begin{table}
 	\centering
-	\caption{Referenzwerte der Akkuratesse. Diese Werte wurden während der Bestimmung des $\beta$ Hyperparameters (s. Abschn. \ref{sec:trainingsparameter}) durch das Trainieren und Evaluieren mit den \textit{realen} Daten ermittelt.}
+	\caption{Zusammenfassung der Ergebnisse. Die Referenzwerte wurden während der Bestimmung des $\beta$ Hyperparameters (s. Abschn. \ref{sec:trainingsparameter}) durch das Trainieren und Evaluieren mit den \textit{realen} Daten ermittelt. Die Durchschnittswerte von Experiment 1 geben durch das Trainieren und Evaluieren mit den synthetischen Daten ermittelte Akkuratesse an.}
 	\begin{tabularx}{1.0\textwidth}{X >{\RaggedRight}X >{\RaggedRight}X >{\RaggedRight}X}
 		\textbf{Strecke} & \textbf{Referenzwert} & \textbf{$\emptyset$ Experiment 1} & \textbf{$\emptyset$ Experiment 2} \\
 		\hline
