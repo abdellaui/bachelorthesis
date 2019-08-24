@@ -32,6 +32,25 @@ Für alle synthetischen Datensätze wurde das Trainingsprozess 5-mal mit den kor
 Für ein besseres Verständnis der durch die Evaluierung mit den \textit{grad-real} Datensätzen resultierenden Akkuratesse wurden pro Strecke für die besten Netzwerke die bestimmten Positionen in der xy-Ebene dargestellt. Ebenso wurden pro Strecke die Positionsfehler in der xy-Ebene und die Orientierungsfehler auf der Gierachse der jeweiligen Evaluationsdaten dargestellt. Abbildungen \ref{fig:result_ic_loop} bis \ref{fig:result_hs_stairs_down} illustrieren die Evaluationsergebnisse.
 
 
+
+\begin{table}
+	\centering
+	\caption{Evaluationsergebnisse von der Strecke \textit{IC-loop}. Die Akkuratesse der mit den jeweiligen Trainingsdaten trainierten Netzwerken wird angegeben. Diese Netzwerke wurde mit den korrespondierenden synthetischen Evaluationsdaten und jeweils mit den realen Evaluationsdaten evaluiert.}
+	\begin{tabularx}{1.0\textwidth}{X >{\RaggedRight}X >{\RaggedRight}X}
+		\textbf{Strecke} & \textbf{Akkuratesse} \hspace{2cm} (Position, Orientierung)
+		\hline
+		\textit{grad-cartoon} & 1.61$m$, 8.17° & 23.56$m$, 51.30°\\
+		\hline
+		\textit{grad-edge} & 2.00$m$, 8.29° & 32.91$m$, 59.17°\\
+		\hline
+		\textit{grad-photoreal} & 1.80$m$, 7.70° & 16.68$m$, 73.25°\\
+		\hhline{|=|=|=|}
+		Durchschnitt & 1.80$m$, 8.05° & 24.38$m$, 61.24°\\
+	\end{tabularx}
+	\label{tab:results_ic}
+\end{table}
+
+
 \subsubsection{IC-loop}
 \label{subsubsec:ic_loop}
 
