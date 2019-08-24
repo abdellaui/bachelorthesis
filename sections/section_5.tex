@@ -30,8 +30,8 @@ Das Lokalisieren auf einem begrenzten Gebäudeareal in \textit{IC-loop} kann auf
 \citet{acharyaBIMPoseNetIndoorCamera2019} stellten überraschend fest, dass das zunehmende \textit{Level of Detail} (LOD) der Gebäudesimulation (\textit{Trainingsdaten}) bei der Evaluation mit den Gradientenbilder der realen Daten zur Abnahme der Akkuratesse führte. Angesichts des höheren LODs des HS-gamma Datensatzes liegt die Schlussfolgerung nahe, dass das die schlechte Akkuratesse im 
 
 % datentypen
-Außerdem erzielten \citet{acharyaBIMPoseNetIndoorCamera2019} ihre besten Ergebnissen durch das Trainieren mit den Gradientenbilder der synthetischen Kantenbilder (\textit{grad-edge}). In dieser Arbeit lässt sich ein einheitlicher Typ der synthetischen Daten nicht finden.
-% Deshalb wurden die Trainingsprozesse jeweils für die Strecken und Datentypen 5-mal wiederholt und die Netzwerke mit den besten Akkuratesse behalten. 
+Außerdem erzielten \citet{acharyaBIMPoseNetIndoorCamera2019} ihre besten Ergebnisse durch das Trainieren mit den Gradientenbilder der synthetischen Kantenbilder (\textit{grad-edge}). In dieser Arbeit konnte häufiger mit den (\textit{grad-cartoon}) Datensätzen bessere Akuratesse erzielt werden. Allerdings kann auf dieser Tatsache kein Typ der synthetischen Daten als Bestes festgelegt werden, da die Anzahl des Trainingsprozesses begrenzt war und somit das Vorhanden sein der besten Akkuratesse von jedem Datentyp zum Vergleich ausgeschlossen werden kann. 
+ 
 
 % Beschränken
 Die Akkuratesse eines KNNs ist in dieser Arbeit durch den stochastischen Gradietenabstiegsverfahren \textit{AdaGrad} bei der Optimierung des \textit{Losses} im Trainingsprozess vom Zufall abhängig. Die durch den Zufall bedingten bestmöglichen Akkuratesse zu finden würde den Rahmen dieser Bachelorarbeit aus Zeitgründen sprengen. Weiterführende Forschungen können bei gleichen Hyperparametern die Anzahl der Trainingsprozesse erhöhen, um bessere Ergebnisse zu erzielen oder auszuschließen sowie den Zusammenhang der Datentypen und den Ergebnissen untersuchen. 
