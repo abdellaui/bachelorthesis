@@ -35,17 +35,17 @@ Für ein besseres Verständnis der durch die Evaluierung mit den \textit{grad-re
 	\centering
 	\caption{Referenzwerte der Akkuratesse. Diese Werte wurden während der Bestimmung des $\beta$ Hyperparameters (s. Abschn. \ref{sec:trainingsparameter}) durch das Trainieren und Evaluieren mit den \textit{realen} Daten ermittelt.}
 	\begin{tabularx}{0.7\textwidth}{X >{\RaggedRight}X}
-		\textbf{Strecke} & \textbf{Akkuratesse} \hspace{2cm} (Position, Orientierung)\\
+		\textbf{Strecke} & \textbf{Referenzwert} \hspace{2cm} (Position, Orientierung) & \textbf{synth} \hspace{2cm} (Position, Orientierung) & \textbf{real vs synth} \hspace{2cm} (Position, Orientierung)\\
 		\hline
-		\textit{IC-loop} & 1.93$m$, 4.26°\\
+		\textit{IC-loop} & 1.93$m$, 4.26° & 1.93$m$, 4.26° & 1.93$m$, 4.26°\\
 		\hline
-		\textit{HS-gamma} & 0.95$m$, 7.53°\\
+		\textit{HS-gamma} & 0.95$m$, 7.53° & 1.93$m$, 4.26° & 1.93$m$, 4.26°\\
 		\hline
-		\textit{HS-stairs-up} & 0.94$m$, 8.33°\\
+		\textit{HS-stairs-up} & 0.94$m$, 8.33° & 1.93$m$, 4.26° & 1.93$m$, 4.26°\\
 		\hline
-		\textit{HS-stairs-down} & 0.87$m$, 9.25°\\
+		\textit{HS-stairs-down} & 0.87$m$, 9.25° & 1.93$m$, 4.26° & 1.93$m$, 4.26°\\
 		\hhline{|=|=|}
-		Durchschnitt & 1.17$m$, 9.79°\\
+		Durchschnitt & 1.17$m$, 9.79° & 1.93$m$, 4.26° & 1.93$m$, 4.26°\\
 	\end{tabularx}
 	\label{tab:results_traj_real}
 \end{table}
