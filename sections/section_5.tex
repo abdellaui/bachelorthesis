@@ -5,9 +5,12 @@
 
 
 
+%Angesichts dieser Ergebnisse liegt die Schlussfolgerung nahe, dass das Evaluieren mit den Gradientenbilder der realen Daten auf das mit synthetischen Daten trainierten PoseNet.
+%Es ist nicht das Ziel dieser Arbeit den visuellen Lokalisierungsansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} auf den erhobenen Datensätzen zu untersuchen. Dabei wird eine Lokalisierungsgenauigkeit im Meterbereich angestrebt, da PLACEHOLDER . Daher ist die Abweichung (\textit{Drift}) bis zu 5\% der realen Evaluationsdaten von den synthetischen Trainingsdaten unproblematisch. In Anbetracht der Ergebnisse ist eine Lokalisierungsverfahren ohne weitere Maßnahmen des Ansatzes von \citet{acharyaBIMPoseNetIndoorCamera2019} auf den in dieser Arbeit erhobenen Datensätzen auszuschließen.
+
 
 % Zusammenfassung Ergebnisse
-Die Ergebnisse der Untersuchungen haben gezeigt, dass der Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019}, worin das PoseNet mit Gradietenbilder der synthetischen Daten trainiert und mit Gradientenbildern der realen Daten evaluiert wird, ohne Optimierung der Hyperparameter auf die im Rahmen dieser Bachelorarbeit erhobenen Datensätze eine durchschnittliche Akkuratesse von 8.45$m$ in der Position und 47.34° in der Orientierung erreichte. Die Evaluationen mit den synthetischen Gradientenbildern haben gezeigt, dass mit Daten aus der gleichen Domäne eine durchschnittliche Akkuratesse von 1.07$m$ in der Position und 8.34° in der Orientierung erzielt werden kann. 
+Die Ergebnisse der Untersuchungen haben gezeigt, dass der Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019}, worin das PoseNet mit Gradietenbilder der synthetischen Daten trainiert und mit Gradientenbildern der realen Daten evaluiert wird, ohne Optimierung der Hyperparameter auf die im Rahmen dieser Bachelorarbeit erhobenen Datensätze eine durchschnittliche Akkuratesse von 14.61$m$ in der Position und 66.26° in der Orientierung erreichte. Die Evaluationen mit den synthetischen Gradientenbildern haben gezeigt, dass mit Daten aus der gleichen Domäne eine durchschnittliche Akkuratesse von 1.59$m$ in der Position und 11.14° in der Orientierung erzielt werden kann. 
 
 
 % Perceptual aliasing & treppen
@@ -24,14 +27,10 @@ Grundsätzlich ist PoseNet weder auf einen ca. 5$m$ breiten und ca. 20$m$ bis 30
 In \textit{IC-loop} kann das Lokalisieren auf einem begrenzten Gebäudeareal auf \textit{perceptual-aliasing} zurückgeführt werden, da sich die Innenräume der vertikal sowie horizontal verlaufende Strecken stark ähnelten. Im Gegensatz dazu waren in \textit{HS-gamma} die Innenräume der vertikal und entlang der Schlaufe verlaufenden Strecken von den horizontalen Strecken optisch differenzierbar. Dennoch wurden in \textit{HS-gamma} die realen Evaluationsdaten \textit{überwiegend} auf einen Bereich der linken horizontalen Strecke lokalisiert. Ebenso wurde die Orientierung als die dominierende Aufnahmerichtung bestimmt.
 
 
-\citet{acharyaBIMPoseNetIndoorCamera2019} stellten überraschend fest, dass das zunehmende \textit{Level of Detail} (LOD) der Gebäudesimulation (\textit{Trainingsdaten}) bei der Evaluation mit den Gradientenbilder der realen Daten zur Abnahme der Akkuratesse führte. 
+\citet{acharyaBIMPoseNetIndoorCamera2019} stellten überraschend fest, dass das zunehmende \textit{Level of Detail} (LOD) der Gebäudesimulation (\textit{Trainingsdaten}) bei der Evaluation mit den Gradientenbilder der realen Daten zur Abnahme der Akkuratesse führte. Angesichts des höheren LODs des HS-gamma Datensatzes liegt die Schlussfolgerung nahe, dass das die schlechte Akkuratesse im 
 
+% datentypen
 
-%Angesichts des höheren LODs des HS-gamma Datensatzes liegt die Schlussfolgerung nahe, dass das 
- %Angesichts dieser Ergebnisse liegt die Schlussfolgerung nahe, dass das Evaluieren mit den Gradientenbilder der realen Daten auf das mit synthetischen Daten trainierten PoseNet.
-
-
-%Es ist nicht das Ziel dieser Arbeit den visuellen Lokalisierungsansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} auf den erhobenen Datensätzen zu untersuchen. Dabei wird eine Lokalisierungsgenauigkeit im Meterbereich angestrebt, da PLACEHOLDER . Daher ist die Abweichung (\textit{Drift}) bis zu 5\% der realen Evaluationsdaten von den synthetischen Trainingsdaten unproblematisch. In Anbetracht der Ergebnisse ist eine Lokalisierungsverfahren ohne weitere Maßnahmen des Ansatzes von \citet{acharyaBIMPoseNetIndoorCamera2019} auf den in dieser Arbeit erhobenen Datensätzen auszuschließen.
 
 % Beschränken
 Die Akkuratesse eines KNNs ist in dieser Arbeit durch den stochastischen Gradietenabstiegsverfahren \textit{AdaGrad} bei der Optimierung des \textit{Losses} im Trainingsprozess vom Zufall abhängig. Die durch den Zufall bedingten bestmöglichen Akkuratesse zu finden würde den Rahmen dieser Bachelorarbeit aus Zeitgründen sprengen. Deshalb wurden die Trainingsprozesse jeweils für die Strecken und Datentypen 5-mal wiederholt und die Netzwerke mit den besten Akkuratesse behalten. Weiterführende Forschungen können bei gleichen Hyperparametern die Anzahl der Trainingsprozesse erhöhen, um bessere Ergebnisse zu erzielen oder auszuschließen. 
