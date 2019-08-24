@@ -34,15 +34,8 @@ Für ein besseres Verständnis der durch die Evaluierung mit den \textit{grad-re
 
 \subsubsection{IC-loop}
 \label{subsubsec:ic_loop}
-% die eine geschlossen Schleife in einem optisch ähnlichen Flur bildet,
-% der Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} auf einer ebenen, gegen den UZS abwechselnde Richtung verlaufenden, ca. 115$m$ langen Strecke mit wiederholenden Gebäudemerkmalen 
-% Alle Datensätze der Strecke \textit{IC-loop} wurden zu 50\% Trainingsdaten und zu 50\% Evaluierungsdaten zufällig aufgeteilt. Für alle synthetischen Datensatztypen mit je 5718 Daten wurde ein separates Netzwerk trainiert. Anschließend wurden die Netzwerke mit den korrespondierenden synthetischen Evaluierungsdatensätze mit je 5717 Daten getestet. Eine weitere Evaluierung der trainierten Netzwerke folgte mit den realen 1921 Evaluierungsdaten. Tabelle \ref{tab:results_ic} gibt die Ergebnisse dieser Evaluierungsvorgänge an.
-% Aus Tabelle \ref{tab:results_ic} ist zu erkennen,
-% Dies zeigt die potenzielle Fähigkeit des Experimentes zur Pose Bestimmung mit Daten derselben Domäne auf der \textit{IC-loop} Strecke. 
 
 In diesem Experiment wurde der \textit{IC-loop} Datensatz verwendet. Eine durchschnittliche Akkuratesse von 1.80$m$ in der Position und 8.05° in der Orientierung wurde mit den synthetischen Daten erzielt. Darüber hinaus ergab die Evaluation mit den realen Daten eine durchschnittliche Akkuratesse von 24.38$m$, 61.24°. Eine Akkuratesse von 1.61$m$, 8.17° wurde mit synthetischen Daten beim Trainieren und Evaluieren durch den \textit{grad-cartoon} Datensatz erzielt. Bei der Evaluierung mit den Gradientenbildern der realen Evaluationsdaten wurde auf dem \textit{grad-photoreal} Netzwerk eine Akkuratesse von 16.68$m$, 73.25° erreicht (vgl. Tab. \ref{tab:results_ic}). 
-
-% Bei einem Gebäudevolumen von ca. $50m \times 11m \times 3.5m$ ist die Positionsgenauigkeit von 16.68$m$, mit Anbetracht des Abdriftens der realen Ground-Truth-Daten (s. Abschn. \ref{subsec:record_real_data}), für ein denkbares Lokalisierungsverfahren zu ungenau. Genauso ist eine Orientierungsgenauigkeit von 73.25° für die Bestimmung der Orientierung mehr als ungeeignet. Abbildung \ref{fig:result_ic_loop} visualisiert die Evaluierungsergebnisse von dem mit \textit{grad-photoreal} trainiertem sowie mit \textit{grad-real} evaluiertem Netzwerk.
 
 Das \textit{grad-photoreal} Netzwerk bestimmte nur die Positionen aller \textit{grad-real} Evaluationsdaten auf einem ca. $30m \times 5m$ großen Teilbereich der unteren horizontalen Strecke (vgl. Abb. \ref{subfig:ic_fig2}). Daher wiesen Evaluationsdaten der kürzeren vertikalen sowie der obigen horizontalen Strecke die größten Positionsfehler auf (vgl. Abb. \ref{subfig:ic_fig4}). Ebenso bestimmte das Netzwerk größtenteils die Orientierung der Evaluationsdaten als die Aufnahmerichtung der unteren horizontalen Strecke (vgl. Abb. \ref{subfig:ic_fig6}).
 
@@ -117,11 +110,8 @@ Das \textit{grad-cartoon} Netzwerk bestimmte überwiegend die Positionen aller \
 
 \subsubsection{HS-stairs-up}
 \label{subsubsec:hs_stairs_up}
-% Dies zeigt das Potenzial des Experimentes zur Pose Bestimmung mit Daten derselben Domäne auf der \textit{HS-stairs-up} Strecke.
 
 Weiterhin wurde ein Experiment mit dem \textit{HS-stairs-up} Datensatz durchgeführt. Ausschließlich mit synthetischen Daten wurde eine Akkuratesse von 0.82$m$ in der Position und 7.76° in der Orientierung durch die \textit{grad-cartoon} Daten erzielt. Bei der Evaluierung mit den Gradientenbildern der realen Evaluationsdaten wurde eine Akkuratesse von 4.33$m$ in der Position und 51.64° in der Orientierung durch das \textit{grad-edge} Netzwerk erreicht (vgl. Tab. \ref{tab:results_hs_stairs_up}). 
-
-% Sowohl ein Positionsfehler von 4.33$m$ als auch ein Orientierungsfehler von 51.64° sind für die Bestimmung der Pose auf der \textit{HS-stairs-up} Strecke in einem ca. $12m \times 12m \times 12m$ großen Zone ungenügend. Abbildung \ref{fig:result_hs_stairs_up} visualisiert die Evaluationsergebnisse von dem mit \textit{grad-edge} trainiertem und \textit{grad-real} evaluiertem Netzwerk.
 
 Die vom \textit{grad-edge} Netzwerk bestimmten Positionen aller \textit{grad-real} Evaluationsdaten liegen mehrheitlich zwischen dem unteren und oberen Treppenlauf (vgl. Abb. \ref{subfig:hs_up_fig3}). Deshalb waren die größten Positionsfehler bei den Evaluationsdaten des Treppenabsatzes aufzufinden. Ebenso waren bei den Evaluationsdaten des unteren und oberen Treppenlaufes abwechselnd größere Positionsfehler zu erkennen. Hierbei weisten die Evaluationsdaten des oberen Treppenlaufes häufiger einen größeren Positionsfehler auf (vgl. Abb. \ref{subfig:hs_up_fig5}). Die Orientierung der Evaluationsdaten des oberen Treppenlaufes wurden überwiegend als die Orientierung der Evaluationsdaten des unteren Treppenlaufes bestimmt. Ebenso waren bei den Evaluationsdaten der Treppenläufe abwechselnd in der entgegengesetzten Orientierung Fehler zu erkennen (vgl. Abb. \ref{subfig:hs_up_fig7}).
 
