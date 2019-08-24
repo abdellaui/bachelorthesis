@@ -27,10 +27,10 @@ Grundsätzlich ist PoseNet weder auf einen ca. 5$m$ breiten und ca. 20$m$ bis 30
 Das Lokalisieren aller \textit{IC-loop} Evaluationsdaten auf einem begrenzten Gebäudeareal kann auf \textit{perceptual-aliasing} zurückgeführt werden, da sich die Innenräume der vertikal sowie horizontal verlaufende Strecken optisch stark ähnelten. Im Gegensatz dazu waren in \textit{HS-gamma} die Innenräume der vertikal und entlang der Schlaufe verlaufenden Strecken von den horizontalen Strecken optisch differenzierbar. Dennoch wurden in \textit{HS-gamma} die realen Evaluationsdaten \textit{überwiegend} auf einem Bereich der linken horizontalen Strecke lokalisiert. Obwohl einige Evaluationsdaten nahe der Schlaufe lokalisiert werden konnten, wurde die Orientierung \textit{überwiegend} als die Richtung der horizontalen Strecken bestimmt.
 
 
-\citet{acharyaBIMPoseNetIndoorCamera2019} stellten überraschend fest, dass die Akuratesse mit einem zunehmendem \textit{Level of Detail} (LOD) der Gebäudesimulation (\textit{Trainingsdaten}) bei der Evaluation mit den Gradientenbildern der realen Daten abnahm. Daher könnte die unzureichende Akkuratesse bzw. Generalisierungsfähigkeit des KNNs auf den HS-Datensätzen auf das hohe LOD des HS-Gebäudesimulations zurückgeführt werden. Dabei sollte jedoch nicht außer Acht gelassen werden, dass die Ergebnisse von \textit{HS-gamma} Parallelen zu den Ergebnissen von \textit{IC-loop} und der von \citet{acharyaBIMPoseNetIndoorCamera2019} vorzeigten. Ebenso sind die Ergebnisse weit über der behaupteten Wirkung des LODs.
+\citet{acharyaBIMPoseNetIndoorCamera2019} stellten überraschend fest, dass die Akuratesse mit einem zunehmendem \textit{Level of Detail} (LOD) der Gebäudesimulation (\textit{Trainingsdaten}) bei der Evaluation mit den Gradientenbildern der realen Daten abnahm. Daher könnte die unzureichende Akkuratesse bzw. Generalisierungsfähigkeit des KNNs auf den HS-Datensätzen auf das hohe LOD des HS-Gebäudesimulations zurückgeführt werden. Dabei sollte jedoch nicht außer Acht gelassen werden, dass die Ergebnisse von \textit{HS-gamma} Parallelen zu den Ergebnissen von \textit{IC-loop} und der von \citet{acharyaBIMPoseNetIndoorCamera2019} vorzeigten. Ebenso zeigte die Evaluation weit über der behaupteten Wirkung des LODs falsche Ergebnisse.
 
 
-Angesichts dieser Parallelen und das Fehlen einer LOD Grenze
+%Angesichts dieser Parallelen und das Fehlen einer LOD Grenze
 %Eine Grenze des LODs geht aus nicht hervor, 
 % Dies erklärt jedoch nicht die Gemeinsamkeiten der ergebniise.
 
