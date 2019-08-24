@@ -81,7 +81,7 @@ Das \textit{grad-photoreal} Netzwerk bestimmte nur die Positionen aller \textit{
 \subsubsection{HS-gamma}
 \label{subsubsec:hs_gamma}
 %Dies stellt bei dem betroffenen Gebäudevolumen von $54m \times 10m \times 3m$ ein Potenzial zur Pose Estimation mit Daten der gleichen Beschaffenheit dar.
-Ein weiteres Experiment folgte mit dem \textit{HS-gamma} Datensatz. Trainiert und evaluiert mit nur synthetischen Daten wurde durch den \textit{grad-cartoon} Datensatz eine Akkuratesse von 1.00$m$ in der Position und 9.92° in der Orientierung erzielt. Die Evaluierung mit den \textit{grad-real} Evaluationsdaten auf dem \textit{grad-cartoon} Netzwerk führte zur einer Akkuratesse von 8.60$m$ in der Position und 19.59° in der Orientierung (vgl. Tab. \ref{tab:results_hs_gamma}). 
+Ein weiteres Experiment folgte mit dem \textit{HS-gamma} Datensatz. Eine durchschnittliche Akkuratesse von 1.80$m$ in der Position und 8.05° in der Orientierung wurde mit den synthetischen Daten erzielt. Darüber hinaus ergab die Evaluation mit den realen Daten eine durchschnittliche Akkuratesse von 9.67$m$, 32.10°. Trainiert und evaluiert mit nur synthetischen Daten wurde durch den \textit{grad-cartoon} Datensatz eine Akkuratesse von 1.00$m$ in der Position und 9.92° in der Orientierung erzielt. Die Evaluierung mit den \textit{grad-real} Evaluationsdaten auf dem \textit{grad-cartoon} Netzwerk führte zur einer Akkuratesse von 8.60$m$ in der Position und 19.59° in der Orientierung (vgl. Tab. \ref{tab:results_hs_gamma}). 
 
 % Bei oben genannten Gebäudemaßen ist eine Positionsgenauigkeit von 8.60$m$ sowie ein Orientierungsfehler von 19.59° unzureichend für die Bestimmung der Pose auf der \textit{HS-gamma} Strecke. Abbildung \ref{fig:result_hs_gamma} visualisiert die Evaluationsergebnisse von dem mit \textit{grad-cartoon} trainiertem und \textit{grad-real} evaluiertem Netzwerk.
 
@@ -100,7 +100,7 @@ Das \textit{grad-cartoon} Netzwerk bestimmte überwiegend die Positionen aller \
 		\hline
 		\textit{grad-photoreal} & 1.45$m$, 9.17° & 10.27$m$, 41.60°\\
 		\hhline{|=|=|=|}
-		Durchschnitt & 1.17$m$, 9.26° & 9,67$m$, 32.10°\\
+		Durchschnitt & 1.17$m$, 9.26° & 9.67$m$, 32.10°\\
 	\end{tabularx}
 	\label{tab:results_hs_gamma}
 \end{table}
