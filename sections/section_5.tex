@@ -27,7 +27,10 @@ Grundsätzlich ist PoseNet weder auf einen ca. 5$m$ breiten und ca. 20$m$ bis 30
 Das Lokalisieren aller \textit{IC-loop} Evaluationsdaten auf einem begrenzten Gebäudeareal kann auf \textit{perceptual-aliasing} zurückgeführt werden, da sich die Innenräume der vertikal sowie horizontal verlaufende Strecken optisch stark ähnelten. Im Gegensatz dazu waren in \textit{HS-gamma} die Innenräume der vertikal und entlang der Schlaufe verlaufenden Strecken von den horizontalen Strecken optisch differenzierbar. Dennoch wurden in \textit{HS-gamma} die realen Evaluationsdaten \textit{überwiegend} auf einem Bereich der linken horizontalen Strecke lokalisiert. Obwohl einige Evaluationsdaten nahe der Schlaufe lokalisiert werden konnten, wurde die Orientierung \textit{überwiegend} als die Richtung der horizontalen Strecken bestimmt.
 
 
-\citet{acharyaBIMPoseNetIndoorCamera2019} stellten überraschend fest, dass die Akuratesse mit einem zunehmendem \textit{Level of Detail} (LOD) der Gebäudesimulation (\textit{Trainingsdaten}) bei der Evaluation mit den Gradientenbildern der realen Daten zu einer Abnahme führte. Daher könnte die schlechte Generalisierungsfähigkeit des KNNs auf dem \textit{HS-gamma} Datensatz auf das hohe LOD des HS-Gebäudesimulations zurückgeführt werden. Allerdings liegt angesichts der oben genannten Parallelen der Ergebnisse die Schlussfolgerung nahe, dass der visuelle Lokalisierungsansatz über KNN bei gleichen Hyperparametern wie in \citet{acharyaBIMPoseNetIndoorCamera2019} begrenzt auf das Erlenen einer Richtung in einem kleinen Gebäudeareal ist.
+\citet{acharyaBIMPoseNetIndoorCamera2019} stellten überraschend fest, dass die Akuratesse mit einem zunehmendem \textit{Level of Detail} (LOD) der Gebäudesimulation (\textit{Trainingsdaten}) bei der Evaluation mit den Gradientenbildern der realen Daten zu einer Abnahme führte. Daher könnte die schlechte Generalisierungsfähigkeit des KNNs auf dem \textit{HS-gamma} Datensatz auf das hohe LOD des HS-Gebäudesimulations zurückgeführt werden.
+
+
+ Allerdings liegt angesichts der oben genannten Parallelen der Ergebnisse die Schlussfolgerung näher, dass über PoseNet bei gleichen Hyperparametern wie in \citet{acharyaBIMPoseNetIndoorCamera2019} begrenzt auf das Erlenen einer Richtung in einem kleinen Gebäudeareal ist.
 
 
 
