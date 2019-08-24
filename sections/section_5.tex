@@ -30,7 +30,7 @@ Das Lokalisieren aller \textit{IC-loop} Evaluationsdaten auf einem begrenzten Ge
 \citet{acharyaBIMPoseNetIndoorCamera2019} stellten überraschend fest, dass die Akuratesse mit einem zunehmendem \textit{Level of Detail} (LOD) der Gebäudesimulation (\textit{Trainingsdaten}) bei der Evaluation mit den Gradientenbildern der realen Daten abnahm. Daher könnte die unzureichende Akkuratesse bzw. Generalisierungsfähigkeit des KNNs auf den HS-Datensätzen auf das hohe LOD des HS-Gebäudesimulations zurückgeführt werden. Dabei sollte jedoch nicht außer Acht gelassen werden, dass die Ergebnisse von \textit{HS-gamma} Parallelen zu den Ergebnissen von \textit{IC-loop} und der von \citet{acharyaBIMPoseNetIndoorCamera2019} vorzeigten.
 
 
-
+Angesichts dieser Parallelen und das Fehlen einer LOD Grenze
 %Eine Grenze des LODs geht aus nicht hervor, 
 % Dies erklärt jedoch nicht die Gemeinsamkeiten der ergebniise.
 
@@ -54,7 +54,7 @@ Weiterhin erzielten \citet{acharyaBIMPoseNetIndoorCamera2019} ihre besten Ergebn
 
 
 % Beschränken
-Die Akkuratesse eines KNNs ist in dieser Arbeit durch den stochastischen Gradietenabstiegsverfahren \textit{AdaGrad} bei der Optimierung des \textit{Losses} im Trainingsprozess vom Zufall abhängig. Die durch den Zufall bedingten bestmöglichen Akkuratesse zu finden würde den Rahmen dieser Bachelorarbeit aus Zeitgründen sprengen. Weiterführende Forschungen können bei gleichen Hyperparametern die Anzahl der Trainingsprozesse erhöhen, um bessere Ergebnisse zu erzielen oder auszuschließen sowie den Zusammenhang der Datentypen zu den Ergebnissen untersuchen. 
+Die Akkuratesse eines KNNs ist in dieser Arbeit durch den stochastischen Gradietenabstiegsverfahren \textit{AdaGrad} bei der Optimierung des \textit{Losses} im Trainingsprozess vom Zufall abhängig. Die durch den Zufall bedingten bestmöglichen Akkuratesse zu finden würde den Rahmen dieser Bachelorarbeit aus Zeitgründen sprengen. Weiterführende Forschungen können bei gleichen Hyperparametern die Anzahl der Trainingsprozesse erhöhen, um bessere Ergebnisse zu erzielen oder auszuschließen sowie den Zusammenhang der Datentypen zu den Ergebnissen untersuchen.
 
 
 Darüber hinaus behandelt diese Arbeit nicht die Optimierung der Hyperparameter. Die Hyperparameter wurden aus \citet{acharyaBIMPoseNetIndoorCamera2019} übernommen bzw. gleichermaßen bestimmt oder im selben Verhältnis zum Datensatz gewählt. Die Optimierung der Hyperparameter kann auf den jeweiligen Datensätzen zu besseren Ergebnissen führen und ist daher eine weitere Empfehlung für weiterführende Forschungen. 
