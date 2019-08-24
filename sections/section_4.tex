@@ -40,7 +40,7 @@ Für ein besseres Verständnis der durch die Evaluierung mit den \textit{grad-re
 % Aus Tabelle \ref{tab:results_ic} ist zu erkennen,
 % Dies zeigt die potenzielle Fähigkeit des Experimentes zur Pose Bestimmung mit Daten derselben Domäne auf der \textit{IC-loop} Strecke. 
 
-In diesem Experiment wurde der \textit{IC-loop} Datensatz verwendet. 
+In diesem Experiment wurde der \textit{IC-loop} Datensatz verwendet. Eine durchschnittliche Akkuratesse von 1.80$m$ in der Position und 8.8
 Eine Akkuratesse von 1.61$m$ in der Position und 8.17° in der Orientierung wurde ausschließlich mit synthetischen Daten beim Trainieren und Evaluieren durch den \textit{grad-cartoon} Datensatz erzielt. Bei der Evaluierung mit den Gradientenbildern der realen Evaluationsdaten wurde auf dem \textit{grad-photoreal} Netzwerk eine Akkuratesse von 16.68$m$ in der Position und 73.25° in der Orientierung erreicht (vgl. Tab. \ref{tab:results_ic}). 
 
 % Bei einem Gebäudevolumen von ca. $50m \times 11m \times 3.5m$ ist die Positionsgenauigkeit von 16.68$m$, mit Anbetracht des Abdriftens der realen Ground-Truth-Daten (s. Abschn. \ref{subsec:record_real_data}), für ein denkbares Lokalisierungsverfahren zu ungenau. Genauso ist eine Orientierungsgenauigkeit von 73.25° für die Bestimmung der Orientierung mehr als ungeeignet. Abbildung \ref{fig:result_ic_loop} visualisiert die Evaluierungsergebnisse von dem mit \textit{grad-photoreal} trainiertem sowie mit \textit{grad-real} evaluiertem Netzwerk.
@@ -59,7 +59,7 @@ Das \textit{grad-photoreal} Netzwerk bestimmte nur die Positionen aller \textit{
 			\hline
 			\textit{grad-photoreal} & 1.80$m$, 7.70° & 16.68$m$, 73.25°\\
 			\hhline{|=|=|=|}
-			Durchschnitt & 1.80$m$, 8.05° & 24,38$m$, 61.24°\\
+			Durchschnitt & 1.80$m$, 8.05° & 24.38$m$, 61.24°\\
 		\end{tabularx}
 	\label{tab:results_ic}
 \end{table}
