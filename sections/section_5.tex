@@ -35,36 +35,9 @@ der überwiegend in eine Richtung bestimmte Orientierung.
 Das Lokalisieren aller realen \textit{IC-loop} Evaluationsdaten auf einem begrenzten Gebäudeareal könnte auf \textit{perceptual-aliasing} zurückgeführt werden, da sich die Innenräume der vertikal sowie horizontal verlaufenden Strecken optisch stark ähnelten. Im Gegensatz dazu waren in \textit{HS-gamma} die Innenräume der vertikal und entlang der Schlaufe verlaufenden Strecken von den horizontalen Strecken optisch differenzierbar. Dennoch wurden in \textit{HS-gamma} ebenfalls die realen Evaluationsdaten überwiegend auf einem Bereich der linken horizontalen Strecke lokalisiert. Obwohl einige Evaluationsdaten nahe der Schlaufe lokalisiert werden konnten, wurde dennoch die Orientierung als die Richtung der horizontalen Strecken bestimmt (s. Abb. \ref{subfig:hs_gamma_fig2}, \ref{subfig:hs_gamma_fig4}). Hierbei ist über \textit{perceptual-aliasing} eine Erklärung der Ergebnisse nicht möglich.
 
 \citet{acharyaBIMPoseNetIndoorCamera2019} stellten überraschend fest, dass die Akkuratesse mit einem zunehmendem \textit{Level of Detail} (LOD) der Gebäudesimulation (\textit{Trainingsdaten}) bei der Evaluation mit den Gradientenbildern der realen Daten abnahm. Zeitgleich hatten dieselben Autoren ein hohes LOD für eine bessere Akkuratesse empfohlen \cite{acharyaBIMPoseNetIndoorCamera2019}. Angesichts dieser Feststellung könnte das hohe LOD der HS-Gebäudesimulation für die unzureichende Generalisierungsfähigkeit des KNNs auf den HS-Datensätzen möglicherweise erklären. Allerdings zeigte die Evaluation der \textit{HS-gamma} Strecke falsche Ergebnisse weit über eine vorstellbare Wirkung des LODs. Ebenso sollte nicht außer Acht gelassen werden, dass die Ergebnisse von \textit{HS-gamma} Gemeinsamkeiten zu den Ergebnissen von \textit{IC-loop} und der von \citet{acharyaBIMPoseNetIndoorCamera2019} nachweisen.
-%TODO: frage, why got parrarels
-
-%Angesichts dieser Parallelen und das Fehlen einer LOD Grenze
-%Eine Grenze des LODs geht aus nicht hervor, 
-% Dies erklärt jedoch nicht die Gemeinsamkeiten der ergebniise.
-
-%Allerdings ist die schlechte Generalisierungsfähigkeit 
-
-
-%Allerdings liegt angesichts der oben genannten Parallelen der Ergebnisse die Schlussfolgerung näher, dass über PoseNet bei gleichen Hyperparametern wie in \citet{acharyaBIMPoseNetIndoorCamera2019} begrenzt auf das Erlenen einer Richtung in einem kleinen Gebäudeareal ist.
-
-
-
-
 
 % PoseNet kann das
 Die Gemeinsamkeiten der Ergebnisse wirkten jedoch fraglich, da PoseNet grundsätzlich weder auf einen ca. 5$m$ breiten und ca. 20$m$ bis 30$m$ langen Gebäudeareal noch für eine einzige Orientierung begrenzt war. Zudem konnte in dieser Bachelorarbeit gezeigt werden, dass durch das Trainieren und Evaluieren mit den hier erhobenen realen Datensätzen eine durchschnittliche Akkuratesse von 1.17$m$, 7.34° und mit den synthetischen Datensätzen eine durchschnittliche Akkuratesse 1.19$m$, 8.35° erzielt werden konnte. Ferner konnten \citet{walchImageBasedLocalizationUsing2017} mit PoseNet durch das Trainieren und Evaluieren mit realen Daten in einem größeren Gebäudeareal als von den \textit{IC-loop} oder \textit{HS-gamma} Datensätzen mit einer Akkuratesse von 1.87$m$, 6.14° die Pose bestimmen. Daher liegt angesichts der oben genannten Parallelen der Ergebnisse die Schlussfolgerung nahe, dass PoseNet bei gleichen Hyperparametern wie in \cite{acharyaBIMPoseNetIndoorCamera2019} mit den Gradientenbildern der simulierten Daten für die Evaluation mit den Gradientenbildern der realen Daten auf einem begrenzten Gebäudeareal nur in eine Richtung trainiert werden kann.
-
-
-% TODO: annahme machen
-
-
-
-
- 
-
-
-
-
-
 
 \subsection{Ausblick}
 
