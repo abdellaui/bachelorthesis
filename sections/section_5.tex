@@ -26,10 +26,10 @@ Außerdem haben die Ergebnisse der Strecken \textit{IC-loop} und \textit{HS-gamm
 Die genannten Ergebnisse zeigen Parallele zu den Ergebnissen von \citet{acharyaBIMPoseNetIndoorCamera2019}, indem die von der Lokalisierung betroffenen Gebäudearealen eine vergleichbare Größe haben und die zu bestimmende Orientierung als nur eine Richtung ist bzw. bestimmt wird.
 % Eventualitäten
 Das Lokalisieren aller realen \textit{IC-loop} Evaluationsdaten auf einem begrenzten Gebäudeareal könnte auf \textit{perceptual-aliasing} zurückgeführt werden, da sich die Innenräume der vertikal sowie horizontal verlaufende Strecken optisch stark ähnelten. Im Gegensatz dazu waren in \textit{HS-gamma} die Innenräume der vertikal und entlang der Schlaufe verlaufenden Strecken von den horizontalen Strecken optisch differenzierbar. Dennoch wurden in \textit{HS-gamma} die realen Evaluationsdaten \textit{überwiegend} auf einem Bereich der linken horizontalen Strecke lokalisiert. Obwohl einige Evaluationsdaten nahe der Schlaufe lokalisiert werden konnten, wurde dennoch die Orientierung als die Richtung der horizontalen Strecken bestimmt.
-
+% TODO: frage, why so bad
 
 \citet{acharyaBIMPoseNetIndoorCamera2019} stellten überraschend fest, dass die Akuratesse mit einem zunehmendem \textit{Level of Detail} (LOD) der Gebäudesimulation (\textit{Trainingsdaten}) bei der Evaluation mit den Gradientenbildern der realen Daten abnahm. Daher könnte die unzureichende Akkuratesse bzw. Generalisierungsfähigkeit des KNNs auf den HS-Datensätzen auf das hohe LOD des HS-Gebäudesimulations zurückgeführt werden. Dabei sollte jedoch nicht außer Acht gelassen werden, dass die Ergebnisse von \textit{HS-gamma} Parallelen zu den Ergebnissen von \textit{IC-loop} und der von \citet{acharyaBIMPoseNetIndoorCamera2019} vorzeigen.  Ebenso zeigte die Evaluation von der \textit{HS-gamma} Strecke falsche Ergebnisse weit über eine vertretbare Wirkung des LODs vor.
-
+%TODO: frage, why got parrarels
 
 %Angesichts dieser Parallelen und das Fehlen einer LOD Grenze
 %Eine Grenze des LODs geht aus nicht hervor, 
