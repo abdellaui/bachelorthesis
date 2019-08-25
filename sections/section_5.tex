@@ -13,20 +13,16 @@
 %Es ist nicht das Ziel dieser Arbeit den visuellen Lokalisierungsansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} auf den erhobenen Datensätzen zu untersuchen. Dabei wird eine Lokalisierungsgenauigkeit im Meterbereich angestrebt, da PLACEHOLDER . Daher ist die Abweichung (\textit{Drift}) bis zu 5\% der realen Evaluationsdaten von den synthetischen Trainingsdaten unproblematisch. In Anbetracht der Ergebnisse ist eine Lokalisierungsverfahren ohne weitere Maßnahmen des Ansatzes von \citet{acharyaBIMPoseNetIndoorCamera2019} auf den in dieser Arbeit erhobenen Datensätzen auszuschließen.
 
 
-In der vorliegenden Bachelorarbeit konnte gezeigt werden, dass der Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} ohne eine Optimierung der Hyperparameter eine durchschnittliche Akkuratesse von 10.95$m$ in der Position und 49.69° in der Orientierung erreichte.
-
-
-% Zusammenfassung Ergebnisse
-Die Ergebnisse der Untersuchungen haben gezeigt, dass der Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019}, worin das PoseNet mit den Gradietenbildern der synthetischen Daten trainiert und mit den Gradientenbildern der realen Daten evaluiert wird, ohne Optimierung der Hyperparameter auf die im Rahmen dieser Bachelorarbeit erhobenen Datensätze eine durchschnittliche Akkuratesse von 10.95$m$ in der Position und 49.69° in der Orientierung erreichte. Die Evaluationen mit den synthetischen Gradientenbildern konnten zeigen, dass eine durchschnittliche Akkuratesse von 1.19$m$, 8.35° mit synthetischen Daten werden kann.
+In der vorliegenden Bachelorarbeit konnte gezeigt werden, dass der Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} ohne eine Optimierung der Hyperparameter eine durchschnittliche Akkuratesse von 10.95$m$ in der Position und 49.69° in der Orientierung erreichte. Die Evaluationen mit den synthetischen Gradientenbildern konnten zeigen, dass eine durchschnittliche Akkuratesse von 1.19$m$, 8.35° mit synthetischen Daten werden kann.
 %übereinstimmend mit den Referenzwerten von 1.17$m$, 7.34° erziel
 % TODO: REFERENZWERT%
 % würde reichen für
 
 % Perceptual aliasing & treppen
-In Gebäuden kommt es häufiger vor, dass unterschiedliche Stellen eines Innenraumes ähnliche Merkmale besitzen und somit schwer voneinander zu unterscheiden sind. Dieses Problem ist in der Literatur auch als \textit{perceptual-aliasing} bekannt und stellt einen der größten Herausforderungen von Lokalisierungsverfahren dar \cite{lowryVisualPlaceRecognition2016}. In dieser Arbeit wird diese Herausforderung durch das Anstreben einer domänenübergreifenden Abstraktion bzw. das Erlenen von den Merkmalen der realen Daten aus den simulierten Daten zusätzlich verstärkt.
+In Gebäuden kommt es häufiger vor, dass unterschiedliche Stellen eines Innenraumes ähnliche Merkmale besitzen und somit schwer voneinander zu unterscheiden sind. Dieses Problem ist in der Literatur auch als \textit{perceptual-aliasing} bekannt und stellt eine der größten Herausforderungen von Lokalisierungsverfahren dar \cite{lowryVisualPlaceRecognition2016}. In dieser Arbeit wurde diese Herausforderung durch das Anstreben einer domänenübergreifenden Abstraktion bzw. das Erlenen von den Merkmalen der realen Daten aus den simulierten Daten zusätzlich verstärkt.
 
 
-Die realen Evaluationsdaten auf den \textit{HS-stairs-down} und \textit{HS-stairs-up} Strecken wurden grundsätzlich zwischen der oberen und unteren Treppenlauf lokalisiert. Eine Generalisierungsfähigkeit zwischen Oben und Unten der KNNs ist nicht zu erkennen. Vielmehr ist eine \textit{zufällige} Zuordnung der KNNs festzuhalten. Dies könnte aufgrund von wiederholenden Strukturen einer Treppe auf \textit{perceptual-aliasing} zurückgeführt werden und würde die abwechselnde Fehlerrate auf den Evaluationsdaten der Treppenläufe erklären.
+Die realen Evaluationsdaten auf den \textit{HS-stairs-down} und \textit{HS-stairs-up} Strecken wurden grundsätzlich zwischen der oberen und unteren Treppenlauf lokalisiert. Eine Generalisierungsfähigkeit zwischen Oben und Unten der KNNs war nicht erkennbar. Vielmehr ist eine \textit{zufällige} Zuordnung der KNNs festzuhalten. Dies könnte aufgrund von wiederholenden Strukturen einer Treppe auf \textit{perceptual-aliasing} zurückgeführt werden und würde die abwechselnde Fehlerrate auf den Evaluationsdaten der Treppenläufe erklären.
 % loop und gamma auf muster aufmerksam machen  & STRECKE VON ACHARYA
 Außerdem haben die Ergebnisse der Strecken \textit{IC-loop} und \textit{HS-gamma} gezeigt, dass die realen Evaluationsdaten auf eine ca. 5$m$ breiten und ca. 20$m$ bis 30$m$ langen Teilzone verteilt werden. Zusätzlich wurden die Orientierung der realen Evaluationsdaten als die Orientierung der von der Anzahl der Trainingsdaten überwiegenden Richtung bestimmt. 
 
