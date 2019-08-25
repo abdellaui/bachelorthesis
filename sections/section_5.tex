@@ -7,6 +7,12 @@
 % drift
 % hyperparameter
 % zufall
+
+
+Die Akkuratesse eines KNNs ist in dieser Arbeit durch den stochastischen Gradietenabstiegsverfahren \textit{AdaGrad} bei der Optimierung des \textit{Losses} im Trainingsprozess vom Zufall abhängig. Die durch den Zufall bedingte bestmögliche Akkuratesse zu finden würde aus Zeitgründen den Rahmen dieser Bachelorarbeit sprengen. Angesichts der begrenzten Zeit wurde der Trainingsprozess pro Datensatztyp 5-mal wiederholt und die bessere Akkuratesse behalten. Daher kann eine bessere oder schlechte Akkuratesse als die der Festgehaltenen weder ausgeschlossen noch sichergestellt werden. Allerdings wiesen alle Evaluationen von den 5 Netzwerken Gemeinsamkeiten auf.
+
+Darüber hinaus wurde die Optimierung der Hyperparameter in dieser vorliegenden Arbeit nicht behandelt. Die Hyperparameter wurden aus \citet{acharyaBIMPoseNetIndoorCamera2019} übernommen bzw. gleichermaßen bestimmt oder im selben Verhältnis zum Datensatz gewählt. Die Optimierung der Hyperparameter kann auf den jeweiligen Datensätzen zu besseren Ergebnissen führen und ist daher eine weitere Empfehlung zu weiterführenden Forschungen. 
+
 \subsection{Diskussion der Ergebnisse}
 
 %Es ist nicht das Ziel dieser Arbeit den visuellen Lokalisierungsansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} auf den erhobenen Datensätzen zu untersuchen. Dabei wird eine Lokalisierungsgenauigkeit im Meterbereich angestrebt, da PLACEHOLDER . Daher ist die Abweichung (\textit{Drift}) bis zu 5\% der realen Evaluationsdaten von den synthetischen Trainingsdaten unproblematisch. In Anbetracht der Ergebnisse ist eine Lokalisierungsverfahren ohne weitere Maßnahmen des Ansatzes von \citet{acharyaBIMPoseNetIndoorCamera2019} auf den in dieser Arbeit erhobenen Datensätzen auszuschließen.
