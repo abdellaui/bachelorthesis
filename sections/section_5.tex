@@ -4,6 +4,7 @@
 \label{sec:kapitel_5}
 
 \subsection{Diskussion der Methode}
+\label{subsec:disc_methode}
 Die Evaluationsdaten wiesen einen Drift von 5\% auf.
 
 Die Akkuratesse eines KNNs ist in dieser Arbeit durch den stochastischen Gradietenabstiegsverfahren \textit{AdaGrad} bei der Optimierung des \textit{Losses} im Trainingsprozess vom Zufall abhängig. Die durch den Zufall bedingte bestmögliche Akkuratesse zu finden würde aus Zeitgründen den Rahmen dieser Bachelorarbeit sprengen. Angesichts der begrenzten Zeit wurde der Trainingsprozess pro Datensatztyp 5-mal wiederholt und die bessere Akkuratesse behalten.
@@ -42,7 +43,7 @@ Die Gemeinsamkeiten der Ergebnisse wirkten jedoch fraglich, da PoseNet grundsät
 \subsection{Ausblick}
 
 %datentypen
-\citet{acharyaBIMPoseNetIndoorCamera2019} erzielten ihre besten Ergebnisse durch das Trainieren mit den Gradientenbilder der synthetischen Kantenbilder (\textit{grad-edge}). In dieser Arbeit konnte eine bessere Akkuratesse mit den \textit{grad-cartoon} Datensätzen häufiger erzielt werden (s. Tab. \ref{tab:results_ic}- \ref{tab:results_hs_stairs_down}). Dennoch kann auf dieser Tatsache kein synthetischer Datentyp als der Beste festgelegt werden, da hierzu die bestmögliche Akkuratesse von jedem Datentyp weder sichergestellt noch ausgeschlossen werden konnte. Dies liegt darin begründet, dass die Akkuratesse wie oben erwähnt vom Zufall abhängig ist. Daher können weiterführende Forschungen bei gleichen Hyperparametern die Anzahl der Trainingsprozesse erhöhen, um bessere Ergebnisse zu erzielen oder auszuschließen. Infolgedessen könnte der Zusammenhang zwischen den Ergebnissen und der Datentypen untersucht werden. 
+\citet{acharyaBIMPoseNetIndoorCamera2019} erzielten ihre besten Ergebnisse durch das Trainieren mit den Gradientenbilder der synthetischen Kantenbilder (\textit{grad-edge}). In dieser Arbeit konnte eine bessere Akkuratesse mit den \textit{grad-cartoon} Datensätzen häufiger erzielt werden (s. Tab. \ref{tab:results_ic}- \ref{tab:results_hs_stairs_down}). Dennoch kann auf dieser Tatsache kein synthetischer Datentyp als der Beste festgelegt werden, da hierzu die bestmögliche Akkuratesse von jedem Datentyp weder sichergestellt noch ausgeschlossen werden konnte. Das wird wie in \ref{subsec:disc_methode} erwähnt dadurch begründet, dass die Akkuratesse vom Zufall abhängig ist. Daher können weiterführende Forschungen bei gleichen Hyperparametern die Anzahl der Trainingsprozesse erhöhen, um bessere Ergebnisse zu erzielen oder auszuschließen. Infolgedessen könnte der Zusammenhang zwischen den Ergebnissen und der Datentypen untersucht werden. 
 
 
 Darüber hinaus wurde die Optimierung der Hyperparameter in dieser vorliegenden Arbeit nicht behandelt. Die Optimierung der Hyperparameter kann auf den jeweiligen Datensätzen zu besseren Ergebnissen führen und ist daher eine weitere Empfehlung zu weiterführenden Forschungen. 
