@@ -26,7 +26,7 @@ Ein künstliches Neuron mit der Inputgröße $M$ ist mathematisch die nicht-line
 
 \subsubsection{Feedforward Neural Networks}
 \label{sec:feedforwardNN}
-Künstliche Neuronen können zu einer Schicht (\textit{Layer}) zusammengeführt werden. Die Verbindung solcher Schichten bildet ein neuronales Netzwerk.
+Künstliche Neurone können zu einer Schicht (\textit{Layer}) zusammengeführt werden. Die Verbindung solcher Schichten bildet ein neuronales Netzwerk.
 Bei einem feedforward (\textit{fully-connected}) Netzwerk übergibt jedes Neuron aus der Schicht $l$ den jeweiligen Output $y_{l}$ an jedem Neuron der Schicht $l+1$ weiter. Ebenso sind die Neurone aus der gleichen Schicht nicht untereinander verbunden \cite{goodfellowDeepLearning2016}.
 Die Schicht $l$ eines feedforward Netzwerks operiert somit auf das Ouput $y_{l-1}$ und stellt die nicht-lineare Funktion $f_l : \mathbb{R}^{M_{l-1}} \mapsto \mathbb{R}^{M_l}$ dar \cite{bauckhageInformedMachineLearning}:
 \begin{equation}
