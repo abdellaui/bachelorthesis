@@ -9,9 +9,9 @@
 	\caption{Visualisierung der Methodik. Abbildung basiert auf \cite{acharyaBIMPoseNetIndoorCamera2019}.}
 	\label{fig:methodik}
 \end{figure}
-Das vorliegende Kapitel gibt die Methodik dieser Arbeit wieder. Die Forscher \citet{acharyaBIMPoseNetIndoorCamera2019} konnten die Pose mit einer Akkuratesse von ca. $2m$ in der Position und 7° in der Orientierung auf einer ca. 18$m$ langen Strecke in einem ca. $20m \times 5m \times 3m$ großen Korridor bestimmen (s. Abb. \ref{fig:acharya_traj}). Dabei erhoben die Forscher reale Daten entlang des Korridors mit einem Smartphone und bestimmten die korrespondierende Pose (Ground-Truth-Daten) über SfM-Methoden. Daraufhin wurden entlang derselben Aufnahmestrecke in der 3D-Simulation des Korridors mehrere synthetische Daten generiert, die sich in ihrer Realitätstreue vom Karikaturistischen zum Fotorealistisch-texturierten variierten. Anschließend wurde das in Abschnitt \ref{sec:posenet} beschriebene PoseNet Modell mit Gradientenbildern der synthetischen Daten trainiert und mit Gradientenbildern der realen Daten evaluiert. Vorab wurde das PoseNet Modell mit den Gewichten eines Modells initialisiert, das auf der GoogLeNet Architektur mit dem Places Datensatz \cite{NIPS2014_5349} trainiert wurde \cite{acharyaBIMPoseNetIndoorCamera2019}. 
+Das vorliegende Kapitel gibt die methodische Vorgehensweise dieser Arbeit wieder. Die Forscher \citet{acharyaBIMPoseNetIndoorCamera2019} konnten die Pose mit einer Akkuratesse von ca. $2m$ in der Position und 7° in der Orientierung auf einer ca. 18$m$ langen Strecke in einem ca. $20m \times 5m \times 3m$ großen Korridor bestimmen (s. Abb. \ref{fig:acharya_traj}). Dabei erhoben die Forscher reale Daten entlang des Korridors mit einem Smartphone und bestimmten die korrespondierende Pose (Ground-Truth-Daten) über SfM-Methoden. Daraufhin wurden entlang derselben Aufnahmestrecke in der 3D-Simulation des Korridors mehrere synthetische Daten generiert, die sich in ihrer Realitätstreue vom Karikaturistischen zum Fotorealistisch-texturierten variierten. Anschließend wurde das in Abschnitt \ref{sec:posenet} beschriebene PoseNet Modell mit Gradientenbildern der synthetischen Daten trainiert und mit Gradientenbildern der realen Daten evaluiert. Vorab wurde das PoseNet Modell mit den Gewichten eines Modells initialisiert, das auf der GoogLeNet Architektur mit dem \textit{Places Datensatz} \cite{NIPS2014_5349} trainiert wurde \cite{acharyaBIMPoseNetIndoorCamera2019}. 
 
-Die vorliegende Arbeit versucht den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} zur Pose Estimation in Gebäuden anhand von Convolutional Neural Network und simulierten 3D-Daten auf längeren Strecken in größeren Gebäudesimulationen zu untersuchen. Daher wurden zuerst entsprechende Datensätze erstellt und gleicherweise das PoseNet Modell trainiert sowie evaluiert. Um die Korrektheit des Training-Pipelines zu überprüfen wurden zuerst die Ergebnisse von \citet{acharyaBIMPoseNetIndoorCamera2019} reproduziert. Danach wurde das PoseNet Modell mit den Gradietenbildern der synthetischen Daten trainiert und evaluiert, um die Performance des Netzwerkes mit Trainings- sowie Evaluationsdaten derselben Domäne zu beobachten. Anschließend wurden zielgemäß die trainierten Netzwerke mit den Gradientenbildern der realen Daten evaluiert. Abbildung \ref{fig:methodik} visualisiert die Methodik dieser Arbeit.
+Die vorliegende Arbeit versucht den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} zur Pose Estimation in Gebäuden anhand von Convolutional Neural Network und simulierten 3D-Daten auf längeren Strecken in größeren Gebäudesimulationen zu untersuchen. Daher wurden zuerst entsprechende Datensätze erstellt und gleicherweise das PoseNet Modell trainiert sowie evaluiert. Um die Korrektheit des Training-Pipelines zu überprüfen wurden zuerst die Ergebnisse von \citet{acharyaBIMPoseNetIndoorCamera2019} reproduziert. Danach wurde das PoseNet Modell mit den Gradietenbildern der synthetischen Daten trainiert und evaluiert, um die Performance des Netzwerks mit Trainings- sowie Evaluationsdaten derselben Domäne zu beobachten. Anschließend wurden zielgemäß die trainierten Netzwerke mit den Gradientenbildern der realen Daten evaluiert. Abbildung \ref{fig:methodik} visualisiert die Methodik dieser Arbeit.
 
 
 Im weiteren Verlauf dieses Kapitels wird die Erhebung / Generierung der realen / synthetischen Daten beschrieben und die Verarbeitung der Daten dargestellt. Im Anschluss werden die Datensätze und die Trainingsparameter angegeben. 
@@ -21,7 +21,7 @@ Im weiteren Verlauf dieses Kapitels wird die Erhebung / Generierung der realen /
 \subsection{Erhebung der realen Daten}
 \label{subsec:record_real_data}
 In der Literatur wurden beliebige Kameras für die Aufnahme der realen Bilder verwendet und anschließend SfM-Methoden eingesetzt, um die Pose (Ground-Truth-Daten) der realen Aufnahmen zu bestimmen \cite{kendallPoseNetConvolutionalNetwork2015, clarkVidLocDeepSpatioTemporal2017, acharyaBIMPoseNetIndoorCamera2019}. 
-In der vorliegenden Arbeit wurde für die Bestimmung der Ground-Truth-Daten sowie die Aufnahme der Bilder zeitgleich zwei unterschiedliche Kameras der \textit{Intel Realsense} Reihe verwendet. Eine Intel Realsense T265\footnote{\url{https://www.intelrealsense.com/tracking-camera-t265/} (abgerufen am: 18.07.2019)} wurde eingesetzt. Diese verspricht bei gegebenen Bestkonditionen mit einer Abweichung von weniger als 1\% die relative Pose zum Ausgangspunkt über die SfM von zwei Fischaugenkameras (mit einer Auflösung von $848 \times 800$) und über IMU zu ermitteln. Zudem wurde eine Intel Realsense D435\footnote{ \url{https://www.intelrealsense.com/depth-camera-d435/} (abgerufen am: 18.07.2019)} eingesetzt, die eine 3D-Punktwolke, ein $1280\times720$ Tiefenbild und ein $1920\times1080$ RGB-Bild einer Szene liefert. Die T265 wurde über die D435 montiert (s. Abb. \ref{fig:t265_d435}), um die RGB-Bilder der D435 mit den Ground-Truth-Daten der T265 annotieren zu können.
+In der vorliegenden Arbeit wurde für die Bestimmung der Ground-Truth-Daten sowie die Aufnahme der Bilder zeitgleich zwei unterschiedliche Kameras der \textit{Intel Realsense} (IR) Reihe verwendet. Eine IR T265\footnote{\url{https://www.intelrealsense.com/tracking-camera-t265/} (abgerufen am: 18.07.2019)} wurde eingesetzt. Diese verspricht bei gegebenen Bestkonditionen mit einer Abweichung von weniger als 1\% die relative Pose zum Ausgangspunkt über die SfM von zwei Fischaugenkameras (mit einer Auflösung von $848 \times 800$) und über IMU zu ermitteln. Zudem wurde eine IR D435\footnote{ \url{https://www.intelrealsense.com/depth-camera-d435/} (abgerufen am: 18.07.2019)} eingesetzt, die eine 3D-Punktwolke, ein $1280\times720$ Tiefenbild und ein $1920\times1080$ RGB-Bild einer Szene liefert. Die T265 wurde über die D435 montiert (s. Abb. \ref{fig:t265_d435}), um die RGB-Bilder der D435 mit den Ground-Truth-Daten der T265 annotieren zu können.
 
 \begin{figure}
 	\centering
@@ -347,7 +347,7 @@ Abbildung \ref{fig:trajectories} illustriert die Strecken der Datensätze.
 \subsection{Trainingsparameter}
 \label{sec:trainingsparameter}
 Künstlichen neuronalen Netzwerke besitzen zwei Arten von Parametern. Die erste Art von Parametern (Gewichte) werden während der Trainingsphase über Verfahren wie z.B. \textit{Backpropagation} an die Trainingsdaten angepasst.
-Die zweite Art von Parametern (Hyperparameter) werden vor der Trainingsphase festgelegt und geben besondere Einstellungen des Netzwerkes wie z.B. das Lernverhalten an. Die Performance eines KNNs ist abhängig von seinen Parametern \cite{goodfellowDeepLearning2016}. Da diese Arbeit den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} in größeren Gebäudesimulation und auf längeren Strecken zu untersuchen versuchte, wurde die Performance des KNNs bestmöglich von den verwendeten Datensätzen abhängig gehalten. Dazu wurden die Hyperparametern von \citet{acharyaBIMPoseNetIndoorCamera2019} übernommen bzw. gleichermaßen bestimmt oder im selben Verhältnis zum Datensatz gewählt.
+Die zweite Art von Parametern (Hyperparameter) werden vor der Trainingsphase festgelegt und geben besondere Einstellungen des Netzwerks wie z.B. das Lernverhalten an. Die Performance eines KNNs ist abhängig von seinen Parametern \cite{goodfellowDeepLearning2016}. Da diese Arbeit den Ansatz von \citet{acharyaBIMPoseNetIndoorCamera2019} in größeren Gebäudesimulation und auf längeren Strecken zu untersuchen versuchte, wurde die Performance des KNNs bestmöglich von den verwendeten Datensätzen abhängig gehalten. Dazu wurden die Hyperparametern von \citet{acharyaBIMPoseNetIndoorCamera2019} übernommen bzw. gleichermaßen bestimmt oder im selben Verhältnis zum Datensatz gewählt.
 
 % Hyperparameter können über Grid-Search Verfahren optimiert werden, indem die Akkuratesse der Netzwerke mit variierenden Hyperparametern paarweise verglichen werden
 
@@ -356,7 +356,7 @@ In der vorliegenden Arbeit wurde für das Training der Netzwerke die Caffe \cite
 
 Jeder reale sowie synthetische Datensatz (s. Tab. \ref{tab:datasets}) wurde je in 50\% Trainings- und 50\% Evaluationsdaten zufällig aufgeteilt und auf eine Auflösung von $480\times270$ skaliert. Während des Trainingsprozesses wurden zufällige Ausschnitte der Größe $224 \times 224$ aus dem skalierten Trainingsdatensatz genommen. Für die Evaluierung wurde ein zentrierter Ausschnitt derselben Größe aus dem skalierten Evaluationsdatensatz verwendet. Das Durchschnittsbild der Trainingsdaten wurde sowohl beim Trainieren als auch bei der Evaluierung von den Inputbildern subtrahiert. 
 
-Der Hyperparameter $\beta$ (s. Gleichung \ref{eq:posenet_loss}) wurde wie empfohlen für jeden realen Datensatz durch ein \textit{Grid-Search}-Verfahren bestimmt. Dabei wurde der Wert für $\beta$ in einem Wertebereich von 120 bis 750 in 70er Schritten variiert und der Trainingsprozess für jeden Wert jeweils 5-mal wiederholt. Hierbei wurde mit den realen Trainingsdaten trainiert und mit den realen Evaluationsdaten evaluiert. Der \textit{Loss} wurde mit dem \textit{AdaGrad} \cite{duchiAdaptiveSubgradientMethods2011} Gradientenabstiegsverfahren mit einer konstanten Lernrate von $10^{-3}$ optimiert bzw. minimiert. Vorab wurden die Gewichte des Netzwerks mit den Gewichten eines Modells initialisiert, das zuvor auf der GoogLeNet Architektur mit dem Places Datensatz trainiert wurde. Tabelle \ref{tab:trainingparams} gibt eine Übersicht der Hyperparameter an.
+Der Hyperparameter $\beta$ (s. Gleichung \ref{eq:posenet_loss}) wurde wie empfohlen für jeden realen Datensatz durch ein \textit{Grid-Search}-Verfahren bestimmt. Dabei wurde der Wert für $\beta$ in einem Wertebereich von 120 bis 750 in 70er Schritten variiert und der Trainingsprozess für jeden Wert jeweils 5-mal wiederholt. Hierbei wurde mit den realen Trainingsdaten trainiert und mit den realen Evaluationsdaten evaluiert. Der \textit{Loss} wurde mit dem \textit{AdaGrad} \cite{duchiAdaptiveSubgradientMethods2011} Gradientenabstiegsverfahren mit einer konstanten Lernrate von $10^{-3}$ optimiert bzw. minimiert. Vorab wurden die Gewichte des Netzwerks mit den Gewichten eines Modells initialisiert, das zuvor auf der GoogLeNet Architektur mit dem \textit{Places Datensatz} trainiert wurde. Tabelle \ref{tab:trainingparams} gibt eine Übersicht der Hyperparameter an.
 
 \cleardoublepage
 \begin{table}[bp]
@@ -367,7 +367,7 @@ Der Hyperparameter $\beta$ (s. Gleichung \ref{eq:posenet_loss}) wurde wie empfoh
 		\hline
 		Architektur & PoseNet (s. Abschn. \ref{sec:posenet})\\
 		\hline
-		Implementierung & Caffe \\
+		Implementierung & \textit{Caffe} \\
 		\hline
 		Batchgröße & $40$\\
 		\hline
@@ -398,11 +398,11 @@ Der Hyperparameter $\beta$ (s. Gleichung \ref{eq:posenet_loss}) wurde wie empfoh
 			\textit{HS-stairs-down}: 610\\
 		}\\
 		\hline
-		Loss-Optimierer & AdaGrad\\
+		Loss-Optimierer & \textit{AdaGrad}\\
 		\hline
 		Lernrate & $10^{-3}$\\
 		\hline
-		Initialisierung der Gewichte & Gewichte eines mit dem Places Datensatz trainierten Modells auf GoogLeNet \\
+		Initialisierung der Gewichte & Gewichte eines mit dem \textit{Places Datensatz} trainierten Modells auf GoogLeNet \\
 	\end{tabularx}
 	\label{tab:trainingparams}
 \end{table}
