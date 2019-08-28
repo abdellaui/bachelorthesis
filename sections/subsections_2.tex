@@ -185,7 +185,7 @@ PoseNet modifiziert die GoogLeNet Architektur an den Output-Knoten wie folgt (vg
 
 \end{itemize}
 Abbildung \ref{fig:posenet_mods} veranschaulicht die Modifikation von GoogLeNet durch PoseNet.
- \begin{figure}
+ \begin{figure}[bp]
 	\centering
 	\includegraphics[width=\textwidth]{images/googlenet/posenet_diagram2.pdf}
 	\caption{Veranschaulichung der Modifikation von den Output-Zweigen der GoogLeNet Architektur durch PoseNet. Die Softmax Aktivierungsfunktion sowie das fully-connected Layer mit Anzahl der Klassifizierungskategorien als Breite wurde von allen Output-Modulen entfernt. Jeder Output-Zweig hat einen FC-Regressionsschicht erhalten, die die 6 Freiheitsgrade einer Pose bestimmt. Der Output-Zweig 1 wird zusätzlich mit einem weiteren FC-Layer der Breite 2048 vor dem Regressionsschicht erweitert. Die Werte der Output-Zweige 2 \& 3 haben nur während der Trainingsphase einen Einfluss und werden in der Evaluationsphase verworfen. In der Trainingsphase wird vor dem Out-Knoten 1 ein Dropout von 50\% und vor den Out-Knoten 2 \& 3 ein Dropout von 70\% angewendet \cite{kendallPoseNetConvolutionalNetwork2015}.}
