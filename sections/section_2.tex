@@ -15,7 +15,7 @@ Die rein visuellen Methoden des VBLs unterteilen sich in direkte und indirekte M
 \begin{enumerate*}[label=\arabic*)]
 	\item Matching von Features zu Punktwolken (\textit{z.B. \cite{liWorldwidePoseEstimation2012}}),
 	\item Pose Regression mit Tiefenbilder (\textit{z.B. \cite{shottonSceneCoordinateRegression2013}}) und
-	\item Pose Regression nur mit Bildern (\textit{z.B. \cite{kendallPoseNetConvolutionalNetwork2015}})
+	\item Pose Regression nur mit Bildern (\textit{z.B. \cite{kendallPoseNetConvolutionalNetwork2015}}).
 \end{enumerate*}
 
 Die erste Art der direkten Methoden versucht die Pose zu bestimmen, indem die 2D-3D-Korrespondenz direkt über eine repräsentative 3D-Punktwolke der Szene hergestellt wird \cite{piascoSurveyVisualBasedLocalization2018}. Diese unterscheidet sich von den indirekten Methoden durch die aktive Zuordnung der 2D-Features in die 3D-Punktwolke, statt das passive Vergleichen der Features in einer Datenbank \cite{irscharaStructurefrommotionPointClouds2009}. Die zweite Art der direkten Methoden bestimmt anhand von Tiefenbilder die Pose z.B. über Regression Forests \cite{shottonSceneCoordinateRegression2013}, Randomize Ferns \cite{glockerRealTimeRGBDCamera2015}, Coarse-to-Fine Registrierung \cite{santosMappingIndoorSpaces2016} oder Neuronale Netze \cite{massicetiRandomForestsNeural2017}. Diese Forschungsprojekte liefern mit Tiefenbildern gewünschte Resultate. Allerdings sind hierfür notwendige 3D-Kameras nicht verbreitet. Die dritte Art der direkten Methoden bestimmt die Pose nur mit RGB-Bildern \cite{kendallPoseNetConvolutionalNetwork2015}.
