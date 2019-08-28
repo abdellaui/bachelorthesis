@@ -1,6 +1,6 @@
 \subsection{Künstliche neuronale Netzwerke}
 \label{sec:KNN}
-Künstliche neuronale Netze sind ein Forschungsgebiet der \textit{künstlichen Intelligenz} und imitieren die Beschaffenheit natürlicher neuronale Netze, um komplexe Probleme zu lösen. Inspiriert von ihren biologischen Vorbildern\footnote{das Nervensystem eines komplexen Lebewesens; z.B. des Menschen}, vernetzen künstliche neuronale Netzwerke künstliche Neuronen miteinander \cite{johnsonCS231nConvolutionalNeural}. Dabei kann die Verbindung unidirektional (\textit{feedforward}) oder bidirektional (\textit{feedback}) sein \cite{goodfellowDeepLearning2016}. 
+Die künstliche neuronale Netze sind ein Forschungsgebiet der künstlichen Intelligenz und imitieren die Beschaffenheit natürlicher neuronaler Netze, um komplexe Probleme zu lösen. Inspiriert von ihren biologischen Vorbildern\footnote{das Nervensystem eines komplexen Lebewesens; z.B. des Menschen}, vernetzen künstliche neuronale Netzwerke künstliche Neuronen miteinander \cite{johnsonCS231nConvolutionalNeural}. Dabei kann die Verbindung unidirektional (\textit{feedforward}) oder bidirektional (\textit{feedback}) sein \cite{goodfellowDeepLearning2016}. 
 
 Bei einem \textit{feedforward Netzwerk} werden die Daten im Netz immer vorwärts übertragen. Ein \textit{feedback Netzwerk}, auch bekannt als \textit{Recurrent Neural Networks}, kann dagegen Daten rückwärts sowie in einer Schleife zum selben Neuron übergeben \cite{goodfellowDeepLearning2016}. Da feedback Netzwerke keinen Einsatz in diesem Arbeit haben, ist im weiteren Verlauf dieser Arbeit bei einem Netzwerk immer ein feedforward Ansatz gemeint. 
 
@@ -26,7 +26,7 @@ Ein künstliches Neuron mit der Inputgröße $M$ ist mathematisch die nicht-line
 
 \subsubsection{Feedforward Neural Networks}
 \label{sec:feedforwardNN}
-Künstliche Neuronen können zu einer Schicht (\textit{layer}) zusammengeführt werden. Die Verbindung solcher Schichten bildet ein neuronales Netzwerk.
+Künstliche Neuronen können zu einer Schicht (\textit{Layer}) zusammengeführt werden. Die Verbindung solcher Schichten bildet ein neuronales Netzwerk.
 Bei einem feedforward (\textit{fully-connected}) Netzwerk übergibt jedes Neuron aus der Schicht $l$ den jeweiligen Output $y_{l}$ an jedem Neuron der Schicht $l+1$ weiter. Ebenso sind die Neurone aus der gleichen Schicht nicht untereinander verbunden \cite{goodfellowDeepLearning2016}.
 Die Schicht $l$ eines feedforward Netzwerkes operiert somit auf das Ouput $y_{l-1}$ und stellt die nicht-lineare Funktion $f_l : \mathbb{R}^{M_{l-1}} \mapsto \mathbb{R}^{M_l}$ dar \cite{bauckhageInformedMachineLearning}:
 \begin{equation}
@@ -116,7 +116,7 @@ Abbildung \ref{fig:convolution_layer} illustriert eine beispielhafte Convolution
 \begin{figure}
 	\centering
 	\includegraphics[width=0.4\textwidth]{images/ann_conv/ReLU.png}
-	\caption{Ein Beispiel für eine Aktivierungsfunktion. Die ReLU (\textit{rectified liniear unit}) Aktivierungsfunktion wird typischerweise in CNNs eingesetzt und ist mathematisch definiert als: $f(x) = max(0,x)$ \cite{goodfellowDeepLearning2016} }
+	\caption{Ein Beispiel für eine Aktivierungsfunktion. Die \textit{Rectified-Liniear-Unit} (ReLU) Aktivierungsfunktion wird typischerweise in CNNs eingesetzt und ist mathematisch definiert als: $f(x) = max(0,x)$ \cite{goodfellowDeepLearning2016} }
 	\label{fig:relu}
 \end{figure}
 
