@@ -14,7 +14,7 @@
 %outdoors. However, GPS cannot be used indoors. 
 %
 %There are many indoor localization tools
-%including , UWB, WiFi AP et al, among which using cameras to localization is the most
+%including  UWB, WiFi AP et al, among which using cameras to localization is the most
 %flexible and low cost one. 
 %
 %Autonomous localization and navigation is necessary for a moving
@@ -37,10 +37,10 @@
 
 
 
-Die Bestimmung der Pose (\textit{Position + Orientierung}) von mobilen Geräten in Gebäuden verschafft im Bauwesen eine Reihe von Anwendungen wie z.B. die automatische Baufortschritterfassung sowie das Facility-Management und die Navigation über Augmented Reality \cite{kroppModelbasedPoseEstimation2016, kochNaturalMarkersAugmented2014}.
+Die Bestimmung der Pose (Position + Orientierung) von mobilen Geräten in Gebäuden verschafft im Bauwesen eine Reihe von Anwendungen wie z.B. die automatische Baufortschritterfassung sowie das Facility-Management und die Navigation über \textit{Augmented Reality} \cite{kroppModelbasedPoseEstimation2016, kochNaturalMarkersAugmented2014}.
 Während im Freien die mobilen Geräte über das \textit{Global Positioning System} (GPS) und die Mobilfunktechnologien lokalisiert werden können, ist grundsätzlich in Gebäuden und in der Abwesenheit von Satelliten- oder Funksignalen eine Lokalisierung über das GPS oder Mobilfunknetz nicht möglich \cite{yassinRecentAdvancesIndoor2016}. 
 
-Für die Lokalisierung in Gebäuden gibt es verschiedene Verfahren, die sich an Technologien wie  \textit{LIDAR, Ultra-Breitband, Wireless Access Point, Bluetooth Beacon etc.} bedienen. Darin stellt die visuelle Lokalisierung über eine Kamera die kostengünstigste und flexibelste Alternative dar, weil es keine flächendeckenden Hardwareinstallationen benötigt. Dies ist dadurch bedingt, dass heutzutage viele Menschen ein Smartphone mit einer hochauflösenden Kamera bei sich führen \cite{wuImagebasedCameraLocalization2018}.
+Für die Lokalisierung in Gebäuden gibt es verschiedene Verfahren, die sich an Technologien wie \textit{LIDAR, Ultra-Breitband, Wireless Access Point, Bluetooth Beacon etc.} bedienen. Darin stellt die visuelle Lokalisierung über eine Kamera die kostengünstigste und flexibelste Alternative dar, weil es keine flächendeckenden Hardwareinstallationen benötigt. Dies ist dadurch bedingt, dass heutzutage viele Menschen ein Smartphone mit einer hochauflösenden Kamera bei sich führen \cite{wuImagebasedCameraLocalization2018}.
 
 Visuelle Lokalisierungsansätze wie z.B. die 
 \textit{visuelle Odemetrie} (VO) oder das \textit{Simultaneous-Localization-and-Mapping} (SLAM) sind eingeschränkt auf die lokale Positionbestimmung. Daher benötigen diese Ansätze eine Ausgangsposition des Sensors, um die absolute Position in einem Gebäude zu lokalisieren \cite{stephenseGlobalLocalizationUsing2002}. Dieses Problem ist in der Literatur auch als das \textit{Kidnapped-Robot-Problem} (KRP) bekannt. KRP beschäftigt sich mit einem von seiner Umpositionierung uninformierten (\textit{entführten}) Roboter. Dieser soll über die Sensormessungen eigenständig seine globale Position in der Umgebung lokalisieren.
@@ -49,12 +49,6 @@ Visuelle Lokalisierungsansätze wie z.B. die
 Die absolute Lokalisierung eines visuellen Abfragematerials ist über das Suchen eines korrespondierenden Bildes in einer Bildergalerie oder über die Regression der Pose anhand von Bild-Features möglich \cite{piascoSurveyVisualBasedLocalization2018}. Diese Verfahren benötigen entweder eine Datenbank aus Bildern mit bekannten Posen \cite{zhangImageBasedLocalization2006, arandjelovicThreeThingsEveryone2012} oder zusätzliche Daten wie die 3D-Punktwolke \cite{irscharaStructurefrommotionPointClouds2009, liWorldwidePoseEstimation2012} oder Tiefenbilder der Szene \cite{shottonSceneCoordinateRegression2013}. Allerdings ist die Beschaffung der Bilder und zusätzlichen Daten von allen möglichen Posen im Gebäude zeit- und kostenaufwendig \cite{acharyaBIMPoseNetIndoorCamera2019}.
 
 
-%Über Structure-from-Motion (\textit{SfM}) Methoden konnten 
-%\citet{kendallPoseNetConvolutionalNetwork2015} trainierten mit Datensätzen bestehend aus einem Bild und die dazu korrespondierende Pose, die sie über Structure-from-Motion (\textit{SfM}) Methoden erhalten dem Sie Pose der 
-% posenet kurz
-%acharya
-%ziele
-%results
 Hierfür versuchen die \textit{Pose Estimation} Ansätze wie z.B. \textit{PoseNet} \cite{kendallPoseNetConvolutionalNetwork2015} mit \textit{künstlichen neuronalen Netzwerken} (KNN) eine geeignete Lösung zu bieten. PoseNet wird mit Datenpaaren bestehend aus RGB-Bildern und Posen trainiert, während die Ermittlung der Posen über das \textit{Structure-from-Motion} (SfM) einer Videoaufnahme der Umgebung genügt. Dennoch benötigen PoseNet und seine Nachfolger \cite{kendallModellingUncertaintyDeep2016, walchImageBasedLocalizationUsing2017, kendallGeometricLossFunctions2017, clarkVidLocDeepSpatioTemporal2017} Trainingsdaten durch das SfM der Videoaufnahmen, die den gesamten Innenraum der Gebäude abdecken. Die Aufnahme der Innenräume und das Erzeugen der Trainingsdaten über langsame und fehleranfällige SfM-Methoden ist zeitaufwändig und mühsam \cite{acharyaBIMPoseNetIndoorCamera2019}.
 
 \citet{acharyaBIMPoseNetIndoorCamera2019} versuchten deshalb die Trainingsdaten aus der Simulation eines Gebäudes zu gewinnen. Dafür erzeugten die Forscher synthetische Bilder mit einer bekannten Pose entlang einer ca. 18$m$ langen Strecke in der 3D-Simulation eines Korridors. Trainiert auf dem PoseNet Modell mit den Gradientenbildern der synthetischen Daten konnten die Forscher \citet{acharyaBIMPoseNetIndoorCamera2019} bei der Evaluierung mit den Gradientenbildern der realen Daten eine Akkuratesse von ca. $2m$ in der Position und 7° in der Orientierung erzielen. Allerdings verlief die kurze Strecke überwiegend in einer Richtung und auf einer Etagenebene in der Simulation eines ca. $20m \times 5m \times 3m$ großen Korridors.
