@@ -38,7 +38,7 @@ y_l = f_l(y_{l-1}) = \phi(W^T_lx_{l-1}+b_{l})
 Die erste Schicht eines Netzwerks wird als Input-, die letzte Schicht als Ouput Layer bezeichnet. Alle Schichten dazwischen sind Hidden Layer \cite{goodfellowDeepLearning2016}. Der Ouput Layer liefert zugleich auch das Ergebnis eines Netzwerks. Deswegen haben die Neurone des Ouput Layers grundsätzlich keine Aktivierungsfunktion \cite{johnsonCS231nConvolutionalNeural}.
 
 Die Tiefe (\textit{depth}) eines Netzwerks ist gegeben durch die Anzahl der Layer \footnote{der Input Layer ist ausgeschlossen} und die Breite (\textit{width}) eines Layers wird durch die Anzahl der Neuronen bestimmt \cite{goodfellowDeepLearning2016}. 
-Abbildung \ref{fig:neural_net} illustriert ein feedforward neuronales Netz als einen azyklischer Graph.
+Abbildung \ref{fig:neural_net} illustriert ein feedforward neuronales Netz als einen azyklischen Graphen.
 
 Ziel eines KNNs ist es eine Funktion $f^*$ zu approximieren, die einen Input $x$ auf einen Output $y$ abbildet. Durch das Output $y$ kann das Input $x$ klassifiziert oder anhand dessen ein Wert regressiert werden. Sei $y = f(x; \theta)$ eine derartige Funktion, dann besetzt ein KNN die Werte des $\theta$ Parameters mit eines der besten Approximation von $f^*$. Der Parameter $\theta$ stellt hierbei die Gewichte dar, die erlernt werden sollen \cite{goodfellowDeepLearning2016}. 
 Das Lernen ist die strategische Anpassung der Gewichte über Input-Output Paare (\textit{Trainingsdaten}) und findet grundsätzlich durch ein \textit{Backpropagation}-Verfahren statt \cite{goodfellowDeepLearning2016}. 
