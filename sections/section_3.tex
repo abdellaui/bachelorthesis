@@ -21,7 +21,7 @@ Im weiteren Verlauf dieses Kapitels wird die Erhebung / Generierung der realen /
 \subsection{Erhebung der realen Daten}
 \label{subsec:record_real_data}
 In der Literatur wurden beliebige Kameras für die Aufnahme der realen Bilder verwendet und anschließend SfM-Methoden eingesetzt, um die Pose (\textit{Ground-Truth-Daten}) der realen Aufnahmen zu bestimmen \cite{kendallPoseNetConvolutionalNetwork2015, clarkVidLocDeepSpatioTemporal2017, acharyaBIMPoseNetIndoorCamera2019}. 
-In der vorliegenden Arbeit wurde für die Bestimmung der Ground-Truth-Daten sowie die Aufnahme der Bilder zeitgleich zwei unterschiedliche Kameras der \textit{Intel Realsense} Reihe verwendet. Eine Intel Realsense T265\footnote{\url{https://www.intelrealsense.com/tracking-camera-t265/} (abgerufen am: 18.07.2019)} wurde eingesetzt. Diese verspricht bei gegebenen Bestkonditionen mit einer Abweichung von weniger als 1\% die relative Pose zum Ausgangspunkt über die SfM von zwei Fischaugenkameras (mit einer Auflösung von $848 \times 800$) und über IMU zu ermitteln. Zudem wurde eine Intel Realsense D435\footnote{ \url{https://www.intelrealsense.com/depth-camera-d435/} (abgerufen am: 18.07.2019)} eingesetzt, die eine 3D Punktwolke, ein $1280\times720$ Tiefenbild und ein $1920\times1080$ RGB-Bild einer Szene liefert. Die T265 wurde über die D435 montiert (s. Abb. \ref{fig:t265_d435}), um die RGB-Bilder der D435 mit den Ground-Truth-Daten der T265 annotieren zu können.
+In der vorliegenden Arbeit wurde für die Bestimmung der Ground-Truth-Daten sowie die Aufnahme der Bilder zeitgleich zwei unterschiedliche Kameras der \textit{Intel Realsense} Reihe verwendet. Eine Intel Realsense T265\footnote{\url{https://www.intelrealsense.com/tracking-camera-t265/} (abgerufen am: 18.07.2019)} wurde eingesetzt. Diese verspricht bei gegebenen Bestkonditionen mit einer Abweichung von weniger als 1\% die relative Pose zum Ausgangspunkt über die SfM von zwei Fischaugenkameras (mit einer Auflösung von $848 \times 800$) und über IMU zu ermitteln. Zudem wurde eine Intel Realsense D435\footnote{ \url{https://www.intelrealsense.com/depth-camera-d435/} (abgerufen am: 18.07.2019)} eingesetzt, die eine 3D-Punktwolke, ein $1280\times720$ Tiefenbild und ein $1920\times1080$ RGB-Bild einer Szene liefert. Die T265 wurde über die D435 montiert (s. Abb. \ref{fig:t265_d435}), um die RGB-Bilder der D435 mit den Ground-Truth-Daten der T265 annotieren zu können.
 
 \begin{figure}
 	\centering
@@ -33,7 +33,7 @@ In der vorliegenden Arbeit wurde für die Bestimmung der Ground-Truth-Daten sowi
 In der Literatur wurden die realen Daten einer Zone grundsätzlich entlang einer Strecke aufgenommen \cite{kendallPoseNetConvolutionalNetwork2015, clarkVidLocDeepSpatioTemporal2017, acharyaBIMPoseNetIndoorCamera2019}. Daher wurden zuerst Aufnahmestrecken in den Gebäudesimulationen festgelegt und anschließend die Aufnahmen durchgeführt. Davor wurden die Ausgangspunkte der Aufnahmen zu einem Referenzpunkt in den Simulationen abgemessen und als Offset zur Bestimmung der globalen Position im Gebäude notiert.
 
 
-Über das Robot Operating System\footnote{\url{https://www.ros.org/about-ros/} (abgerufen am: 18.07.2019)} (\textit{ROS}) Framework wurden die Kameras zeitgleich angesprochen und der Datenfluss der Kameras synchronisiert. Anschließend wurde der notierte Offset zur Bestimmung der absoluten Position im Gebäude zu den von der T265 berechneten zum Ausgangspunkt relativen Posen addiert. Somit beinhaltete jeder erhobene Datensatz ein Bild pro Fischaugenkamera, ein Tiefenbild, ein RGB-Bild, eine 3D Punktwolke und die dazugehörige absolute Pose im Gebäude pro Frame. Für die vorliegende Arbeit waren nur die Pose-Daten der T265 sowie die RGB-Bilder der D435 relevant, da PoseNet ausschließlich RGB-Bilder mit annotiertem Kamerapose benötigte. Abbildung \ref{fig:dataset} visualisiert ein Datensatzexemplar für einen Frame.
+Über das Robot Operating System\footnote{\url{https://www.ros.org/about-ros/} (abgerufen am: 18.07.2019)} (\textit{ROS}) Framework wurden die Kameras zeitgleich angesprochen und der Datenfluss der Kameras synchronisiert. Anschließend wurde der notierte Offset zur Bestimmung der absoluten Position im Gebäude zu den von der T265 berechneten zum Ausgangspunkt relativen Posen addiert. Somit beinhaltete jeder erhobene Datensatz ein Bild pro Fischaugenkamera, ein Tiefenbild, ein RGB-Bild, eine 3D-Punktwolke und die dazugehörige absolute Pose im Gebäude pro Frame. Für die vorliegende Arbeit waren nur die Pose-Daten der T265 sowie die RGB-Bilder der D435 relevant, da PoseNet ausschließlich RGB-Bilder mit annotiertem Kamerapose benötigte. Abbildung \ref{fig:dataset} visualisiert ein Datensatzexemplar für einen Frame.
 
 Die Bestkonditionen für die T265 konnten nicht hergestellt werden, sodass die von der T265 berechneten Posen eine Abweichung (\textit{Drift}) bis zu 5\% aufweisen (vgl. Abb. \ref{fig:trajectories}). Die Abweichung der Posen wurden aus Zeitgründen nicht korrigiert, da in der vorliegenden Arbeit die realen Daten zur Evaluierung eingesetzt wurden, allenfalls für die Bestimmung eines Hyperparameters zwecks der Evaluation mit den realen Daten ein KNN trainiert wurde, sowie die Akkuratesse im Meterbereich für eine Beobachtung ausreichen sollte.
 
@@ -43,7 +43,7 @@ Die Bestkonditionen für die T265 konnten nicht hergestellt werden, sodass die v
 	\begin{subfigure}[t]{0.3\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/real_dataset/pointcloud3.png}
-		\caption{Pose (T265) + \\ 3D Punktwolke (D435)}
+		\caption{Pose (T265) + \\ 3D-Punktwolke (D435)}
 		\label{subfig:odom1}
 	\end{subfigure}
 	\hfill
@@ -64,7 +64,7 @@ Die Bestkonditionen für die T265 konnten nicht hergestellt werden, sodass die v
 	\begin{subfigure}[t]{0.3\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{images/real_dataset/pointcloud1.png}
-		\caption{Pose (T265) + \\ 3D Punktwolke (D435)}
+		\caption{Pose (T265) + \\ 3D-Punktwolke (D435)}
 		\label{subfig:odom2}
 	\end{subfigure}
 	\hfill
@@ -81,7 +81,7 @@ Die Bestkonditionen für die T265 konnten nicht hergestellt werden, sodass die v
 		\caption{Tiefenbild \\ (D435) \hspace*{2cm}}
 		\label{subfig:depth-image}
 	\end{subfigure}
-	\caption{Datensatz pro Frame. \subref{subfig:odom1} und \subref{subfig:odom2} visualisieren in unterschiedlichen Perspektiven die von der T265 ermittelte Odometrie und die von der D435 erhaltenen 3D Punktwolke. \subref{subfig:fisheye1} und \subref{subfig:fisheye2} sind die von der T265 aufgenommenen Fischaugenbilder. \subref{subfig:rgb-image} ist das RGB-Bild der D435 und \subref{subfig:depth-image} das dazugehörige Tiefenbild. }
+	\caption{Datensatz pro Frame. \subref{subfig:odom1} und \subref{subfig:odom2} visualisieren in unterschiedlichen Perspektiven die von der T265 ermittelte Odometrie und die von der D435 erhaltenen 3D-Punktwolke. \subref{subfig:fisheye1} und \subref{subfig:fisheye2} sind die von der T265 aufgenommenen Fischaugenbilder. \subref{subfig:rgb-image} ist das RGB-Bild der D435 und \subref{subfig:depth-image} das dazugehörige Tiefenbild. }
 	\label{fig:dataset}
 \end{figure}
 
