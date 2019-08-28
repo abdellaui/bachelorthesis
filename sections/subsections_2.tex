@@ -103,16 +103,15 @@ Angefangen mit der LeNet-5 \cite{lecunGradientBasedLearningApplied1998} Architek
 \end{table}
 
 \subsubsection{Convolutional Layer}
-Der Convolutional Layer ist der Hauptbestandteil eines CNNs, der die Kombination aus einer Convolution Operation und einer Aktivierungsfunktion ist \cite{yamashitaConvolutionalNeuralNetworks2018}.
+Der Convolutional Layer ist der Hauptbestandteil eines CNNs, der die Kombination aus einer \textit{Convolution Operation} und einer Aktivierungsfunktion ist \cite{yamashitaConvolutionalNeuralNetworks2018}.
 
-Die Convolution Operation basiert auf die mathematische Faltung (\textit{Convolution}) und wird typischerweise in CNNs mit Verzicht auf die Kommutativität der anliegenden diskreten Kreuzkorrelation gleichgesetzt \cite{goodfellowDeepLearning2016}.
+Die Convolution Operation basiert auf die mathematische Faltung (\textit{Convolution}) und wird typischerweise in CNNs mit Verzicht auf die Kommutativität der anliegenden diskreten Kreuzkorrelation gleichgesetzt \cite{goodfellowDeepLearning2016}. Abbildung \ref{fig:convolution_layer} illustriert eine beispielhafte Convolution Operation.
 
 Sei $I$ ein 2D-Input, $K$ ein 2D-Filter der Größe $M \times N$, $S$ die Schrittweite (\textit{Stride}) und $O$ das Output mit der Größe $X \times Y$, dann ist die Convolution Operation mathematisch definiert als \cite{goodfellowDeepLearning2016}:
 \begin{equation}
 	\label{eq:convolution}
 	O(x,y) = (I * K)(x,y) = \sum_{m}\sum_{n}I(S_x \cdot x+m, S_y \cdot y+n)K(m,n)
 \end{equation}
-Abbildung \ref{fig:convolution_layer} illustriert eine beispielhafte Convolution Operation.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.4\textwidth]{images/ann_conv/ReLU.png}
