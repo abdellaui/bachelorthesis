@@ -3,11 +3,11 @@
 \section{Fazit}
 \label{sec:kapitel_6}
 Das Ziel dieser Bachelorarbeit war, den Ansatz zur Pose Estimation anhand von Convolutional Neural Networks und simulierten 3D-Daten von \citet{acharyaBIMPoseNetIndoorCamera2019} in größeren Gebäudesimulationen und auf längeren Strecken zu untersuchen.
-Insgesamt wurde der Ansatz in zwei unterschiedlichen Gebäuden auf vier Strecken untersucht. Zusammenfassend konnte durch die Untersuchungen festgestellt werden, dass durch den Ansatz ein Lokalisierungsverfahren mit den hier erhobenen Datensätzen nicht möglich ist.
+Insgesamt wurde der Ansatz in zwei unterschiedlichen Gebäuden auf vier Strecken untersucht. Zusammenfassend konnte durch die Untersuchungen festgestellt werden, dass ein Lokalisierungsverfahren mit den hier erhobenen Datensätzen nicht möglich ist.
 
 
 
-
+Der zugrundeliegende CNN 
 %
 
 %
@@ -18,6 +18,6 @@ PoseNet konnte die Pose auf den hier erhobenen Datensätzen mit einer durchschni
 %\subsection{Empfehlungen für weiterführende Forschungen}
 
 %datentypen
-\citet{acharyaBIMPoseNetIndoorCamera2019} erzielten ihre besten Ergebnisse durch das Trainieren mit den Gradientenbilder der synthetischen Kantenbilder (\textit{grad-edge}). In dieser Arbeit konnte häufiger eine bessere Akkuratesse mit den \textit{grad-cartoon} Datensätzen erzielt werden (s. Tab. \ref{tab:results_ic}- \ref{tab:results_hs_stairs_down}). Dennoch kann auf dieser Tatsache kein synthetischer Datentyp als der Beste festgelegt werden, da hierzu die bestmögliche Akkuratesse von jedem Datentyp weder sichergestellt noch ausgeschlossen werden konnte. Das wird wie in \ref{subsec:disc_methode} erwähnt dadurch begründet, dass die Akkuratesse vom Zufall abhängig ist. Daher können weiterführende Forschungen bei gleichen Hyperparametern die Anzahl der Trainingsprozesse erhöhen, um bessere Ergebnisse zu erzielen oder auszuschließen. Infolgedessen könnte der Zusammenhang zwischen den Ergebnissen und der Datentypen untersucht werden. 
+\citet{acharyaBIMPoseNetIndoorCamera2019} erzielten ihre besten Ergebnisse durch das Trainieren mit den Gradientenbildern der synthetischen Kantenbilder (\textit{grad-edge}). In dieser Arbeit konnte häufiger eine bessere Akkuratesse mit den \textit{grad-cartoon} Datensätzen erzielt werden (s. Tab. \ref{tab:results_ic}- \ref{tab:results_hs_stairs_down}). Dennoch kann auf dieser Tatsache kein synthetischer Datentyp als der Beste festgelegt werden, da hierzu die bestmögliche Akkuratesse von jedem Datentyp weder sichergestellt noch ausgeschlossen werden konnte. Das wird wie in \ref{subsec:disc_methode} erwähnt dadurch begründet, dass die Akkuratesse vom Zufall abhängig ist. Daher können weiterführende Forschungen bei gleichen Hyperparametern die Anzahl der Trainingsprozesse erhöhen, um bessere Ergebnisse zu erzielen oder auszuschließen. Infolgedessen könnte der Zusammenhang zwischen den Ergebnissen und der Datentypen untersucht werden. 
 
 Außerdem wurde die Optimierung der Hyperparameter in dieser Arbeit nicht behandelt. Dies kann auf den jeweiligen Datensätzen zu besseren Ergebnissen führen und ist daher eine weitere Empfehlung zu weiterführenden Forschungen. Um das \textit{perceptual-aliasing} Problem zu behandeln, wurde in der Literatur raumzeitliche Informationen aus Bildsequenzen von aufeinanderfolgenden Frames berücksichtigt \cite{walchImageBasedLocalizationUsing2017, clarkVidLocDeepSpatioTemporal2017}. Des Weiteren wurde PoseNet an einem \textit{Bayessian Neural Network} angepasst, um die Unsicherheit der Ergebnisse zu modellieren. Dadurch ist es in der Evaluationsphase möglich, den Ergebnissen zu vertrauen oder zu verwerfen \cite{kendallModellingUncertaintyDeep2016}. Angesichts dessen können weitere Forschungsprojekte die hier erhobenen Datensätze auf die Nachfolger von PoseNet \cite{kendallModellingUncertaintyDeep2016, walchImageBasedLocalizationUsing2017, clarkVidLocDeepSpatioTemporal2017} anwenden und die Fähigkeit zur Lokalisierung untersuchen.
