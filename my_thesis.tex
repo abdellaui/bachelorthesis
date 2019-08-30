@@ -1,10 +1,10 @@
 \documentclass[
 %draft,
-ngerman,        % (ngerman/english) internationalisation
-%  listoffigures,  % optional listings of figures, tables and listings
-%  listoftables,
-%  listoflistings,
-%  twoside,        % double sided layout
+ngerman, % (ngerman/english) internationalisation
+% listoffigures, % optional listings of figures, tables and listings
+% listoftables,
+% listoflistings,
+% twoside, % double sided layout
 ]{iib_thesis}
 
 
@@ -55,7 +55,7 @@ ngerman,        % (ngerman/english) internationalisation
 	black and white/.is choice,
 	black and white/.default=static,
 	black and white/static/.style={ 
-		draw=white,   
+		draw=white, 
 		zoombox paths/.append style={
 			draw=white,
 			postaction={
@@ -73,28 +73,28 @@ ngerman,        % (ngerman/english) internationalisation
 	},
 	black and white pattern/.is choice,
 	black and white pattern/0/.style={},
-	black and white pattern/1/.style={    
+	black and white pattern/1/.style={ 
 		draw=white,
 		postaction={
 			draw=black,
 			dash pattern=on 2pt off 2pt
 		}
 	},
-	black and white pattern/2/.style={    
+	black and white pattern/2/.style={ 
 		draw=white,
 		postaction={
 			draw=black,
 			dash pattern=on 4pt off 4pt
 		}
 	},
-	black and white pattern/3/.style={    
+	black and white pattern/3/.style={ 
 		draw=white,
 		postaction={
 			draw=black,
 			dash pattern=on 4pt off 4pt on 1pt off 4pt
 		}
 	},
-	black and white pattern/4/.style={    
+	black and white pattern/4/.style={ 
 		draw=white,
 		postaction={
 			draw=black,
@@ -198,9 +198,9 @@ ngerman,        % (ngerman/english) internationalisation
 				\node [anchor=north] at (\x/10,0) {0.\x};
 			}
 			\foreach \y in {0,1,...,9} {
-				\draw(0,\y/10) -- (1,\y/10);                        \node [anchor=east] at (0,\y/10) {0.\y};
+				\draw(0,\y/10) -- (1,\y/10); \node [anchor=east] at (0,\y/10) {0.\y};
 			}
-		\end{scope}    
+		\end{scope} 
 	},
 	help grid/.style={
 		append after command={
@@ -244,7 +244,7 @@ ngerman,        % (ngerman/english) internationalisation
 }
 
 
-\includeonly{sections/section_5, sections/section_6 }
+%\includeonly{sections/section_5, sections/section_6 }
 \begin{document}
 
 \include{sections/section_1}
