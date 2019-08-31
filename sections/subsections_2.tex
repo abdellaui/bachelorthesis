@@ -40,7 +40,7 @@ Die erste Schicht eines Netzwerks wird als Input-, die letzte Schicht als Ouput 
 Die Tiefe (\textit{depth}) eines Netzwerks ist gegeben durch die Anzahl der Layer\footnote{der Input Layer ist ausgeschlossen} und die Breite (\textit{width}) eines Layers wird durch die Anzahl der Neuronen bestimmt \cite{goodfellowDeepLearning2016}. 
 Abbildung \ref{fig:neural_net} illustriert ein feedforward neuronales Netz als einen azyklischen Graphen.
 
-Ziel eines KNNs ist es eine Funktion $f^*$ zu approximieren, die einen Input $x$ auf einen Output $y$ abbildet. Durch das Output $y$ kann das Input $x$ klassifiziert oder anhand dessen ein Wert regressiert werden. Sei $y = f(x; \theta)$ eine derartige Funktion, dann besetzt ein KNN die Werte des $\theta$ Parameters mit eines der besten Approximation von $f^*$. Der Parameter $\theta$ stellt hierbei die Gewichte dar, die erlernt werden sollen \cite{goodfellowDeepLearning2016}. 
+Ziel eines KNNs ist es, eine Funktion $f^*$ zu approximieren, die einen Input $x$ auf einen Output $y$ abbildet. Durch das Output $y$ kann das Input $x$ klassifiziert oder anhand dessen ein Wert regressiert werden. Sei $y = f(x; \theta)$ eine derartige Funktion, dann besetzt ein KNN die Werte des $\theta$ Parameters mit eines der besten Approximation von $f^*$. Der Parameter $\theta$ stellt hierbei die Gewichte dar, die erlernt werden sollen \cite{goodfellowDeepLearning2016}. 
 Das Lernen ist die strategische Anpassung der Gewichte über Input-Output Paare (\textit{Trainingsdaten}) und findet grundsätzlich durch ein \textit{Backpropagation}-Verfahren statt \cite{goodfellowDeepLearning2016}. 
 
 Die Funktion $y = f(x; \theta)$ bildet sich aus den Funktionen der im Netzwerk vorhandenen Schichten (s. Gleichung \ref{eq:layer}) und kann bei einer Tiefe $L$ repräsentiert werden als die folgende Funktion $f : \mathbb{R}^{M_0} \mapsto \mathbb{R}^{M_L}$ \cite{goodfellowDeepLearning2016, bauckhageInformedMachineLearning}:
@@ -159,7 +159,7 @@ GoogLeNet, konstruiert von \citet{szegedyGoingDeeperConvolutions2015} im Jahr 20
 GoogLeNet ist eine besondere Inkarnation des sogenannten \textit{Inception Moduls}, die zeitgleich mit GoogLeNet vorgestellt wird.
 Ein Inception Modul beinhaltet mehrere Convolutional- sowie einen Pooling Layer und verarbeitet das Inputvolumen parallel auf 4 Zweigen. Vor rechenintensiven Convolutional Layer werden zusätzliche 1$\times$1 dimensionsreduzierende Layer geschaltet. Abschließend werden die ein Volumen mit der gleichen Breite und Höhe produzierenden Zweige zu einem Outputvolumen (in die Tiefe) zusammengeführt. Ein Inception Modul ermöglicht bei zunehmender Tiefe und Breite den neuronalen Netzen eine konstante Rechenkapazität zu verlangen. Hierzu werden vor den rechenintensiven Operationen eine parallele Berechnung der Zweige und das Einschalten von dimensionsreduzierenden 1$\times$1 Layern benötigt \cite{szegedyGoingDeeperConvolutions2015}. Inzwischen wurde das Inception Modul \cite{szegedyRethinkingInceptionArchitecture2016} und die gesamte Architektur rundherum \cite{szegedyInceptionv4InceptionResNetImpact2016} weiterentwickelt. Abbildung \ref{fig:inception_module} stellt das Inception (v1) Modul dar.
 
-Die Architektur von GoogLeNet besteht aus 9 Inception Modulen (je von Tiefe 2) und hat eine gesamte Tiefe von 22 Layer \footnote{Anzahl der trainierbaren Layern inkl. Output Layer}. Das Ungewöhnliche an der Architektur ist, dass es 3 Output-Zweigen hat. Jedes der Ouput-Zweige produziert ein Klassifizierungsergebnis. Output-Zweig 2 \& 3 sind Hilfszweige, die nur in der Trainingsphase einen Einfluss haben und in der Evaluationsphase verworfen werden \cite{szegedyGoingDeeperConvolutions2015}. Abbildung \ref{fig:googlenet} illustriert die GoogLeNet Architektur in Detail.
+Die Architektur von GoogLeNet besteht aus 9 Inception Modulen (je von Tiefe 2) und hat eine gesamte Tiefe von 22 Layer \footnote{Anzahl der trainierbaren Layern inkl. Output Layer}. Das Ungewöhnliche an der Architektur ist, dass dieser 3 Output-Zweigen hat. Jedes der Ouput-Zweige produziert ein Klassifizierungsergebnis. Output-Zweig 2 \& 3 sind Hilfszweige, die nur in der Trainingsphase einen Einfluss haben und in der Evaluationsphase verworfen werden \cite{szegedyGoingDeeperConvolutions2015}. Abbildung \ref{fig:googlenet} illustriert die GoogLeNet Architektur in Detail.
 
  \begin{figure}
 	\centering
@@ -174,7 +174,7 @@ PoseNet, vorgestellt von \citet{kendallPoseNetConvolutionalNetwork2015} im Jahr 
 
 PoseNet modifiziert die GoogLeNet Architektur an den Output-Knoten wie folgt (vgl. Abb. \ref{fig:googlenet}) \cite{kendallPoseNetConvolutionalNetwork2015}:
 \begin{itemize}
-	\item Jedes der Softmax-Klassifikatoren werden ersetzt durch Regressoren. Dabei wird der Softmax-Activation Layer entfernt und der FC-Layer so modifiziert, dass es einen 7-dimensionalen Vektor\footnote{(3) für die Position und (4) für die Orientierung} ausgibt.
+	\item Jedes der Softmax-Klassifikatoren werden ersetzt durch Regressoren. Dabei wird der Softmax-Activation Layer entfernt und der FC-Layer so modifiziert, dass dieser einen 7-dimensionalen Vektor\footnote{(3) für die Position und (4) für die Orientierung} ausgibt.
 	\item Vor dem finalen Regressor des Output-Zweiges 1 wird ein weiteres FC-Layer der Breite 2048 eingefügt.
 
 \end{itemize}
