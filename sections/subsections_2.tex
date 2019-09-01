@@ -119,7 +119,7 @@ Sei $I$ ein 2D-Input, $K$ ein 2D-Filter der Größe $M \times N$, $S$ die Schrit
 	\label{fig:relu}
 \end{figure}
 
-Die Randbehandlung des Inputvolumens wird \textit{Padding} genannt. Es gibt eine Reihe von Padding Methoden. CNNs setzen grundsätzlich das Zero-Padding Verfahren ein. Das Zero-Padding Verfahren erweitert den Rand des Inputvolumens um eine beliebige Breite und Höhe mit Nullen \cite{johnsonCS231nConvolutionalNeurala}. 
+Die Randbehandlung des Inputvolumens wird \textit{Padding} genannt. Es gibt eine Reihe von Padding Methoden. CNNs setzen grundsätzlich das \textit{Zero-Padding} Verfahren ein. Das Zero-Padding Verfahren erweitert den Rand des Inputvolumens um eine beliebige Breite und Höhe mit Nullen \cite{johnsonCS231nConvolutionalNeurala}. 
 
 Die Werte des 2D-Filters stellen die Gewichte dar und werden in der Trainingsphase optimiert. Ein Convolutional Layer kann aus mehreren 2D-Filtern der gleichen Größe bestehen. Die Convolution Operation wird je 2D-Filter unabhängig auf die Schichten des Inputvolumens ausgeführt \cite{johnsonCS231nConvolutionalNeurala}. Das Output des Convolution Operation wird auch \textit{Feature-Map} genannt. Die Tiefe des Feature-Maps ist gegeben durch die Anzahl der 2D-Filter \cite{yamashitaConvolutionalNeuralNetworks2018}.
 
